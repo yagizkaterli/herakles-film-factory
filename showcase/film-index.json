@@ -1,0 +1,15 @@
+{
+  "schema": "herakles.film-showcase-index.v1",
+  "films": [
+    {
+      "id": "contextless-agent-proof",
+      "title": "Can a blank agent find the thread?",
+      "status": "planned",
+      "question": "Can an agent with no prior chat reconstruct the work from system surfaces?",
+      "source": "HERAKLES system snapshot + d-SONNET-DESTAN-D2-B3 report",
+      "render": null,
+      "receipt": null
+    }
+  ],
+  "rule": "status=planned means no film asset is presented as released"
+}

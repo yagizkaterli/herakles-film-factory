@@ -2,6 +2,8 @@
 
 Evidence-bound film production for HERAKLES: ImageGen for art direction, Manim/ManimGL-compatible scenes for causal explanation, and HERAKLES World as the live source of verified system state.
 
+The repository is designed to be understood from the front page: [film showcase](showcase/README.md), [frontier study](docs/FRONTIER-GITHUB-STUDY.md), and [production system](pipeline/README.md).
+
 ## Core rule
 
 The film never invents a world event. It reads a canonical snapshot/event, turns that event into a storyboard, renders the explanation, and stores a receipt that points back to the source.
