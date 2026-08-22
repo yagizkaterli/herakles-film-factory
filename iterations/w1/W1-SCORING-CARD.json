@@ -1,7 +1,6 @@
 {
   "kart": "d-FILM-W1-20-aday-skor",
   "kanal": "oda",
-  "sinif": 4,
   "aile": "codex",
   "durum": "bekliyor",
   "amac": "W1 I01-I20 görsel hipotezlerini kaynak paritesi, nedensel okunabilirlik ve dışarıdan anlaşılabilirlik ölçütleriyle skorla; yalnızca >=0.82 adayları top-10 listesine al. Girdi: iterations/w1/W1-MANIFEST.json + concept-01-evidence-thread.png + HERAKLES paper + 3B1B anlatı + motion contract. Teslim: iterations/w1/top-10-contact-sheet.json. ImageGen yalnızca referans; kanıt icat etme; puan bileşenleri ayrı yaz; Markdown yok.",
