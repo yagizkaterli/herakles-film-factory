@@ -6,6 +6,10 @@ HERAKLES Film Factory is an evidence-bound animation system. It reads a real HER
 
 > ImageGen sets the art direction. Code owns the geometry. Receipts own the truth.
 
+![HERAKLES World-bound trace to receipt — current pilot](showcase/films/herakles-trace-to-receipt-grammar-pilot-3d-preview.gif)
+
+**Current visual pilot:** the live World-bound grammar scene is shown above. The MP4 is the downloadable render; the GIF is the no-click homepage preview.
+
 ## First 3D film — preview
 
 | P01 Evidence Terrain | P02 EON Camera Journey |
