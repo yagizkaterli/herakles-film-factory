@@ -1,0 +1,13 @@
+{
+  "schema": "herakles.film-factory.project.v1",
+  "name": "HERAKLES Film Factory",
+  "room": "de2b53bf-a6a6-459b-a393-b30210d6fb46",
+  "repo": "yagizkaterli/herakles-film-factory",
+  "inputs": ["herakles.system-snapshot.v2", "herakles.system-event.v2", "verified receipt"],
+  "art_direction": "imagegen-reference-only",
+  "renderers": ["manim", "manimgl-compatible"],
+  "outputs": ["mp4", "poster", "receipt.json"],
+  "authority": "WORLD_READ_ONLY_MIRROR",
+  "fake_evidence": false,
+  "status": "scaffolded"
+}
