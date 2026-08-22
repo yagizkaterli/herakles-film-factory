@@ -10,6 +10,15 @@
       "render": "showcase/films/contextless-agent-proof-3d.mp4",
       "poster": "showcase/films/contextless-agent-proof-3d-poster.png",
       "receipt": "showcase/films/contextless-agent-proof-3d.receipt.json"
+    },
+    {
+      "id": "evidence-terrain-pilot",
+      "title": "One trace, one receipt",
+      "status": "pilot-render",
+      "question": "Can one source trace become a readable evidence path?",
+      "source": "prior-art pilot P01; deterministic scene geometry",
+      "render": "showcase/films/evidence-terrain-pilot-3d.mp4",
+      "receipt": null
     }
   ],
   "rule": "status=planned means no film asset is presented as released"
