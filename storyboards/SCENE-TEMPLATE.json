@@ -1,0 +1,15 @@
+{
+  "schema": "herakles.film-storyboard.v1",
+  "filmId": "FILM-ID",
+  "question": "One unresolved question in plain language.",
+  "source": "receipts/source.json",
+  "states": [
+    {"id":"question","holdSeconds":2.0,"objectIds":[],"verb":"observe","caption":""},
+    {"id":"obstruction","holdSeconds":1.2,"objectIds":[],"verb":"expose","caption":""},
+    {"id":"prediction","holdSeconds":1.0,"objectIds":[],"verb":"hold","caption":""},
+    {"id":"reveal","holdSeconds":1.4,"objectIds":[],"verb":"transform","caption":""},
+    {"id":"consequence","holdSeconds":1.8,"objectIds":[],"verb":"return","caption":""}
+  ],
+  "limits": ["what this film does not prove"],
+  "motionPolicy": {"decorativeMotion": false, "reducedMotionFinalState": true}
+}

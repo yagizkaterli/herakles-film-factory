@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "herakles.film-receipt.v1",
+  "type": "object",
+  "required": ["schema", "filmId", "sourceDigest", "sceneStateDigest", "render", "gates"],
+  "properties": {
+    "schema": {"const": "herakles.film-receipt.v1"},
+    "filmId": {"type": "string", "minLength": 1},
+    "sourceDigest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "sceneStateDigest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "render": {
+      "type": "object",
+      "required": ["engine", "width", "height", "fps", "durationSeconds"],
+      "properties": {
+        "engine": {"enum": ["manim", "manimgl"]},
+        "width": {"type": "integer", "minimum": 1},
+        "height": {"type": "integer", "minimum": 1},
+        "fps": {"type": "number", "exclusiveMinimum": 0},
+        "durationSeconds": {"type": "number", "exclusiveMinimum": 0},
+        "output": {"type": "string"}
+      }
+    },
+    "gates": {
+      "type": "object",
+      "required": ["sourceParity", "narrative", "identity", "reducedMotion", "outsiderRead", "worldLink"],
+      "additionalProperties": {"type": "boolean"}
+    },
+    "worldLink": {"type": "object"}
+  }
+}

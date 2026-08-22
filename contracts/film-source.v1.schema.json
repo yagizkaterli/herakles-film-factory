@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "herakles.film-source.v1",
+  "type": "object",
+  "required": ["schema", "sourceStream", "snapshotDigest", "events", "question"],
+  "properties": {
+    "schema": {"const": "herakles.film-source.v1"},
+    "sourceStream": {"type": "string", "minLength": 1},
+    "snapshotDigest": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "events": {"type": "array", "items": {"$ref": "#/$defs/event"}},
+    "question": {"type": "string", "minLength": 8, "maxLength": 180},
+    "scope": {"type": "string"}
+  },
+  "$defs": {
+    "event": {
+      "type": "object",
+      "required": ["eventId", "kind", "timestamp", "sourcePointer"],
+      "properties": {
+        "eventId": {"type": "string"},
+        "kind": {"type": "string"},
+        "timestamp": {"type": "string"},
+        "sourcePointer": {"type": "string"},
+        "digest": {"type": "string"}
+      }
+    }
+  }
+}
