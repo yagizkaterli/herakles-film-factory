@@ -28,6 +28,15 @@
       "source": "prior-art pilot P02; deterministic waypoint rail",
       "render": "showcase/films/eon-camera-journey-pilot-3d.mp4",
       "receipt": null
+    },
+    {
+      "id": "herakles-trace-to-receipt-grammar-pilot",
+      "title": "Trace becomes a receipt",
+      "status": "grammar-pilot-render",
+      "question": "Can HERAKLES own a visual grammar beyond the seed design?",
+      "source": "canonical/herakles-film-grammar.v1.json",
+      "render": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.mp4",
+      "receipt": null
     }
   ],
   "rule": "status=planned means no film asset is presented as released"
