@@ -1,0 +1,16 @@
+{
+  "schema": "herakles.prior-art-atlas-run.v1",
+  "status": "in-progress",
+  "researched": 5,
+  "pending": 95,
+  "minimum": 100,
+  "entries": [
+    {"id":"A01-01","category":"mathematical_explanation","title":"3b1b Manim","source_url":"https://github.com/3b1b/manim","source_type":"github","observed_pattern":"engine and scene code are separated; examples are first navigation surface","transferable_rule":"keep deterministic scene entry points separate from the film factory","rejection_rule":"no decorative scene without runnable source","citation_receipt":"docs/FRONTIER-GITHUB-STUDY.md","status":"researched"},
+    {"id":"A02-01","category":"scientific_visualization","title":"Three.js","source_url":"https://github.com/mrdoob/three.js/","source_type":"github","observed_pattern":"browsable examples catalog with small runnable witnesses","transferable_rule":"each film scene needs a browsable source witness","rejection_rule":"no visual without source and receipt link","citation_receipt":"docs/FRONTIER-GITHUB-STUDY.md","status":"researched"},
+    {"id":"A03-01","category":"systems_and_network_films","title":"Mapbox Storytelling","source_url":"https://github.com/mapbox/storytelling","source_type":"github","observed_pattern":"chapters bind camera state to callbacks","transferable_rule":"EON chapters must own camera waypoints and state transitions","rejection_rule":"no anonymous timeline or camera jump","citation_receipt":"docs/FRONTIER-GITHUB-STUDY.md","status":"researched"},
+    {"id":"A04-01","category":"interactive_worlds","title":"Flow Story","source_url":"https://github.com/Poolchaos/flow-story","source_type":"github","observed_pattern":"waypoints and annotated 3D transitions are data-driven","transferable_rule":"camera choreography is a manifest, not ad-hoc animation","rejection_rule":"no waypoint without source pointer and reversible QA","citation_receipt":"docs/FRONTIER-GITHUB-STUDY.md","status":"researched"},
+    {"id":"A10-01","category":"frontier_generative_to_deterministic_workflows","title":"Genblaze","source_url":"https://github.com/backblaze-labs/genblaze","source_type":"github","observed_pattern":"manifest-driven media pipeline with shared producer schemas","transferable_rule":"ImageGen outputs stay provider-neutral and feed deterministic stages","rejection_rule":"no generated asset without provenance manifest","citation_receipt":"docs/FRONTIER-GITHUB-STUDY.md","status":"researched"}
+  ],
+  "next": "fill 95 pending slots with primary-source receipt before W1 promotion",
+  "fake_evidence": false
+}
