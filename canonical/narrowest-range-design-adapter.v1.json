@@ -21,6 +21,6 @@
     "distance": "unresolved -> receipt-backed state"
   },
   "qa": ["object_identity", "source_pointer_continuity", "one_proposition_per_scene", "reduced_motion", "autoplay_pause_restart_scrub"],
-  "status": "adapter-ready",
+  "status": "seed-only; superseded by herakles-film-grammar.v1",
   "fake_evidence": false
 }

@@ -1,0 +1,34 @@
+{
+  "schema": "herakles.film-grammar.v1",
+  "status": "seeded-from-narrowest-range-now-herakles-specific",
+  "seed": "canonical/narrowest-range-design-adapter.v1.json",
+  "thesis": "A HERAKLES film is not a diagram of an answer; it is a traversable proof of how an unresolved trace becomes a receipt-backed state.",
+  "own_primitives": [
+    {"id":"trace","form":"thin electric filament","meaning":"stigmergic residue left by an event or source"},
+    {"id":"question-gate","form":"open aperture with a visible missing segment","meaning":"unresolved question; never a decorative portal"},
+    {"id":"route-split","form":"one path forks into typed rails","meaning":"consumer -> organ -> route choice"},
+    {"id":"eon-stratum","form":"stacked isometric terrain layer","meaning":"ordinal time/chapter, not wall-clock time"},
+    {"id":"authority-field","form":"stable translucent plane under objects","meaning":"World/source authority boundary"},
+    {"id":"receipt-seal","form":"closed luminous volume with hash ticks","meaning":"claim is closed only when receipt exists"},
+    {"id":"negative-space-hold","form":"intentional stillness","meaning":"the system does not know yet; silence is data"}
+  ],
+  "scene_grammar": [
+    "enter with one concrete trace",
+    "hold one question in negative space",
+    "make the route or obstruction physically visible",
+    "preserve object identity while the camera changes scale",
+    "show EON transition as a stratum change",
+    "close only with receipt and source pointer",
+    "end with the remaining unknown, not a false victory"
+  ],
+  "design_rules": {
+    "one_proposition_per_scene": true,
+    "imagegen_is_reference_only": true,
+    "geometry_is_deterministic": true,
+    "evidence_is_not_decoration": true,
+    "world_link_is_read_only": true,
+    "reduced_motion_preserves_state": true
+  },
+  "next_build": "replace P01/P02 generic labels with trace/question-gate/route-split/eon-stratum/receipt-seal primitives",
+  "fake_evidence": false
+}
