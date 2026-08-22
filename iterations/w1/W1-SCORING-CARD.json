@@ -4,7 +4,5 @@
   "aile": "codex",
   "durum": "bekliyor",
   "amac": "W1 I01-I20 görsel hipotezlerini kaynak paritesi, nedensel okunabilirlik ve dışarıdan anlaşılabilirlik ölçütleriyle skorla; yalnızca >=0.82 adayları top-10 listesine al. Girdi: iterations/w1/W1-MANIFEST.json + concept-01-evidence-thread.png + HERAKLES paper + 3B1B anlatı + motion contract. Teslim: iterations/w1/top-10-contact-sheet.json. ImageGen yalnızca referans; kanıt icat etme; puan bileşenleri ayrı yaz; Markdown yok.",
-  "falsifier": "kaynak pointeri doğrulanamayan veya görsel fiili kanıt gibi sunulan aday RED",
-  "profil_izi": "G-HERAKLES-FILM-FACTORY/iterations/w1",
-  "yontem_izi": "manifest -> source check -> six-score -> threshold -> JSON"
+  "falsifier": "kaynak pointeri doğrulanamayan veya görsel fiili kanıt gibi sunulan aday RED"
 }
