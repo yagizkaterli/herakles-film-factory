@@ -1,0 +1,190 @@
+{
+  "schema": "herakles.w1-score-envelope.v1",
+  "status": "pending_review",
+  "candidate_count": 20,
+  "top10": [],
+  "candidates": [
+    {
+      "id": "I01",
+      "question": "Bir iz nasıl görünür?",
+      "source_pointer": "World snapshot",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I02",
+      "question": "Kaynak ile iddia nasıl ayrılır?",
+      "source_pointer": "d-SONNET-DESTAN-D2-B3",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I03",
+      "question": "Soru ne zaman kapıya dönüşür?",
+      "source_pointer": "MOTION-CONTRACT-v7",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I04",
+      "question": "Bir kanıt zinciri nasıl tutulur?",
+      "source_pointer": "World event stream",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I05",
+      "question": "Bellek neden gezilebilir bir dünya?",
+      "source_pointer": "DRAFT-FINAL.md#7-memory-is-a-world",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I06",
+      "question": "Bağlamsız işçi ilk ipucunu nasıl bulur?",
+      "source_pointer": "d-SONNET-DESTAN-D2-B3",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I07",
+      "question": "Bir görev ne zaman çalıştırılabilir?",
+      "source_pointer": "World snapshot",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I08",
+      "question": "Ölçüm ile yorum nasıl ayrılır?",
+      "source_pointer": "MOTION-CONTRACT-v7",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I09",
+      "question": "Bir EON içindeki geçiş nasıl okunur?",
+      "source_pointer": "EON ledger",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I10",
+      "question": "İşlenmiş çıktı nereye döner?",
+      "source_pointer": "World event stream",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I11",
+      "question": "Kapı yazılı ama çağrılmıyorsa ne görürüz?",
+      "source_pointer": "F0/F3 defensive-gate finding",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I12",
+      "question": "Bir yanlış pozitif nasıl görünür?",
+      "source_pointer": "aile-sozlesmesi-v1.schema.json",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I13",
+      "question": "İki şefin kesişen hükmü nedir?",
+      "source_pointer": "R6 two-chief rule",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I14",
+      "question": "Stigmerjik iz nasıl bir sonraki işi doğurur?",
+      "source_pointer": "P-HERAKLES-PAPER + Lobi",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I15",
+      "question": "Bir nesne sahne boyunca nasıl aynı kalır?",
+      "source_pointer": "G-VITRIN/3B1B-ANLATI-BILGI.md#object-permanence",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I16",
+      "question": "Duraklama düşünmeye nasıl alan açar?",
+      "source_pointer": "MOTION-CONTRACT-v7",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I17",
+      "question": "World link kanıtı nasıl bağlanır?",
+      "source_pointer": "World snapshot",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I18",
+      "question": "Bir iddia nasıl çürütülebilir kalır?",
+      "source_pointer": "P-HERAKLES-PAPER#false-positive-calibration",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I19",
+      "question": "Sistem neden sadece dashboard değildir?",
+      "source_pointer": "DRAFT-FINAL.md#8-worlds-share-ontology",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    },
+    {
+      "id": "I20",
+      "question": "İzden filme giden en kısa yol nedir?",
+      "source_pointer": "iteration-100-imagegen-to-3d.v1.json",
+      "scores": null,
+      "total": null,
+      "decision": "pending_review",
+      "falsifier": "source-bound image review plus render receipt absent"
+    }
+  ],
+  "rule": "Never promote without six scores, source parity, falsifier, and receipt.",
+  "fake_evidence": false
+}
