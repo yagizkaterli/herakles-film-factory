@@ -1,0 +1,22 @@
+{
+  "schema": "herakles.prior-art-atlas.v1",
+  "purpose": "Before visual iteration, study 100 relevant explanatory, cinematic, interactive, and evidence-bound precedents.",
+  "status": "scaffolded-not-researched",
+  "minimum": 100,
+  "hard_gate": "No W1-W5 visual promotion until 100 entries have source_url, observed_pattern, transferable_rule, rejection_rule, and citation_receipt.",
+  "categories": [
+    {"id":"A01","name":"mathematical_explanation","slots":10},
+    {"id":"A02","name":"scientific_visualization","slots":10},
+    {"id":"A03","name":"systems_and_network_films","slots":10},
+    {"id":"A04","name":"interactive_worlds","slots":10},
+    {"id":"A05","name":"documentary_data_storytelling","slots":10},
+    {"id":"A06","name":"game_world_grammar","slots":10},
+    {"id":"A07","name":"motion_and_camera_language","slots":10},
+    {"id":"A08","name":"evidence_and_provenance_surfaces","slots":10},
+    {"id":"A09","name":"accessibility_and_reduced_motion","slots":10},
+    {"id":"A10","name":"frontier_generative_to_deterministic_workflows","slots":10}
+  ],
+  "entry_schema": ["id","category","title","source_url","source_type","observed_pattern","transferable_rule","rejection_rule","citation_receipt","status"],
+  "promotion": ["100 researched entries","pattern matrix","HERAKLES-specific design grammar","only then W1-I01 kickoff"],
+  "fake_evidence": false
+}

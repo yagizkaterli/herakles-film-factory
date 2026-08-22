@@ -1,7 +1,8 @@
 {
   "schema": "herakles.imagegen-to-3d-iteration.v1",
   "project": "HERAKLES Film Factory",
-  "thesis": "discover the clearest visual sentence cheaply, then rebuild only the winning sentence as deterministic 3D code",
+  "thesis": "study 100 prior-art precedents, discover the clearest visual sentence cheaply, then rebuild only the winning sentence as deterministic 3D code",
+  "preflight": "canonical/prior-art-100.v1.json must be complete before any W1-W5 candidate can be promoted",
   "source_scope": ["HERAKLES paper", "DESTAN-v1", "EON ledger", "World snapshot", "World event stream", "verified receipts"],
   "hard_boundary": "ImageGen is art-direction and hypothesis generation; code and receipts own geometry and truth.",
   "iterations": {

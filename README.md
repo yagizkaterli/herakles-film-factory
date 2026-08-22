@@ -10,7 +10,9 @@ HERAKLES Film Factory is an evidence-bound animation system. It reads a real HER
 
 ![Contextless agent proof — live render preview](showcase/films/contextless-agent-proof-3d-preview.gif)
 
-The preview is embedded here so the repository front page shows the film immediately. The full MP4 and its receipt are below.
+The preview is embedded here so the repository front page shows the film immediately. This is an early baseline proof, not the result of the final 100-iteration process. The full MP4 and its receipt are below.
+
+The revised process now begins with a mandatory 100-entry prior-art atlas before any visual candidate can be promoted.
 
 ## See the pipeline
 
