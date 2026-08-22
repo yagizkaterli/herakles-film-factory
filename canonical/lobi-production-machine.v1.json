@@ -1,0 +1,11 @@
+{
+  "schema": "herakles.lobi-production-machine.v1",
+  "input": "one human intention in plain language",
+  "outputs": ["room", "project_identity", "partitioned_queue", "cross_review", "receipts"],
+  "pipeline": ["intention", "room_repo", "prior_art", "source_manifest", "storyboard", "image_direction", "manim_scene", "render_qa", "film_receipt", "world_link"],
+  "rules": ["one coordination room", "named chapters", "stable source anchor", "pause freezes state", "restart resets state", "reduced_motion_preserves_meaning", "factual_trace_only", "human_actions_remain_human_owned", "imagegen_is_art_direction_only"],
+  "world_authority": "WORLD_READ_ONLY_MIRROR",
+  "fake_evidence": false,
+  "room": "de2b53bf-a6a6-459b-a393-b30210d6fb46",
+  "repo": "yagizkaterli/herakles-film-factory"
+}

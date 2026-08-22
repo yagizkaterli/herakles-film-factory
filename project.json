@@ -9,5 +9,7 @@
   "outputs": ["mp4", "poster", "receipt.json"],
   "authority": "WORLD_READ_ONLY_MIRROR",
   "fake_evidence": false,
-  "status": "scaffolded"
+  "status": "scaffolded",
+  "canonical_artifacts": ["canonical/lobi-production-machine.v1.json", "canonical/audience-first.v1.json", "contracts/film-source.v1.schema.json", "contracts/film-receipt.v1.schema.json"],
+  "presentation_artifacts": ["README.md", "pipeline/README.md", "pipeline/LOBI-PRODUCTION-MACHINE.md", "pipeline/AUDIENCE-FIRST.md"]
 }

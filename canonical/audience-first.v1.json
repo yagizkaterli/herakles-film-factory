@@ -1,0 +1,19 @@
+{
+  "schema": "herakles.film-audience-contract.v1",
+  "audience": "contextless outsider",
+  "first_ten_seconds": ["name the concrete object", "name the requested change"],
+  "beat_verbs": ["observe", "obstruct", "predict", "transform", "verify", "return"],
+  "translation": {
+    "task_card": "one piece of work waiting",
+    "trace": "mark left by previous worker",
+    "agent": "next worker reading the mark",
+    "receipt": "proof work crossed the gate",
+    "eon": "order in which the world changed",
+    "provisional": "plan or outline",
+    "verified": "source-backed built result",
+    "blocked": "visible stop"
+  },
+  "forbidden": ["generated art as live evidence", "unverified solid world object", "acronym before witness", "result before prediction", "unrelated chart morph"],
+  "final_frame": "reuse first witness with consequence and source pointer",
+  "fake_evidence": false
+}
