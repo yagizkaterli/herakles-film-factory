@@ -1,0 +1,39 @@
+{
+  "schema": "herakles.imagegen-to-3d-iteration.v1",
+  "project": "HERAKLES Film Factory",
+  "thesis": "discover the clearest visual sentence cheaply, then rebuild only the winning sentence as deterministic 3D code",
+  "source_scope": ["HERAKLES paper", "DESTAN-v1", "EON ledger", "World snapshot", "World event stream", "verified receipts"],
+  "hard_boundary": "ImageGen is art-direction and hypothesis generation; code and receipts own geometry and truth.",
+  "iterations": {
+    "total": 100,
+    "waves": [
+      {"id":"W1","range":"01-20","focus":"question_and_concrete_witness","reject":["definition_first","generic_dashboard","no_source_object"]},
+      {"id":"W2","range":"21-40","focus":"causal_transformation","reject":["decorative_motion","object_identity_break","answer_before_prediction"]},
+      {"id":"W3","range":"41-60","focus":"world_material_and_scale","reject":["fake_solid_geometry","unverified_building","unreadable_camera"]},
+      {"id":"W4","range":"61-80","focus":"eon_chapter_and_camera","reject":["wall_clock_only","anonymous_timeline","no_pause_or_reduced_motion"]},
+      {"id":"W5","range":"81-100","focus":"outsider_clarity_and_3d_translation","reject":["slop","untraceable_claim","no_world_pointer"]}
+    ]
+  },
+  "per_iteration": ["source_pointer", "question", "one_visual_verb", "imagegen_reference", "score", "falsifier", "keep_or_reject"],
+  "score": {
+    "audience_clarity": 0.25,
+    "causal_legibility": 0.2,
+    "source_parity": 0.2,
+    "object_continuity": 0.15,
+    "world_authority": 0.1,
+    "craft": 0.1,
+    "minimum_to_promote": 0.82
+  },
+  "promotion": [
+    "top_10 contact sheet",
+    "top_3 storyboards with source manifests",
+    "one selected direction",
+    "deterministic 3D implementation",
+    "render receipt",
+    "World-link receipt",
+    "outsider and reduced-motion QA"
+  ],
+  "lobi_partition": ["research", "imagegen-w1", "imagegen-w2", "imagegen-w3", "imagegen-w4", "imagegen-w5", "storyboard", "3d-code", "render", "qa", "world-link"],
+  "status": "spec-ready",
+  "fake_evidence": false
+}
