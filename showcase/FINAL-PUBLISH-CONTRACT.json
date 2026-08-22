@@ -1,0 +1,21 @@
+{
+  "schema": "herakles.final-film-publish.v1",
+  "status": "gate-defined",
+  "required_assets": [
+    "showcase/films/<id>.mp4",
+    "showcase/films/<id>-poster.png",
+    "showcase/films/<id>.receipt.json",
+    "showcase/films/<id>-preview.gif"
+  ],
+  "required_receipt": ["source_digest", "render_command", "sha256", "world_link", "outsider_qa", "reduced_motion_qa"],
+  "publish_actions": [
+    "validate receipt JSON",
+    "verify media sha256",
+    "update showcase/film-index.json status=final",
+    "replace README preview reference with final preview",
+    "git commit all four assets atomically",
+    "git push origin master"
+  ],
+  "pilot_rule": "pilot-render assets never replace the final README hero",
+  "fake_evidence": false
+}

@@ -14,6 +14,8 @@ The preview is embedded here so the repository front page shows the film immedia
 
 The revised process now begins with a mandatory 100-entry prior-art atlas before any visual candidate can be promoted.
 
+Final publication is gated by [FINAL-PUBLISH-CONTRACT.json](showcase/FINAL-PUBLISH-CONTRACT.json): the final MP4, poster, GIF preview and receipt will be pushed atomically, and the README hero will point to that final preview. Current previews remain explicitly marked as baseline/pilot renders.
+
 ## See the pipeline
 
 These are the first generated narrative assets. They are deliberately marked as narrative-only: they explain the film language, not live operational state.
