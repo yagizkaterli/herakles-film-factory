@@ -40,7 +40,7 @@ class HeraklesTraceToReceipt3D(ThreeDScene):
         for lab, x in zip(labels, [-3.6, -1.2, 1.2, 3.6]):
             lab.to_edge(DOWN, buff=.38).shift(RIGHT * x * .48)
         self.add_fixed_in_frame_mobjects(labels); self.play(LaggedStart(*[Write(l) for l in labels], lag_ratio=.12), run_time=.7)
-        note = Text("one unresolved trace · one visible route · one falsifiable close", font="DejaVu Sans Mono", font_size=15, color="#E8E2D7")
+        note = Text("WORLD SNAPSHOT · 17 agents · 2 tasks · 2 queues · 4 EON strata · 2 receipts", font="DejaVu Sans Mono", font_size=13, color="#E8E2D7")
         note.to_edge(DOWN, buff=.08); self.add_fixed_in_frame_mobjects(note); self.play(Write(note), run_time=.5)
         stamp = Text("HERAKLES GRAMMAR v1 · deterministic geometry · World link pending", font="DejaVu Sans Mono", font_size=9, color="#778492")
         stamp.to_edge(UP, buff=.05); self.add_fixed_in_frame_mobjects(stamp); self.wait(1.0)

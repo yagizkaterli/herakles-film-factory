@@ -1,0 +1,30 @@
+{
+  "schema": "herakles.world-bound-film-source.v1",
+  "snapshot": {
+    "id": "herakles-native:snapshot:1787435102",
+    "schema_version": "herakles.system-snapshot.v2",
+    "cursor": 0,
+    "captured_at": "2026-08-22T21:45:02.929572+00:00",
+    "endpoint": "/v2/snapshot"
+  },
+  "measured_domains": {
+    "agents": 17,
+    "tasks": 2,
+    "queues": 2,
+    "rooms": 2,
+    "evidence": 2,
+    "receipts": 2,
+    "eon_layers": 4,
+    "world_fields": 5
+  },
+  "scene_binding": {
+    "trace": "evidence",
+    "question_gate": "tasks",
+    "route_split": "queues",
+    "eon_stratum": "eon_layers",
+    "authority_field": "world_fields",
+    "receipt_seal": "receipts"
+  },
+  "rule": "Every visible object must resolve to this snapshot or be explicitly marked narrative-only.",
+  "fake_evidence": false
+}
