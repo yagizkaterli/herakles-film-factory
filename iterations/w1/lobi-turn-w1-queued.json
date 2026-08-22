@@ -1,0 +1,15 @@
+{
+  "type": "film_iteration_w1_queued",
+  "status": "queued",
+  "card": "d-FILM-W1-20-aday-skor",
+  "queue": "sistem-analizi-s106",
+  "commit": "6da082c",
+  "work": "I01-I20 six-score candidate evaluation",
+  "next": "top-10-contact-sheet.json",
+  "hcue": {
+    "simdi": "W1 aday skorlaması kuyrukta",
+    "siraki": ">=0.82 top-10",
+    "kuyrukta": "top-3 storyboard ve Manim 3D"
+  },
+  "fake_evidence": false
+}
