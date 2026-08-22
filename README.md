@@ -6,6 +6,20 @@ HERAKLES Film Factory is an evidence-bound animation system. It reads a real HER
 
 > ImageGen sets the art direction. Code owns the geometry. Receipts own the truth.
 
+## See the pipeline
+
+These are the first generated narrative assets. They are deliberately marked as narrative-only: they explain the film language, not live operational state.
+
+| Trace enters | Hold the question |
+|---|---|
+| ![Trace intake](assets/generated/TraceIntake.gif) | ![Question hold](assets/generated/QuestionHold.gif) |
+
+| Receipt returns | Link back to World |
+|---|---|
+| ![Receipt return](assets/generated/ReceiptReturn.gif) | ![World link](assets/generated/WorldLink.gif) |
+
+[Open the asset manifest](assets/manifest.json) · [Read the render source](scenes/narrative_assets.py)
+
 ## Start here
 
 - [Film showcase](showcase/README.md) — what exists, what is planned, and what is not being faked.
