@@ -24,6 +24,7 @@ These are the first generated narrative assets. They are deliberately marked as 
 
 - [Film showcase](showcase/README.md) — what exists, what is planned, and what is not being faked.
 - [Production system](pipeline/README.md) — the state machine and acceptance gates.
+- [Lobi production machine](pipeline/LOBI-PRODUCTION-MACHINE.md) — how one intention becomes a partitioned, receipt-backed film project.
 - [Audience-first grammar](pipeline/AUDIENCE-FIRST.md) — how a stranger should understand a film.
 - [Frontier repository study](docs/FRONTIER-GITHUB-STUDY.md) — the patterns we borrowed and the constraints we added.
 - [Source contract](contracts/film-source.v1.schema.json) — what a film is allowed to read.
