@@ -1,9 +1,9 @@
 {
   "schema": "herakles.prior-art-atlas-run.v1",
   "status": "in-progress",
-  "researched": 34,
-  "pending": 66,
-  "latest_batch_receipt": "prior-art/batch-04-result.json",
+  "researched": 42,
+  "pending": 58,
+  "latest_batch_receipt": "prior-art/batch-05-result.json",
   "minimum": 100,
   "entries": [
     {"id":"A01-01","category":"mathematical_explanation","title":"3b1b Manim","source_url":"https://github.com/3b1b/manim","source_type":"github","observed_pattern":"engine and scene code are separated; examples are first navigation surface","transferable_rule":"keep deterministic scene entry points separate from the film factory","rejection_rule":"no decorative scene without runnable source","citation_receipt":"docs/FRONTIER-GITHUB-STUDY.md","status":"researched"},
