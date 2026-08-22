@@ -1,0 +1,14 @@
+{
+  "schema": "herakles.prior-art-pilots.v1",
+  "status": "art-direction-ready",
+  "contact_sheet": "prior-art/pilots/four-pilot-contact-sheet.png",
+  "authority": "ImageGen reference only; deterministic code and receipts own truth.",
+  "pilots": [
+    {"id":"P01","name":"evidence-terrain","visual_verb":"connect","prior_art":["VTK","Open3D","DataReel"],"next":"Manim source-bound terrain + receipt beacon"},
+    {"id":"P02","name":"eon-camera-journey","visual_verb":"traverse","prior_art":["Cesium Camera","Cesium KmlTour","Blender Markers"],"next":"camera waypoint manifest + deterministic render"},
+    {"id":"P03","name":"context-recovery","visual_verb":"reconstruct","prior_art":["StoryGAN","StoryDALL-E","Story Ribbons"],"next":"persistent agent/object identity scene"},
+    {"id":"P04","name":"provenance-to-world","visual_verb":"seal","prior_art":["C2PA 2.4","crJSON","OpenTimelineIO"],"next":"hash-bound media receipt + World pointer"}
+  ],
+  "next_gate": "choose one pilot using source parity, causal legibility, object continuity, and outsider QA",
+  "fake_evidence": false
+}
