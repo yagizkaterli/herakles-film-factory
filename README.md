@@ -8,9 +8,11 @@ HERAKLES Film Factory is an evidence-bound animation system. It reads a real HER
 
 ## First 3D film — preview
 
-![Contextless agent proof — live render preview](showcase/films/contextless-agent-proof-3d-preview.gif)
+| P01 Evidence Terrain | P02 EON Camera Journey |
+|---|---|
+| ![Evidence terrain pilot](showcase/films/evidence-terrain-pilot-3d-preview.gif) | ![EON camera journey pilot](showcase/films/eon-camera-journey-pilot-3d-preview.gif) |
 
-The preview is embedded here so the repository front page shows the film immediately. This is an early baseline proof, not the result of the final 100-iteration process. The full MP4 and its receipt are below.
+These are the current pilot renders shown directly on the repository front page. The older contextless-agent render remains archived as a baseline; none of these pilots is the final 100-iteration film.
 
 The revised process now begins with a mandatory 100-entry prior-art atlas before any visual candidate can be promoted.
 
