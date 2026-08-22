@@ -1,0 +1,18 @@
+{
+  "schema": "herakles.film-scene.v1",
+  "id": "context-recovery-3d",
+  "status": "planned",
+  "question": "Can an agent with no prior chat find the thread?",
+  "source": {"required": ["snapshotDigest", "eventId", "taskCardPointer", "reportPointer"]},
+  "states": [
+    {"id":"blank-agent","verb":"observe"},
+    {"id":"task-card","verb":"receive"},
+    {"id":"source-surfaces","verb":"traverse"},
+    {"id":"receipt","verb":"verify"},
+    {"id":"world-pointer","verb":"return"}
+  ],
+  "geometry": {"agent":"3D node", "card":"source-bound plane", "surfaces":"pointer-linked volumes", "receipt":"evidence marker", "world":"read-only mirror"},
+  "authority": "WORLD_READ_ONLY_MIRROR",
+  "fake_evidence": false,
+  "release_gate": ["source parity", "identity continuity", "outsider read", "reduced motion", "world link"]
+}

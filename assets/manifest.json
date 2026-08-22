@@ -1,0 +1,14 @@
+{
+  "schema": "herakles.film-assets.v1",
+  "assets": [
+    {"id":"trace-intake","kind":"gif","status":"planned","evidence":"narrative-only","role":"chapter witness","source":"storyboard state: question"},
+    {"id":"question-hold","kind":"gif","status":"planned","evidence":"narrative-only","role":"prediction hold","source":"pipeline/AUDIENCE-FIRST.md"},
+    {"id":"receipt-return","kind":"gif","status":"planned","evidence":"narrative-only","role":"receipt transition","source":"film-receipt.v1"},
+    {"id":"world-link","kind":"gif","status":"planned","evidence":"narrative-only","role":"World pointer transition","source":"world-link/README.md"},
+    {"id":"context-recovery-3d","kind":"scene","status":"planned","evidence":"source-bound","role":"first 3D proof","source":"d-SONNET-DESTAN-D2-B3 report"},
+    {"id":"event-to-world-3d","kind":"scene","status":"planned","evidence":"source-bound","role":"World mirror movement","source":"herakles.system-event.v2"},
+    {"id":"authority-state-3d","kind":"scene","status":"planned","evidence":"source-bound","role":"provisional/blocked/verified geometry","source":"AUTHORITY-MATRIX.md"},
+    {"id":"camera-waypoint-3d","kind":"scene","status":"planned","evidence":"source-bound","role":"question/reveal/consequence camera","source":"storyboard state machine"}
+  ],
+  "rule": "planned assets are not displayed as generated; every released asset gets a receipt"
+}
