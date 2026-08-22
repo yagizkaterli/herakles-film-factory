@@ -1,0 +1,14 @@
+{
+  "schema": "herakles.film-receipt.v1",
+  "filmId": "contextless-agent-proof-3d",
+  "title": "Can a blank agent find the thread?",
+  "source": {
+    "pointer": "d-SONNET-DESTAN-D2-B3-ust-ontoloji-niyet.md.rapor.md",
+    "facts": {"lines": 265, "sourceLabels": 49, "measuredLabels": 10},
+    "worldLink": "pending"
+  },
+  "render": {"engine":"manim","version":"0.20.1","width":1280,"height":720,"fps":30,"output":"showcase/films/contextless-agent-proof-3d.mp4"},
+  "gates": {"sourceParity":true,"narrative":true,"identity":true,"reducedMotion":false,"outsiderRead":"pending","worldLink":false},
+  "status":"in-progress",
+  "limit":"This film explains context reconstruction; it does not claim a canonical World construction."
+}

@@ -4,11 +4,12 @@
     {
       "id": "contextless-agent-proof",
       "title": "Can a blank agent find the thread?",
-      "status": "planned",
+      "status": "in-progress",
       "question": "Can an agent with no prior chat reconstruct the work from system surfaces?",
       "source": "HERAKLES system snapshot + d-SONNET-DESTAN-D2-B3 report",
-      "render": null,
-      "receipt": null
+      "render": "showcase/films/contextless-agent-proof-3d.mp4",
+      "poster": "showcase/films/contextless-agent-proof-3d-poster.png",
+      "receipt": "showcase/films/contextless-agent-proof-3d.receipt.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"

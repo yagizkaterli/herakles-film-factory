@@ -30,6 +30,12 @@ These are the first generated narrative assets. They are deliberately marked as 
 - [Source contract](contracts/film-source.v1.schema.json) — what a film is allowed to read.
 - [Receipt contract](contracts/film-receipt.v1.schema.json) — what a film must prove.
 
+## First 3D film
+
+[Watch the contextless-agent proof](showcase/films/contextless-agent-proof-3d.mp4) · [poster](showcase/films/contextless-agent-proof-3d-poster.png) · [receipt](showcase/films/contextless-agent-proof-3d.receipt.json)
+
+Status: **in progress**. The render exists; World-link, reduced-motion and outsider-read gates are still open.
+
 ## Why this exists
 
 HERAKLES produces work across agents, rooms, queues, reviews, receipts and World state. A raw log is difficult to enter. A dashboard hides causality. A decorative animation invents confidence.

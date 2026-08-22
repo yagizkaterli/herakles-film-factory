@@ -11,7 +11,7 @@ This is the public-facing index inside the repository. It is intentionally hones
 
 ## Current films
 
-There are currently no released films in this repository. The first film is the contextless-agent proof and will be released only after its source/event receipt, Manim render and outsider-read gate pass.
+The first film is now rendered but not released: [contextless-agent-proof-3d.mp4](films/contextless-agent-proof-3d.mp4). Its source and render receipt are present; World linking, reduced-motion and outsider-read gates remain open.
 
 ## Viewer contract
 
