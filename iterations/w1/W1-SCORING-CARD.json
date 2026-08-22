@@ -2,25 +2,9 @@
   "kart": "d-FILM-W1-20-aday-skor",
   "kanal": "oda",
   "sinif": 4,
-  "hat": "FILM-ITERATION",
   "aile": "codex",
   "durum": "bekliyor",
-  "amac": "W1 I01-I20 görsel hipotezlerini kaynak paritesi, nedensel okunabilirlik ve dışarıdan anlaşılabilirlik ölçütleriyle skorla; yalnızca >=0.82 adayları top-10 listesine al",
-  "girdi": [
-    "iterations/w1/W1-MANIFEST.json",
-    "iterations/w1/concept-01-evidence-thread.png",
-    "canonical/iteration-100-imagegen-to-3d.v1.json",
-    "P-HERAKLES-PAPER/DRAFT-FINAL.md",
-    "G-VITRIN/3B1B-ANLATI-BILGI.md",
-    "lobi/LOBI-OBSERVABILITY-MOTION-v7/MOTION-CONTRACT-v7.md"
-  ],
-  "teslim": "iterations/w1/top-10-contact-sheet.json",
-  "kisit": [
-    "ImageGen yalnızca referans; kanıt icat etme",
-    "her adayda source_pointer ve falsifier zorunlu",
-    "Markdown rapor yok; kanonik JSON",
-    "puan bileşenleri ayrı yazılacak"
-  ],
+  "amac": "W1 I01-I20 görsel hipotezlerini kaynak paritesi, nedensel okunabilirlik ve dışarıdan anlaşılabilirlik ölçütleriyle skorla; yalnızca >=0.82 adayları top-10 listesine al. Girdi: iterations/w1/W1-MANIFEST.json + concept-01-evidence-thread.png + HERAKLES paper + 3B1B anlatı + motion contract. Teslim: iterations/w1/top-10-contact-sheet.json. ImageGen yalnızca referans; kanıt icat etme; puan bileşenleri ayrı yaz; Markdown yok.",
   "falsifier": "kaynak pointeri doğrulanamayan veya görsel fiili kanıt gibi sunulan aday RED",
   "profil_izi": "G-HERAKLES-FILM-FACTORY/iterations/w1",
   "yontem_izi": "manifest -> source check -> six-score -> threshold -> JSON"
