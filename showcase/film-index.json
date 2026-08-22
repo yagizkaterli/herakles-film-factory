@@ -19,6 +19,15 @@
       "source": "prior-art pilot P01; deterministic scene geometry",
       "render": "showcase/films/evidence-terrain-pilot-3d.mp4",
       "receipt": null
+    },
+    {
+      "id": "eon-camera-journey-pilot",
+      "title": "An EON is a journey",
+      "status": "pilot-render",
+      "question": "Can a chapter camera path make EON transitions legible?",
+      "source": "prior-art pilot P02; deterministic waypoint rail",
+      "render": "showcase/films/eon-camera-journey-pilot-3d.mp4",
+      "receipt": null
     }
   ],
   "rule": "status=planned means no film asset is presented as released"
