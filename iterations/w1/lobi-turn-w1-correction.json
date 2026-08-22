@@ -1,0 +1,22 @@
+{
+  "type": "film_iteration_w1_correction",
+  "status": "imagegen_reference_ready",
+  "repo": "https://github.com/yagizkaterli/herakles-film-factory",
+  "commit": "7b1e96a",
+  "manifest": "iterations/w1/W1-MANIFEST.json",
+  "asset": "iterations/w1/concept-01-evidence-thread.png",
+  "iterations": ["I01-I20"],
+  "next": [
+    "score candidates",
+    "promote >=0.82",
+    "top-10 contact sheet JSON",
+    "top-3 storyboard",
+    "deterministic Manim 3D render"
+  ],
+  "hcue": {
+    "simdi": "W1 I01-I20 source-bound visual hypotheses",
+    "siraki": "top-10 contact sheet",
+    "kuyrukta": "W2 causal transformation"
+  },
+  "fake_evidence": false
+}
