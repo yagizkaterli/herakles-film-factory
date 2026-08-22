@@ -6,6 +6,12 @@ HERAKLES Film Factory is an evidence-bound animation system. It reads a real HER
 
 > ImageGen sets the art direction. Code owns the geometry. Receipts own the truth.
 
+## First 3D film — preview
+
+![Contextless agent proof — live render preview](showcase/films/contextless-agent-proof-3d-preview.gif)
+
+The preview is embedded here so the repository front page shows the film immediately. The full MP4 and its receipt are below.
+
 ## See the pipeline
 
 These are the first generated narrative assets. They are deliberately marked as narrative-only: they explain the film language, not live operational state.
