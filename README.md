@@ -12,6 +12,12 @@ HERAKLES Film Factory is an evidence-bound animation system. It reads a real HER
 |---|---|
 | ![Evidence terrain pilot](showcase/films/evidence-terrain-pilot-3d-preview.gif) | ![EON camera journey pilot](showcase/films/eon-camera-journey-pilot-3d-preview.gif) |
 
+### HERAKLES-native grammar pilot
+
+![Trace becomes a receipt](showcase/films/herakles-trace-to-receipt-grammar-pilot-3d-preview.gif)
+
+[Open the grammar pilot MP4](showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.mp4)
+
 These are the current pilot renders shown directly on the repository front page. The older contextless-agent render remains archived as a baseline; none of these pilots is the final 100-iteration film.
 
 The revised process now begins with a mandatory 100-entry prior-art atlas before any visual candidate can be promoted.
