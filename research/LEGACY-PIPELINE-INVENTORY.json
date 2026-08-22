@@ -1,0 +1,32 @@
+{
+  "schema": "herakles.film-factory.legacy-inventory.v1",
+  "measured_sources": [
+    {
+      "path": "02 Projects/Sistem-Insa/gorevler/G-BILD-NARRATIVE/BILD-NARRATIVE-V3",
+      "kept": ["storyboard", "deterministic scene state", "render preview", "validation report", "receipt"],
+      "lesson": "Narrative and operational D2/receipt surfaces must remain separate."
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/gorevler/G-VITRIN/video-hatti",
+      "kept": ["public demo", "embed", "fresh browser QA", "playback verification", "connection receipt"],
+      "lesson": "A rendered film is not delivered until the actual embed and playback are measured."
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/gorevler/G-VITRIN/video-hatti/kaynak/claim.py",
+      "kept": ["small concrete object", "single semantic transformation", "receipt return"],
+      "lesson": "The viewer follows one atomic operation better than a fleet montage."
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/gorevler/G-VITRIN/3B1B-ANLATI-BILGI.md",
+      "kept": ["question first", "concrete before abstract", "object permanence", "prediction/reveal", "honest limits"],
+      "lesson": "The narrative grammar is falsifiable and belongs in the acceptance gate."
+    }
+  ],
+  "rejected_patterns": [
+    "generic dashboard montage",
+    "definition-first opening",
+    "generated art presented as operational proof",
+    "result badge before the question",
+    "film passing without browser/outsider QA"
+  ]
+}

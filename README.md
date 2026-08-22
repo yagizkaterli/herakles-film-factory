@@ -6,6 +6,8 @@ Evidence-bound film production for HERAKLES: ImageGen for art direction, Manim/M
 
 The film never invents a world event. It reads a canonical snapshot/event, turns that event into a storyboard, renders the explanation, and stores a receipt that points back to the source.
 
+The audience contract is in `pipeline/AUDIENCE-FIRST.md`; the legacy pipeline findings are in `research/LEGACY-PIPELINE-INVENTORY.json`.
+
 ## Pipeline
 
 1. `source` — HERAKLES World snapshot, event stream, receipt, EON pointer
