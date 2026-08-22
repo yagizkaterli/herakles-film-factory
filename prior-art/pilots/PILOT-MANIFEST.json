@@ -3,6 +3,7 @@
   "status": "art-direction-ready",
   "contact_sheet": "prior-art/pilots/four-pilot-contact-sheet.png",
   "authority": "ImageGen reference only; deterministic code and receipts own truth.",
+  "design_adapter": "canonical/narrowest-range-design-adapter.v1.json",
   "pilots": [
     {"id":"P01","name":"evidence-terrain","visual_verb":"connect","prior_art":["VTK","Open3D","DataReel"],"next":"Manim source-bound terrain + receipt beacon"},
     {"id":"P02","name":"eon-camera-journey","visual_verb":"traverse","prior_art":["Cesium Camera","Cesium KmlTour","Blender Markers"],"next":"camera waypoint manifest + deterministic render"},

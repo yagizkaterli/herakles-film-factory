@@ -1,0 +1,26 @@
+{
+  "schema": "herakles.narrowest-range-design-adapter.v1",
+  "source": "02 Projects/Kaygun — Partition Range Viz/THE-NARROWEST-RANGE-v2-FILM-REDESIGN-DELIVERY/THE-NARROWEST-RANGE-v2-FILM-REDESIGN",
+  "purpose": "Transfer the proven low-friction 3D film grammar into HERAKLES Film Factory without copying domain content.",
+  "invariants": [
+    "near-black field with extreme negative space",
+    "electric-blue technical strokes",
+    "white and pale-blue isometric objects",
+    "sparse registration marks and micro labels",
+    "one proposition per scene",
+    "persistent object identity across representations",
+    "autoplay with pause, restart and scrub",
+    "no dashboard stack in the main cinematic surface",
+    "final scene resolves one visible distance or relation"
+  ],
+  "HERAKLES_translation": {
+    "candidate_token": "source/event node",
+    "partition": "source -> question -> route split",
+    "interval": "uncertainty/evidence envelope",
+    "pareto_plane": "World authority surface",
+    "distance": "unresolved -> receipt-backed state"
+  },
+  "qa": ["object_identity", "source_pointer_continuity", "one_proposition_per_scene", "reduced_motion", "autoplay_pause_restart_scrub"],
+  "status": "adapter-ready",
+  "fake_evidence": false
+}

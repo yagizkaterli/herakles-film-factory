@@ -16,6 +16,8 @@ These are the current pilot renders shown directly on the repository front page.
 
 The revised process now begins with a mandatory 100-entry prior-art atlas before any visual candidate can be promoted.
 
+The current pilots also use the proven [Narrowest Range design adapter](canonical/narrowest-range-design-adapter.v1.json): one proposition per scene, persistent objects, sparse technical linework and a low-friction 3D stage.
+
 Final publication is gated by [FINAL-PUBLISH-CONTRACT.json](showcase/FINAL-PUBLISH-CONTRACT.json): the final MP4, poster, GIF preview and receipt will be pushed atomically, and the README hero will point to that final preview. Current previews remain explicitly marked as baseline/pilot renders.
 
 ## See the pipeline
