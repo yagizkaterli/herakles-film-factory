@@ -1,0 +1,40 @@
+{
+  "schema": "herakles.film-iteration-batch.v1",
+  "batch": "W1",
+  "range": "01-20",
+  "status": "imagegen-reference-ready",
+  "truth_boundary": "ImageGen references are hypotheses; only source pointers, World snapshots/events, and render receipts can make a claim.",
+  "source_set": [
+    "P-HERAKLES-PAPER/DRAFT-FINAL.md#7-memory-is-a-world",
+    "G-VITRIN/3B1B-ANLATI-BILGI.md#question-first",
+    "lobi/LOBI-OBSERVABILITY-MOTION-v7/MOTION-CONTRACT-v7.md",
+    "World snapshot (VPS /v2/snapshot)",
+    "d-SONNET-DESTAN-D2-B3"
+  ],
+  "imagegen_reference": "iterations/w1/concept-01-evidence-thread.png",
+  "iterations": [
+    {"id":"I01","question":"Bir iz nasıl görünür?","visual_verb":"trace","source_pointer":"World snapshot","status":"candidate"},
+    {"id":"I02","question":"Kaynak ile iddia nasıl ayrılır?","visual_verb":"separate","source_pointer":"d-SONNET-DESTAN-D2-B3","status":"candidate"},
+    {"id":"I03","question":"Soru ne zaman kapıya dönüşür?","visual_verb":"gate","source_pointer":"MOTION-CONTRACT-v7","status":"candidate"},
+    {"id":"I04","question":"Bir kanıt zinciri nasıl tutulur?","visual_verb":"hold","source_pointer":"World event stream","status":"candidate"},
+    {"id":"I05","question":"Bellek neden gezilebilir bir dünya?","visual_verb":"traverse","source_pointer":"DRAFT-FINAL.md#7-memory-is-a-world","status":"candidate"},
+    {"id":"I06","question":"Bağlamsız işçi ilk ipucunu nasıl bulur?","visual_verb":"search","source_pointer":"d-SONNET-DESTAN-D2-B3","status":"candidate"},
+    {"id":"I07","question":"Bir görev ne zaman çalıştırılabilir?","visual_verb":"unlock","source_pointer":"World snapshot","status":"candidate"},
+    {"id":"I08","question":"Ölçüm ile yorum nasıl ayrılır?","visual_verb":"contrast","source_pointer":"MOTION-CONTRACT-v7","status":"candidate"},
+    {"id":"I09","question":"Bir EON içindeki geçiş nasıl okunur?","visual_verb":"advance","source_pointer":"EON ledger","status":"candidate"},
+    {"id":"I10","question":"İşlenmiş çıktı nereye döner?","visual_verb":"return","source_pointer":"World event stream","status":"candidate"},
+    {"id":"I11","question":"Kapı yazılı ama çağrılmıyorsa ne görürüz?","visual_verb":"stall","source_pointer":"F0/F3 defensive-gate finding","status":"candidate"},
+    {"id":"I12","question":"Bir yanlış pozitif nasıl görünür?","visual_verb":"reject","source_pointer":"aile-sozlesmesi-v1.schema.json","status":"candidate"},
+    {"id":"I13","question":"İki şefin kesişen hükmü nedir?","visual_verb":"intersect","source_pointer":"R6 two-chief rule","status":"candidate"},
+    {"id":"I14","question":"Stigmerjik iz nasıl bir sonraki işi doğurur?","visual_verb":"seed","source_pointer":"P-HERAKLES-PAPER + Lobi","status":"candidate"},
+    {"id":"I15","question":"Bir nesne sahne boyunca nasıl aynı kalır?","visual_verb":"persist","source_pointer":"G-VITRIN/3B1B-ANLATI-BILGI.md#object-permanence","status":"candidate"},
+    {"id":"I16","question":"Duraklama düşünmeye nasıl alan açar?","visual_verb":"pause","source_pointer":"MOTION-CONTRACT-v7","status":"candidate"},
+    {"id":"I17","question":"World link kanıtı nasıl bağlanır?","visual_verb":"link","source_pointer":"World snapshot","status":"candidate"},
+    {"id":"I18","question":"Bir iddia nasıl çürütülebilir kalır?","visual_verb":"falsify","source_pointer":"P-HERAKLES-PAPER#false-positive-calibration","status":"candidate"},
+    {"id":"I19","question":"Sistem neden sadece dashboard değildir?","visual_verb":"descend","source_pointer":"DRAFT-FINAL.md#8-worlds-share-ontology","status":"candidate"},
+    {"id":"I20","question":"İzden filme giden en kısa yol nedir?","visual_verb":"compose","source_pointer":"iteration-100-imagegen-to-3d.v1.json","status":"candidate"}
+  ],
+  "next_gate": "score I01-I20 with audience_clarity, causal_legibility, source_parity, object_continuity, world_authority, craft; promote only >=0.82",
+  "next_artifact": "top-10-contact-sheet.json",
+  "fake_evidence": false
+}
