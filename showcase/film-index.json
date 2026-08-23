@@ -47,6 +47,16 @@
       "render": "showcase/films/anlati-counterexample.scene.html",
       "poster": "showcase/films/anlati-counterexample-poster.png",
       "receipt": "showcase/films/anlati-counterexample.receipt.json"
+    },
+    {
+      "id": "anlati-label-vs-stream-3d",
+      "title": "The Label Said Running",
+      "status": "pilot-render",
+      "question": "Can a frozen stream contradict a running label?",
+      "source": "canonical/label-is-not-evidence.v1.json",
+      "render": "showcase/films/anlati-label-vs-stream-3d.mp4",
+      "preview": "showcase/films/anlati-label-vs-stream-3d-preview.gif",
+      "receipt": "showcase/films/anlati-label-vs-stream-3d.receipt.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"
