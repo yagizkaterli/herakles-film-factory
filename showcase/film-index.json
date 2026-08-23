@@ -67,6 +67,17 @@
       "render": "showcase/films/anlati-label-vs-stream-v2-3d.mp4",
       "preview": "showcase/films/anlati-label-vs-stream-v2-3d-preview.gif",
       "receipt": "showcase/films/anlati-label-vs-stream-v2-3d.receipt.json"
+    },
+    {
+      "id": "nobet-health-surface-2047",
+      "title": "Measured Health Surface",
+      "status": "pilot-render",
+      "question": "Can measured system health contradict green status?",
+      "source": "canonical/nobet-film-2047.v1.json + Film Factory room turn 2026-08-23T20:47Z",
+      "render": "showcase/films/nobet-health-surface-2047.mp4",
+      "preview": "showcase/films/nobet-health-surface-2047-preview.gif",
+      "poster": "showcase/films/nobet-health-surface-2047-poster.png",
+      "receipt": "showcase/films/nobet-health-surface-2047.receipt.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"
