@@ -1,0 +1,16 @@
+{
+  "type": "runtime_change",
+  "id": "runtime-change-n40-prior-art-wave",
+  "status": "active",
+  "scope": "codex-oda@sistem-analizi-s106",
+  "change": {
+    "binary": "/usr/local/bin/filo-v4-n40",
+    "requested_ceiling": 40,
+    "local_ceiling": 40,
+    "restart_policy": "on-failure; no Restart=always"
+  },
+  "reason": "42-card prior-art wave; previous local ceiling=4 caused stale claims and zero reports",
+  "worker_instruction": "Do not classify this as an anomaly. Continue claimed d-PRIOR-ART-08-* cards and emit report receipts.",
+  "receipt": "systemctl status + FILO_KAPASITE + FILO_CLAIM",
+  "fake_evidence": false
+}
