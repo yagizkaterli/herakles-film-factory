@@ -1,0 +1,21 @@
+{
+  "schema": "herakles.anlati-first-film.v1",
+  "title": "One Counterexample Breaks the Surface",
+  "question": "How can one concrete counterexample overturn a whole-looking claim?",
+  "single_move": "counterexample",
+  "source_receipts": [
+    "gorevler/_kuyruk/islenen/d-MAT-007-varma-integrali-curutme.md.rapor.md",
+    "gorevler/_oda-kuyruk/kara-oda/islenen/d-KARA-S0-01.md.rapor.md"
+  ],
+  "visual_beats": [
+    "show a stable claim surface",
+    "introduce one source-bound red point",
+    "let the point break the surface, not decorate it",
+    "hold the surviving unknown in negative space"
+  ],
+  "world_binding": ["evidence", "reviews", "receipts"],
+  "grammar": ["trace", "question-gate", "negative-space-hold", "receipt-seal"],
+  "falsifier": "If the red point cannot be traced to both source receipts, the scene is rejected.",
+  "status": "production-candidate",
+  "fake_evidence": false
+}
