@@ -1,10 +1,10 @@
 {
   "schema": "herakles.latest-film-pointer.v1",
-  "status": "pilot-render",
-  "id": "s6-phrasing-v3",
+  "status": "deterministic-render",
+  "id": "s6-universe-rebuild",
   "preview": "showcase/latest-preview.gif",
-  "render": "showcase/films/s6-phrasing-v3.mp4",
-  "receipt": "showcase/films/s6-phrasing-v3.receipt.json",
+  "render": "showcase/films/s6-universe-rebuild.mp4",
+  "receipt": "showcase/films/s6-universe-rebuild.receipt.json",
   "update_rule": "Every newly promoted film replaces latest-preview.gif and updates this pointer in the same commit.",
   "fake_evidence": false
 }

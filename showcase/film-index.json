@@ -118,6 +118,16 @@
       "render": "showcase/films/s6-phrasing-v3.mp4",
       "preview": "showcase/films/s6-phrasing-v3-preview.gif",
       "receipt": "showcase/films/s6-phrasing-v3.receipt.json"
+    },
+    {
+      "id": "s6-universe-rebuild",
+      "title": "The Unfinished World Closes",
+      "status": "deterministic-render",
+      "question": "Can a viewer follow the S6 construction from geometry alone?",
+      "source": "https://alpo.ge/s6.pdf",
+      "render": "showcase/films/s6-universe-rebuild.mp4",
+      "preview": "showcase/films/s6-universe-rebuild-preview.gif",
+      "receipt": "showcase/films/s6-universe-rebuild.receipt.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"

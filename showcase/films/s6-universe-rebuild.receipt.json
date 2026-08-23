@@ -1,0 +1,25 @@
+{
+  "schema": "herakles.film-receipt.v1",
+  "id": "s6-universe-rebuild",
+  "title": "The Unfinished World Closes",
+  "status": "deterministic-render",
+  "question": "Can a viewer follow the S6 construction from geometry alone?",
+  "source": "https://alpo.ge/s6.pdf",
+  "storyboard": "canonical/s6-universe-rebuild.v1.json",
+  "imagegen_assets": "canonical/s6-universe-rebuild-assets.v1.json",
+  "frames": ["F01", "F02", "F03", "F04", "F05"],
+  "render": {
+    "engine": "Manim Community v0.20.1",
+    "command": "manim -ql -r 854,480 --media_dir /root/herakles-film-factory/media -o s6-universe-rebuild.mp4 scenes/film_s6_universe_rebuild_3d.py S6UniverseRebuild3D",
+    "asset": "showcase/films/s6-universe-rebuild.mp4",
+    "sha256": "28836d7ba4395d0fc33b664dc9040da6e7b5eb2bb00bfdae19b54e952dda094a",
+    "duration_seconds": 16.266667,
+    "resolution": "854x480"
+  },
+  "qa": {
+    "readable_text": false,
+    "persistent_geometry_ids": ["open-shell", "torus-family", "gate-3", "gate-4", "cusp-infinity", "dP6-hexagon", "S6-closure"],
+    "falsifier": "If the causal transformation is not inferable from geometry without labels, reject and regenerate.",
+    "fake_evidence": false
+  }
+}
