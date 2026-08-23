@@ -1,0 +1,11 @@
+{
+  "schema": "herakles.film-receipt.v1",
+  "film_id": "anlati-label-vs-stream-3d",
+  "status": "pilot-render",
+  "source": "canonical/label-is-not-evidence.v1.json",
+  "room": "de2b53bf-a6a6-459b-a393-b30210d6fb46",
+  "single_move": "label-versus-stream",
+  "render": {"engine":"Manim Community v0.20.1","command":"manim -ql -r 854,480 scenes/film_anlati_label_vs_stream_3d.py AnlatiLabelVsStream3D","asset":"showcase/films/anlati-label-vs-stream-3d.mp4","sha256":"3c7bc4878f74484fa5f065aca3ffa59f5f609eebed5e200d87c4112cfb8b12a1"},
+  "qa": {"source_binding":"pass","single_move":"pass","outsider_read":"pending","reduced_motion":"pending","world_link":"pending"},
+  "fake_evidence": false
+}

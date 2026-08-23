@@ -1,10 +1,10 @@
 {
   "schema": "herakles.latest-film-pointer.v1",
-  "status": "pilot",
-  "id": "herakles-trace-to-receipt-grammar-pilot-3d",
+  "status": "pilot-render",
+  "id": "anlati-label-vs-stream-3d",
   "preview": "showcase/latest-preview.gif",
-  "render": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.mp4",
-  "receipt": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.receipt.json",
+  "render": "showcase/films/anlati-label-vs-stream-3d.mp4",
+  "receipt": "showcase/films/anlati-label-vs-stream-3d.receipt.json",
   "update_rule": "Every newly promoted film replaces latest-preview.gif and updates this pointer in the same commit.",
   "fake_evidence": false
 }
