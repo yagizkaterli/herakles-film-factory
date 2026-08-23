@@ -1,0 +1,19 @@
+{
+  "schema": "herakles.live-agent-trace-visual.v1",
+  "purpose": "Render active Codex agent summaries as readable World limbs without exposing hidden reasoning.",
+  "source": "~/.codex-a/.codex/sessions/**/rollout-*.jsonl",
+  "allowed_events": ["agent_message", "tool_call", "task_started", "task_complete", "token_count", "error"],
+  "forbidden_events": ["encrypted_content", "hidden_reasoning", "raw_credentials", "environment_secrets"],
+  "visual_mapping": {
+    "agent_message": "limb pulse + current intention label",
+    "tool_call": "trace filament to tool organ",
+    "task_started": "limb grows from claim node",
+    "task_complete": "receipt-seal closes",
+    "token_count": "activity intensity only; no semantic text",
+    "error": "red interruption vein"
+  },
+  "world_binding": ["agents", "rooms", "tasks", "queues", "receipts"],
+  "privacy": "show summaries and tool names only; never render hidden chain-of-thought",
+  "qa": ["append-only cursor", "agent identity continuity", "no secret leakage", "reduced-motion static snapshot"],
+  "fake_evidence": false
+}
