@@ -1,0 +1,28 @@
+{
+  "schema": "herakles.math-film-source.v1",
+  "id": "s6-modular-family-film",
+  "source_url": "https://alpo.ge/s6.pdf",
+  "source_type": "research-paper-pdf",
+  "title": "When a Torus Family Becomes S6",
+  "single_move": "smooth torus family degenerates at the cusp into a hexagonal dP6 toric fibre",
+  "source_facts": [
+    "triangle group Delta(3,4,infinity)",
+    "three special points: elliptic order 3, elliptic order 4, cusp",
+    "cusp monodromy is unipotent of rank two",
+    "central toric fibre W has a hexagonal moment polygon and is a self-glued degree-six del Pezzo dP6",
+    "pi_1(X)=Z/|12 ell_0 - 4 ell_1 - 3 ell_2| and the chosen parameters give 1",
+    "integral homology of X is that of S6 and X is diffeomorphic to S6",
+    "Euler number localises at the cusp: e(X)=e(W)=2"
+  ],
+  "visual_beats": [
+    "one smooth torus repeats over a dark base curve",
+    "three special points glow: 3, 4, infinity",
+    "cusp monodromy twists the fibre and opens a seam",
+    "the torus collapses into a six-sided hexagonal dP6 surface",
+    "the seam closes and the total space resolves to S6"
+  ],
+  "world_binding": ["source_pdf", "proof_receipt", "diagram_frames"],
+  "falsifier": "If the rendered transition does not preserve the three special points, cusp monodromy, hexagon/dP6 fibre and S6 closure, reject the film.",
+  "status": "production-candidate",
+  "fake_evidence": false
+}
