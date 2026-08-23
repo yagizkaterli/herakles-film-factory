@@ -1,0 +1,18 @@
+{
+  "schema": "herakles.corpus-window-finding.v1",
+  "finding_id": "CVP-WINDOW-01",
+  "claim": "The corpus is not 52 days old; the measured production windows are much shorter and denser.",
+  "measurements": [
+    {"source":"codex-a","window":"19-23 August","window_days":5,"sessions":17538,"sessions_per_day":3507.6},
+    {"source":"grok","window":"15-23 August","window_days":9,"sessions":49875,"sessions_per_day":5541.6667},
+    {"source":"codex-root","window":"31 July-21 August","window_days":22,"sessions":null,"sessions_per_day":null}
+  ],
+  "rejected_claim": "52 days",
+  "visual_translation": {
+    "one_move":"compress calendar into measured density",
+    "scene":"short luminous time band with dense session strata, not a 52-day wall",
+    "falsifier":"raw session timestamps contradict the stated windows"
+  },
+  "status": "measured-partial",
+  "fake_evidence": false
+}
