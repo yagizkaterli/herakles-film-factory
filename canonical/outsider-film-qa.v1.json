@@ -1,0 +1,17 @@
+{
+  "schema": "herakles.outsider-film-qa.v1",
+  "film": "showcase/films/s6-explainer-long.mp4",
+  "method": "contextless viewer; no paper, tweet, README or prior conversation",
+  "questions": [
+    "What do you think this film is about?",
+    "What changed from beginning to end?",
+    "What does the hexagon mean?",
+    "What evidence made you trust the ending?",
+    "What remains unclear?"
+  ],
+  "pass_rule": "viewer identifies torus family, cusp degeneration, hexagonal dP6 and S6 closure without external context",
+  "fail_rule": "viewer describes generic geometry, sci-fi transformation or cannot identify the causal transition",
+  "hidden_reasoning": "not collected; only answer summary and observable confusion points",
+  "output": "JSON QA receipt with answer summary, confusion points, score and redesign actions",
+  "fake_evidence": false
+}
