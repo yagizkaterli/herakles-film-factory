@@ -1,0 +1,120 @@
+{
+  "schema": "herakles.prior-art-batch-08-merged.v1",
+  "reports_scanned": 21,
+  "entries_seen": 9,
+  "unique_entries": 8,
+  "entries": [
+    {
+      "id": "S106-PRIOR-ART-09-01-01",
+      "category": "world_binding",
+      "title": "Introduction to USD",
+      "source_url": "https://openusd.org/release/intro.html",
+      "observed_pattern": "OpenUSD, Composition Arcs ve Stage uzerinden katmanlari, primitive varliklari ve assetleri paketleyip aggregate ederek tamamlanmis sahnelere bagliyor. References bir asset agacini referencing prim altina tasiyor; payload deferred reference olarak secimli load/unload ve working-set yonetimi sagliyor; composition engine sonucu predictable way ile cozluyor.",
+      "transferable_rule": "HERAKLES World icin kaynak manifesti katmanli ve acik bir composition grafigi olsun: her varlik source pointer ile reference veya payload arc'a baglansin, World namespace'inde cozulmus yolu izlenebilsin, payload ile ihtiyac kadar yukleme yapilabilsin ve resolved stage deterministik bir makbuzla yeniden okunabilsin.",
+      "rejection_rule": "World varligi source pointer veya composition arc olmadan runtime'a elle enjekte ediliyorsa; cozulmus namespace yolu, precedence veya load/unload durumu kayitli degilse; ayni girdiden ayni resolved stage yeniden elde edilemiyorsa world binding reddedilir.",
+      "citation_receipt": "Birincil resmi kaynak: https://openusd.org/release/intro.html. Yerel fetch: curl -L --fail --silent --show-error -w 'http=%{http_code} bytes=%{size_download}\\n' URL -o /tmp/tmp.OHD3wJZhDg/source.html -> http=200 bytes=142348; sha256=ea053042ba549197e991eac5ed5acefff930e3b98e11acef8892393af7eeb31f; wc=1564 satir, 142348 byte. HTML anchor makbuzu: satir 1188 Composition Arcs; satir 1286-1291 references, complete scenes, deferred reference ve working sets; satir 1311-1314 predictable way ve stronger/weaker layer override. Resmi web okuma da ayni dayanaklari Introduction to USD satir 41-50, 74-83 olarak gosteriyor.",
+      "status": "proposal",
+      "report": "d-PRIOR-ART-09-01-rerun.md.rapor.md"
+    },
+    {
+      "id": "A11-04",
+      "category": "camera_control",
+      "title": "OrbitControls - Three.js Docs",
+      "source_url": "https://threejs.org/docs/pages/OrbitControls.html",
+      "observed_pattern": "OrbitControls kamerayi bir target etrafinda orbit, dolly ve pan hareketleriyle yonetiyor; up yonunu koruyor. enableRotate, enablePan ve enableZoom ile eksen/eylem kapilari; min/max azimuth, polar angle, distance ve zoom ile limitler; enableDamping ile inertia; update() ile frame dongusu; saveState/reset ile durum geri alma; start/change/end ile lifecycle olaylari tanimli.",
+      "transferable_rule": "Her HERAKLES camera_control kaydi target, etkin hareket eksenleri, azimuth/polar/distance limitleri, damping ve update cadence, save_state/reset yolu ve start/change/end makbuzlarini birlikte tasimali. Kamera transformu adsiz runtime mutasyonu olarak birakilmamali.",
+      "rejection_rule": "Target'i veya hareket limitleri belirsiz olan, update cadence'i tanimsiz kalan, state save/reset yolu bulunmayan ya da camera lifecycle olaylarini makbuzlamayan camera_control reddedilir.",
+      "citation_receipt": "Resmi Three.js dokumani HTTP 200; bytes=25001; lines=549; sha256=0161f735e6a00bd7ab72a5230627ad45547e9bfbd50078cc49239642745eede8. Resmi kaynak dosyasi HTTP 200; bytes=40504; lines=1963; sha256=faabb4e8dfd9235ee4a9fd7c9a3d75f90f1689dbd4944bd6fd32117dacec5f93. Dokuman anchorlari orbit/dolly/pan/up 16-22, update 26-36, damping/enable kontrolleri 108-140, target 297-303, reset 452-458, saveState 488-493, change/end 505+. Aday title ve URL cakisma sayimi 0.",
+      "status": "proposal",
+      "report": "d-PRIOR-ART-09-03.md.rapor.md"
+    },
+    {
+      "id": "A09-06",
+      "category": "accessibility_and_reduced_motion",
+      "title": "Web Content Accessibility Guidelines (WCAG) 2.2 - Success Criterion 2.3.3 Animation from Interactions",
+      "source_url": "https://www.w3.org/TR/WCAG22/#animation-from-interactions",
+      "observed_pattern": "W3C WCAG 2.2, Success Criterion 2.3.3 ve Level AAA olarak, etkilesimle tetiklenen motion animation'in kapatilabilir olmasini ister; istisna yalniz animasyonun islev veya aktarilan bilgi icin essential olmasidir.",
+      "transferable_rule": "Her etkilesimle tetiklenen cinematic motion icin kullanicinin motion'u kapatabilecegi acik bir yol tanimla. Essential istisnasi kullaniliyorsa, kaldirilmanin hangi islevi veya bilgiyi temelden degistirecegini kaydet; bu kaynak otomatik video oynatimi veya flashing-light politikasini tek basina kanitlamaz.",
+      "rejection_rule": "Etkilesim tetiklemeli motion icin kapatma yolu yoksa ve essential gerekce acikca gosterilmiyorsa cinematic akisi reddet. Essential etiketi, degisen islev veya bilgi belirtilmeden kullaniliyorsa istisnayi da reddet.",
+      "citation_receipt": "Birincil resmi W3C kaynagi: https://www.w3.org/TR/WCAG22/#animation-from-interactions. Direct komut: curl -L --fail --silent --show-error -w 'direct_http=%{http_code} direct_bytes=%{size_download}\\n' https://www.w3.org/TR/WCAG22/ -o /tmp/prior-art-09-06-z4JapZ/wcag22.html => direct_http=200, direct_bytes=512457; sha256=6e3c5fe397257cae509a2fb4752b73062cf8cbeb92c2cec618989b17e4cf7057. Jina komut sonucu: jina_http=200, jina_bytes=202511; sha256=b0abb342c7015bad75da86eab689b3626880b85ab2227da9d8a8fc2beb671b78. Direct HTML satir 1415 baslik ve 1419 Level AAA, satir 1421 kural metni; Jina metni satir 663 ayni kuralin motion animation, disable ve essential kosullarini tasiyor.",
+      "status": "researched",
+      "report": "d-PRIOR-ART-09-05-rerun.md.rapor.md"
+    },
+    {
+      "id": "A15-02",
+      "category": "3d_composition",
+      "title": "USD Terms and Concepts",
+      "source_url": "https://openusd.org/release/glossary.html",
+      "observed_pattern": "OpenUSD resmi sozluk Composition'i birden cok layer'in composition arc'lari ile bir araya gelerek UsdStage scenegraph'i uretmesi olarak tanimliyor. Composition Arcs base scene description ile override'lari birlestiren operatorlerdir; LIVERPS bu arc'larin strength ordering kuralidir; composition stage acilisinda, prim load/unload sirasinda ve katkili layer edit edildiginde yeniden calisir.",
+      "transferable_rule": "Her 3D composition manifesti source layer'lari, arc listesini, target prim path'i, LIVERPS strength order'i, load/unload olayini ve resolved stage/path ciktisini saklasin; her composition gecisi bu kayittan yeniden oynatilabilsin.",
+      "rejection_rule": "Ordered layer/arc grafigi, target prim path'i, strength resolution'i veya resolved output'u olmayan; composition degisikligini non-destructive olarak izleyemeyen ya da ayni girdiden replay makbuzu uretemeyen 3D composition reddedilsin.",
+      "citation_receipt": {
+        "source_type": "official_primary_source",
+        "source_title": "USD Terms and Concepts",
+        "source_url": "https://openusd.org/release/glossary.html",
+        "fetch_command": "curl -L --fail --silent --show-error --write-out 'http=%{http_code} bytes=%{size_download} final=%{url_effective}\\n' https://openusd.org/release/glossary.html -o /tmp/tmp.uqpeiGWis7/openusd-glossary.html",
+        "fetch_output": "http=200 bytes=458606 final=https://openusd.org/release/glossary.html; sha256=7fe0d80398df8c80d6d439bd4f43809a6dceb6c10ae12c57a6966d4176fc5990",
+        "content_output": "Composition Arcs=32; LIVERPS=11; subLayers=36; References=117; Payload=46; VariantSets=34; composed scene=4; Composition occurs=1; source anchors around lines 1670-1675, 1684-1711, 2677-2683, 2758-2761",
+        "duplicate_output": "wide prior-art URL matches=0; title matches=0; id A15-02 matches=0"
+      },
+      "status": "proposal",
+      "report": "d-PRIOR-ART-09-06-rerun.md.rapor.md"
+    },
+    {
+      "id": "A14-01",
+      "category": "world_binding",
+      "title": "WebXR Device API",
+      "source_url": "https://www.w3.org/TR/webxr/",
+      "observed_pattern": "W3C WebXR, XRSpace'i fiziksel konuma karsilik gelen bir sanal koordinat sistemi olarak tanimliyor; requestReferenceSpace(type) desteklenen bir referans uzayi kuruyor; uzaylar arasi konum ve yon iliskisi XRFrame.getPose() ile okunuyor; native/effective origin degisiklikleri reset olayi ile bildiriliyor.",
+      "transferable_rule": "HERAKLES world_binding her bagli varlik icin world_space_type, origin, transform, parent_space ve frame_receipt alanlarini acik bir manifestte tutmali; varlikler arasi uzamsal iliski getPose benzeri bir donusumle yeniden okunabilmeli; origin degisimi reset/rebind olayi olarak kayda girmeli.",
+      "rejection_rule": "Bir varlik yalniz ekran koordinatina veya adsiz bir runtime transformuna bagliysa; parent/reference space, origin, yon-donusum veya yeniden okuma makbuzu yoksa; origin degisiminde rebind/reset izi tutulmuyorsa world_binding reddedilir.",
+      "citation_receipt": {
+        "source_type": "official_w3c_specification",
+        "source_url": "https://www.w3.org/TR/webxr/",
+        "fetch": "HTTP 200; bytes=1529653; lines=9556; sha256=9084c0f40f37edfa40ea3857c234012815d1f4ee86517e9251f139ff31be0bd8",
+        "source_anchors": "lines 1985, 2511-2520, 2585, 2602, 3792",
+        "observed_counts": "XRReferenceSpace=785; requestReferenceSpace=37; coordinate system=28; XRSession=2610; getViewerPose=49",
+        "duplicate_check": "ATLAS title=0 url=0; batch-08 title=0 url=0; broad local title=0 url=0"
+      },
+      "status": "proposal",
+      "report": "d-PRIOR-ART-09-09-rerun.md.rapor.md"
+    },
+    {
+      "id": "A15-01",
+      "category": "story_grammar",
+      "title": "Storylets: Harlowe (v3.2)",
+      "source_url": "https://www.twinery.org/cookbook/storylets/harlowe/harlowe_storylets.html",
+      "observed_pattern": "Harlowe Storylets pasajlari dogrudan birbirine baglamak yerine requirement ve content ile tanimliyor; (storylet:) when lambda degeri true ise pasaj open oluyor; (link-storylet:) acik storylet secerek navigasyonu runtime state'e gore degistiriyor.",
+      "transferable_rule": "HERAKLES story_grammar icin beat ve chapter adaylarini sabit timeline listesi yerine requirement, content ve open predicate tasiyan storylet kayitlari olarak modelle; secim sonucu ve sonraki navigasyon state makbuzunda saklansin.",
+      "rejection_rule": "Story veya beat secimi requirement ya da open predicate olmadan sabit sira ile yapiliyorsa, acik aday yok durumu tanimsizsa veya state degisimi sonraki navigasyonu degistirmiyorsa cikti reddedilir.",
+      "citation_receipt": "Birincil resmi kaynak: https://www.twinery.org/cookbook/storylets/harlowe/harlowe_storylets.html; web makbuzu turn1view0 satir 419-427; yerel fetch HTTP 200, 171645 byte, sha256 0e43103aca2ef39c4b0023c0e5029b36cf0f691f33083163c314e12d3a11d90e; yerel anchorlar 10266-10270; yeni URL duplicate sayisi ATLAS=0, batch-08=0, vault=0.",
+      "status": "researched",
+      "report": "d-PRIOR-ART-09-10.md.rapor.md"
+    },
+    {
+      "id": "A09-04",
+      "category": "accessible_disclosure_controls",
+      "title": "W3C APG Disclosure (Show/Hide) Pattern",
+      "source_url": "https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/",
+      "observed_pattern": "W3C APG disclosure kontrolunu bir button ile kontrol edilen gorunur veya gizli icerik bolumu olarak kuruyor; Enter ve Space klavye etkilesimi gorunurlugu toggle ediyor; aria-expanded gorunur durumu, aria-controls ise bagli icerik bolumunu ifade ediyor.",
+      "transferable_rule": "Her film chapter, kamera paneli veya world ac/kapa yuzeyi focusable button ile calismali; Enter ve Space ayni toggle yolunu vermeli; button state aria-expanded ile ve kontrol edilen bolum aria-controls ile baglanmali.",
+      "rejection_rule": "Icerik yalniz pointer click ile aciliyor, Enter veya Space ile toggle olmuyor, aria-expanded gercek gorunumle eslesmiyor veya kontrol edilen bolumun baglantisi izlenemiyorsa emsal kapisi reddedilir.",
+      "citation_receipt": "W3C APG resmi kaynak: https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/. Web okuyucu 69 satir; ilgili satirlar 18-22, 34-42. curl HTTP 200, 35553 byte, SHA256 046fa8e1f04a33fd6b413289cf862ab03934df2ed1acaeb97992c690e6372e2c; HTML anchor satirlari 20, 22, 297, 357-358, 367, 371.",
+      "status": "researched",
+      "report": "d-PRIOR-ART-09-13.md.rapor.md"
+    },
+    {
+      "id": "A11-04",
+      "category": "timing",
+      "title": "Web Animations",
+      "source_url": "https://www.w3.org/TR/web-animations-1/",
+      "observed_pattern": "W3C Web Animations timing modeli input time'dan output iteration progress uretir; model stateless ve hierarchical olarak tanimlanir, frame-rate independent davranir. current time, iteration duration, playback rate ve seek islemleri acik timing yuzeyleri olarak verilir.",
+      "transferable_rule": "HERAKLES timing atomu timeline_id, current_time, duration veya iteration_duration, playback_rate, direction ve progress alanlarini acikca tasimali; render ilerlemesi frame sayan gizli mutable birikimden degil bu timing girdilerinden turetilmeli. Replay ve seek ayni current_time sozlesmesi uzerinden yapilmalidir.",
+      "rejection_rule": "Her frame onceki frame sayacina bagli ilerleyen, duration veya progress tanimi olmayan, playback yonu/seek davranisi kayitsiz olan ya da frame-rate degisince ayni input icin farkli timing sonucu veren beat reddedilir.",
+      "citation_receipt": "W3C resmi teknik spesifikasyon: https://www.w3.org/TR/web-animations-1/; HTTP 200; bytes=1000120; sha256=e814a799ef2442a6c2f5bb783307080054441215ae75921349c018aaef3a2e55; anchorlar: Timing model overview satir 938, stateless 941-946, frame-rate independent 949-953, hierarchical 988, current time/seek 1200-1283.",
+      "status": "proposal",
+      "report": "d-PRIOR-ART-09-15.md.rapor.md"
+    }
+  ],
+  "fake_evidence": false
+}
