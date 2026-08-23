@@ -1,0 +1,61 @@
+{
+  "schema": "herakles.prior-art-batch-08-merged.v1",
+  "reports_scanned": 3,
+  "entries_seen": 3,
+  "unique_entries": 3,
+  "entries": [
+    {
+      "id": "A16-01",
+      "category": "world_binding",
+      "title": "OpenXR Spaces chapter",
+      "source_url": "https://github.com/KhronosGroup/OpenXR-Docs/blob/main/specification/sources/chapters/spaces.adoc",
+      "source_type": "official_primary_source",
+      "observed_pattern": "Khronos OpenXR Spaces bolumu koordinat donen veya alan koordinati alan her API cagrisinda XrSpace ile frame of reference secilmesini ister. VIEW, LOCAL, LOCAL_FLOOR ve STAGE reference space turleri origin ve eksen anlamini aciklar; xrLocateSpace bir space origininin base space icindeki pose'unu zaman parametresiyle bulur. Origin veya tracking durumu degisebildigi icin pose iki space arasindaki iliski olarak ele alinir.",
+      "transferable_rule": "HERAKLES world_binding her varlik icin source_space, base_space, origin, eksen yonu, zaman ve pose_validity alanlarini acik bir manifestte tutsun. World'e sabit icerik world-locked bir space'e baglansin; her frame veya replay adiminda iki space arasindaki pose ve origin-change olayi deterministik makbuzla kaydedilsin.",
+      "rejection_rule": "Varlik adsiz global transforma veya ekran koordinatina bagliysa; source/base space, origin ve eksen yonu kayitli degilse; zamanli pose, validity/tracking durumu veya origin degisim olayi yeniden okunamiyorsa world_binding reddedilir.",
+      "citation_receipt": {
+        "source_title": "OpenXR Spaces chapter",
+        "source_url": "https://github.com/KhronosGroup/OpenXR-Docs/blob/main/specification/sources/chapters/spaces.adoc",
+        "raw_fetch_url": "https://raw.githubusercontent.com/KhronosGroup/OpenXR-Docs/main/specification/sources/chapters/spaces.adoc",
+        "fetch_output": "http=200 bytes=51447 lines=1194 sha256=7ad66d4d2d1eabae027295419e9023d70ab0cc034276890bd150c70f6a73c006",
+        "source_anchors": "lines 27-63, 107-127, 203-213, 657-710",
+        "duplicate_check": "ATLAS+batch-08+batch-09 combined entries=59; candidate title matches=0; candidate URL matches=0; case-insensitive title/url matches=0"
+      },
+      "status": "researched",
+      "report": "d-PRIOR-ART-11-01.md.rapor.md"
+    },
+    {
+      "id": "S106-PRIOR-ART-11-02-01",
+      "category": "provenance_c2pa_manifests",
+      "title": "Content Credentials : C2PA Technical Specification",
+      "source_url": "https://spec.c2pa.org/specifications/specifications/2.4/specs/C2PA_Specification.html",
+      "observed_pattern": "C2PA 2.4; assertionlar, claim ve claim signature birlikte dogrulanabilir bir C2PA Manifest olusturuyor; Content Credential icindeki manifestler asset provenance verisini temsil ediyor; manifestler baska manifestlere referans verebiliyor ve dijital imza tamper-evident kontrol sagliyor.",
+      "transferable_rule": "Her film asseti icin asset hash veya content binding, assertionlar, claim generator, manifest kimligi ve source pointer ayni provenance kaydinda tutulmali; yeni degisiklik onceki provenance zincirini koruyarak yeni bir manifest veya referansli manifest uretmeli; dogrulama sonucu ayri receipt ile baglanmali.",
+      "rejection_rule": "Asset provenance kaydi source pointer, content binding veya manifest kimligi olmadan yayinlaniyorsa; assertion, claim ve imza baginin dogrulanabilirligi yoksa; yeni degisiklik onceki provenance bagini kopariyorsa; ya da tamper-evident dogrulama makbuzu yoksa kayit reddedilir.",
+      "citation_receipt": "Birincil resmi kaynak: https://spec.c2pa.org/specifications/specifications/2.4/specs/C2PA_Specification.html. Direct curl: HTTP 200, bytes=1065169, lines=19315, sha256=d55caebd96206f0de667962a4bab7098c6b6468fba68f8b55bcdd3a12d1ed26d. Jina Reader: HTTP 200, bytes=828220, lines=10283, sha256=f1aa61ee52899a26a25bdaa605f0576e59dda98a27ccfd2b4f1698a2e04de9d9. Anchorlar: reader satir 184 existing provenance'in degisikliklerle korunmasi; 192 manifest ve dijital imza; 208 assertion/claim/signature baglanmasi; 338-344 manifest, provenance ve manifest store tanimlari; 220 asset hash ve JPEG'e gomulu manifest ornegi.",
+      "status": "researched",
+      "report": "d-PRIOR-ART-11-02.md.rapor.md"
+    },
+    {
+      "id": "A16-01",
+      "category": "testing",
+      "title": "testharness.js API",
+      "source_url": "https://web-platform-tests.org/writing-tests/testharness-api.html",
+      "source_type": "official_project_documentation",
+      "observed_pattern": "WPT testharness.js her testi atomic bir sonuc olarak PASS, FAIL, TIMEOUT veya NOTRUN statusu ile raporlar. Test adi ayni dosyada unique ve kosular arasinda invariant olmalidir. Sync, async ve promise testleri ayri API'lerle tanimlanir; start, test_state, result ve complete callbackleri kosum durumunu disariya acar.",
+      "transferable_rule": "HERAKLES testing kosumu her scene veya chapter beat icin sabit bir test adi, test giris tipi, assertion listesi, timeout politikasi ve tek final status tasiyan receipt uretsin. Async ve promise akislari explicit completion ile kapanmali; result ve complete callbackleri test raporuna baglanmali; kosumlar arasi ayni ad ve ayni girdide ayni test kimligi korunmali.",
+      "rejection_rule": "Test adi kosular arasinda degisiyorsa veya ayni dosyada unique degilse; PASS, FAIL, TIMEOUT, NOTRUN ya da precondition durumundan biri raporlanmiyorsa; async/promise kosumu completion sinyali vermiyorsa; result/complete makbuzu yoksa ya da tek test birden cok bagimsiz sonucu atomik olmayan tek kayitta sakliyorsa testing yuzeyi reddedilir.",
+      "citation_receipt": {
+        "primary_source": "Web Platform Tests resmi testharness.js API dokumani",
+        "source_url": "https://web-platform-tests.org/writing-tests/testharness-api.html",
+        "fetch_output": "http=200 bytes=189833 final=https://web-platform-tests.org/writing-tests/testharness-api.html; lines=2060; sha256=3aa4945021f0fe0823374a374adb51bd72c82ed6f254e4000e8e7127bdd6585d",
+        "source_anchors": "web satir 62-76, 93-103, 109-182, 496-528, 1112-1131",
+        "observed_counts": "testharness.js=21; PASS=5; FAIL=11; TIMEOUT=7; NOTRUN=2; unique/invariant ifade=4; add_result_callback=3",
+        "duplicate_check": "title hedef yuzey=0; URL hedef yuzey=0; title tum vault=0; URL tum vault=0; id A16-01=0"
+      },
+      "status": "researched",
+      "report": "d-PRIOR-ART-11-03.md.rapor.md"
+    }
+  ],
+  "fake_evidence": false
+}
