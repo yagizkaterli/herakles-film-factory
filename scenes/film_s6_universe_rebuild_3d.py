@@ -57,8 +57,10 @@ class S6UniverseRebuild3D(ThreeDScene):
         # One wide cusp portal, intentionally not a fourth gate.
         cusp = Circle(radius=0.82, color=GOLD, stroke_width=5).move_to([3.45, 0, 0.18]).stretch(1.75, dim=0)
         gates = VGroup(gate3, gate4, cusp)
+        gate3.rotate(PI * 0.7, axis=OUT, about_point=gate3.get_center())
+        gate4.rotate(-PI * 0.45, axis=OUT, about_point=gate4.get_center())
         self.play(FadeOut(tori), run_time=0.55)
-        self.play(FadeIn(gates), Rotate(gate3, PI * 0.7, axis=OUT), Rotate(gate4, -PI * 0.45, axis=OUT), run_time=1.7)
+        self.play(FadeIn(gates), run_time=1.7)
         self.wait(1.25)
 
         # F04 — cusp passage: persistent centre fibre twists and becomes a hexagonal surface.
