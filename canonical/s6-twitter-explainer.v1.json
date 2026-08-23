@@ -1,0 +1,26 @@
+{
+  "schema": "herakles.s6-twitter-explainer.v1",
+  "source": "https://alpo.ge/s6.pdf",
+  "audience": "public X/Twitter viewer with no topology background",
+  "voice": "short, concrete, one causal sentence per beat",
+  "measured_constraints": [
+    "one subject per beat",
+    "captions are readable and never carry more than one claim",
+    "shape plus stroke plus color; color is never the only signal",
+    "hold before each camera move",
+    "no decorative infinite motion"
+  ],
+  "captions": [
+    {"frame": "F01", "text": "Can S⁶ carry a complex structure?"},
+    {"frame": "F02", "text": "Build a smooth family of 2-tori."},
+    {"frame": "F03", "text": "Three boundary events shape the family."},
+    {"frame": "F04", "text": "At the cusp, the cycles twist into a hexagonal fibre."},
+    {"frame": "F05", "text": "Glue the boundary: the total space closes as S⁶."}
+  ],
+  "handoff": {
+    "claude": "Review captions and flag mathematical ambiguity only; do not edit production code.",
+    "manim": "Implement captions as deterministic fixed-frame overlays; geometry remains the proof.",
+    "imagegen": "Generate atmosphere and material references only; never generate explanatory text."
+  },
+  "fake_evidence": false
+}
