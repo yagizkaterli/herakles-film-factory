@@ -1,0 +1,13 @@
+{
+  "schema": "herakles.film-critic-brief.v1",
+  "target": "anlati-label-vs-stream-v2-3d",
+  "film": "showcase/films/anlati-label-vs-stream-v2-3d.mp4",
+  "brief": "Critique the current film and propose concrete next-level changes using the 100-entry prior-art atlas and HERAKLES Film Grammar.",
+  "critics": [
+    {"id":"CODEX-CRITIC-NARRATIVE","focus":["one proposition","outsider clarity","causal beat","falsifier","Anlati grammar"]},
+    {"id":"CODEX-CRITIC-CINEMATIC","focus":["3D composition","camera/state transitions","object identity","negative space","materials","reduced motion"]}
+  ],
+  "shared_pointers":["canonical/herakles-film-grammar.v1.json","canonical/film-direction-prior-art.v1.json","prior-art/ATLAS.json","canonical/world-bound-film-source.v1.json"],
+  "output":"JSON critique with evidence, ranked defects, concrete patch plan and falsifier; no Markdown",
+  "fake_evidence":false
+}
