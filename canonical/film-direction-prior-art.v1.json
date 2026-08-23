@@ -1,0 +1,42 @@
+{
+  "schema": "herakles.film-direction-prior-art.v1",
+  "directive_id": "FILM-DIRECTION-PRIOR-ART-01",
+  "thesis": "The best HERAKLES film is a source-bound, one-proposition, state-driven 3D argument whose objects persist while the camera reveals a falsifiable transformation.",
+  "primary_pointers": [
+    "prior-art/ATLAS.json",
+    "prior-art/batch-04-result.json",
+    "prior-art/batch-05-result.json",
+    "prior-art/batch-06-result.json",
+    "prior-art/batch-07-result.json",
+    "prior-art/batch-08-merged.json",
+    "prior-art/batch-09-merged.json",
+    "prior-art/batch-10-rerun-merged.json",
+    "prior-art/batch-11-merged.json"
+  ],
+  "method_pointers": {
+    "camera_and_chapters": ["Cesium Camera API", "Cesium KmlTour", "Blender Timeline Markers", "NYT three-story-controls", "MapLibre Storymaps"],
+    "state_and_story": ["W3C SCXML", "XState/Stately", "Vega parameters/view state", "D3 state grammar", "StoryGAN", "StoryDALL-E"],
+    "3d_composition": ["VTK pipeline", "Open3D", "OpenUSD composition", "glTF 2.0", "WebGPU render pipeline"],
+    "provenance_and_replay": ["C2PA 2.4", "crJSON", "OpenTimelineIO", "W3C PROV-DM", "rr record/replay", "Genblaze manifests"],
+    "accessibility": ["W3C prefers-reduced-motion", "WCAG 2.3.3", "WAI-ARIA Carousel Pattern", "MDN reduced motion"],
+    "evaluation": ["DataReel", "Playwright visual comparisons", "Good Story evidence discipline"]
+  },
+  "production_rules": [
+    "one proposition and one move per film",
+    "show concrete source object before abstraction",
+    "use explicit state transitions, not decorative timing",
+    "keep object identity across camera changes",
+    "camera waypoints and EON chapters are data",
+    "ImageGen is art direction only; deterministic code owns geometry",
+    "every claim has source pointer, falsifier and receipt",
+    "publish only after sha256, outsider QA and reduced-motion QA",
+    "latest-film pointer changes atomically with MP4, preview and receipt"
+  ],
+  "current_application": {
+    "film": "anlati-label-vs-stream-v2-3d",
+    "render": "showcase/films/anlati-label-vs-stream-v2-3d.mp4",
+    "receipt": "showcase/films/anlati-label-vs-stream-v2-3d.receipt.json",
+    "github_commit": "d725947"
+  },
+  "fake_evidence": false
+}
