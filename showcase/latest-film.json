@@ -1,10 +1,10 @@
 {
   "schema": "herakles.latest-film-pointer.v1",
   "status": "pilot-render",
-  "id": "s6-explainer-long",
+  "id": "s6-explainer-v2",
   "preview": "showcase/latest-preview.gif",
-  "render": "showcase/films/s6-explainer-long.mp4",
-  "receipt": "showcase/films/s6-explainer-long.receipt.json",
+  "render": "showcase/films/s6-explainer-v2.mp4",
+  "receipt": "showcase/films/s6-explainer-v2.receipt.json",
   "update_rule": "Every newly promoted film replaces latest-preview.gif and updates this pointer in the same commit.",
   "fake_evidence": false
 }

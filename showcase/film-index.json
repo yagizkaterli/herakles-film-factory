@@ -98,6 +98,16 @@
       "render": "showcase/films/s6-explainer-long.mp4",
       "preview": "showcase/films/s6-explainer-long-preview.gif",
       "receipt": "showcase/films/s6-explainer-long.receipt.json"
+    },
+    {
+      "id": "s6-explainer-v2",
+      "title": "Does S6 admit a complex structure? Yup. — v2",
+      "status": "qa-revision-render",
+      "question": "Can an outsider follow torus → cusp → dP6 → S6?",
+      "source": "https://alpo.ge/s6.pdf + outsider QA revision",
+      "render": "showcase/films/s6-explainer-v2.mp4",
+      "preview": "showcase/films/s6-explainer-v2-preview.gif",
+      "receipt": "showcase/films/s6-explainer-v2.receipt.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"

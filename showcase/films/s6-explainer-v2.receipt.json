@@ -1,0 +1,11 @@
+{
+  "schema":"herakles.film-receipt.v1",
+  "film_id":"s6-explainer-v2",
+  "status":"pilot-render",
+  "source":"canonical/s6-modular-family-film.v1.json",
+  "hook":"Does S^6 admit a complex structure? Yup.",
+  "render":{"engine":"Manim Community v0.20.1","command":"manim -ql -r 854,480 scenes/film_s6_explainer_v2_3d.py S6ExplainerV2","asset":"showcase/films/s6-explainer-v2.mp4","sha256":"2c840a248300e43d762a9bbf083c6b02f2557bffc8d135da12e9ab518e2d0b18"},
+  "qa_changes":["explicit legend","torus-to-hexagon morph","pi1 substitution step","visible S6 closure path"],
+  "qa":{"source_binding":"pass","deterministic":"pass","outsider_read":"pending","reduced_motion":"pending"},
+  "fake_evidence":false
+}
