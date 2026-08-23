@@ -11,10 +11,11 @@
     "anlati": "canonical/anlati-first-film.v1.json",
     "live_limbs": "canonical/live-agent-trace-visual.v1.json",
     "experiment": "canonical/contextless-stigmergy-experiment.v1.json"
+    ,"corpus_window": "canonical/corpus-window-finding.v1.json"
   },
   "stages": [
     {"id":"S0_HEALTH","name":"VPS health","input":"live VPS","output":"health receipt","gate":"load/disk/failed units measured"},
-    {"id":"S1_SOURCE","name":"source lock","input":"World snapshot/event + receipts","output":"source manifest","gate":"every visible claim has pointer"},
+    {"id":"S1_SOURCE","name":"source lock","input":"World snapshot/event + receipts + measured corpus window","output":"source manifest","gate":"every visible claim has pointer and every time-window claim has raw timestamp receipt"},
     {"id":"S2_PRIOR_ART","name":"prior-art gate","input":"ATLAS","output":"100 verified entries","gate":"researched=100 and pending=0"},
     {"id":"S3_EXPERIMENT","name":"contextless stigmergy","input":"raw allowed rollout summaries","output":"independent receipts","gate":"no hidden reasoning/secrets; convergence or divergence recorded"},
     {"id":"S4_VARIANT","name":"story variant","input":"evolution/anlati grammar","output":"one-move storyboard JSON","gate":"single proposition and falsifier"},
