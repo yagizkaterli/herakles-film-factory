@@ -1,0 +1,12 @@
+{
+  "schema":"herakles.film-receipt.v1",
+  "film_id":"s6-explainer-long",
+  "status":"pilot-render",
+  "source":"canonical/s6-modular-family-film.v1.json",
+  "hook":"Does S^6 admit a complex structure? Yup.",
+  "source_url":"https://alpo.ge/s6.pdf",
+  "render":{"engine":"Manim Community v0.20.1","command":"manim -ql -r 854,480 scenes/film_s6_explainer_long_3d.py S6ExplainerLong3D","asset":"showcase/films/s6-explainer-long.mp4","sha256":"0710fc11bb0284685d3a062632be8675d1ec135120a29679278f7b3a6faed9a6"},
+  "beats":["hook","torus family","3/4/infinity","cusp monodromy","hexagonal dP6","pi1 closure","S6 conclusion"],
+  "qa":{"source_binding":"pass","deterministic":"pass","outsider_read":"pending","reduced_motion":"pending"},
+  "fake_evidence":false
+}

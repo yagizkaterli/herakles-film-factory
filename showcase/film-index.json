@@ -88,6 +88,16 @@
       "render": "showcase/films/s6-torus-to-sphere.mp4",
       "preview": "showcase/films/s6-torus-to-sphere-preview.gif",
       "receipt": "showcase/films/s6-torus-to-sphere.receipt.json"
+    },
+    {
+      "id": "s6-explainer-long",
+      "title": "Does S6 admit a complex structure? Yup.",
+      "status": "pilot-render",
+      "question": "How does the torus family degenerate and close into S6?",
+      "source": "https://alpo.ge/s6.pdf + X hook @__alpoge__",
+      "render": "showcase/films/s6-explainer-long.mp4",
+      "preview": "showcase/films/s6-explainer-long-preview.gif",
+      "receipt": "showcase/films/s6-explainer-long.receipt.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"
