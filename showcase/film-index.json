@@ -36,7 +36,7 @@
       "question": "Can HERAKLES own a visual grammar beyond the seed design?",
       "source": "canonical/herakles-film-grammar.v1.json",
       "render": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.mp4",
-      "receipt": null
+      "receipt": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.receipt.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"

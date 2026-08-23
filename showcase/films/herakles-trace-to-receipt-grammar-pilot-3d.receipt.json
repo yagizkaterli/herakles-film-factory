@@ -1,0 +1,24 @@
+{
+  "schema": "herakles.film-receipt.v1",
+  "film_id": "herakles-trace-to-receipt-grammar-pilot-3d",
+  "status": "pilot-render",
+  "source": "canonical/world-bound-film-source.v1.json",
+  "grammar": "canonical/herakles-film-grammar.v1.json",
+  "world_snapshot_id": "herakles-native:snapshot:1787435102",
+  "scene_objects": ["trace", "question-gate", "route-split", "eon-stratum", "receipt-seal", "agents", "tasks"],
+  "render": {
+    "engine": "Manim Community v0.20.1",
+    "command": "manim -ql -r 854,480 scenes/film_herakles_trace_to_receipt_3d.py HeraklesTraceToReceipt3D",
+    "asset": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.mp4",
+    "sha256": "f7662d14ec1c7ffbc78446b297cd671f5fe763955a08c1b9d634ed2c5281a440",
+    "rasterized": true
+  },
+  "qa": {
+    "object_identity": "pass",
+    "source_binding": "pass",
+    "reduced_motion": "static-state-defined",
+    "outsider_read": "pending",
+    "world_link": "pending"
+  },
+  "fake_evidence": false
+}
