@@ -1,0 +1,31 @@
+{
+  "schema": "herakles.nobet-film-source.v1",
+  "source_room": "de2b53bf-a6a6-459b-a393-b30210d6fb46",
+  "source_turn": "c062f90e-f07a-444c-b85e-c086887be4be",
+  "captured_at": "2026-08-23T20:47Z",
+  "single_move": "measured_health_surface contradicts green status",
+  "measured_state": {
+    "failure_count": 9,
+    "decision_count": 202,
+    "false_green_count": 138,
+    "pending_bild": 923,
+    "processed_bild": 13116,
+    "production_per_hour": 57,
+    "consumption_per_hour": 57,
+    "active_organs": 0,
+    "identity_bound": "25/29",
+    "dead_channels": ["deepseek 402", "cerebras 401"],
+    "restart_loop": "codex-oda@kara-oda.service NRestarts=191"
+  },
+  "visual_beats": [
+    "green success stamp covers a dark stalled organ",
+    "nine red failure veins surface",
+    "138 false-green stamps peel away to reveal missing work",
+    "production and consumption balance on one beam",
+    "the unresolved four identities remain in negative space"
+  ],
+  "world_binding": ["agents", "queues", "reviews", "receipts", "health"],
+  "falsifier": "If the same timestamped hterm nobet source does not contain these measurements, the scene is rejected.",
+  "status": "production-candidate",
+  "fake_evidence": false
+}
