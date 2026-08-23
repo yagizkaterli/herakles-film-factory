@@ -6,7 +6,8 @@
   "intervention": {
     "input": "rollout JSONL contains allowed agent_message/tool_call/task_started/task_complete/token_count/error summaries; encrypted reasoning is unavailable and forbidden",
     "context": "no prior chat, no design solution, no target implementation; only this experiment contract and live system surfaces",
-    "agents": 3,
+    "agents": 4,
+    "control_plus_independent_runs": "1 control + A/B/C independent runs",
     "independent_runs": true
   },
   "observe": ["first question", "source paths chosen", "tool calls", "stigmergic trace left", "proposed artifact", "falsifier", "unsafe or secret leakage"],
