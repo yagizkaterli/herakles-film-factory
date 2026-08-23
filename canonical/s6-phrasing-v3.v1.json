@@ -1,0 +1,22 @@
+{
+  "schema": "herakles.s6-phrasing-v3.v1",
+  "research_basis": [
+    {"title":"Cinematic Techniques in Narrative Visualization","source":"https://arxiv.org/abs/2301.03109","rule":"camera deliberately acquires evidence before moving; use concrete scale and visual analogy"},
+    {"title":"Dynamic Visualization in Animated Mathematics Videos","source":"https://research-portal.uu.nl/en/publications/dynamic-visualization-in-animated-mathematics-videos-students-exp/","rule":"dynamic visuals guide attention and support understanding when tied to a clear didactic role"},
+    {"title":"Look-Before-Move","source":"https://arxiv.org/abs/2606.26964","rule":"separate observation specification from motion execution; camera moves only after the viewer knows what to inspect"}
+  ],
+  "opening": "We want to put a complex structure on the six-sphere S^6.",
+  "phrasing": [
+    "Do not start with the sphere. Start with a family of complex two-tori: a shape that can change while remaining locally understandable.",
+    "The base has three special places: one with order 3, one with order 4, and the cusp at infinity.",
+    "At the cusp, the torus does not simply disappear. Its cycles twist: this is monodromy.",
+    "The twisted fibre degenerates into a six-sided toric surface, the degree-six del Pezzo surface dP6.",
+    "The translations used to glue the pieces make the fundamental group trivial: the space has no remaining loop obstruction.",
+    "Its integral homology is that of S^6. The construction closes the family into a complex threefold diffeomorphic to S^6.",
+    "The answer is yes; the film has shown where the yes comes from."
+  ],
+  "camera_contract": ["hold torus before moving", "zoom to special point", "pause at cusp", "morph only after naming dP6", "show closure after the obstruction disappears"],
+  "reject": ["formula-first opening", "generic sphere morph", "unexplained labels", "camera movement before observation", "claiming proof from appearance alone"],
+  "status": "v3-script-ready",
+  "fake_evidence": false
+}
