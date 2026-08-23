@@ -1,0 +1,14 @@
+{
+  "schema": "herakles.film-hook.v1",
+  "film_id": "s6-torus-to-sphere",
+  "source_url": "https://x.com/__alpoge__",
+  "hook": "Please welcome to the world a beautiful new geometric object, to do with a problem I've always loved. Claude really contains multitudes:D Does S^6 admit a complex structure? Yup.",
+  "source_pdf": "https://alpo.ge/s6.pdf",
+  "translation": {
+    "opening": "Does S^6 admit a complex structure?",
+    "answer": "Yup.",
+    "visual_proof_arc": "torus family -> three special points -> cusp degeneration -> hexagonal dP6 -> S6 closure"
+  },
+  "provenance_note": "Tweet is the narrative hook; the PDF is the mathematical source of truth.",
+  "fake_evidence": false
+}

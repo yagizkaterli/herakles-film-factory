@@ -4,6 +4,7 @@
   "source_url": "https://alpo.ge/s6.pdf",
   "source_type": "research-paper-pdf",
   "title": "When a Torus Family Becomes S6",
+  "hook": "Does S^6 admit a complex structure? Yup.",
   "single_move": "smooth torus family degenerates at the cusp into a hexagonal dP6 toric fibre",
   "source_facts": [
     "triangle group Delta(3,4,infinity)",
