@@ -1,0 +1,12 @@
+{
+  "schema": "herakles.anlati-scene.v1",
+  "id": "label-is-not-evidence",
+  "title": "The Label Said Running",
+  "single_move": "label-versus-stream",
+  "room_source": "de2b53bf-a6a6-459b-a393-b30210d6fb46",
+  "measured_instance": "2c0b22e4 dosya-mtime'inda CANLI gorunuyordu; akisinin son satiri 23 Agu 02:14'ten beri model=<synthetic> output_tokens=0. Etiket kosuyor dedi, akis park etmis dedi.",
+  "visual_beats": ["green running label", "frozen stream tail", "label peels away", "readable contradiction hold"],
+  "falsifier": "Park etmis panel gercek bir transkriptteki sentetik son-satira baglanamazsa sahne REDDEDILIR.",
+  "status": "production-candidate",
+  "fake_evidence": false
+}

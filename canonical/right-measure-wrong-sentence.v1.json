@@ -1,0 +1,12 @@
+{
+  "schema": "herakles.anlati-scene.v1",
+  "id": "right-measure-wrong-sentence",
+  "title": "The Measurement Was Right",
+  "single_move": "one-hop-above-the-measurement",
+  "room_source": "de2b53bf-a6a6-459b-a393-b30210d6fb46",
+  "measured_instance": "Vaka 3: ureten spesifikasyon hic inmemis dedi; yeniden-olcum 388 satir + test + dort adaydan KAZANAN buldu.",
+  "visual_beats": ["wrong sentence appears", "measurement opens", "388 lines and test surface", "four candidates collapse to winner"],
+  "falsifier": "Cokusen cumle CASES.md'deki gercek bir geri-cekilmis iddiaya baglanamazsa sahne REDDEDILIR.",
+  "status": "production-candidate",
+  "fake_evidence": false
+}
