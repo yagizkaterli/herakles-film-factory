@@ -108,6 +108,16 @@
       "render": "showcase/films/s6-explainer-v2.mp4",
       "preview": "showcase/films/s6-explainer-v2-preview.gif",
       "receipt": "showcase/films/s6-explainer-v2.receipt.json"
+    },
+    {
+      "id": "s6-phrasing-v3",
+      "title": "Can S6 carry a complex structure? — v3",
+      "status": "phrasing-revision-render",
+      "question": "Can an outsider follow the geometric story before seeing the formula?",
+      "source": "canonical/s6-phrasing-v3.v1.json + s6.pdf",
+      "render": "showcase/films/s6-phrasing-v3.mp4",
+      "preview": "showcase/films/s6-phrasing-v3-preview.gif",
+      "receipt": "showcase/films/s6-phrasing-v3.receipt.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"

@@ -1,0 +1,10 @@
+{
+  "schema":"herakles.film-receipt.v1",
+  "film_id":"s6-phrasing-v3",
+  "status":"phrasing-revision-render",
+  "source":"canonical/s6-phrasing-v3.v1.json",
+  "render":{"engine":"Manim Community v0.20.1","command":"manim -ql -r 854,480 scenes/film_s6_phrasing_v3_3d.py S6PhrasingV3","asset":"showcase/films/s6-phrasing-v3.mp4","sha256":"41b33ec5e9f4b144c634ba48bcfb0b6a744a570d4990ea94723f70a105dc1089"},
+  "qa_changes":["family-before-answer","hold-before-camera-move","plain-language-phrasing","single-causal-beat"],
+  "qa":{"source_binding":"pass","deterministic":"pass","outsider_read":"pending","reduced_motion":"pending"},
+  "fake_evidence":false
+}
