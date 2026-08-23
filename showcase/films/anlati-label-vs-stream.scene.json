@@ -1,0 +1,64 @@
+{
+  "schema": "herakles.film-scene.v1",
+  "id": "d-FILM-ANLATI-02-label-vs-stream",
+  "status": "production-candidate",
+  "deterministic": true,
+  "source": {
+    "canonical_path": "/root/vault-homebase/02 Projects/Sistem-Insa/canonical/label-is-not-evidence.v1.json",
+    "canonical_id": "label-is-not-evidence",
+    "canonical_sha256": "c0c55f2a0bfadfa6cb5f88c79f5b3b17b4c041972dec08cad13f76b0fdf9dbea",
+    "room_source": "de2b53bf-a6a6-459b-a393-b30210d6fb46",
+    "room_measurement_path": "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_durum/hterm-durum.json",
+    "room_measurement_sha256": "a15670e51a4afd23a482f938eac755553f4db1e30213d4796586f29fc9be684a",
+    "room_match_count": 1,
+    "room_name": "HERAKLES Film Factory ImageGen + Manim + HERAKLES World kanitli film uretim hatti",
+    "room_role": "member",
+    "room_pending_offer_count": 1,
+    "measured_instance": "2c0b22e4 dosya-mtime'inda CANLI gorunuyordu; akisinin son satiri 23 Agu 02:14'ten beri model=<synthetic> output_tokens=0. Etiket kosuyor dedi, akis park etmis dedi."
+  },
+  "single_move": {
+    "name": "label-versus-stream",
+    "count": 1,
+    "operation": "contradict green running label with frozen stream tail"
+  },
+  "beats": [
+    {
+      "id": "green-running-label",
+      "kind": "label",
+      "text": "green running label",
+      "source_field": "visual_beats[0]"
+    },
+    {
+      "id": "frozen-stream-tail",
+      "kind": "stream-tail",
+      "text": "frozen stream tail",
+      "tail": "23 Agu 02:14'ten beri model=<synthetic> output_tokens=0",
+      "source_field": "measured_instance"
+    },
+    {
+      "id": "readable-contradiction-hold",
+      "kind": "hold",
+      "text": "readable contradiction hold",
+      "source_field": "visual_beats[3]"
+    }
+  ],
+  "object_bindings": [
+    {
+      "object": "green-running-label",
+      "source_receipt": "/root/vault-homebase/02 Projects/Sistem-Insa/canonical/label-is-not-evidence.v1.json",
+      "source_fields": ["visual_beats[0]", "measured_instance"]
+    },
+    {
+      "object": "frozen-stream-tail",
+      "source_receipt": "/root/vault-homebase/02 Projects/Sistem-Insa/canonical/label-is-not-evidence.v1.json",
+      "source_fields": ["measured_instance"]
+    },
+    {
+      "object": "readable-contradiction-hold",
+      "source_receipt": "/root/vault-homebase/02 Projects/Sistem-Insa/canonical/label-is-not-evidence.v1.json",
+      "source_fields": ["visual_beats[3]", "falsifier"]
+    }
+  ],
+  "falsifier": "Park etmis panel gercek bir transkriptteki sentetik son-satira baglanamazsa sahne REDDEDILIR.",
+  "invented_evidence": false
+}
