@@ -1,0 +1,16 @@
+{
+  "schema": "herakles.spore-evolution-story-variants.v1",
+  "contact_sheet": "prior-art/evolution/four-evolution-variants-contact-sheet.png",
+  "thesis": "The world is not a finished dashboard; it is a living organism that grows new organs from traces, constraints and receipts.",
+  "high_level_seed": "cellular adaptation -> communal behavior -> world formation -> civilization of receipts",
+  "not_a_style_copy": true,
+  "variants": [
+    {"id":"V01","name":"trace-cell","arc":"one trace enters a dark medium, senses a question, grows a route filament and seals a receipt","world_binding":["evidence","tasks","queues","receipts"],"visual_verb":"differentiate","ending":"one unresolved edge remains visible"},
+    {"id":"V02","name":"colony-of-agents","arc":"17 agent organisms cluster, exchange stigmergic filaments, specialize into route organs and form an EON stratum","world_binding":["agents","tribes","eon","queues"],"visual_verb":"cooperate","ending":"a missing organ becomes the next quest"},
+    {"id":"V03","name":"world-seed","arc":"a source seed becomes terrain, authority fields appear, and receipts crystallize as navigable landmarks","world_binding":["world","rooms","evidence","receipts"],"visual_verb":"terrain-form","ending":"World remains read-only and partially unexplored"},
+    {"id":"V04","name":"receipt-civilization","arc":"several EON strata accumulate into a civilization whose laws are provenance, falsifiability and repair","world_binding":["eon","reviews","receipts","health"],"visual_verb":"institutionalize","ending":"the civilization opens a new question rather than claiming completion"}
+  ],
+  "shared_grammar":["trace-cell","question-gate","route-split","eon-stratum","authority-field","receipt-seal","negative-space-hold"],
+  "selection_gate":"source parity + object identity + outsider clarity + reduced-motion + falsifier",
+  "fake_evidence": false
+}
