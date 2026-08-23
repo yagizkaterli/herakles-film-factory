@@ -1,0 +1,166 @@
+{
+  "schema": "herakles.anlati-first-film.render-receipt.v1",
+  "card": "d-FILM-ANLATI-01-counterexample.md",
+  "candidate": "one-counterexample-breaks-the-surface",
+  "deterministic": true,
+  "single_move": "counterexample",
+  "render_command": "node d-FILM-ANLATI-01-counterexample.render.mjs",
+  "canvas": {
+    "width": 1280,
+    "height": 720,
+    "renderer": "canvas-3d-perspective-projection",
+    "external_assets": 0
+  },
+  "canonical": {
+    "path": "/root/vault-homebase/02 Projects/Sistem-Insa/canonical/anlati-first-film.v1.json",
+    "sha256": "d37bdf41116b9236d99b17eaa65cb26ce81128191c70b3bcd8c306c702860aa4",
+    "schema": "herakles.anlati-first-film.v1"
+  },
+  "source_receipts": [
+    {
+      "path": "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_kuyruk/islenen/d-MAT-007-varma-integrali-curutme.md.rapor.md",
+      "sha256": "5371104e6b7d5b8c407dde7d1428ec879e51167ffb0306ec304664f8a43218e1",
+      "lines": 74,
+      "role": "counterexample-formula-and-unverified-claim"
+    },
+    {
+      "path": "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_oda-kuyruk/kara-oda/islenen/d-KARA-S0-01.md.rapor.md",
+      "sha256": "123ba23c8dc718d0cfcabe15c861d27aeed28858cf066f05e1a7c5e83d4d424a",
+      "lines": 230,
+      "role": "runtime-health-candidate-and-unapplied-finding"
+    }
+  ],
+  "object_bindings": [
+    {
+      "id": "authority-field",
+      "form": "stable translucent plane",
+      "binding": "evidence",
+      "source_receipts": [
+        "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_kuyruk/islenen/d-MAT-007-varma-integrali-curutme.md.rapor.md",
+        "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_oda-kuyruk/kara-oda/islenen/d-KARA-S0-01.md.rapor.md"
+      ],
+      "evidence": "both reports contain bounded findings and explicit measurement limits"
+    },
+    {
+      "id": "claim-surface",
+      "form": "stable blue plane",
+      "binding": "receipt-seal",
+      "source_receipts": [
+        "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_kuyruk/islenen/d-MAT-007-varma-integrali-curutme.md.rapor.md",
+        "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_oda-kuyruk/kara-oda/islenen/d-KARA-S0-01.md.rapor.md"
+      ],
+      "proposition": "receipt exists does not imply claim closed"
+    },
+    {
+      "id": "counterexample-point",
+      "form": "red point",
+      "binding": "evidence",
+      "source_receipts": [
+        "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_kuyruk/islenen/d-MAT-007-varma-integrali-curutme.md.rapor.md",
+        "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_oda-kuyruk/kara-oda/islenen/d-KARA-S0-01.md.rapor.md"
+      ],
+      "anchors": [
+        "source1 lines 10-12, 40, 52-53",
+        "source2 lines 175-179, 183-197"
+      ],
+      "proposition": "receipt is present while verification or application remains open"
+    },
+    {
+      "id": "surface-break",
+      "form": "four separated plane pieces and red crack",
+      "binding": "reviews",
+      "source_receipts": [
+        "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_kuyruk/islenen/d-MAT-007-varma-integrali-curutme.md.rapor.md",
+        "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_oda-kuyruk/kara-oda/islenen/d-KARA-S0-01.md.rapor.md"
+      ],
+      "derived_from": "counterexample-point"
+    },
+    {
+      "id": "negative-space-hold",
+      "form": "empty dark aperture",
+      "binding": "unknown",
+      "source_receipts": [
+        "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_kuyruk/islenen/d-MAT-007-varma-integrali-curutme.md.rapor.md",
+        "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_oda-kuyruk/kara-oda/islenen/d-KARA-S0-01.md.rapor.md"
+      ],
+      "anchors": [
+        "source1 lines 40, 52-53, 56-60",
+        "source2 lines 197, 210-230"
+      ],
+      "question": "independent closure test remains unknown"
+    }
+  ],
+  "scene_beats": [
+    "stable-claim-surface",
+    "one-source-bound-red-counterexample-point",
+    "surface-breaks",
+    "surviving-unknown-in-negative-space"
+  ],
+  "render": {
+    "modes": {
+      "normal": {
+        "image_path": "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_oda-kuyruk/sistem-analizi-s106/islenen/d-FILM-ANLATI-01-counterexample-normal.png",
+        "image_sha256": "3a008de6f50260b10f4bc0dfb3343b3830d0f275cff734aeab4e95865d956651",
+        "image_bytes": 144546,
+        "qa": {
+          "scene": "d-FILM-ANLATI-01-counterexample",
+          "singleMove": "counterexample",
+          "title": "One CounterexampleBreaks the Surface",
+          "claim": "RECEIPT EXISTS does not imply CLAIM CLOSED",
+          "counterexample": "RED POINT / CLAIM STILL OPENone move: counterexample",
+          "unknown": "NEGATIVE-SPACE HOLDIndependent closure test remains unknown. Silence is data.",
+          "reduced": false,
+          "finalState": "surface broken / unknown held",
+          "canvas": {
+            "width": 1280,
+            "height": 720
+          }
+        }
+      },
+      "reduced": {
+        "image_path": "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_oda-kuyruk/sistem-analizi-s106/islenen/d-FILM-ANLATI-01-counterexample-reduced.png",
+        "image_sha256": "d87a157ff4926b4f0ba6c7c32ff17026588cc3a9957b2044cff6600fc2f027e6",
+        "image_bytes": 144499,
+        "qa": {
+          "scene": "d-FILM-ANLATI-01-counterexample",
+          "singleMove": "counterexample",
+          "title": "One CounterexampleBreaks the Surface",
+          "claim": "RECEIPT EXISTS does not imply CLAIM CLOSED",
+          "counterexample": "RED POINT / CLAIM STILL OPENone move: counterexample",
+          "unknown": "NEGATIVE-SPACE HOLDIndependent closure test remains unknown. Silence is data.",
+          "reduced": true,
+          "finalState": "surface broken / unknown held",
+          "canvas": {
+            "width": 1280,
+            "height": 720
+          }
+        }
+      }
+    },
+    "outsider_qa": {
+      "fresh_view": true,
+      "required_labels_visible": {
+        "title": true,
+        "claim": true,
+        "counterexample": true,
+        "unknown": true
+      },
+      "all_visible": true
+    },
+    "reduced_motion_qa": {
+      "scene": "d-FILM-ANLATI-01-counterexample",
+      "singleMove": "counterexample",
+      "title": "One CounterexampleBreaks the Surface",
+      "claim": "RECEIPT EXISTS does not imply CLAIM CLOSED",
+      "counterexample": "RED POINT / CLAIM STILL OPENone move: counterexample",
+      "unknown": "NEGATIVE-SPACE HOLDIndependent closure test remains unknown. Silence is data.",
+      "reduced": true,
+      "finalState": "surface broken / unknown held",
+      "canvas": {
+        "width": 1280,
+        "height": 720
+      }
+    }
+  },
+  "fake_evidence": false
+}

@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>One Counterexample Breaks the Surface</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #070a10; }
+    body { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    #stage { position: relative; width: 100vw; height: 100vh; background: #070a10; }
+    canvas { display: block; width: 100%; height: 100%; }
+    .hud { position: absolute; inset: 0; pointer-events: none; color: #d9e4ee; }
+    .kicker { position: absolute; top: 30px; left: 42px; color: #7f92a4; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+    .title { position: absolute; top: 52px; left: 40px; max-width: 520px; font-size: 26px; line-height: 1.08; letter-spacing: -.04em; }
+    .claim { position: absolute; left: 50%; top: 13%; transform: translateX(-50%); color: #f0f6fb; font-size: 15px; letter-spacing: .07em; text-transform: uppercase; white-space: nowrap; }
+    .claim em { color: #8da4b7; font-style: normal; }
+    .counterexample { position: absolute; left: 50%; top: 51%; transform: translate(-50%, -50%); color: #ff6874; font-size: 12px; letter-spacing: .04em; text-align: center; white-space: nowrap; }
+    .counterexample span { display: block; color: #ff9aa2; font-size: 10px; margin-top: 5px; }
+    .unknown { position: absolute; right: 7.5%; top: 45%; width: 210px; color: #8295a6; font-size: 12px; line-height: 1.5; letter-spacing: .04em; }
+    .unknown strong { display: block; color: #c2cfda; font-size: 10px; letter-spacing: .16em; margin-bottom: 7px; }
+    .legend { position: absolute; left: 42px; bottom: 34px; color: #697c8e; font-size: 10px; line-height: 1.7; }
+    .legend b { color: #b4c4d0; font-weight: 500; }
+    .status { position: absolute; right: 42px; bottom: 34px; color: #617384; font-size: 10px; text-align: right; line-height: 1.7; }
+    .status b { color: #b4c4d0; font-weight: 500; }
+    .reduced .claim, .reduced .counterexample, .reduced .unknown { animation: none !important; }
+    @media (prefers-reduced-motion: reduce) {
+      .claim, .counterexample, .unknown { animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main id="stage" data-scene="d-FILM-ANLATI-01-counterexample" data-single-move="counterexample">
+    <canvas id="film" width="1280" height="720" aria-label="3D counterexample film scene"></canvas>
+    <section class="hud" aria-label="Scene explanation">
+      <div class="kicker" data-outsider="kicker">HERAKLES / FILM ANLATI 01</div>
+      <div class="title" data-outsider="title">One Counterexample<br>Breaks the Surface</div>
+      <div class="claim" data-outsider="claim">RECEIPT EXISTS <em>does not imply</em> CLAIM CLOSED</div>
+      <div class="counterexample" data-outsider="counterexample">RED POINT / CLAIM STILL OPEN<span>one move: counterexample</span></div>
+      <div class="unknown" data-outsider="unknown"><strong>NEGATIVE-SPACE HOLD</strong>Independent closure test remains unknown. Silence is data.</div>
+      <div class="legend"><b>BLUE PLANE</b> stable claim surface &nbsp; <b>RED</b> source-bound point &nbsp; <b>VOID</b> surviving unknown</div>
+      <div class="status"><b data-status="mode">NORMAL</b><br><span data-status="state">surface / point / break / unknown</span></div>
+    </section>
+  </main>
+  <script>
+    (function () {
+      const canvas = document.getElementById('film');
+      const ctx = canvas.getContext('2d');
+      const stage = document.getElementById('stage');
+      const reduced = new URLSearchParams(location.search).get('mode') === 'reduced' || matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduced) stage.classList.add('reduced');
+      document.querySelector('[data-status="mode"]').textContent = reduced ? 'REDUCED' : 'NORMAL';
+      const W = canvas.width, H = canvas.height;
+      const camera = { x: 0, y: 0.9, z: 14, focal: 700 };
+      const colors = { bg: '#070a10', grid: '#142332', plane: '#2c6681', planeEdge: '#86c7df', red: '#ff4d5e', redGlow: 'rgba(255,77,94,.18)', white: '#d9e4ee', muted: '#526678', void: '#0c131b' };
+      const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+      const mix = (a, b, t) => a + (b - a) * t;
+      function project(p) {
+        const dz = Math.max(.2, camera.z - p.z);
+        return { x: W / 2 + (p.x - camera.x) * camera.focal / dz, y: H / 2 - (p.y - camera.y) * camera.focal / dz, s: camera.focal / dz };
+      }
+      function poly(points, fill, stroke, width) {
+        ctx.beginPath();
+        points.forEach((p, i) => { const q = project(p); if (i) ctx.lineTo(q.x, q.y); else ctx.moveTo(q.x, q.y); });
+        ctx.closePath();
+        if (fill) { ctx.fillStyle = fill; ctx.fill(); }
+        if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = width || 1; ctx.stroke(); }
+      }
+      function line(points, stroke, width, alpha) {
+        ctx.beginPath();
+        points.forEach((p, i) => { const q = project(p); if (i) ctx.lineTo(q.x, q.y); else ctx.moveTo(q.x, q.y); });
+        ctx.strokeStyle = stroke; ctx.globalAlpha = alpha == null ? 1 : alpha; ctx.lineWidth = width || 1; ctx.stroke(); ctx.globalAlpha = 1;
+      }
+      function circle(p, radius, fill, stroke, width) {
+        const q = project(p); ctx.beginPath(); ctx.arc(q.x, q.y, radius * q.s / 100, 0, Math.PI * 2);
+        if (fill) { ctx.fillStyle = fill; ctx.fill(); } if (stroke) { ctx.strokeStyle = stroke; ctx.lineWidth = width || 1; ctx.stroke(); }
+      }
+      function drawGrid() {
+        for (let x = -9; x <= 9; x += 1) line([{x, y: -3.4, z: -1.5}, {x, y: -3.4, z: 5}], colors.grid, 1, .7);
+        for (let z = -1; z <= 5; z += 1) line([{x: -9, y: -3.4, z}, {x: 9, y: -3.4, z}], colors.grid, 1, .7);
+      }
+      function drawAuthorityField() {
+        poly([{x:-7,y:-2.8,z:-.5},{x:7,y:-2.8,z:-.5},{x:7,y:4.2,z:-.5},{x:-7,y:4.2,z:-.5}], 'rgba(11,31,45,.34)', '#18384b', 1);
+        line([{x:-7,y:3.75,z:-.48},{x:7,y:3.75,z:-.48}], '#2b536a', 1, .7);
+      }
+      function drawSurface(p) {
+        const gap = mix(0, .18, p);
+        if (p < .98) {
+          poly([{x:-4.7-gap,y:-1.55,z:0},{x:4.7+gap,y:-1.55,z:0},{x:4.7+gap,y:1.55,z:0},{x:-4.7-gap,y:1.55,z:0}], 'rgba(34,103,132,.30)', colors.planeEdge, 2);
+          for (let x = -4; x <= 4; x += 1) line([{x, y:-1.45, z:.03},{x, y:1.45, z:.03}], colors.plane, 1, .55);
+          for (let y = -1; y <= 1; y += 1) line([{x:-4.6, y, z:.03},{x:4.6, y, z:.03}], colors.plane, 1, .55);
+        } else {
+          const d = .24;
+          const pieces = [
+            [{x:-4.7,y:-1.55,z:0},{x:-d,y:-1.55,z:0},{x:-d,y:-.12,z:.03},{x:-1.2,y:.1,z:.03},{x:-4.7,y:1.55,z:0}],
+            [{x:d,y:-1.55,z:0},{x:4.7,y:-1.55,z:0},{x:4.7,y:1.55,z:0},{x:1.2,y:.1,z:.03},{x:d,y:-.12,z:.03}],
+            [{x:-4.7,y:1.55,z:0},{x:-1.2,y:.1,z:.03},{x:0,y:.42,z:.05},{x:-d,y:1.55,z:0}],
+            [{x:d,y:1.55,z:0},{x:0,y:.42,z:.05},{x:1.2,y:.1,z:.03},{x:4.7,y:1.55,z:0}]
+          ];
+          pieces.forEach((piece, i) => poly(piece, i === 0 ? 'rgba(34,103,132,.24)' : 'rgba(34,103,132,.18)', colors.planeEdge, 2));
+          line([{x:-1.2,y:.1,z:.08},{x:0,y:.42,z:.10},{x:1.2,y:.1,z:.08}], colors.red, 2, .95);
+          line([{x:-d,y:-1.55,z:.08},{x:-d,y:-.12,z:.08}], colors.red, 1, .75);
+          line([{x:d,y:-1.55,z:.08},{x:d,y:-.12,z:.08}], colors.red, 1, .75);
+        }
+      }
+      function drawTrace(p) {
+        const y = mix(-2.7, -1.9, p);
+        line([{x:-6.6,y,z:.08},{x:-4.7,y:y+.08,z:.08},{x:-2.5,y:y+.03,z:.08},{x:0,y:y+.12,z:.08}], colors.planeEdge, 2, .8);
+        circle({x:-6.6,y,z:.08}, 5, colors.planeEdge);
+      }
+      function drawCounterexample(p) {
+        const x = mix(-3.0, 0, p), y = mix(1.8, 0.25, p), z = .18 + p * .2;
+        const q = project({x,y,z});
+        ctx.beginPath(); ctx.arc(q.x, q.y, 22 + 8 * p, 0, Math.PI * 2); ctx.fillStyle = colors.redGlow; ctx.fill();
+        circle({x,y,z}, 13, colors.red, '#ffd0d4', 2);
+        line([{x:x-.22,y:y,z:z+.02},{x:x+.22,y:y,z:z+.02}], '#fff0f1', 1.5, .9);
+        line([{x:x,y:y-.22,z:z+.02},{x:x,y:y+.22,z:z+.02}], '#fff0f1', 1.5, .9);
+      }
+      function drawUnknown() {
+        const center = {x:5.3,y:.25,z:-.2};
+        circle(center, 110, 'rgba(4,9,14,.66)', '#304656', 1);
+        circle(center, 72, null, '#243746', 1);
+        line([{x:4.35,y:.25,z:-.18},{x:6.25,y:.25,z:-.18}], colors.muted, 1, .7);
+        line([{x:5.3,y:-.7,z:-.18},{x:5.3,y:1.2,z:-.18}], colors.muted, 1, .7);
+      }
+      function draw(p) {
+        ctx.fillStyle = colors.bg; ctx.fillRect(0, 0, W, H);
+        drawAuthorityField(); drawGrid(); drawTrace(p); drawSurface(p); drawCounterexample(p); drawUnknown();
+        const vignette = ctx.createRadialGradient(W/2,H/2,80,W/2,H/2,720); vignette.addColorStop(0,'rgba(7,10,16,0)'); vignette.addColorStop(1,'rgba(7,10,16,.72)'); ctx.fillStyle = vignette; ctx.fillRect(0,0,W,H);
+      }
+      let progress = reduced ? 1 : 0;
+      function setProgress(v) { progress = clamp(Number(v) || 0, 0, 1); draw(progress); document.querySelector('[data-status="state"]').textContent = progress >= 1 ? 'surface broken / unknown held' : 'surface / point approaching / unknown held'; }
+      window.__FILM__ = { setProgress, reduced, scene: 'd-FILM-ANLATI-01-counterexample', singleMove: 'counterexample' };
+      window.__FILM_READY__ = true;
+      draw(progress);
+      if (!reduced && !new URLSearchParams(location.search).has('final')) {
+        const start = performance.now();
+        function tick(now) { const t = clamp((now - start) / 1500, 0, 1); setProgress(t); if (t < 1) requestAnimationFrame(tick); }
+        requestAnimationFrame(tick);
+      }
+    })();
+  </script>
+</body>
+</html>

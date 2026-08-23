@@ -37,6 +37,16 @@
       "source": "canonical/herakles-film-grammar.v1.json",
       "render": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.mp4",
       "receipt": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.receipt.json"
+    },
+    {
+      "id": "anlati-counterexample",
+      "title": "One counterexample breaks the surface",
+      "status": "scene-render",
+      "question": "Can one concrete counterexample overturn a whole-looking claim?",
+      "source": "d-MAT-007 + d-KARA-S0-01 receipts",
+      "render": "showcase/films/anlati-counterexample.scene.html",
+      "poster": "showcase/films/anlati-counterexample-poster.png",
+      "receipt": "showcase/films/anlati-counterexample.receipt.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"
