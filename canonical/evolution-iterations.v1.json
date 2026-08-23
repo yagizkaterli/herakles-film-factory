@@ -1,0 +1,14 @@
+{
+  "schema": "herakles.evolution-iterations.v1",
+  "source": "canonical/spore-evolution-story-variants.v1.json",
+  "iteration": 1,
+  "variants": [
+    {"id":"V01-I01","variant":"trace-cell","beats":["source trace enters medium","question-gate opens","route filament differentiates","receipt-seal closes"],"world_bindings":["evidence","tasks","queues","receipts"],"visual_verb":"differentiate","falsifier":"route or seal appears without source/evidence pointer"},
+    {"id":"V02-I01","variant":"colony-of-agents","beats":["agents emerge as separate organisms","stigmergic trails overlap","route organs specialize","missing organ remains visible"],"world_bindings":["agents","tribes","queues","eon"],"visual_verb":"cooperate","falsifier":"agents are decorative dots without distinct source state"},
+    {"id":"V03-I01","variant":"world-seed","beats":["source seed anchors terrain","authority field expands","EON layers stack","World remains partially unexplored"],"world_bindings":["world","rooms","evidence","eon"],"visual_verb":"terrain-form","falsifier":"terrain has no snapshot/event authority"},
+    {"id":"V04-I01","variant":"receipt-civilization","beats":["receipts crystallize as landmarks","laws connect provenance and falsifier","review gates form institutions","new question opens"],"world_bindings":["receipts","reviews","health","eon"],"visual_verb":"institutionalize","falsifier":"civilization claims closure without unresolved edge"}
+  ],
+  "promotion": "one variant becomes deterministic 3D only after source parity, identity continuity, outsider QA and reduced-motion pass",
+  "next": "V01-I02 source-bound World snapshot scene",
+  "fake_evidence": false
+}
