@@ -21,7 +21,7 @@ def main() -> None:
     out = Path(sys.argv[2])
     entries = []
     reports = 0
-    for path in sorted(src.glob("d-PRIOR-ART-10-*-rerun.md.rapor.md")):
+    for path in sorted(src.glob("d-PRIOR-ART-11-*.md.rapor.md")):
         report = decode_report(path)
         if not report:
             continue
