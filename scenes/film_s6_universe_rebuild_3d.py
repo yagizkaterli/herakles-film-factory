@@ -54,11 +54,12 @@ class S6UniverseRebuild3D(ThreeDScene):
         # F03 — three visually distinct boundary events.
         gate3 = Torus(major_radius=0.65, minor_radius=0.09, color=CRIMSON, stroke_width=3).move_to([-3.3, 0, 0.15])
         gate4 = Torus(major_radius=0.82, minor_radius=0.09, color=VIOLET, stroke_width=3).move_to([0.0, 0, 0.15])
-        cusp_outer = Torus(major_radius=1.15, minor_radius=0.12, color=GOLD, stroke_width=4).move_to([3.45, 0, 0.18])
-        cusp_inner = Torus(major_radius=0.63, minor_radius=0.055, color=AMBER, stroke_width=2).move_to([3.45, 0, 0.18]).stretch(1.8, dim=0)
-        gates = VGroup(gate3, gate4, cusp_outer, cusp_inner)
-        self.play(FadeOut(tori), FadeIn(gates), Rotate(gate3, PI * 0.7, axis=OUT), Rotate(gate4, -PI * 0.45, axis=OUT), run_time=1.8)
-        self.wait(0.8)
+        # One wide cusp portal, intentionally not a fourth gate.
+        cusp = Circle(radius=0.82, color=GOLD, stroke_width=5).move_to([3.45, 0, 0.18]).stretch(1.75, dim=0)
+        gates = VGroup(gate3, gate4, cusp)
+        self.play(FadeOut(tori), run_time=0.55)
+        self.play(FadeIn(gates), Rotate(gate3, PI * 0.7, axis=OUT), Rotate(gate4, -PI * 0.45, axis=OUT), run_time=1.7)
+        self.wait(1.25)
 
         # F04 — cusp passage: persistent centre fibre twists and becomes a hexagonal surface.
         fibre = Torus(major_radius=1.0, minor_radius=0.28, color=BLUE, stroke_width=2).move_to([0, 0, 0.1])
