@@ -7,12 +7,13 @@
   "source": "https://alpo.ge/s6.pdf",
   "storyboard": "canonical/s6-universe-rebuild.v1.json",
   "imagegen_assets": "canonical/s6-universe-rebuild-assets.v1.json",
+  "caption_contract": "canonical/s6-twitter-explainer.v1.json",
   "frames": ["F01", "F02", "F03", "F04", "F05"],
   "render": {
     "engine": "Manim Community v0.20.1",
     "command": "manim -ql -r 854,480 --media_dir /root/herakles-film-factory/media -o s6-universe-rebuild.mp4 scenes/film_s6_universe_rebuild_3d.py S6UniverseRebuild3D",
     "asset": "showcase/films/s6-universe-rebuild.mp4",
-    "sha256": "c9dbb13efcbf320db3053c461cad54e38923905014a15c0ea1a82ee3c0aad865",
+    "sha256": "413b982e876777f44734556256287eb67bc334cd6d96871ed6998f98de5571ce",
     "duration_seconds": 17.2,
     "resolution": "854x480"
   },
