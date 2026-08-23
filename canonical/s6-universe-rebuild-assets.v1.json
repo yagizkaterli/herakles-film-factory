@@ -1,0 +1,45 @@
+{
+  "schema": "herakles.s6-universe-rebuild-assets.v1",
+  "storyboard": "canonical/s6-universe-rebuild.v1.json",
+  "source": "https://alpo.ge/s6.pdf",
+  "policy": {
+    "imagegen_role": "visual_prior_only",
+    "deterministic_render_role": "production_truth",
+    "text_carries_meaning": false,
+    "readable_text_allowed": false
+  },
+  "frames": [
+    {
+      "id": "F01",
+      "asset": "prior-art/s6-rebuild/F01-question-space.png",
+      "imagegen_prompt_id": "F01-question-space",
+      "deterministic_target": "open-shell-with-single-seam"
+    },
+    {
+      "id": "F02",
+      "asset": "prior-art/s6-rebuild/F02-torus-garden.png",
+      "imagegen_prompt_id": "F02-torus-garden",
+      "deterministic_target": "five-identical-tori-on-one-path"
+    },
+    {
+      "id": "F03",
+      "asset": "prior-art/s6-rebuild/F03-three-boundaries.png",
+      "imagegen_prompt_id": "F03-three-boundaries",
+      "deterministic_target": "three-gates-two-rotating-one-cusp"
+    },
+    {
+      "id": "F04",
+      "asset": "prior-art/s6-rebuild/F04-cusp-collapse.png",
+      "imagegen_prompt_id": "F04-cusp-collapse",
+      "deterministic_target": "torus-twist-to-hexagonal-surface"
+    },
+    {
+      "id": "F05",
+      "asset": "prior-art/s6-rebuild/F05-closure.png",
+      "imagegen_prompt_id": "F05-closure",
+      "deterministic_target": "hexagonal-boundary-folds-to-closed-sphere"
+    }
+  ],
+  "falsifier": "If a viewer cannot infer the causal transformation from geometry alone, regenerate the frame; do not add explanatory labels.",
+  "fake_evidence": false
+}

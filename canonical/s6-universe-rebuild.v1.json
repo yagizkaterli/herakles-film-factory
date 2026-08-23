@@ -1,0 +1,16 @@
+{
+  "schema": "herakles.s6-universe-rebuild.v1",
+  "status": "storyboard-ready",
+  "source": "https://alpo.ge/s6.pdf",
+  "principle": "No text carries the explanation; persistent geometry and camera attention carry it.",
+  "frames": [
+    {"id":"F01","name":"question-space","visual":"a dark empty six-dimensional question space represented by a luminous closed shell with a missing seam","meaning":"the problem is open"},
+    {"id":"F02","name":"torus-garden","visual":"a family of identical blue torus organisms suspended along a curved path, each visibly the same object at a different position","meaning":"a smooth family of complex two-tori"},
+    {"id":"F03","name":"three-boundaries","visual":"three distinct gates on the path: two rotating colored gates and one widening golden cusp gate","meaning":"orders 3, 4 and infinity without labels"},
+    {"id":"F04","name":"cusp-collapse","visual":"one torus passes through the golden cusp, twists, opens along its cycles and becomes a six-sided amber crystal surface","meaning":"unipotent monodromy and dP6 toric degeneration"},
+    {"id":"F05","name":"closure","visual":"the six-sided surface folds its boundary seams into a luminous closed sphere while the original path remains visible behind it","meaning":"the total space closes with the homology of S6"}
+  ],
+  "deterministic_translation": {"engine":"Manim Community","persistent_ids":["torus-family","gate-3","gate-4","cusp-infinity","dP6-hexagon","S6-closure"],"camera_rule":"one subject per frame; hold before move; transition only after the viewer can name the visible relation"},
+  "falsifier":"If a viewer cannot infer the transformation from geometry without reading text, the frame is rejected and regenerated.",
+  "fake_evidence": false
+}
