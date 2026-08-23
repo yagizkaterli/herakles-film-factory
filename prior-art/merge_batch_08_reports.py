@@ -26,13 +26,17 @@ def main() -> None:
         if not report:
             continue
         reports += 1
-        evidence = report.get("kanit", "")
+        evidence = report.get("entries", report.get("kanit", ""))
         if isinstance(evidence, str):
             try:
                 evidence = json.loads(evidence)
             except json.JSONDecodeError:
                 continue
-        for item in (evidence or {}).get("entries", []):
+        if isinstance(evidence, list):
+            source_entries = evidence
+        else:
+            source_entries = (evidence or {}).get("entries", [])
+        for item in source_entries:
             item = dict(item)
             item["report"] = path.name
             entries.append(item)
