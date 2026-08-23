@@ -1,0 +1,10 @@
+{
+  "schema":"herakles.film-receipt.v1",
+  "film_id":"anlati-label-vs-stream-v2-3d",
+  "status":"pilot-render",
+  "source":"canonical/label-is-not-evidence.v1.json",
+  "render":{"engine":"Manim Community v0.20.1","command":"manim -ql -r 854,480 scenes/film_anlati_label_vs_stream_v2_3d.py AnlatiLabelVsStreamV2","asset":"showcase/films/anlati-label-vs-stream-v2-3d.mp4","sha256":"2821a901e318298f748d34cd3058532e90643bbc5e003f0d6fb1915833aaa44f"},
+  "prior_art_applied":["Narrowest Range negative-space grammar","SCXML explicit states","Cesium/Blender camera transition","C2PA receipt boundary"],
+  "qa":{"single_move":"pass","source_binding":"pass","outsider_read":"pending","reduced_motion":"pending"},
+  "fake_evidence":false
+}

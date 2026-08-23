@@ -57,6 +57,16 @@
       "render": "showcase/films/anlati-label-vs-stream-3d.mp4",
       "preview": "showcase/films/anlati-label-vs-stream-3d-preview.gif",
       "receipt": "showcase/films/anlati-label-vs-stream-3d.receipt.json"
+    },
+    {
+      "id": "anlati-label-vs-stream-v2-3d",
+      "title": "The Label Said Running — v2",
+      "status": "pilot-render",
+      "question": "Can a measured stream overturn a status label?",
+      "source": "canonical/label-is-not-evidence.v1.json + prior-art state/camera grammar",
+      "render": "showcase/films/anlati-label-vs-stream-v2-3d.mp4",
+      "preview": "showcase/films/anlati-label-vs-stream-v2-3d-preview.gif",
+      "receipt": "showcase/films/anlati-label-vs-stream-v2-3d.receipt.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"
