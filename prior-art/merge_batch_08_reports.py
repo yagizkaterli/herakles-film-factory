@@ -11,7 +11,7 @@ def decode_report(path: Path):
     if start < 0:
         return None
     try:
-        return json.loads(text[start + 1 :])
+        return json.JSONDecoder().raw_decode(text[start + 1 :])[0]
     except json.JSONDecodeError:
         return None
 
