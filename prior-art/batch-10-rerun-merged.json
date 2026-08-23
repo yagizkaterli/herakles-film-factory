@@ -1,0 +1,77 @@
+{
+  "schema": "herakles.prior-art-batch-08-merged.v1",
+  "reports_scanned": 8,
+  "entries_seen": 5,
+  "unique_entries": 5,
+  "entries": [
+    {
+      "id": "S106-PRIOR-ART-10-01-01",
+      "category": "world_binding",
+      "title": "glTF 2.0 Specification",
+      "source_url": "https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html",
+      "observed_pattern": "glTF 2.0 bir JSON scene description icinde scenes dizisi, root node indexleri ve yuklemede gosterilecek varsayilan scene secimini tanimliyor; node'lar parent-child hiyerarsisinde dongusuz ve tek ebeveynli strict tree'ler olarak baglaniyor; local transform'lar parent transform'u ile birleserek global transform'u uretiyor.",
+      "transferable_rule": "HERAKLES World manifesti her bagli varlik icin source_url, scene_id, root_node_id ve parent-child yolunu saklamali; varsayilan scene acikca secilmeli; cozumlenmis global transform ve asset version ayni girdiden yeniden okunabilir bir receipt ile uretilmeli.",
+      "rejection_rule": "Scene veya varlik source pointer olmadan runtime'a enjekte ediliyorsa; root node, scene secimi veya parent-child yolu yoksa; hiyerarsi dongu ya da iki ebeveyn uretiyorsa; transform cozumlemesi ve asset version makbuzlanamiyorsa world binding reddedilir.",
+      "citation_receipt": "Birincil resmi kaynak: https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html. Web okuma makbuzu: kaynak toplam 6424 satir; 3.3 satir 761-782 indekslerin mevcut elemanlara baglanmasi, 3.5.1 satir 799-823 scenes/root nodes/default scene, 3.5.2 satir 824-855 parent-child hiyerarsisi ve dongusuz strict tree kurali, 3.5.3 satir 856-868 local ve global transform kurali. Yerel curl denemesi: curl_exit=22 http=403 bytes=0; icerik dogrulamasi web okuma ciktisindan yapildi, 403 basarili fetch olarak sayilmadi.",
+      "status": "researched",
+      "report": "d-PRIOR-ART-10-01-rerun.md.rapor.md"
+    },
+    {
+      "id": "S106-PRIOR-ART-10-02-01",
+      "category": "story_grammar",
+      "title": "Nodes, Lines, and Options | Yarn Spinner 2.1",
+      "source_url": "https://docs.yarnspinner.dev/2.1/getting-started/writing-in-yarn/lines-nodes-and-options",
+      "observed_pattern": "Yarn Spinner hikayeyi named node'lara ayiriyor; her node title ve body tasiyor; title node baslatma ve jump hedefi oluyor; body line, command ve option iceriyor; secilen option kendi indented devamini ve gerekirse baska node'a jump'i tasiyabiliyor.",
+      "transferable_rule": "HERAKLES story_grammar icin her beat veya chapter'i benzersiz bir node_id, title ve body ile modelle; body line, command ve option dizisini tutsun; her option secim sonucu icin acik bir continuation veya terminal hedefi versin; buyuyen veya nested akislar ayri named node'lara jump ile bolunsun.",
+      "rejection_rule": "Beat veya chapter adsiz inline metin olarak tutuluyorsa; secim node_id veya acik continuation/terminal hedefi tasimiyorsa; secilen option'in devami baska secenekle karisiyorsa; nested akislar okunabilir named node'lara ayrilamiyor ve replay edilemiyorsa story_grammar reddedilir.",
+      "citation_receipt": {
+        "source_type": "official_primary_documentation",
+        "source_title": "Nodes, Lines, and Options | Yarn Spinner 2.1",
+        "source_url": "https://docs.yarnspinner.dev/2.1/getting-started/writing-in-yarn/lines-nodes-and-options",
+        "fetch_receipt": "curl -L --fail --silent --show-error --max-time 30 -o /tmp/prior-art-10-02-yarn-nodes-lines-options.md URL -> http_status=200 bytes=8765 lines=217; sha256=a4b72a0e8c0f923457e054e2a5b4562c491e483bb86a5ee76d45797581eb47b3",
+        "evidence_loci": "Yerel kaynak satir 9-13 named node/title/jump; satir 57 line-command-option body; satir 92-124 option ve secime bagli continuation; satir 126-146 nested option ve jump; satir 215-217 node'lara ayirmanin buyuyen dosyalari duzenlemeyi kolaylastirmasi.",
+        "duplicate_receipt": "ATLAS title=0 url=0; batch-08 title=0 url=0; batch-09 title=0 url=0; vault title=0 url=0; aday id S106-PRIOR-ART-10-02-01 icin yerel eslesme 0.",
+        "search_receipt": "Web arama sonucu turn0search6; agent-reach ve mcporter bu ortamda kurulu degil, resmi kaynak fallback'i kullanildi."
+      },
+      "status": "researched",
+      "report": "d-PRIOR-ART-10-02-rerun.md.rapor.md"
+    },
+    {
+      "id": "A11-08",
+      "category": "camera_control",
+      "title": "Properties and options | Mapbox GL JS | Mapbox",
+      "source_url": "https://docs.mapbox.com/mapbox-gl-js/api/properties/",
+      "observed_pattern": "Mapbox CameraOptions ortak jumpTo, easeTo ve flyTo gecisleri icin center, around, zoom, bearing, pitch, padding ve fov alanlarini acik bir kamera durumunda topluyor; eksik alan mevcut degeri koruyor ve around secilen noktayi ekran konumunda sabitliyor. FreeCameraOptions fiziksel position ve quaternion orientation erisimi veriyor; position MercatorCoordinate, zoom-altitude ve pitch/bearing kisitlariyla birlikte tanimli.",
+      "transferable_rule": "Her HERAKLES camera_control kaydi gecis turu, center veya around hedefi, zoom, bearing, pitch, padding ve gerekiyorsa fov alanlarini acikca serilestirsin; serbest kamera kullaniliyorsa position, orientation, coordinate space ve pitch/bearing kisitlari da kayitli olsun. Eksik alanin onceki durumu koruyup korumadigi replay makbuzunda gorunsun.",
+      "rejection_rule": "Kamera gecisi center/around hedefi veya zoom-bearing-pitch durumu olmadan adsiz transformla yapiliyorsa; serbest kamera coordinate space ve orientation kisitlarini belirtmiyorsa; eksik alanlarin onceki durumu koruma semantigi veya replay sonucu makbuzlanmiyorsa camera_control reddedilir.",
+      "citation_receipt": "Resmi Mapbox API dokumani dogrudan HTTP 200, 338159 byte, 470 satir, sha256=2d6fd143d8a6c3db504f93bb2cb04c97953f68ce613f8d20788d22b73b37a82c; Jina okunabilir kopya HTTP 200, 37188 byte, 440 satir, sha256=ed2814a0cd852b5c371b1d753758882fc134fb6d516d95844e164d4b2544a068. Jina satirlari 45, 48, 58-65, 140, 143, 149-150; aday title=0 ve URL=0 exact eslesme ATLAS+batch-08+batch-09.",
+      "status": "proposal",
+      "report": "d-PRIOR-ART-10-03-rerun.md.rapor.md"
+    },
+    {
+      "id": "S106-PRIOR-ART-10-04-01",
+      "category": "provenance_event_schema",
+      "title": "OpenLineage 2-0-2 Event Schema",
+      "source_url": "https://openlineage.io/spec/2-0-2/OpenLineage.json",
+      "observed_pattern": "OpenLineage resmi JSON semasi BaseEvent icin eventTime, producer ve schemaURL alanlarini zorunlu kiliyor. RunEvent run ve job ile birlikte START, RUNNING, COMPLETE, ABORT, FAIL veya OTHER durum gecisini tasiyor; Run icinde UUID runId, ayrica input ve output dataset dizileri var.",
+      "transferable_rule": "Her provenance olayi event_time, producer_uri, schema_url, run_id, job kimligi, input dataset listesi, output dataset listesi ve acik run durum gecisi tasiyan bir event zarfi olarak kaydedilsin. Ayni zarf yeniden okunabilir ve source schema URL'siyle dogrulanabilir olsun.",
+      "rejection_rule": "Producer veya schema URL'si olmayan; event time kaydetmeyen; run/job kimligi bulunmayan; input-output dataset bagini kurmayan; START ile terminal durum arasinda acik gecis vermeyen veya sema URL'siyle dogrulanamayan provenance kaydi reddedilsin.",
+      "citation_receipt": "Birincil resmi kaynak: https://openlineage.io/spec/2-0-2/OpenLineage.json. curl makbuzu: HTTP 200, 9155 byte, final URL ayni; sha256=69f68bee00b9beac88a87059c0102410e7bb05f3f43c46d02a0409831eceb0d2; 304 satir. Kaynak anchor makbuzu: JSON satir 7-25 eventTime/producer/schemaURL; 33-60 eventType/run/job/inputs/outputs; 111-127 runId. Yerel duplicate makbuzu: ATLAS=0, batch-08=0, batch-09=0 URL eslesmesi; title countleri de 0.",
+      "status": "proposal",
+      "report": "d-PRIOR-ART-10-04-rerun.md.rapor.md"
+    },
+    {
+      "id": "S106-PRIOR-ART-10-08-01",
+      "category": "visual_regression_testing",
+      "title": "Visual comparisons",
+      "source_url": "https://playwright.dev/docs/test-snapshots",
+      "observed_pattern": "Playwright Test ilk kosuda reference screenshot uretip sonraki kosularda gorsel karsilastirma yapiyor; baseline ayni ortamda uretilmeli. Snapshot adlari browser/platform bilgisi tasiyor, maxDiffPixels ile fark butcesi verilebiliyor, stylePath ile dinamik elemanlar gizlenebiliyor ve text veya binary snapshot'lar da ayni denetim yuzeyine alinabiliyor.",
+      "transferable_rule": "HERAKLES test kontrati her scene/chapter icin versionlanmis baseline, sabit browser/OS/render ortami, adli snapshot yolu ve acik fark esigi tutsun; dinamik elemanlar deterministik stylesheet ile filtrelensin; gorsel snapshot yaninda text/binary scene metadata snapshot'i da kosulsun ve baseline degisiklikleri review edilerek commitlensin.",
+      "rejection_rule": "Baseline'i olmayan, kosum ortamini sabitlemeyen, fark esigi veya dinamik icerik filtresi tanimlamayan, snapshot yolunu testten ayirmayan ya da baseline degisikligini review edilebilir bir version-control kaydina baglamayan test akisi reddedilir.",
+      "citation_receipt": "Birincil resmi kaynak: https://playwright.dev/docs/test-snapshots. Web satir dayanaklari: 77-98 reference screenshot ve ayni ortam; 101-109 golden snapshot; 124-142 browser/platform ve snapshot yolu; 143-191 update ve maxDiffPixels; 192-244 stylePath; 245-265 text/binary snapshot ve version control. Yerel curl: http=200, bytes=71277, sha256=5bf55e60f444b1a0994551fbaa12c930115a597c3bfeaa244e7a7bb0380c6cef.",
+      "status": "proposal",
+      "report": "d-PRIOR-ART-10-08-rerun.md.rapor.md"
+    }
+  ],
+  "fake_evidence": false
+}
