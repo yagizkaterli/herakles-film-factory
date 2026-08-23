@@ -1,0 +1,11 @@
+{
+  "schema":"herakles.film-receipt.v1",
+  "film_id":"s6-torus-to-sphere",
+  "status":"pilot-render",
+  "source":"canonical/s6-modular-family-film.v1.json",
+  "source_url":"https://alpo.ge/s6.pdf",
+  "render":{"engine":"Manim Community v0.20.1","command":"manim -ql -r 854,480 scenes/film_s6_torus_to_sphere_3d.py S6TorusToSphere3D","asset":"showcase/films/s6-torus-to-sphere.mp4","sha256":"c6f541a98bfe5c69714ab04a44070233ab754b1924587b687b19f28ed4721b55"},
+  "visual_claim":"smooth torus family -> cusp -> hexagonal dP6 -> S6 closure",
+  "qa":{"source_binding":"pass","deterministic":"pass","outsider_read":"pending","reduced_motion":"pending"},
+  "fake_evidence":false
+}

@@ -1,10 +1,10 @@
 {
   "schema": "herakles.latest-film-pointer.v1",
   "status": "pilot-render",
-  "id": "nobet-health-surface-2047",
+  "id": "s6-torus-to-sphere",
   "preview": "showcase/latest-preview.gif",
-  "render": "showcase/films/nobet-health-surface-2047.mp4",
-  "receipt": "showcase/films/nobet-health-surface-2047.receipt.json",
+  "render": "showcase/films/s6-torus-to-sphere.mp4",
+  "receipt": "showcase/films/s6-torus-to-sphere.receipt.json",
   "update_rule": "Every newly promoted film replaces latest-preview.gif and updates this pointer in the same commit.",
   "fake_evidence": false
 }
