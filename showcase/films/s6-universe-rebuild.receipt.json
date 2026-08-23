@@ -12,8 +12,8 @@
     "engine": "Manim Community v0.20.1",
     "command": "manim -ql -r 854,480 --media_dir /root/herakles-film-factory/media -o s6-universe-rebuild.mp4 scenes/film_s6_universe_rebuild_3d.py S6UniverseRebuild3D",
     "asset": "showcase/films/s6-universe-rebuild.mp4",
-    "sha256": "28836d7ba4395d0fc33b664dc9040da6e7b5eb2bb00bfdae19b54e952dda094a",
-    "duration_seconds": 16.266667,
+    "sha256": "c9dbb13efcbf320db3053c461cad54e38923905014a15c0ea1a82ee3c0aad865",
+    "duration_seconds": 17.2,
     "resolution": "854x480"
   },
   "qa": {
