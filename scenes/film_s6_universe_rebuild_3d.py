@@ -119,4 +119,14 @@ class S6UniverseRebuild3D(ThreeDScene):
         self.wait(0.35)
         self.play(FadeOut(fibre), FadeIn(closure), run_time=1.25)
         self.play(Indicate(closure, color=CYAN, scale_factor=1.08), run_time=0.8)
-        self.wait(1.5)
+        self.wait(0.8)
+
+        # F06 — the answer is explicit, but the film keeps the claim scoped.
+        final_line = caption("So the answer is yes — and it contradicts a published theorem.", "#FFD36A")
+        self.add_fixed_in_frame_mobjects(final_line)
+        contradiction = Line([-0.55, 0, 0], [0.55, 0, 0], color="#FF6B6B", stroke_width=5).rotate(PI / 4)
+        contradiction2 = contradiction.copy().rotate(PI / 2)
+        mark = VGroup(contradiction, contradiction2).move_to([0, 1.2, 0])
+        self.play(ReplacementTransform(line5, final_line), Create(mark), run_time=0.8)
+        self.play(Indicate(closure, color=GOLD, scale_factor=1.05), run_time=0.8)
+        self.wait(1.6)
