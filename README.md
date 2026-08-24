@@ -6,9 +6,9 @@ HERAKLES Film Factory is an evidence-bound animation system. It reads a real HER
 
 > ImageGen sets the art direction. Code owns the geometry. Receipts own the truth.
 
-![Latest HERAKLES film](showcase/latest-preview.gif)
+![Context to Event to Decision](docs/media/hero.gif)
 
-**Latest film:** [open the current render](showcase/latest-film.json). This hero is replaced atomically whenever a newer film is promoted.
+**README hero:** Context → Event → Decision. [Open the fail-closed gate](docs/media/gate.gif) · [open the current S6 render](showcase/latest-film.json).
 
 ## First 3D film — preview
 
