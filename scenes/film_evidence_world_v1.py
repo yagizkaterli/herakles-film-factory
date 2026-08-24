@@ -51,8 +51,10 @@ class EvidenceWorldV1(ThreeDScene):
         capsule = Prism(dimensions=[1.55, 2.15, 1.35], fill_color="#8EDCFF", fill_opacity=.13,
                         stroke_color="#C9F4FF", stroke_width=2)
         capsule.move_to([-1.0, .8, 0])
-        capsule_core = Octahedron(radius=.48, fill_color="#BDEFFF", fill_opacity=.36,
-                                  stroke_color="#E9FCFF", stroke_width=2).move_to([-1.0, .8, 0])
+        capsule_core = (Octahedron(edge_length=.68)
+                        .set_fill("#BDEFFF", opacity=.36)
+                        .set_stroke("#E9FCFF", width=2)
+                        .move_to([-1.0, .8, 0]))
         capsule_ring = Torus(major_radius=.59, minor_radius=.022, color="#9BE9FF").rotate(PI / 2, axis=RIGHT).move_to([-1.0, .8, 0])
         self.play(FadeIn(capsule), GrowFromCenter(capsule_core), Create(capsule_ring), run_time=.8)
         capsule_label = Text("CAPSULE", font="DejaVu Sans Mono", font_size=15, color="#AEEBFF")

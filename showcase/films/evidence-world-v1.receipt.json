@@ -1,0 +1,14 @@
+{
+  "schema": "herakles.film.receipt.v1",
+  "film_id": "evidence-world-v1",
+  "scene": "EvidenceWorldV1",
+  "renderer": "manim",
+  "quality": "low",
+  "source": "scenes/film_evidence_world_v1.py",
+  "storyboard": "storyboards/evidence-world-film-v1.json",
+  "remote_render": "herakles-runtime:/root/herakles-film-factory/media/videos/film_evidence_world_v1/480p15/EvidenceWorldV1.mp4",
+  "local_artifact": "showcase/films/evidence-world-v1.mp4",
+  "status": "rendered",
+  "validation": {"python_compile": true, "manim_render": true, "caption_source": "deterministic_code"},
+  "fake_evidence": false
+}
