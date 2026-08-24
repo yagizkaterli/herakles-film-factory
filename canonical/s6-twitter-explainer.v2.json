@@ -1,0 +1,95 @@
+{
+  "schema": "herakles.twitter-explainer.v2",
+  "supersedes": "s6-twitter-explainer.v1.json",
+  "source": "https://alpo.ge/s6.pdf",
+  "audience": "public X/Twitter viewer with no topology background",
+  "voice": "short, concrete, one causal sentence per beat",
+
+  "why_v2": [
+    "v1 asked a question and never answered it: five captions, no 'yes'. The paper's Corollary 1.1 states the answer outright, and the hook closed on construction rather than on the claim.",
+    "v1 never mentioned that the theorem contradicts a published result. That is the paper's most contested content and its own section 10, and it is what a technical reader will react to.",
+    "F04 claimed a hexagon the geometry did not show: a flat RegularPolygon at phi=68 renders edge-on as a line. Caption and frame disagreed, which the scene canon forbids -- geometry is the proof.",
+    "F05 said 'glue the boundary' over a cut. The hexagon faded and the sphere appeared from nothing; the identification the sentence names was never performed on screen."
+  ],
+
+  "measured_constraints": [
+    "one subject per beat",
+    "captions are readable and never carry more than one claim",
+    "shape plus stroke plus color; color is never the only signal",
+    "hold before each camera move",
+    "no decorative infinite motion",
+    "a caption may not claim what the frame does not show"
+  ],
+
+  "captions": [
+    { "frame": "F01", "text": "Can S⁶ carry a complex structure?" },
+    { "frame": "F02", "text": "Build a smooth family of 2-tori." },
+    { "frame": "F03", "text": "Three boundary events shape the family." },
+    { "frame": "F04", "text": "At the cusp, the cycles twist into a hexagonal fibre." },
+    { "frame": "F05", "text": "Glue the boundary: the total space closes as S⁶." },
+    { "frame": "F06", "text": "So the answer is yes — and it contradicts a published theorem." }
+  ],
+
+  "thread": {
+    "note": "Captions are for the film. These are the posted sentences; each stands alone if quoted in isolation.",
+    "posts": [
+      "A 100-year-old question: can the six-sphere carry a complex structure? A new paper says yes, and builds one. Here is the construction, in five moves.",
+      "Start over a thrice-punctured sphere. Every fibre is a complex 2-torus, and the family is given by explicit period functions on the upper half plane.",
+      "Three special points. At each one the family is completed differently — two by logarithmic transforms, one by a toric degeneration.",
+      "At the cusp the fibre becomes a hexagon: dP₆, the del Pezzo surface of degree six, whose anticanonical boundary is a cycle of six (−1)-curves.",
+      "Glue the three pairs of opposite sides. The total space is simply connected with the integral homology of S⁶ — and is diffeomorphic to it.",
+      "The result contradicts a published corollary (CDP20). Section 10 does not wave at the disagreement; it locates the exact step where the two accounts diverge."
+    ]
+  },
+
+  "verification": {
+    "note": "Recorded because the film makes a mathematical claim and the claim was checked against the source rather than assumed. Written by the reviewer, not by the author of the scene.",
+    "reviewer": "Claude (Opus 5), acting under the scene canon's handoff rule: flag mathematical ambiguity, do not edit production code -- with the code fix explicitly requested afterwards",
+    "checked": [
+      {
+        "claim": "the cusp fibre is a hexagon",
+        "source": "Lemma 4.2(iv): 'E_v is dP6, the smooth toric del Pezzo surface of degree six; its toric boundary is the anticanonical cycle of six (-1)-curves'",
+        "verdict": "CONFIRMED"
+      },
+      {
+        "claim": "the hexagon is not decorative -- it is the fan",
+        "source": "Lemma 4.2(iv) proof: 'the six triangles containing 0 are the cones over consecutive pairs of e1, e2, e2-e1, -e1, -e2, e1-e2, each consecutive pair of determinant +1: the complete smooth hexagonal fan of dP6'",
+        "verdict": "CONFIRMED -- the six vertices in the scene are that fan"
+      },
+      {
+        "claim": "gluing identifies opposite sides",
+        "source": "Theorem (2): 'W is obtained from dP6 by identifying the three pairs of opposite sides of its hexagon of (-1)-curves'",
+        "verdict": "CONFIRMED -- the scene now pairs (k, k+3), three pairs"
+      },
+      {
+        "claim": "the total space is S⁶",
+        "source": "Theorem (4): 'X is simply connected and H*(X;Z) = H*(S6;Z) ... consequently X is diffeomorphic to the 6-sphere'",
+        "verdict": "CONFIRMED"
+      },
+      {
+        "claim": "S⁶ carries a complex structure",
+        "source": "Corollary 1.1: 'The six-sphere S6 carries an integrable complex structure'",
+        "verdict": "CONFIRMED -- and absent from v1's captions, which is why F06 exists"
+      }
+    ],
+    "known_simplification": {
+      "what": "The scene draws a REGULAR hexagon (equal 60 degree angles).",
+      "why_it_is_not_exact": "The paper's edge directions are +-e1, +-e2, +-(e1-e2); the fan's hexagon is not metrically regular.",
+      "why_it_is_acceptable": "The fan lives in R^2 and an SL2(Z) change of basis carries it to the regular picture; the combinatorial content -- six cones, consecutive pairs of determinant +1 -- is preserved. The topological claim is exact; the metric shape is a representation.",
+      "stated_because": "the thread claims the visualisation is faithful, and a faithful claim has to name where it simplifies"
+    },
+    "not_checked": [
+      "7 of the paper's 100 pages were read: abstract, theorem, introduction, and sections 4.1-4.5",
+      "Section 10, which carries the contradiction, is known by its heading and not by its body",
+      "The rendered MP4 was not watched; the review used extracted PNG frames and the contact sheet"
+    ]
+  },
+
+  "handoff": {
+    "claude": "Review captions and flag mathematical ambiguity only; production code edits were requested explicitly for the F04/F05 defect and are recorded in the scene file.",
+    "manim": "Implement captions as deterministic fixed-frame overlays; geometry remains the proof.",
+    "imagegen": "Generate atmosphere and material references only; never generate explanatory text."
+  },
+
+  "fake_evidence": false
+}
