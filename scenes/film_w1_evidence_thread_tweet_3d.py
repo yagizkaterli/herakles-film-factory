@@ -12,7 +12,7 @@ class W1EvidenceThreadTweet(Scene):
                                    fill_color="#020409", fill_opacity=0.9).to_edge(DOWN, buff=0.18)
             label = Text(text, font_size=17, color=color, weight=BOLD).move_to(bar)
             g = VGroup(bar, label)
-            self.add_fixed_in_frame_mobjects(g)
+            self.add(g)
             return g
 
         source = RoundedRectangle(corner_radius=0.08, width=1.55, height=2.15, color="#F4C77B",
