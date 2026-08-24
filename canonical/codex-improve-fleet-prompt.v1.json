@@ -1,0 +1,22 @@
+{
+  "schema": "herakles.codex-improve-fleet-prompt.v1",
+  "mission": "Improve HERAKLES and kolonid using one shared Codex observation protocol.",
+  "roles": {
+    "herakles": ["queue pressure", "systemd and journal", "World/LOBI freshness", "output receipts"],
+    "kolonid": ["lease ownership", "duplicate release", "EOF connections", "heartbeat gaps"]
+  },
+  "allocation": "odd worker ids inspect herakles; even worker ids inspect kolonid",
+  "rules": [
+    "read-only observation; do not edit production code or restart services",
+    "measure every number yourself",
+    "one new finding per worker",
+    "include falsifier and exact receipt paths",
+    "return JSON only; no Markdown artifact",
+    "do not inspect Claude or modify Claude lanes"
+  ],
+  "deliverable": {
+    "path_pattern": "02 Projects/Sistem-Insa/raporlar/codex-improve-fleet/worker-<n>.json",
+    "fields": ["worker", "lane", "finding", "evidence", "falsifier", "next_measurement", "fake_evidence"]
+  },
+  "fake_evidence": false
+}
