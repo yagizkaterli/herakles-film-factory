@@ -1,0 +1,194 @@
+{
+  "schema": "herakles.world-v21-film-capture.v1",
+  "capturedAt": "2026-08-24T08:47:57.363Z",
+  "source": {
+    "base": "http://127.0.0.1:3419",
+    "relay": "herakles.live-relay.v2",
+    "snapshotId": "herakles-native:snapshot:1787561104",
+    "createdAt": "2026-08-24T08:45:04.518911+00:00"
+  },
+  "relay": {
+    "cursor": 3125,
+    "recentEvents": 2000,
+    "hasSnapshot": true,
+    "snapshotDigest": "5380bc62c92586131b7e414857436e2d57221b73b00c9476a07ee762aa0ca150"
+  },
+  "agents": [
+    {
+      "id": "codexoda1@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexoda2@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexoda3@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexoda4@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexoda5@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexoda6@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexoda7@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexoda8@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexoda9@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexsef1@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexsef2@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexsef3@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "codexsef4@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "filoorkestrator1@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "filoorkestrator2@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "filoorkestrator3@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "filoorkestrator4@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "filoorkestrator5@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "filoorkestrator6@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "filoorkestrator7@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "filoorkestrator8@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "filoorkestrator9@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "filoorkestrator10@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "filoorkestrator11@herakles",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "herakles-world.service",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "hterm-web.service",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    },
+    {
+      "id": "●",
+      "model": "systemd-unit",
+      "status": "running",
+      "restarts": 0
+    }
+  ],
+  "aggregates": {
+    "agentCount": 27,
+    "working": 27,
+    "idle": 0,
+    "taskCount": 300
+  },
+  "events": [],
+  "privacy": {
+    "rawThoughts": false,
+    "encryptedReasoning": false,
+    "credentials": false,
+    "commandsSent": false
+  },
+  "eventsError": null
+}

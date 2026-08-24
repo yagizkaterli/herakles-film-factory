@@ -5,7 +5,7 @@ import numpy as np
 from manim import *
 
 
-SOURCE = Path(__file__).resolve().parents[1] / "canonical" / "world-bound-film-source.v1.json"
+SOURCE = Path(__file__).resolve().parents[1] / "iterations" / "world-v21-live-capture.json"
 
 
 class WorldBoundAgentsV1(ThreeDScene):
@@ -13,15 +13,20 @@ class WorldBoundAgentsV1(ThreeDScene):
 
     def construct(self):
         source = json.loads(SOURCE.read_text(encoding="utf-8"))
-        agents = source["agents"]
-        stats = source["aggregates"]
+        all_agents = source.get("agents", [])
+        agents = [a for a in all_agents if any(k in (a.get("id") or "").lower() for k in ("codex", "filo", "hterm", "lobi", "bildmaker"))][:15]
+        stats = source.get("aggregates", {})
+        working_count = stats.get("working_selected", stats.get("working", sum(a.get("status") in ("working", "running") for a in agents)))
+        idle_count = stats.get("idle_selected", stats.get("idle", sum(a.get("status") == "idle" for a in agents)))
+        task_count = stats.get("task_count", stats.get("taskCount", "—"))
+        snapshot_id = source.get("source", {}).get("snapshotId", "live")
         self.camera.background_color = "#04070C"
         self.set_camera_orientation(phi=66 * DEGREES, theta=-58 * DEGREES, focal_distance=22)
 
         title = Text("A LIVE WORLD FOR BOUNDED WORK", font="DejaVu Sans Mono", font_size=25,
                      color="#E8E2D7", weight=BOLD)
         title.to_edge(UP, buff=.2)
-        stamp = Text(f"SNAPSHOT {source['snapshot_id'].split(':')[-1]} · READ-ONLY",
+        stamp = Text(f"SNAPSHOT {snapshot_id.split(':')[-1]} · READ-ONLY",
                      font="DejaVu Sans Mono", font_size=10, color="#77909A")
         stamp.to_edge(UP, buff=.02)
         subtitle = Text("LIVE WORKERS · BOUNDED TRACES · RECEIPTS",
@@ -84,9 +89,9 @@ class WorldBoundAgentsV1(ThreeDScene):
         self.play(LaggedStart(*[FadeIn(x) for x in labels], lag_ratio=.025), run_time=.9)
 
         live_text = VGroup(
-            Text(f"{stats['working_selected']} WORKING", font="DejaVu Sans Mono", font_size=14, color="#70E5F2"),
-            Text(f"{stats['idle_selected']} IDLE", font="DejaVu Sans Mono", font_size=14, color="#8A969B"),
-            Text(f"{stats['task_count']} TASKS", font="DejaVu Sans Mono", font_size=14, color="#F0BC67"),
+            Text(f"{working_count} WORKING", font="DejaVu Sans Mono", font_size=14, color="#70E5F2"),
+            Text(f"{idle_count} IDLE", font="DejaVu Sans Mono", font_size=14, color="#8A969B"),
+            Text(f"{task_count} TASKS", font="DejaVu Sans Mono", font_size=14, color="#F0BC67"),
         ).arrange(RIGHT, buff=.28)
         live_text.to_edge(LEFT, buff=.24).shift(DOWN * 1.1)
         self.add_fixed_in_frame_mobjects(live_text)

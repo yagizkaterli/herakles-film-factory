@@ -2,6 +2,15 @@
   "schema": "herakles.film-showcase-index.v1",
   "films": [
     {
+      "id": "world-v21-live-v1",
+      "title": "HERAKLES World v21 — Live Runtime Capture",
+      "status": "live-runtime-candidate",
+      "question": "Can the actual v21 World runtime, rather than a derived illustration, become the film source?",
+      "source": "v21 relay /v2/snapshot + /events; sanitized read-only capture",
+      "render": "showcase/films/world-v21-live-v1.mp4",
+      "receipt": "showcase/films/world-v21-live-v1.receipt.json"
+    },
+    {
       "id": "world-bound-agents-v2",
       "title": "A Live World for Bounded Work",
       "status": "validated-candidate",

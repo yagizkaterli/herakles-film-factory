@@ -1,0 +1,15 @@
+{
+  "schema": "herakles.film.receipt.v1",
+  "film_id": "world-v21-live-v1",
+  "scene": "WorldBoundAgentsV1",
+  "source": "iterations/world-v21-live-capture.json",
+  "snapshot_id": "herakles-native:snapshot:1787561104",
+  "relay": "herakles.live-relay.v2",
+  "capture": {"duration_ms":10000,"events":0,"commands_sent":false,"raw_thoughts":false,"encrypted_reasoning":false},
+  "renderer": "manim",
+  "quality": "low-validation-480p15",
+  "local_artifact": "showcase/films/world-v21-live-v1.mp4",
+  "status": "live-runtime-candidate",
+  "qa": {"capture_adapter_node_check": true,"snapshot_fetched_from_v21_relay": true,"sse_endpoint_reached": true,"sse_events_observed": false},
+  "fake_evidence": false
+}
