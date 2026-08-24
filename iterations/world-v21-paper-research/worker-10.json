@@ -1,0 +1,23 @@
+{
+  "worker": "10",
+  "topic": "generative architecture and growth",
+  "paper": {
+    "title": "Procedural Modeling of Buildings",
+    "authors": [
+      "Pascal Müller",
+      "Peter Wonka",
+      "Simon Haegler",
+      "Andreas Ulmer",
+      "Luc Van Gool"
+    ],
+    "year": 2006,
+    "venue": "ACM Transactions on Graphics 25(3), Proceedings of ACM SIGGRAPH 2006",
+    "doi_or_url": "https://doi.org/10.1145/1141911.1141931"
+  },
+  "primary_url": "https://www.peterwonka.net/Publications/pdfs/2006.SG.Mueller.ProceduralModelingOfBuildings.final.pdf",
+  "relevant_section_or_figure": "Figure 1 caption; §2, Shape Grammar for CG Architecture; §5, A Model for Office Buildings; §9, Conclusion. The paper describes a sequential CGA shape grammar: generate a volumetric mass model first, then derive facade/roof/detail scopes from it, with context-sensitive rules preventing invalid spatial relationships. §2 explicitly contrasts time-oriented parallel growth with sequential rules that describe spatial structure.",
+  "transferable_principle": "Use semantic, context-sensitive hierarchical growth: each coarse parent mass establishes a scope and attributes, and later detail can be generated only as a constrained refinement of that parent and its neighbors. Stochastic variation belongs at controlled rule choices, while context rules preserve adjacency, containment, and non-intersection invariants.",
+  "application_to_world_v21": "Treat a live snapshot as the axiom, then generate the world in two passes. Pass 1 creates a small number of legible macro-zones or terrain masses from EON time, task-parcel topology, worker-trace density, receipt state, and epistemic state. Pass 2 derives bounded child geometry, labels, paths, and state markers from each zone's semantic scope; neighbor/context queries suppress overlaps and keep markers attached to the relevant parcel. Use deterministic seeded stochastic rules for variation across zones, and stop refinement at a camera/LOD budget. This should give terrain an intentional large-scale structure, reduce geometry clutter, strengthen scale through nested masses, and make state differences readable because details inherit the state that produced them.",
+  "falsifier": "A/B the current renderer against the hierarchical/context-sensitive construction on identical snapshots and camera paths. Falsify the principle for v21 if, at equal or lower geometry and frame-time budgets, it does not improve blinded identification of parcel/epistemic states and does not reduce overlap/occlusion or increase recognition of macro-scale zones; also falsify it if deterministic replay cannot preserve the same generated structure for the same snapshot seed.",
+  "fake_evidence": "None. The source is the authors' full paper PDF and its DOI record. The paper provides evidence about procedural building grammars, not HERAKLES WORLD v21; any claimed improvement for v21 is a proposed testable application, not a reported result."
+}

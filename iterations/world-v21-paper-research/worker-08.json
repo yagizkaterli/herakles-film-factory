@@ -1,0 +1,24 @@
+{
+  "worker": "08",
+  "topic": "readable large-scale 3D interfaces",
+  "paper": {
+    "title": "Embodied Navigation in Immersive Abstract Data Visualization: Is Overview+Detail or Zooming Better for 3D Scatterplots?",
+    "authors": [
+      "Yalong Yang",
+      "Maxime Cordeil",
+      "Johanna Beyer",
+      "Tim Dwyer",
+      "Kim Marriott",
+      "Hanspeter Pfister"
+    ],
+    "year": 2021,
+    "venue": "IEEE Transactions on Visualization and Computer Graphics (IEEE VIS/InfoVis 2020 presentation)",
+    "doi_or_url": "https://doi.org/10.1109/TVCG.2020.3030427"
+  },
+  "primary_url": "https://arxiv.org/abs/2008.09941",
+  "relevant_section_or_figure": "Figure 1 (the four navigation conditions); Section 2.1 (Overview+Detail); Section 3.1 (Experimental Conditions); Sections 4.8 and 5.1. The study reports that overview or zoom improves navigation over locomotion alone, that overview can improve accuracy for some tasks, and that an overview can also add context-switching/time cost.",
+  "transferable_principle": "Treat scale as an explicit, user-controlled navigation state: couple a detailed view to a compact, synchronized overview that exposes location and orientation, but make the overview lightweight and task-appropriate because persistent extra context can distract and increase switching cost.",
+  "application_to_world_v21": "Add a compact world overview/minimap synchronized with the live Three.js camera: show the current frustum, EON-time position, task parcels, worker-trace regions, and receipt/state clusters. Let an overview target focus the detail view or smoothly zoom into it, while keeping the overview visually subordinate and optionally collapsible. Use the detail view for readable state labels and receipt/trace inspection; use the overview to preserve scale and orientation when the terrain is flat, geometry is cluttered, or the user moves between distant parcels.",
+  "falsifier": "Reject this construction if a controlled A/B test on representative World v21 tasks (locate a parcel, compare worker states, and inspect a receipt across distant regions) shows no improvement in time-to-locate, state-identification accuracy, or orientation recovery over the current view, or shows a net increase in errors and context-switching despite equivalent rendering and interaction latency.",
+  "fake_evidence": []
+}

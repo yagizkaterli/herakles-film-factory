@@ -1,0 +1,25 @@
+{
+  "worker": "02",
+  "topic": "digital twins and live world mirrors",
+  "paper": {
+    "title": "Visualization of Mobility Digital Twin: Framework Design, Case Study, and Future Challenges",
+    "authors": [
+      "Yueyang Liu",
+      "Xiaolong Tu",
+      "Dawei Chen",
+      "Kyungtae Han",
+      "Onur Altintas",
+      "Haoxin Wang",
+      "Jiang Xie"
+    ],
+    "year": 2023,
+    "venue": "2023 IEEE 20th International Conference on Mobile Ad Hoc and Smart Systems (MASS)",
+    "doi_or_url": "https://doi.org/10.1109/MASS58611.2023.00028"
+  },
+  "primary_url": "https://arxiv.org/abs/2307.09666",
+  "relevant_section_or_figure": "Figure 1 and Sections II-B, III-A, III-B, IV-B, and V-C. The paper separates a mobility digital twin into physical space, digital space, and a communication plane; it then evaluates fidelity and physical-to-digital synchronicity as distinct attributes and discusses fidelity adaptation.",
+  "transferable_principle": "Make the live mirror a layered system with an explicit synchronization/evidence plane: keep the stable world substrate, live semantic entities, and freshness/source/uncertainty signals visually distinct, because geometric fidelity and currentness are separate properties. The communication plane should be legible as state evidence rather than being implied by geometry.",
+  "application_to_world_v21": "Treat the pale terrain and stable landmarks as a subdued world substrate with explicit scale anchors; place worker traces, task parcels, and receipts in a semantic live-entity layer; and reserve a compact, high-salience synchronization layer for snapshot/SSE age, EON time, and epistemic state. Use desaturation, hatching, or reduced opacity for stale or uncertain overlays while leaving the substrate stable. This assigns terrain, scale, live activity, and evidence different visual jobs, reducing geometry clutter and making states readable in the read-only mirror.",
+  "falsifier": "The principle is falsified if a controlled comparison shows no improvement in task completion time or accuracy for identifying live state, freshness, and epistemic status, or if users still confuse detailed geometry with current evidence after the synchronization layer is made explicit.",
+  "fake_evidence": []
+}

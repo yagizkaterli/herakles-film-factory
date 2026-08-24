@@ -1,0 +1,27 @@
+{
+  "worker": "04",
+  "topic": "stigmergic coordination visualization",
+  "paper": {
+    "title": "HuGoS: a virtual environment for studying collective human behavior from a swarm intelligence perspective",
+    "authors": [
+      "Nicolas Coucke",
+      "Mary Katherine Heinrich",
+      "Axel Cleeremans",
+      "Marco Dorigo"
+    ],
+    "year": 2021,
+    "venue": "Swarm Intelligence, volume 15, pages 339–376",
+    "doi_or_url": "https://doi.org/10.1007/s11721-021-00199-1"
+  },
+  "primary_url": "https://link.springer.com/article/10.1007/s11721-021-00199-1",
+  "relevant_section_or_figure": "Section 4.2.3 (Case study 3: stigmergy) defines coordination through observing environmental modifications rather than avatar motion; Section 5.3 and Figure 10 compare cumulative blocks placed at a spill with spill surface area over time. Figure 6 shows the shared block medium from experimenter and participant views.",
+  "transferable_principle": "Make the shared medium carry persistent, inspectable traces of work, and visualize trace accumulation together with the changing task outcome. The observer should be able to infer coordination from durable environmental state—not only from moving agents—with recency and effectiveness visible over time.",
+  "application_to_world_v21": "For each task parcel, render a sparse parcel-centered trace field derived from worker traces and receipts: accumulated work/claim/receipt marks remain after workers move, decay or stratify by age, and use depth, contour density, and luminance to distinguish active, completed, stale, and contested states. Keep geometry sparse enough that the trace field establishes scale and intent; pair it with a small parcel progress/history strip that relates trace accumulation to receipt or completion changes. This should make the read-only mirror legible through the shared task medium while preserving live snapshot/SSE and EON-time semantics.",
+  "falsifier": "Run a controlled A/B observation test on matched World v21 snapshots and live traces, with and without the persistent trace field. The principle is weakened or falsified if observers are not faster or more accurate at identifying the active parcel, its state, and the likely next coordination site, or if gains disappear when agent motion is hidden. Also falsify it if the layer increases clutter or creates state misclassification relative to the current view.",
+  "fake_evidence": [
+    "The paper does not prove that visualizing traces alone improves coordination; it reports a browser-based human-swarm case study and an example trial.",
+    "Figure 10 is one example trial with eight participants and two spills, not a universal law about stigmergic visualization.",
+    "The paper's interpretation that longer block-placement intervals may indicate searching for a good position is explicitly tentative; do not present it as a measured causal result.",
+    "Do not claim that the paper validates a particular Three.js aesthetic, terrain treatment, color palette, or receipt/EON encoding."
+  ]
+}

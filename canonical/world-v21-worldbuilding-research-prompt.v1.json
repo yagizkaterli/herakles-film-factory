@@ -1,0 +1,10 @@
+{
+  "schema":"herakles.world-v21-worldbuilding-research-prompt.v1",
+  "mission":"Find one primary research paper per worker that teaches how to build a readable, living 3D world for HERAKLES WORLD v21.",
+  "source_surface":"HERAKLES-WORLD-v21 actual runtime + Playwright screenshot + current art-direction reference",
+  "rules":["one worker researches exactly one paper","prefer primary papers, proceedings, or author-hosted preprints","do not copy visuals; extract a transferable construction principle","record title, authors, year, stable URL/DOI, exact section or figure, and one falsifiable design implication","JSON output only","do not modify runtime code in research phase","no invented citations or unsupported claims"],
+  "topics":["procedural terrain and world synthesis","digital twins and live world mirrors","embodied agent visualization","stigmergic coordination visualization","epistemic state/material semantics","camera dramaturgy for 3D explanation","information visualization in spatial environments","readable large-scale 3D interfaces","cinematic level-of-detail and scale","generative architecture and growth","uncertainty and provenance visualization","reduced-motion and accessibility in 3D worlds"],
+  "deliverable":"iterations/world-v21-paper-research/worker-<n>.json",
+  "required_fields":["worker","topic","paper","primary_url","relevant_section_or_figure","transferable_principle","application_to_world_v21","falsifier","fake_evidence"],
+  "fake_evidence":false
+}

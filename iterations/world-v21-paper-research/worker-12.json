@@ -1,0 +1,24 @@
+{
+  "worker": 12,
+  "topic": "reduced-motion and accessibility in 3D worlds",
+  "paper": {
+    "title": "Developing an Accessibility Metric for VR Games Based on Motion Data Captured Under Game Conditions",
+    "authors": [
+      "Felix J. Thiel",
+      "Anthony Steed"
+    ],
+    "year": 2022,
+    "venue": "Frontiers in Virtual Reality, Virtual Reality and Human Behaviour",
+    "doi_or_url": "https://doi.org/10.3389/frvir.2022.909357"
+  },
+  "primary_url": "https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2022.909357/full",
+  "relevant_section_or_figure": "Section 3.1 (The Metric) defines a motion profile using Impulsiveness, Energy, Directness, Jerkiness, and Expansiveness; Figure 2 and Tables 1–2 show distinct profiles derived from captured gameplay motion. Sections 5.3.3–5.3.4 caution that means can hide variation and that raw values are not sufficiently human-readable.",
+  "transferable_principle": "Treat motion accessibility as an explicit, user-visible contract: derive a compact profile of the world’s motion demands from runtime traces, and expose separate dimensions rather than hiding them behind a generic device or mode label. The profile should support comparison and user choice, while retaining variability information instead of presenting a single opaque average.",
+  "application_to_world_v21": "For the read-only Three.js mirror, classify observed motion into independently controllable channels—camera travel/rotation, terrain or parallax drift, object animation, and state-update pulses—and publish a small motion profile alongside the live snapshot or parcel receipt. A reduced-motion presentation can then damp or disable the high-impulsiveness/high-jerk channels while preserving EON time, task-parcel state, worker traces, and epistemic-state labels as stable, high-contrast text or badges. Use the profile to compare normal and reduced-motion views and to reveal whether the current clutter and weak scale are causing motion that obscures state readability, without copying the paper’s chart or game visuals.",
+  "falsifier": "Reject this construction principle for v21 if a controlled comparison shows that the motion profile does not predict which channels users disable or that reduced-motion channel controls fail to improve task-state comprehension and comfort without reducing successful navigation/receipt interpretation. Also reject any claim that telemetry-derived profiles alone establish accessibility for disabled users; the paper’s evidence is a prototype based mainly on able-bodied participants.",
+  "fake_evidence": [
+    "The paper does not test a visual reduced-motion setting, camera-animation suppression, or motion-sickness reduction; those are proposed applications to v21, not findings from the study.",
+    "The paper reports a prototype metric and profiles seven VR games from captured motion data; it does not establish universal accessibility thresholds or prove that any one profile is comfortable for a particular impairment.",
+    "The paper itself identifies limitations: button input is not included, means can conceal variation, and several metric values are difficult for lay users to interpret."
+  ]
+}

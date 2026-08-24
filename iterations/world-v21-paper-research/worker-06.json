@@ -1,0 +1,23 @@
+{
+  "worker": "06",
+  "topic": "camera dramaturgy for 3D explanation",
+  "paper": {
+    "title": "A Real-time Cinematography System for Interactive 3D Environments",
+    "authors": [
+      "Christophe Lino",
+      "Marc Christie",
+      "Fabrice Lamarche",
+      "Guy Schofield",
+      "Patrick Olivier"
+    ],
+    "year": 2010,
+    "venue": "Eurographics/ACM SIGGRAPH Symposium on Computer Animation (SCA 2010)",
+    "doi_or_url": "https://doi.org/10.2312/SCA/SCA10/139-148"
+  },
+  "primary_url": "https://diglib.eg.org/bitstreams/86dfafe2-a735-4111-a8c2-937bb1a2808c/download",
+  "relevant_section_or_figure": "Sections 3-5, especially Figure 1 (the event-to-viewpoint/editing pipeline), Section 4 (construction of Director Volumes), and Figures 4-5 (visibility regions and propagation). The paper turns narrative elements into spatial regions of characteristic viewpoints, intersects them with full/partial visibility regions, then filters and transitions between the resulting regions.",
+  "transferable_principle": "Make camera dramaturgy an explicit event-conditioned constraint layer: represent each explanatory event as a set of admissible viewpoint regions defined by semantic intent plus visibility, choose a view from the currently most relevant region, and transition from the previous view with continuity and pacing rules. This is a construction principle for selecting and sequencing views, not a prescription to copy the paper's cinematic look.",
+  "application_to_world_v21": "Treat live snapshot/SSE changes as narrative elements with targets and explanatory intent. For example, an overview volume must keep a parcel, its surrounding terrain, and a scale anchor visible; a trace volume must keep the worker, active edge, and destination legible; a receipt/epistemic-state volume must frame the relevant receipt and its state transition while retaining enough spatial context. Precompute or cheaply approximate these volumes on the walkable ground plane, reject candidates with occlusion or excessive clutter, and rank them by event relevance, state legibility, scale visibility, and continuity with the prior shot. Use EON time to schedule a short lead-in and dwell around important transitions, with a stable overview fallback when no event has sufficient relevance.",
+  "falsifier": "Run task-oriented A/B trials against the current fixed-orbit or nearest-object camera. The principle is falsified for v21 if event-conditioned viewpoint regions do not reduce time or error when users identify worker, parcel, receipt, and epistemic state, or if they increase disorientation/occlusion after controlling for exposure and task difficulty.",
+  "fake_evidence": "None. The source is the official Eurographics proceedings PDF and DOI record; its evidence concerns an automated cinematography system and a 3D canteen-animation demonstration, not HERAKLES WORLD v21. The v21 application is a design transfer and is not presented as experimentally validated by this paper."
+}

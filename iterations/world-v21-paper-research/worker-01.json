@@ -1,0 +1,23 @@
+{
+  "worker": "01",
+  "topic": "procedural terrain and world synthesis",
+  "paper": {
+    "title": "Terrain Generation Using Procedural Models Based on Hydrology",
+    "authors": [
+      "Jean-David Génevaux",
+      "Éric Galin",
+      "Eric Guérin",
+      "Adrien Peytavie",
+      "Bedřich Beneš"
+    ],
+    "year": 2013,
+    "venue": "ACM Transactions on Graphics, 32(4), Article 143 (Proceedings of SIGGRAPH 2013)",
+    "doi_or_url": "https://doi.org/10.1145/2461912.2461996"
+  },
+  "primary_url": "https://perso.liris.cnrs.fr/eric.galin/Articles/2013-river-networks.pdf",
+  "relevant_section_or_figure": "Figure 2; Section 6.2, Terrain Primitives Generation; Section 7, Terrain Tree Definition.",
+  "transferable_principle": "Construct world form hierarchically from a sparse macro-structure that partitions the domain, then synthesize local detail as compact-support primitives combined by explicit blend, replace, and carve operators. Let detail inherit scale and boundaries from the macro-structure instead of applying uniform noise everywhere.",
+  "application_to_world_v21": "Derive a sparse world-structure graph from the live snapshot: nodes are major task parcels or state-transition hubs, and edges are active parcel adjacency or worker flow. Use that graph to define a small number of broad terrain/material regions and landmark bands, with per-region detail and geometry budgets. Bind state markers to graph regions and reserve negative space around them; keep worker traces and receipts as local detail so macro relief establishes scale while semantic states remain readable.",
+  "falsifier": "Render the same snapshot with the current flat/noise-plus-clutter pipeline and with the graph-partitioned construction-tree pipeline at matched camera, object count, and palette. If blinded reviewers cannot more reliably identify world scale and epistemic/task states, or if readability gains disappear when geometry density is held constant, the principle is falsified for v21.",
+  "fake_evidence": "No World v21 improvement is claimed from the paper. The paper supports the hierarchical construction-tree and primitive-composition method only; its hydrologic assumptions, examples, performance figures, and visual results must not be presented as evidence that graph-derived task terrain improves v21."
+}

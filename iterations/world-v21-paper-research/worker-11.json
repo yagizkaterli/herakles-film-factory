@@ -1,0 +1,21 @@
+{
+  "worker": "11",
+  "topic": "uncertainty and provenance visualization",
+  "paper": {
+    "title": "A Framework for Uncertainty-Aware Visual Analytics",
+    "authors": [
+      "Carlos D. Correa",
+      "Yu-Hsuan Chan",
+      "Kwan-Liu Ma"
+    ],
+    "year": 2009,
+    "venue": "Proceedings of the IEEE Symposium on Visual Analytics Science and Technology (IEEE VAST 2009), pp. 51-58",
+    "doi_or_url": "https://doi.org/10.1109/VAST.2009.5332611"
+  },
+  "primary_url": "https://vis.cs.ucdavis.edu/papers/vast09.pdf",
+  "relevant_section_or_figure": "Section 3 (Uncertainty Framework), especially Section 3.5 (Visual Mapping), and the case-study views in Figures 1, 5, 6, and 9. Figure 1 makes the pipeline explicit: model source uncertainty, propagate and aggregate it through transformations, then map both the aggregate and its sources into views. Figures 5-6 pair an overview with a detail view of contributing sensitivities; Figure 9 shows uncertainty carried into a derived projection.",
+  "transferable_principle": "Make provenance-bearing transformations uncertainty-bearing as well: at every transformation, retain both an aggregate uncertainty value and a decomposable attribution to upstream inputs or operations, then expose the aggregate first and the attribution on demand. This preserves a readable overview while allowing an operator to answer which source or step made a result less trustworthy.",
+  "application_to_world_v21": "Treat the live chain snapshot/SSE -> worker trace -> task parcel -> receipt as a provenance pipeline. For each parcel or receipt, store a compact epistemic/uncertainty summary plus attribution links to the snapshot age, producing worker trace, task state transition, and receipt evidence. Use the summary to drive legibility in the Three.js world (for example, visual prominence or state contrast), while a selected object opens a provenance drill-down showing the contributing events and the exact EON-time interval. This is a construction principle, not a reproduction of the paper's scatterplots or marks.",
+  "falsifier": "Replay the same world snapshots with and without attribution-aware uncertainty summaries. The principle is falsified for this world if users cannot identify the upstream event or worker responsible for a deliberately injected stale, missing, or weakly evidenced receipt more accurately or quickly with the drill-down, or if the overview becomes less readable without improving diagnosis.",
+  "fake_evidence": "None. The paper metadata was checked against the DOI/bibliographic record, and the construction claims were taken from the author-hosted PDF; no fabricated citation, figure, user study result, or world-v21 measurement is asserted."
+}

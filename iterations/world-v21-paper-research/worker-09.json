@@ -1,0 +1,24 @@
+{
+  "worker": "Codex research worker 09",
+  "topic": "cinematic level-of-detail and scale",
+  "paper": {
+    "title": "Real-Time, Continuous Level of Detail Rendering of Height Fields",
+    "authors": [
+      "Peter Lindstrom",
+      "David Koller",
+      "William Ribarsky",
+      "Larry F. Hodges",
+      "Nickolas Faust",
+      "Gregory A. Turner"
+    ],
+    "year": 1996,
+    "venue": "Proceedings of the 23rd annual conference on Computer graphics and interactive techniques (SIGGRAPH 1996), pp. 109-118",
+    "doi_or_url": "https://doi.org/10.1145/237170.237217"
+  },
+  "primary_url": "https://repository.gatech.edu/entities/publication/39f1dca8-ec3c-46d4-a26c-d6ceeab70a3a",
+  "relevant_section_or_figure": "Section 3.1, Continuous Level of Detail; Section 4, Simplification Criteria; Figure 1, which compares terrain tessellations at projected geometric-error thresholds of one and four pixels.",
+  "transferable_principle": "Drive geometry complexity from a continuous, user-controlled screen-space error budget rather than from raw world distance alone: select a coarse spatial LOD, refine locally only where projected deviation exceeds the pixel threshold, and transition continuously as the view changes.",
+  "application_to_world_v21": "Partition terrain and decorative geometry into spatial blocks and assign each block a projected-error budget based on the active camera. Collapse distant low-salience clutter aggressively while retaining the broad terrain silhouette and a small set of scale landmarks. Give worker traces, task parcels, receipts, EON-time cues, and epistemic-state markers a separate minimum screen-size/readability floor so LOD can simplify their supporting geometry without erasing their meaning; use morphing or another continuous transition at threshold crossings to reduce popping during fly-throughs.",
+  "falsifier": "The transfer is falsified if matched camera fly-throughs with a fixed screen-space budget produce no measurable reduction in clutter or improvement in perceived scale/readability at equal triangle cost, or if semantic state markers remain unreadable despite meeting their declared pixel floor. That result would show that this terrain-oriented error criterion is insufficient for World v21's semantic and cinematic demands.",
+  "fake_evidence": []
+}

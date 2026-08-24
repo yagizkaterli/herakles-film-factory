@@ -1,0 +1,7 @@
+You are Codex research worker 08. Research exactly ONE primary research paper for this topic: readable large-scale 3D interfaces.
+
+Context: actual HERAKLES WORLD v21 is a running Three.js read-only world mirror with live snapshot/SSE, worker traces, task parcels, receipts, EON time and epistemic states. Current visual problem: flat pale terrain, cluttered geometry, weak scale, unreadable states.
+
+Find a real paper using primary sources (author page, arXiv, ACM/IEEE/Eurographics proceedings). Use curl/web tools if available. Do not invent citations. Extract one transferable construction principle, not a visual copy.
+
+Write JSON only to /root/vault-homebase/02 Projects/Sistem-Insa/raporlar/world-v21-paper-research/worker-08.json with fields worker,topic,paper {title,authors,year,venue,doi_or_url},primary_url,relevant_section_or_figure,transferable_principle,application_to_world_v21,falsifier,fake_evidence. Do not modify runtime code.

@@ -1,0 +1,43 @@
+{
+  "schema": "herakles.world-v21-visual-constitution.v1",
+  "status": "research-synthesis-before-build",
+  "inputs": {"papers":12,"workers":12,"source_surface":"HERAKLES-WORLD-v21 actual runtime","hterm_rollouts_read":12},
+  "thesis": "Build a living world as a synchronized, evidence-bearing habitat: substrate, entities, traces, uncertainty, and camera all remain legible as different layers.",
+  "non_negotiables": [
+    "World substrate and live semantic entities are visually distinct.",
+    "Verified, provisional, unresolved, stale, and uncertain states are material behaviors, not color labels only.",
+    "Stigmergic coordination persists in the environment; moving workers alone are insufficient.",
+    "Camera is an event-conditioned visibility system, not a decorative orbit.",
+    "Scale is a navigation state with overview/detail continuity.",
+    "Geometry grows hierarchically from semantic parents and never invents canonical facts.",
+    "Every visible transformation retains provenance and uncertainty attribution.",
+    "Reduced motion is an explicit readable mode, not a hidden fallback."
+  ],
+  "layers": [
+    {"id":"substrate","principles":["macro terrain first; local detail inherits boundaries","continuous screen-space-error LOD","world silhouette and horizon establish scale"]},
+    {"id":"entities","principles":["small selected state tuple drives motifs","semantic hierarchical growth","worker identity continuity"]},
+    {"id":"traces","principles":["persistent environmental traces","recency and effectiveness visible","route filaments are causal, not decoration"]},
+    {"id":"epistemics","principles":["material history is indexical","aggregate uncertainty first; attribution on demand","freshness/source plane separate from geometry"]},
+    {"id":"camera","principles":["event-conditioned admissible viewpoints","target/occluder optimization","overview/detail synchronized"]},
+    {"id":"accessibility","principles":["motion profile measured and visible","reduced-motion preserves relationships","user-controlled scale and camera state"]}
+  ],
+  "implementation_order": [
+    "P0 fix runtime shader/CORS/React blockers (done and Playwright-verified)",
+    "P1 replace flat terrain with macro substrate + sparse local detail + horizon scale",
+    "P2 implement material state grammar: provisional/verified/unresolved/stale/uncertain",
+    "P3 make traces persistent and causal; animate only changes, not perpetual noise",
+    "P4 add event-conditioned camera targets and overview/detail navigation",
+    "P5 grow architecture from semantic parents with collision/containment invariants",
+    "P6 add uncertainty/provenance and reduced-motion QA",
+    "P7 capture real v21 runtime and build film from the same event timeline"
+  ],
+  "acceptance_gates": [
+    "outsider can name substrate, worker, trace, and receipt in under 30 seconds",
+    "camera can show target without occlusion at three scales",
+    "a state change alters material/trace according to source evidence",
+    "no visual object exists without a source id or explicit art-direction role",
+    "reduced-motion frame preserves causal relationships",
+    "Playwright screenshot has canvas=1, page errors=0, relay snapshot and SSE CORS pass"
+  ],
+  "fake_evidence": false
+}

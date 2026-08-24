@@ -1,0 +1,21 @@
+{
+  "worker": "07",
+  "topic": "information visualization in spatial environments",
+  "paper": {
+    "title": "UrbanVR: An immersive analytics system for context-aware urban design",
+    "authors": [
+      "Chi Zhang",
+      "Wei Zeng",
+      "Ligang Liu"
+    ],
+    "year": 2021,
+    "venue": "Computers & Graphics, 99, 128-138",
+    "doi_or_url": "https://doi.org/10.1016/j.cag.2021.07.006"
+  },
+  "primary_url": "https://arxiv.org/abs/2107.00227",
+  "relevant_section_or_figure": "Section 4.4, Viewpoint Optimization; Figures 5-6. The authors formalize a target view with an energy function combining target-distance fit (E1), camera obstruction avoidance (E2), and target view-occlusion minimization (E3); Figure 6 contrasts the individual terms with their combined result.",
+  "transferable_principle": "In a spatial visualization, treat legibility as a view-construction problem: define semantic targets and occluders using cheap spatial abstractions, then optimize the camera (or presentation layer) for a bounded target distance, unobstructed placement, and minimal target occlusion while preserving context. Do not rely on a static camera or global translucency to solve clutter.",
+  "application_to_world_v21": "For the currently selected task parcel, receipt, worker trace, or epistemic-state cluster, build a lightweight proxy set from the live snapshot/SSE scene and score candidate camera poses against (1) target scale in the viewport, (2) camera-inside-geometry safety, and (3) occlusion by terrain/geometry/other parcels. Keep the rest of the world as context, but use semantic LOD proxies and an anchored state panel/label for the target. Recompute the framing when selection or EON time changes; this directly addresses pale terrain, weak scale, clutter, and unreadable state without copying UrbanVR's appearance.",
+  "falsifier": "Reject this principle if a controlled A/B test on the same World v21 identification task shows that optimized framing does not improve target-state identification time, target readability, or measured occlusion rate over the baseline camera, or if users consistently prefer manual navigation after equivalent practice.",
+  "fake_evidence": "None. The paper citation, section/figure references, and study claim are taken from the primary arXiv manuscript and its linked journal record; no World v21 result is presented as already observed."
+}
