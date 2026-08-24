@@ -148,6 +148,17 @@
       "render": "docs/media/d-CTXC-06-hero.mp4",
       "preview": "docs/media/hero.gif",
       "receipt": "showcase/films/d-CTXC-06.receipt.json"
+    },
+    {
+      "id": "s6-claude-f06-rebuilt",
+      "title": "S6 Construction — Answer and Disagreement",
+      "status": "deterministic-render",
+      "question": "What does the paper claim, and where does it disagree with a published theorem?",
+      "source": "https://alpo.ge/s6.pdf + Claude F06 review",
+      "render": "showcase/films/s6-claude-f06-rebuilt.mp4",
+      "preview": "showcase/films/s6-claude-f06-rebuilt-preview.gif",
+      "receipt": "showcase/films/s6-claude-f06-rebuilt.receipt.json",
+      "tweet": "canonical/s6-tweet-variant-a.v1.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"

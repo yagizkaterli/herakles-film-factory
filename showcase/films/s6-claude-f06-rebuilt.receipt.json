@@ -1,0 +1,26 @@
+{
+  "schema": "herakles.film-receipt.v1",
+  "id": "s6-claude-f06-rebuilt",
+  "title": "S6 Construction — Answer and Disagreement",
+  "status": "deterministic-render",
+  "source": "https://alpo.ge/s6.pdf",
+  "caption_contract": "canonical/s6-twitter-explainer.v2.json",
+  "tweet": "canonical/s6-tweet-variant-a.v1.json",
+  "scene": "scenes/film_s6_universe_rebuild_3d.py",
+  "render": {
+    "engine": "Manim Community v0.20.1",
+    "asset": "showcase/films/s6-claude-f06-rebuilt.mp4",
+    "preview": "showcase/films/s6-claude-f06-rebuilt-preview.gif",
+    "sha256": {
+      "mp4": "85e99cb2e0f7ba3a1957f2105279d615476e57f530187538527bb33fed315c0e",
+      "preview": "aa524642c720367d2b3f7a8cfaf987625f554b8f93e37819ae6ff56d58dabb02"
+    },
+    "duration_seconds": 19.533008,
+    "resolution": "854x480"
+  },
+  "qa": {
+    "f06": "answer and published-theorem disagreement visibly captioned",
+    "paper_framing": "paper claims yes",
+    "fake_evidence": false
+  }
+}
