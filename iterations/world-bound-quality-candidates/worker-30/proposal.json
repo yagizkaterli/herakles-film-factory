@@ -1,0 +1,42 @@
+{
+  "worker": "worker-30",
+  "axis": "scale cues",
+  "finding": {
+    "statement": "The scene contains several world scales, but the render gives no explicit camera-scale transition between them.",
+    "impact": "The bounded habitat reads as a static diagram: the viewer can see the floor, agent ring, and task rings, but is not cued when the visual focus expands from workers to the larger task field."
+  },
+  "candidate_change": {
+    "atomic_change": "Insert one 0.6-second camera pull-back immediately before the task-orbit reveal at the current line 97 transition (after the worker pulses and before Create(task_orbits)). Hold the wider framing through the receipt end state.",
+    "implementation_intent": "Use a single calibrated zoom-out, approximately 0.80 of the current camera zoom, without changing source data, object radii, colors, labels, or overlay placement.",
+    "success_condition": "The pull-back visibly establishes the nested relationship between the 35-tile bounded field, the agent ring, and all three task orbits while keeping the fixed title, live counts, task text, receipt label, and footer legible."
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:18-19",
+      "observation": "The camera orientation and focal_distance=22 are set once; no later camera transform or zoom call exists in the scene."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:30-38",
+      "observation": "The habitat floor is a 7 by 5 grid (35 tiles) spanning x=-6..6 and z=-4..4."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:49-53, 92-104",
+      "observation": "Agent positions use radii 2.10, 2.48, and 2.86; task orbits use radii 3.70, 4.25, and 4.80. These scale layers are encoded but not introduced by a framing cue."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "Measured render metadata: 854x480, 15 fps, 172 frames, 11.466016 seconds. Sampled frames 30, 60, 90, 120, 150, and 171 retain the same camera perspective while content is added; there is no visible pull-back at the task-orbit reveal."
+    }
+  ],
+  "falsifier": "Reject this finding and candidate if a source or frame-level inspection shows an existing camera zoom/framing change at the task-orbit transition, or if the current render already communicates the three scale layers without a framing transition.",
+  "next_measurement": {
+    "procedure": "Render the candidate at the same 854x480/15 fps settings. Compare consecutive frames across the 0.6-second pull-back and sample the pre-transition, transition midpoint, task-orbit reveal, and final frames.",
+    "checks": [
+      "Projected worker-node diameter decreases monotonically during the pull-back.",
+      "All 35 floor tiles, 15 agent nodes, and 3 task orbits remain inside frame bounds after the move.",
+      "Fixed-frame title, counts, task text, receipt label, and footer do not scale or move with the world.",
+      "The wider final framing remains stable through the receipt end state."
+    ]
+  },
+  "fake_evidence": false
+}

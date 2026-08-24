@@ -1,0 +1,36 @@
+{
+  "worker": "worker-23",
+  "axis": "narrative beat ordering",
+  "finding": "The opening delays the film's primary referent. The title/stamp appears first, then the habitat floor is built for about 0.9 seconds, and only after that is the WORLD root and label introduced. In the rendered sample, the opening is title-only at approximately 0.0 seconds, floor-only at approximately 1.0 second, and the WORLD anchor is visible by approximately 2.0 seconds. The first beat can therefore read as an unanchored surface before it reads as a bounded habitat.",
+  "candidate_change": "Reorder only the opening beats: title/stamp -> WORLD root, ring, and label -> habitat floor -> agent limbs/nodes/labels -> aggregate status -> activity pulses -> task parcels -> receipt -> closing footer. Concretely, move the existing root construction/play block (source lines 40-47) before the existing floor construction/play block (source lines 30-38); do not change source data, camera, labels, counts, or later beats.",
+  "evidence": [
+    {
+      "kind": "source_order",
+      "source": "scenes/film_world_bound_agents_v1.py:28-47",
+      "observation": "The title/stamp play is followed by the floor play, and the WORLD root/label play follows the floor play. The source run times are 0.55s, 0.90s, and 0.65s respectively."
+    },
+    {
+      "kind": "render_metadata",
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "ffprobe reports H.264, 854x480, 15 fps, 172 frames, and 11.466016 seconds."
+    },
+    {
+      "kind": "visual_sampling",
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "One-second frame sampling showed frame 1 as title over black, frame 2 as the tiled floor while the title is still resolving, and frame 3 as the floor with the WORLD anchor/label."
+    },
+    {
+      "kind": "canonical_intent",
+      "source": "canonical/world-bound-film-source.v1.json:27-29",
+      "observation": "The canonical claim is a read-only habitat with live workers, bounded traces, and receipts; the proposed order makes the habitat anchor precede its population and traces."
+    },
+    {
+      "kind": "asset_resolution",
+      "source": "requested showcase/films/WorldBoundAgentsV1.mp4",
+      "observation": "That path is absent in the workspace. The same-named rendered asset used for QA is present at the media/videos path above; no evidence is claimed from the absent showcase path."
+    }
+  ],
+  "falsifier": "Reject this candidate if a candidate render does not make the WORLD root/label the first clearly readable habitat anchor, or if blinded reviewers show no improvement in identifying the opening as a bounded habitat. Also reject it if moving the root before the floor causes occlusion or changes any later beat, aggregate count, or privacy boundary.",
+  "next_measurement": "Render the candidate to a non-production QA artifact, then record at 15 fps the first frame where the WORLD root and label are simultaneously readable, plus the first frames for agents, task parcels, and RECEIPT. Compare those timestamps with the baseline render, and verify the visible aggregates remain 13 WORKING, 2 IDLE, and 60 TASKS and that no forbidden fields appear.",
+  "fake_evidence": false
+}

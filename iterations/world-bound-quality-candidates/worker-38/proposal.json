@@ -1,0 +1,54 @@
+{
+  "worker": "worker-38",
+  "axis": "caption safe area",
+  "finding": "The fixed-frame captions are placed against the delivery-frame edges instead of inside a declared safe area. The source uses buff=.02 for the snapshot stamp (line 26) and footer (line 118), buff=.18/.24 for the right/left metric captions (lines 82 and 107), and places the receipt label at buff=.22 (line 113). In the matching repo render, the 1.0-second frame shows the snapshot stamp nearly touching the top edge; the 10.8-second frame shows the footer nearly touching the bottom edge and the metric captions close to both side edges. This is a safe-area risk even though the text remains visually present in the sampled frames.",
+  "candidate_change": {
+    "type": "layout-only candidate",
+    "scope": "fixed-frame caption placement only; no production files changed",
+    "safe_area": {
+      "rule": "Keep every caption bounding box at least 5% inside each corresponding frame edge.",
+      "target_render": "854x480",
+      "minimum_pixels": {
+        "left": 43,
+        "right": 43,
+        "top": 24,
+        "bottom": 24
+      }
+    },
+    "placement": [
+      "Reflow the snapshot stamp and title as a two-line top group whose measured bounding boxes both clear the 24 px top boundary and do not overlap.",
+      "Move the left and right metric captions inward to the same horizontal safe boundary while preserving their current text, values, colors, and vertical beat.",
+      "Reflow WORLD, RECEIPT, and the footer as a bottom caption stack with explicit vertical gaps; keep the footer at least 24 px above the bottom edge and keep all three boxes non-overlapping.",
+      "Add a QA-only bounding-box assertion for the caption group at 854x480; do not add source fields, new claims, or production output files."
+    ]
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:21-28",
+      "observation": "The title uses to_edge(UP, buff=.2), while the snapshot stamp uses to_edge(UP, buff=.02) and both are registered as fixed-in-frame objects."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:80-84,105-109",
+      "observation": "The left live-count caption uses LEFT buff=.24 and the right task caption uses RIGHT buff=.18; both are fixed in frame."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:112-120",
+      "observation": "RECEIPT uses DOWN buff=.22 and the footer uses DOWN buff=.02, creating a bottom-edge stack without a declared safe-area or non-overlap check."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:6-9,27-29",
+      "observation": "The canonical source authorizes only the listed operational fields and states the read-only habitat claim; it contains no caption-layout exception or additional visual data. fake_evidence is false."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "ffprobe measured H.264 video at 854x480, 15 fps, 172 frames, and 11.466016 seconds; SHA-256 is 77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153. Visual QA of extracted frames at 1.0 s and 10.8 s found the top stamp, bottom footer, and side captions close to their frame edges."
+    },
+    {
+      "source": "showcase/films/WorldBoundAgentsV1.mp4",
+      "observation": "The requested showcase path is absent in the workspace; no evidence is claimed from that path. The matching render under media/videos was used and is identified above."
+    }
+  ],
+  "falsifier": "Render the candidate at the existing 854x480, 15 fps settings and reject this finding if, at every caption-visible QA frame, all caption bounding boxes already clear the 5% boundaries with at least a 4 px measured interior margin, no caption boxes overlap, and text legibility is not worse than the baseline. Also reject it if the inward reflow clips, overlaps, or materially reduces readability of any existing caption.",
+  "next_measurement": "Render only the candidate to a temporary non-production output. At 1.0 s, 5.0 s, and 10.8 s, record the pixel bounding box and edge margin for the title, snapshot stamp, left metric, right task caption, WORLD, RECEIPT, and footer; check pairwise overlap and full-string visibility at 854x480. Compare those measurements with the baseline artifact above and retain the candidate only if every caption clears the 5% safe area without a legibility regression.",
+  "fake_evidence": false
+}

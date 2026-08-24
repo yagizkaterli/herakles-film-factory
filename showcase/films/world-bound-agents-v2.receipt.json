@@ -1,0 +1,29 @@
+{
+  "schema": "herakles.film.receipt.v1",
+  "film_id": "world-bound-agents-v2",
+  "scene": "WorldBoundAgentsV1",
+  "source_manifest": "canonical/world-bound-film-source.v1.json",
+  "snapshot_id": "herakles-production:snapshot:0:1787556209107",
+  "renderer": "manim",
+  "quality": "low-validation-480p15",
+  "local_artifact": "showcase/films/world-bound-agents-v2.mp4",
+  "status": "validated-candidate",
+  "quality_fleet": {
+    "requested": 40,
+    "direct_codex_processes_started": 40,
+    "proposal_json": 40,
+    "schema_valid": 31,
+    "hterm_rollout_summaries_read": 40,
+    "production_files_changed_by_workers": false
+  },
+  "atomic_changes_applied": [
+    "opening thesis moved to first frame",
+    "worker labels moved to two screen-space rails",
+    "habitat floor de-emphasized",
+    "aggregate task count represented by one parcel instead of three implied categories",
+    "deterministic trace dot travels from World root to a worker",
+    "working/idle/task metrics use distinct semantic colors"
+  ],
+  "qa": {"python_compile": true, "manim_render": true, "frame_readability_checked": true, "privacy_boundary": "no raw thoughts or encrypted reasoning"},
+  "fake_evidence": false
+}

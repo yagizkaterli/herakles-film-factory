@@ -1,0 +1,42 @@
+{
+  "worker": "worker-08",
+  "axis": "worker node legibility",
+  "finding": "Worker labels are rendered at font_size 7.5 and truncated to 17 characters (scenes/film_world_bound_agents_v1.py:66-68). All labels are then added as fixed-in-frame objects while retaining their projected node-adjacent positions (scenes/film_world_bound_agents_v1.py:77-78). In the available 854x480 render, the labels around the habitat center are visibly too small and overlap, so individual worker nodes cannot be read reliably.",
+  "candidate_change": {
+    "type": "layout-only candidate",
+    "change": "Replace the node-adjacent label placement with two fixed screen-space label rails (left and right), keep one label per worker, use the full compact worker id where it fits, increase label font size to 11, and draw a thin leader line from each rail entry to its worker node. Preserve the existing node colors for working versus idle and do not add any unobserved worker data.",
+    "scope": "worker node legibility only; production scene file is untouched",
+    "rationale": "Screen-space rails provide stable separation at the existing camera angle and resolution; a larger type size improves readability without increasing the current center-cluster collisions."
+  },
+  "evidence": [
+    {
+      "kind": "source_static_check",
+      "path": "scenes/film_world_bound_agents_v1.py",
+      "lines": "66-68, 77-78",
+      "observed": "short[:17], font_size=7.5, and fixed-in-frame label registration"
+    },
+    {
+      "kind": "canonical_data_check",
+      "path": "canonical/world-bound-film-source.v1.json",
+      "observed": "15 selected agents (13 working, 2 idle); source privacy allows agent id and status; fake_evidence is false"
+    },
+    {
+      "kind": "render_metadata",
+      "path": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observed": "ffprobe: 854x480, 11.466016 seconds, 172 frames"
+    },
+    {
+      "kind": "visual_qa",
+      "frame": "5.0 seconds extracted from the available render",
+      "observed": "the worker labels form a tiny, overlapping band around the center; individual ids are not reliably legible at the delivered 854x480 size"
+    },
+    {
+      "kind": "requested_path_check",
+      "path": "showcase/films/WorldBoundAgentsV1.mp4",
+      "observed": "not present in the workspace; QA used the matching render found under media/videos"
+    }
+  ],
+  "falsifier": "Render the candidate from the unchanged canonical snapshot at 854x480 and inspect the label-visible frames. Falsify the candidate if any of the 15 labels is clipped, if any two label boxes overlap, or if a label cannot be identified without pausing or enlarging the video.",
+  "next_measurement": "Render only the candidate variant to a temporary media directory at the same 480p15 settings. Extract one frame after labels settle and one during the pulse sequence; record frame dimensions, count the 15 label boxes, check pairwise overlap, and compare readable-id count against the current render. Keep the temporary render outside production paths.",
+  "fake_evidence": false
+}

@@ -1,0 +1,31 @@
+{
+  "worker": "worker-01",
+  "axis": "opening proposition clarity",
+  "finding": "The opening establishes the name and mood, but not the full proposition soon enough. The first title says \"HERAKLES WORLD · LIVE HABITAT\" and the smaller stamp says \"READ-ONLY\"; the canonical contrast \"not a dashboard\" and the bounded-traces/receipts idea are only made explicit by the late footer and receipt label.",
+  "candidate_change": "In the first title beat, replace the title with \"THE WORLD IS A READ-ONLY HABITAT\" and add a concise subtitle \"LIVE WORKERS · BOUNDED TRACES · RECEIPTS\". Keep the canonical snapshot stamp, agent geometry, counts, and later receipt/footer unchanged. Use only wording already supported by the canonical film claim; do not add new data or geometry.",
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:21-28",
+      "observation": "The first text rendered is \"HERAKLES WORLD · LIVE HABITAT\" plus a small \"SNAPSHOT ... · READ-ONLY\" stamp, faded in over 0.55 seconds."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:30-38",
+      "observation": "The next 0.9-second animation is the habitat floor, before the film introduces the world root, workers, task parcels, or receipt."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:111-120",
+      "observation": "\"RECEIPT\" and \"A LIVE SNAPSHOT IS A PLACE · NOT A CHAT SCREEN\" are rendered near the end, so the strongest proposition language is delayed."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:27-29",
+      "observation": "The canonical film claim is a read-only habitat where live workers leave bounded traces and receipts; the source also marks fake_evidence as false."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "QA render probe: 854x480, 15 fps, 172 frames, 11.466016 seconds. Frame checks at 0.2s, 1.0s, and 2.0s show the title/stamp, then the floor, then the WORLD root respectively. The requested showcase/films/WorldBoundAgentsV1.mp4 path is absent; this existing render is the inspected same-name artifact."
+    }
+  ],
+  "falsifier": "After viewing only the first 2.0 seconds, an independent viewer can accurately state both that this is a read-only habitat rather than a dashboard/chat screen and that live workers leave bounded traces/receipts, without relying on later frames. If that comprehension is already reliable, the opening-clarity finding is falsified.",
+  "next_measurement": "Render the candidate and run a blinded first-2.0-second comprehension check with at least 5 viewers. Record whether each viewer mentions the read-only habitat proposition and bounded traces/receipts; accept the candidate only if at least 4 of 5 do so and no viewer reports the opening text as unreadable or overcrowded.",
+  "fake_evidence": false
+}

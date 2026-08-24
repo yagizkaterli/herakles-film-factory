@@ -1,0 +1,45 @@
+{
+  "worker": "worker-39",
+  "axis": "film receipt completeness",
+  "finding": "The WorldBoundAgentsV1 render contains the visual receipt beat, but the requested showcase delivery is incomplete: showcase/films/WorldBoundAgentsV1.mp4 and showcase/films/WorldBoundAgentsV1.receipt.json are absent. The render exists only under media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4, and the current showcase index/pointer do not reference this film.",
+  "candidate_change": {
+    "action": "At promotion time, package the verified render as showcase/films/WorldBoundAgentsV1.mp4 and add a matching machine-readable receipt sidecar plus showcase index reference, carrying the source hash, scene hash, render hash, dimensions, fps, frame count, duration, and QA results.",
+    "scope": "receipt packaging and showcase linkage only; no production scene or canonical source change",
+    "production_files_touched": []
+  },
+  "evidence": [
+    {
+      "check": "expected showcase artifact",
+      "result": "FAIL",
+      "details": "Path does not exist: showcase/films/WorldBoundAgentsV1.mp4"
+    },
+    {
+      "check": "expected receipt sidecar",
+      "result": "FAIL",
+      "details": "Path does not exist: showcase/films/WorldBoundAgentsV1.receipt.json"
+    },
+    {
+      "check": "render artifact",
+      "result": "PASS",
+      "details": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4; sha256=77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153; 854x480; 15 fps; 172 frames; 11.466016 seconds; 806189 bytes"
+    },
+    {
+      "check": "source and scene parse",
+      "result": "PASS",
+      "details": "Canonical JSON parses; scene AST parses. canonical sha256=8e6049e7f72d8f7553a665c3dc7b1e65b81d3a9b68e8fe2106a1af391e04e503; scene sha256=9a8431c53d797377c9434c538ad2d33533c28fa5c11584ac2a5f9666c2897491"
+    },
+    {
+      "check": "visual receipt beat",
+      "result": "PASS",
+      "details": "Frame inspection of the rendered contact sheet (frames 0, 60, 120, 171) shows RECEIPT in the final frame, the footer A LIVE SNAPSHOT IS A PLACE · NOT A CHAT SCREEN, the snapshot stamp, and 13 WORKING · 2 IDLE · 60 TASKS. The scene source creates these at lines 111-120."
+    },
+    {
+      "check": "showcase linkage",
+      "result": "FAIL",
+      "details": "showcase/film-index.json and showcase/latest-film.json parse successfully but neither references WorldBoundAgentsV1; both current receipt fields are null."
+    }
+  ],
+  "falsifier": "Recheck the exact showcase paths and parsed index after promotion. This finding is falsified if showcase/films/WorldBoundAgentsV1.mp4 exists, its sha256 matches the promoted render, a parseable receipt sidecar records the same render/source/scene identities and QA measurements, and the showcase index references the same artifact and receipt.",
+  "next_measurement": "Run stat, sha256sum, ffprobe, and JSON parsing on the promoted showcase MP4, receipt sidecar, and index; compare the recorded render hash, dimensions, fps, frame count, duration, source hash, and scene hash against the measured values above.",
+  "fake_evidence": false
+}

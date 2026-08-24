@@ -2,6 +2,15 @@
   "schema": "herakles.film-showcase-index.v1",
   "films": [
     {
+      "id": "world-bound-agents-v2",
+      "title": "A Live World for Bounded Work",
+      "status": "validated-candidate",
+      "question": "Can a real HERAKLES World snapshot make live workers, bounded traces, and receipts understandable without exposing hidden reasoning?",
+      "source": "canonical/world-bound-film-source.v1.json; 40-worker atomic quality fleet; HTERM rollout QA",
+      "render": "showcase/films/world-bound-agents-v2.mp4",
+      "receipt": "showcase/films/world-bound-agents-v2.receipt.json"
+    },
+    {
       "id": "evidence-world-v1",
       "title": "A Trace Becomes a World",
       "status": "rendered-v1",

@@ -1,0 +1,35 @@
+{
+  "worker": "worker-02",
+  "axis": "closing proposition clarity",
+  "finding": {
+    "statement": "The closing footer is visible, but its proposition is indirect: it defines the World by contrasting it with a chat screen instead of stating that it is a read-only habitat whose workers leave bounded traces and receipts.",
+    "current_copy": "A LIVE SNAPSHOT IS A PLACE · NOT A CHAT SCREEN"
+  },
+  "candidate_change": {
+    "scope": "candidate copy only; no production file change",
+    "replace_current_footer_with": "THE WORLD IS A READ-ONLY HABITAT · WORKERS LEAVE BOUNDED TRACES AND RECEIPTS",
+    "rationale": "Use the canonical film claim directly in the closing proposition while preserving the existing single-footer treatment and timing."
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:116-120",
+      "observation": "The rendered footer is exactly the current_copy and is written immediately before the final 1.0 second hold."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:27-29",
+      "observation": "The source film_claim explicitly names a read-only habitat, bounded traces, and receipts; the source also records fake_evidence as false."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "The available render was inspected at 854x480, 15 fps, 172 frames, and 11.466016 seconds. The closing footer is visible in the final sampled frame around 10 seconds; the requested showcase path was absent, so this repo render is the only video evidence used.",
+      "sha256": "77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153"
+    }
+  ],
+  "falsifier": "Reject this candidate if the replacement footer is cropped or collides with RECEIPT at 854x480, or if a blinded viewer cannot paraphrase the World as a read-only habitat with bounded worker traces and receipts.",
+  "next_measurement": {
+    "render": "Render the candidate at the existing 854x480, 15 fps profile.",
+    "visual_qa": "Inspect the final 1.0 second at full-frame and verify the entire footer is readable, centered, and separated from RECEIPT.",
+    "comprehension_qa": "Show the final frame to 5 blinded reviewers for 2 seconds and ask: What is the World? Pass if at least 4 mention both the read-only habitat and worker traces/receipts."
+  },
+  "fake_evidence": false
+}

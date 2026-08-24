@@ -1,0 +1,48 @@
+{
+  "worker": "worker-05",
+  "axis": "depth hierarchy",
+  "finding": "The film has radial nesting, but it does not establish a readable camera-facing depth order between the World, agent nodes, and task parcels. Agent positions use only two index-derived y values, task geometry shares one y plane, and all labels are promoted to a fixed-in-frame layer.",
+  "candidate_change": {
+    "scope": "candidate only; do not modify production files",
+    "change": "Place the existing source-bound objects on three explicit camera-facing depth planes: World/root in the foreground, agent nodes and their connectors in the middle, and aggregate task orbits/parcels in the background. Keep the current source data, radial positions, counts, colors, and read-only claim unchanged. Attach agent and task labels to their corresponding 3D plane (with a small readability offset) instead of making the labels fixed-screen-only.",
+    "atomicity": "depth placement and depth-consistent label anchoring only"
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:49-53",
+      "observation": "Agent positions are radial, with y set only to 0.22 or 0.30 from i % 2; this is not a source-semantic depth tier."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:91-103",
+      "observation": "All task orbits and parcels are placed at y=0.2, so the task layer has no explicit depth separation from the agent layer."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:66-78 and :105-109",
+      "observation": "Agent labels and task text are added as fixed-in-frame mobjects, so their screen position does not communicate 3D depth."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "Measured render is 854x480, 11.466016 seconds, 172 frames. Visual inspection of frames 80, 140, and 171 shows the agent labels concentrated in one horizontal band while the nested rings read mainly as scale/radius, not a stable foreground/middle/background order."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:10-29",
+      "observation": "The snapshot supplies 15 agents with 13 working and 2 idle, plus aggregate task_count=60; the proposed planes use only these existing entities and do not infer hidden data."
+    },
+    {
+      "source": "requested showcase/films/WorldBoundAgentsV1.mp4 path",
+      "observation": "That exact path is absent in the workspace; the matching rendered artifact was found and measured at the media/videos path above."
+    }
+  ],
+  "falsifier": "Reject the candidate if a rerendered frame cannot show a stable, unambiguous World -> agents -> task depth order in at least two of the three comparison frames, or if depth anchoring increases label collisions/occlusion enough to reduce identification of the 15 source-bound agents.",
+  "next_measurement": {
+    "method": "Render the candidate without changing the snapshot, then inspect frames 80, 140, and 171 at the same 854x480 output size.",
+    "record": [
+      "whether all three planes are visually separable",
+      "the observed front-to-back order in each frame",
+      "agent-label collision count and fully occluded agent-node count",
+      "whether the displayed 13 WORKING, 2 IDLE, and 60 TASKS values remain unchanged"
+    ],
+    "acceptance_signal": "A stable three-level depth order across at least two comparison frames with no loss of source-bound identity or aggregate-count fidelity."
+  },
+  "fake_evidence": false
+}

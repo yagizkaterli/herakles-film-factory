@@ -1,0 +1,26 @@
+{
+  "worker": "worker-22",
+  "axis": "last 3 seconds payoff",
+  "finding": "The source's nominal 10.98-second ending is crowded: the last 3 seconds contain task-orbit creation, parcel growth, task text, RECEIPT seal creation, footer writing, and only a 1.0-second hold. The payoff is therefore structurally split across several late arrivals instead of being given one clean final beat. Visual confirmation from the requested MP4 was not possible because showcase/films/WorldBoundAgentsV1.mp4 is absent.",
+  "candidate_change": "Keep the existing source-bound task parcels and their label, but finish their reveal before the final 3-second window. Use that full window for one payoff: converge or visually resolve the three parcels into the existing central RECEIPT seal, write RECEIPT once, then hold the resolved seal and the existing footer for at least the final 1.5 seconds. Do not add new agents, counts, claims, or geometry.",
+  "evidence": [
+    {
+      "kind": "source_timing",
+      "source": "scenes/film_world_bound_agents_v1.py:97-121",
+      "detail": "The tail actions are run_time 0.65 (task orbits), 0.70 (parcels), 0.40 (task text), 0.55 (seal plus RECEIPT), 0.55 (footer), followed by wait(1.0)."
+    },
+    {
+      "kind": "source_claim_alignment",
+      "source": "canonical/world-bound-film-source.v1.json:27-29",
+      "detail": "The canonical claim is a read-only habitat with bounded traces and receipts; the candidate preserves the existing receipt motif and adds no unsupported data."
+    },
+    {
+      "kind": "artifact_availability",
+      "source": "showcase/films/WorldBoundAgentsV1.mp4",
+      "detail": "File lookup and ffprobe both returned that the requested MP4 does not exist; end-frame and last-3-second visual measurements are unavailable."
+    }
+  ],
+  "falsifier": "After a rerender, inspect the final 3.0 seconds frame-by-frame and reject this candidate if more than one new visual/text event occurs after the payoff begins, if the resolved RECEIPT state is held for less than 1.5 seconds, or if the final state introduces any non-canonical claim or geometry.",
+  "next_measurement": "Render the candidate to a known MP4 path, probe its duration with ffprobe, sample frames at T-3.0, T-2.0, T-1.5, T-0.5, and T-0.1 seconds, and record whether the receipt is visually resolved and stable for the final 1.5 seconds. Compare against the current render once the missing WorldBoundAgentsV1.mp4 is restored.",
+  "fake_evidence": false
+}

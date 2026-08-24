@@ -1,0 +1,56 @@
+{
+  "worker": "worker-21",
+  "axis": "first 3 seconds hook",
+  "finding": {
+    "summary": "Mevcut açılış ilk 3 saniyede canlı çalışan habitatı göstermiyor; izleyici önce başlık, boş zemin, merkez dünya ve bağlantı çizgilerini ardışık olarak görüyor.",
+    "baseline_timing_seconds": {
+      "title_and_stamp": [0.0, 0.55],
+      "floor": [0.55, 1.45],
+      "world_root_ring_label": [1.45, 2.1],
+      "agent_limbs": [2.1, 3.1],
+      "working_agent_nodes": [3.1, 4.1]
+    },
+    "source_truth": "canonical kaynakta 15 ajan var: 13 working, 2 idle; aggregate task_count 60.",
+    "scope_note": "Production dosyalarına dokunulmadı; yalnızca aday ve QA kanıtı yazılıyor."
+  },
+  "candidate_change": {
+    "intent": "İlk 3 saniyede 'live habitat' iddiasını görsel olarak kanıtlamak.",
+    "atomic_edit": "Açılış animasyon sırasını sıkıştırıp paralelleştir: zemin ve WORLD kökü ilk 0.8 saniyede görünür olsun; 13 working node ve bunların kök bağlantıları en geç 1.8 saniyede görünür olsun; başlık/stamp ve WORLD etiketi okunur kalırken mevcut açıklayıcı metinlerin ilk 3 saniyeye yüklenmesi engellensin.",
+    "invariant": "Agent kimlikleri, working/idle statüleri, snapshot id, task_count, read-only iddiası ve source-bound sınırı değişmeyecek.",
+    "success_target": "t=1.8 saniyede başlık + WORLD kökü + en az 13 working node/bağlantısı aynı karede algılanabilir; t=3.0 saniyede açılış hâlâ okunabilir ve çakışmasız olmalı."
+  },
+  "evidence": [
+    {
+      "type": "source_timing_measurement",
+      "path": "scenes/film_world_bound_agents_v1.py",
+      "observation": "Kodda play sırası ve run_time değerleri toplandığında title/stamp 0.55 s, floor 0.90 s, root/ring/label 0.65 s, limbs 1.00 s, nodes 1.00 s sürüyor; bu yüzden working node animasyonu 3.10 s civarında başlıyor."
+    },
+    {
+      "type": "canonical_source_check",
+      "path": "canonical/world-bound-film-source.v1.json",
+      "observation": "agents toplamı 15; status dağılımı 13 working ve 2 idle; aggregates.task_count 60; fake_evidence false."
+    },
+    {
+      "type": "render_probe",
+      "path": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "ffprobe: 854x480, 15 fps, 172 frame, 11.466016 s, 806189 byte. 0–3 s için 2 fps contact-sheet incelemesinde sırasıyla karanlık başlık, zemin, merkez ring ve bağlantı çizgileri görülüyor; working node görünümü 3 s eşiğine taşınmış durumda.",
+      "sha256": "77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153"
+    },
+    {
+      "type": "path_discrepancy",
+      "observation": "İstenen showcase/films/WorldBoundAgentsV1.mp4 yolu checkout'ta yok; ölçüm, aynı isimli mevcut Manim render yolu media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4 üzerinden yapıldı."
+    }
+  ],
+  "falsifier": "Revize renderda t=1.8 s karesinde WORLD kökü ve 13 working node/bağlantısı birlikte algılanamıyorsa aday başarısızdır. Ayrıca 5 bağımsız ilk-3-saniye izleyici testinde 'canlı çalışan habitat' mesajı baseline'dan daha erken anlaşılmıyorsa değişiklik reddedilir.",
+  "next_measurement": {
+    "procedure": "Aynı çözünürlük ve fps ile yeni renderı ffprobe ve frame örnekleme ile kontrol et; t=0.0, 0.6, 1.2, 1.8, 2.4, 3.0 saniyelerinde kareleri kaydet.",
+    "metrics": [
+      "first_frame_with_world_root_and_any_working_node_seconds",
+      "first_frame_with_all_13_working_nodes_seconds",
+      "t=1.8s_same_frame_contains_title_world_root_and_working_nodes boolean",
+      "5-person comprehension result for 'live habitat, not dashboard'"
+    ],
+    "acceptance": "first working node <= 1.2 s; all 13 working nodes <= 1.8 s; t=1.8 s composition readable; comprehension result baseline'dan kötü değil ve tercihen artmış."
+  },
+  "fake_evidence": false
+}

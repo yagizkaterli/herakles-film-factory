@@ -1,0 +1,32 @@
+{
+  "worker": "worker-19",
+  "axis": "privacy boundary clarity",
+  "finding": "The canonical snapshot defines an explicit privacy boundary, but the film does not make that boundary visible to the viewer. The scene visibly labels the snapshot as READ-ONLY and task parcels as source-bound, while the only statement about hidden reasoning is a code comment rather than rendered evidence. A viewer can see identifiers, status, and aggregate counts without being told which fields are allowed or which sensitive fields are excluded.",
+  "candidate_change": {
+    "scope": "candidate only; do not modify production files",
+    "change": "Add a fixed-in-frame, source-derived privacy boundary card during the data reveal and keep it legible through the receipt beat. Render two compact lines: SHOWN: agent id / model family / status / restart count / aggregate counts; NOT SHOWN: encrypted reasoning / raw thoughts / credentials / environment secrets / prompt content. Build the labels from source['privacy'] so the visual contract cannot drift from the canonical source.",
+    "intended_effect": "Make the read-only boundary explicit at the moment the worker traces and aggregate task parcels are visible, without adding any forbidden data or changing the underlying snapshot.",
+    "production_change_made": false
+  },
+  "evidence": [
+    {
+      "source": "canonical/world-bound-film-source.v1.json:6-9",
+      "observation": "The source has five allowed categories (agent id, model family, status, restart count, aggregate counts) and five forbidden categories (encrypted reasoning, raw thoughts, credentials, environment secrets, prompt content)."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:24-28, 66-84, 105-118",
+      "observation": "The scene renders a READ-ONLY snapshot stamp, agent labels, working/idle/task aggregates, source-bound task text, RECEIPT, and a place/not-chat footer; it does not render the canonical allowed/forbidden lists."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:86",
+      "observation": "The phrase 'no hidden reasoning' exists only in a source comment, so it is not viewer-visible QA evidence."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "ffprobe measured an H.264 render at 854x480, 15 fps, 172 frames, 11.466016 seconds. A sampled late frame visibly contains READ-ONLY, source-bound/no fabricated geometry, aggregate counts, WORLD, RECEIPT, and the footer, but no privacy allow/forbid card. The user-supplied showcase/films/WorldBoundAgentsV1.mp4 path is absent; this actual render path was used for the sample."
+    }
+  ],
+  "falsifier": "The finding is false if a candidate render, independently sampled at start, midpoint, and receipt/end frames, contains a persistent, legible privacy boundary card that covers every canonical allowed and forbidden category and does not expose any forbidden field elsewhere in the frame.",
+  "next_measurement": "Render the candidate to a separate QA artifact, then inspect frames at approximately 0.5 s, 5.7 s, and 10.9 s. Verify exact category coverage against canonical/world-bound-film-source.v1.json, confirm the card remains legible at 854x480, and run a field-level review confirming that only allowed categories appear in worker labels and metrics. Record frame timestamps and pass/fail results; do not overwrite the production render.",
+  "fake_evidence": false
+}

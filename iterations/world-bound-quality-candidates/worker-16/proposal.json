@@ -1,0 +1,38 @@
+{
+  "worker": "worker-16",
+  "axis": "stigmergic trace motion",
+  "finding": "The film establishes root-to-worker limbs and pulses working nodes, but no signal travels along a bounded connection or remains as a visible trace. Lines are created once at source lines 55-75, and the activity loop at lines 86-89 only scales nodes. The task parcels at lines 91-104 are also static, so the current motion does not yet communicate stigmergic traces.",
+  "candidate_change": {
+    "scope": "scenes/film_world_bound_agents_v1.py, the worker-limb/activity block only",
+    "change": "For each working agent, add one small cyan trace marker constrained to that agent's existing root-to-node Line. Animate it from root to node with a short deterministic MoveAlongPath/UpdateFromAlphaFunc segment, fade it out at the node, and remove or reset it before the next marker. Keep idle limbs marker-free. Do not add new agents, tasks, geometry claims, or source fields.",
+    "parameters_to_test": {
+      "trace_count": 1,
+      "trace_duration_seconds": 0.45,
+      "trace_radius": 0.045,
+      "trace_opacity": 0.75,
+      "trace_color": "#70E5F2"
+    },
+    "atomicity": "Changes only the visual motion semantics of existing worker connections; node pulse, labels, parcels, captions, and canonical data remain unchanged."
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:55-75",
+      "observation": "Each root-to-agent Line is constructed and created, with no updater or moving object attached to it."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:86-89",
+      "observation": "The only worker activity animation is a node scale/opacity pulse; it does not leave or move a trace."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json",
+      "observation": "The manifest declares 13 working agents, 2 idle agents, 60 tasks, and the claim that live workers leave bounded traces and receipts; it permits only agent/status and aggregate fields used here."
+    },
+    {
+      "source": "showcase/films/WorldBoundAgentsV1.mp4",
+      "observation": "The requested showcase file is absent in the workspace, so frame-level visual QA and timing measurement were not performed."
+    }
+  ],
+  "falsifier": "Reject this candidate if a rendered frame sequence shows trace markers leaving the existing root-to-worker segments, appearing on idle limbs, persisting after the activity window, or being too small/brief for an outsider to identify as directional motion in at least 4 of 5 sampled working traces. Also reject it if the trace makes working-vs-idle state less legible than the baseline node pulse.",
+  "next_measurement": "Render an isolated candidate to a non-production output, then inspect frames at 0.10-second intervals across the worker activity block. Record: (1) 5/5 sampled working traces remain on their source Line, (2) 0/5 idle traces appear, (3) median root-to-node travel time, (4) visible tail duration after arrival, and (5) an outsider comprehension check asking which paths show activity. Re-run against the supplied showcase MP4 when that file is restored.",
+  "fake_evidence": false
+}

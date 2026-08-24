@@ -1,0 +1,25 @@
+{
+  "worker": "worker-27",
+  "axis": "lighting contrast",
+  "finding": "The render has a very dark midtone field with sparse bright highlights. The scene sets a near-black background at scenes/film_world_bound_agents_v1.py:18, while the runtime default ThreeDCamera light resolves to [-7, -9, 10]. The habitat floor is upward-facing, so the light's Y position is below it; this suppresses floor/root surface modeling and leaves the world readable mainly through bright working nodes and text.",
+  "candidate_change": "At scenes/film_world_bound_agents_v1.py:19, immediately after the existing camera-orientation call, move the existing light source to [ -7, 8, 10 ] with `self.camera.light_source.move_to([-7, 8, 10])`. Keep camera orientation, object colors, geometry, captions, timing, and the canonical manifest unchanged. This is a single lighting-placement change that should lift upward-facing habitat surfaces while preserving side shading.",
+  "evidence": [
+    {
+      "kind": "source",
+      "observation": "The source explicitly sets background_color to #04070C and does not explicitly place the 3D light; the installed Manim ThreeDCamera default light_source_start_point is 9*DOWN + 7*LEFT + 10*OUT = [-7, -9, 10]."
+    },
+    {
+      "kind": "render_measurement",
+      "artifact": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "note": "The requested showcase/films/WorldBoundAgentsV1.mp4 path is absent; measurements use the matching local WorldBoundAgentsV1 render and do not promote it as a showcase asset.",
+      "measurement": "854x480, 15 fps, 11.466016 seconds. FFmpeg signalstats at frame 30 (2.0s), 90 (6.0s), and 150 (10.0s) reported YAVG 28.516, 30.820, 30.391; YHIGH 32, 33, 34; YMAX 249, 255, 255. The measured pattern is a low-luminance bulk with isolated highlight peaks."
+    },
+    {
+      "kind": "visual_qa",
+      "observation": "A six-sample contact sheet from the same render shows the floor tiles and thin traces staying nearly black while working nodes and the later amber task parcels carry most of the visual luminance contrast."
+    }
+  ],
+  "falsifier": "Reject this candidate if a same-config candidate render does not increase floor-tile and root-surface separation from the background at all three sampled timestamps, or if it causes visible highlight clipping/haloing on working nodes, title, or task parcels. A no-change result is also a falsifier because the proposed mechanism is specifically light placement above the floor.",
+  "next_measurement": "Render only this candidate to a temporary output using the same resolution, frame rate, camera, duration, and manifest. Compare frames at 2.0s, 6.0s, and 10.0s with fixed ROIs for one floor tile, the root cylinder/ring, a working node, and an amber parcel. Record per-ROI Y median, Y95, and clipped-pixel fraction; accept provisionally only if floor/root Y median rises without a clipped-pixel increase in the text/node/parcel ROIs, then perform a blinded readability check of floor, root habitat, and trace visibility.",
+  "fake_evidence": false
+}

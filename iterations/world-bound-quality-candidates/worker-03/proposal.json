@@ -1,0 +1,41 @@
+{
+  "worker": "worker-03",
+  "axis": "camera framing",
+  "finding": "The current camera keeps the bounded habitat visually small in the middle of the frame while the 35-tile floor fills the viewport. In the worker-label beat, the fixed labels converge over the central root and become hard to separate; the wide task-orbit beat then adds large rings without making the worker cluster easier to read.",
+  "candidate_change": {
+    "target": "scenes/film_world_bound_agents_v1.py:19",
+    "operation": "Replace only the camera orientation call with set_camera_orientation(phi=56 * DEGREES, theta=-58 * DEGREES, zoom=1.08, focal_distance=22, frame_center=[0, 0.2, 0]).",
+    "intended_effect": "Use a moderately more top-down angle to open vertical separation between the radial workers and a small zoom increase to give the habitat more screen presence, while keeping the existing world center and azimuth stable.",
+    "scope": "Camera framing only. Do not change floor, agents, labels, captions, task orbits, receipt geometry, canonical data, or production outputs.",
+    "validation_status": "Candidate not rendered in this pass; expected effect is unverified."
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:18-19",
+      "observation": "The baseline uses a fixed phi=66 degrees, theta=-58 degrees, and focal_distance=22, with no explicit zoom or frame center."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:30-38",
+      "observation": "The habitat floor is a 7 by 5 field of 35 tiles spanning x=-6..6 and z=-4..4, so it can dominate the projected frame around the smaller central subject."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:49-68,75-78",
+      "observation": "Agent nodes are placed on radii 2.1, 2.48, or 2.86 and their labels are later made fixed-in-frame; the scene therefore has a compact subject plus labels that can overlap in screen space."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:92-109",
+      "observation": "The task-orbit radii extend to 4.8 and the task caption is fixed to the right edge, creating a wide late-stage framing constraint."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "The available render is 854x480, 15 fps, 172 frames, and 11.466 seconds. Visual checks at approximately 4s, 7s, and 10-11s show the floor filling the viewport, the worker cluster remaining central and compact, and agent labels overlapping in the label beat."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:27-29",
+      "observation": "The source-bound snapshot is 13 working agents, 2 idle agents, and 60 tasks, with the film claim that workers leave bounded traces; no additional data is needed for this framing candidate."
+    }
+  ],
+  "falsifier": "Reject the candidate if a rerender clips any node, task parcel, title, stamp, live-count caption, task caption, RECEIPT label, or footer; if the 4-11s habitat view is not visibly larger or the agent labels remain materially unreadable; or if the more top-down view makes the bounded world read as a flat floor instead of a habitat. Also reject it if the zoom change pushes the 4.8-radius task orbit outside a 5% frame safety margin.",
+  "next_measurement": "Render this camera-only candidate to a non-production output and inspect frames at 4s, 7s, and 10-11s at 854x480. Record: (1) whether all 15 nodes and 3 parcels remain inside a 5% edge margin, (2) whether the title/stamp and all fixed captions are fully inside frame, (3) the screen-space bounding box of the worker cluster versus the baseline, and (4) the count of visually separable agent labels. Keep the candidate only if framing improves without clipping or flattening the habitat; compare against the available render copy, while noting that the requested showcase/films/WorldBoundAgentsV1.mp4 path is absent.",
+  "fake_evidence": false
+}

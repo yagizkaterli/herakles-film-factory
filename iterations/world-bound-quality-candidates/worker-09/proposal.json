@@ -1,0 +1,47 @@
+{
+  "worker": "worker-09",
+  "axis": "active-vs-idle contrast",
+  "finding": "The source-backed status encoding exists, but the contrast is weak at the delivered 854x480 size: working nodes use #70E5F2 and idle nodes use #64747C, with nominal active/background contrast 13.62:1 and active/idle contrast 3.27:1. The render contains 13 working nodes and only 2 idle nodes, so the two idle nodes are easy to miss among the brighter nodes and pulses. This is a visual salience finding only; no status beyond the canonical snapshot is inferred.",
+  "candidate_change": {
+    "type": "status-palette-only candidate",
+    "change": "Keep the existing geometry, camera, source data, labels, connection topology, and working-only pulse behavior. Replace the node/label status palette with working fill #A8F4FF and stroke #FFFFFF, and idle fill #3C4A50 and stroke #7D8B91; use the matching status color for each label. This raises the nominal working/idle palette contrast from 3.27:1 to 7.45:1 while preserving a visible outline for idle nodes.",
+    "scope": "active-vs-idle contrast only; production scene file is untouched",
+    "rationale": "A stronger fill/stroke separation makes the two idle nodes scannable in a single paused frame without adding unobserved data or changing the film's habitat composition. The candidate does not alter which agents are working or idle."
+  },
+  "evidence": [
+    {
+      "kind": "source_static_check",
+      "path": "scenes/film_world_bound_agents_v1.py",
+      "lines": "60-64, 72-73, 86-89",
+      "observed": "Status drives the current color, radius, fill, stroke, and connection line; only working nodes are placed in the pulse list and animated. Current node colors are #70E5F2 for working and #64747C for idle."
+    },
+    {
+      "kind": "canonical_data_check",
+      "path": "canonical/world-bound-film-source.v1.json",
+      "lines": "10-27",
+      "observed": "The read-only snapshot has 15 selected agents: 13 working, 2 idle, and 60 tasks. The source explicitly allows status and aggregate counts; fake_evidence is false."
+    },
+    {
+      "kind": "palette_measurement",
+      "observed": "Computed from the declared hex colors against #04070C using relative luminance: current working/idle 3.27:1; candidate working/idle 7.45:1; candidate working/background 16.38:1."
+    },
+    {
+      "kind": "render_metadata",
+      "path": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observed": "ffprobe reports H.264, 854x480, 15 fps, 172 frames, 11.466016 seconds, 806189 bytes."
+    },
+    {
+      "kind": "visual_qa",
+      "frame": "5.0 seconds extracted from the matching render",
+      "observed": "The habitat and worker node cluster are visible; the two idle nodes are gray and lower-salience than the cyan working nodes. The requested showcase path was absent, so this QA used the matching WorldBoundAgentsV1 render under media/videos."
+    },
+    {
+      "kind": "requested_path_check",
+      "path": "showcase/films/WorldBoundAgentsV1.mp4",
+      "observed": "Not present in the workspace; no evidence from that path was claimed."
+    }
+  ],
+  "falsifier": "Render the candidate from the unchanged canonical snapshot at the same 854x480, 15 fps settings. Falsify it if either idle node disappears into the habitat floor or becomes confused with a working node in the settled frame, if the working-only pulse behavior changes, if the candidate introduces any status not present in the source, or if a blind paused-frame review cannot classify at least 14 of 15 nodes by status within 3 seconds.",
+  "next_measurement": "Render only the candidate to a temporary non-production directory. Extract settled frames at 5.0 s and 6.0 s, record the same ffprobe metadata, sample the declared node palette, and run a blinded 15-node status classification at 854x480. Compare correct classifications and idle-node visibility against the current render; retain the candidate only if both idle nodes remain visible and the classification result improves without geometry or source-count changes.",
+  "fake_evidence": false
+}

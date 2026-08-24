@@ -1,0 +1,47 @@
+{
+  "worker": "worker-07",
+  "axis": "root habitat readability",
+  "finding": "The root habitat is visible as a bright central cylinder/ring, but its only name is a bottom-pinned WORLD label. In the inspected 854x480 render, agent rays and labels occupy the central field and the later task orbits encircle it, so the viewer must map a distant lower label back to the root marker; the root's semantic anchor is not locally readable.",
+  "candidate_change": {
+    "type": "root-anchor readability candidate",
+    "change": "Keep the canonical data, camera, agents, counts, parcel geometry, and receipt/footer unchanged. In the root block, increase the root cylinder from radius 0.56/height 0.22 to radius 0.80/height 0.30 and the root ring from major_radius 0.80 to 1.05, preserving the existing colors. Replace the bottom-edge placement of WORLD with a fixed-frame WORLD / ROOT HABITAT label positioned immediately below the projected root marker and above the receipt/footer zone; keep label font size at least 15 for the 480p15 delivery.",
+    "scope": "root habitat readability only; production scene file remains untouched"
+  },
+  "evidence": [
+    {
+      "kind": "source_static_check",
+      "path": "scenes/film_world_bound_agents_v1.py",
+      "lines": "40-47",
+      "observed": "The root cylinder is radius 0.56 and height 0.22, the ring major radius is 0.80, and WORLD is moved to the bottom edge before being registered as a fixed-in-frame object."
+    },
+    {
+      "kind": "source_static_check",
+      "path": "scenes/film_world_bound_agents_v1.py",
+      "lines": "49-78, 91-109",
+      "observed": "Fifteen agents are placed at radii 2.1-2.86 with central connecting lines and small labels; three task orbits are then added around the same root area."
+    },
+    {
+      "kind": "canonical_data_check",
+      "path": "canonical/world-bound-film-source.v1.json",
+      "observed": "The snapshot contains 15 selected agents, 13 working, 2 idle, and 60 tasks; privacy allows only the listed operational fields and fake_evidence is false."
+    },
+    {
+      "kind": "render_metadata",
+      "path": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observed": "ffprobe measured 854x480, 11.466016 seconds, and 172 frames."
+    },
+    {
+      "kind": "visual_qa",
+      "path": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observed": "Frames extracted at 2.8s, 5.3s, 8.0s, and 10.8s show the root/ring at screen center while WORLD remains near the lower center; by 8.0s the orbit rings also cross the root field, and by 10.8s the receipt/footer zone is active."
+    },
+    {
+      "kind": "requested_path_check",
+      "path": "showcase/films/WorldBoundAgentsV1.mp4",
+      "observed": "The requested showcase path is absent; QA used the matching same-name render found under media/videos."
+    }
+  ],
+  "falsifier": "Falsify the finding if, on the current 854x480 render, at least 4 of 5 independent viewers can identify the central root marker and correctly associate it with the distant WORLD label within 2 seconds in at least 9 of 10 sampled label-visible frames, without using the title, footer, or source code.",
+  "next_measurement": "Render only the candidate to a temporary output directory at the existing 480p15 settings. Sample 10 evenly spaced frames from 5.0s through 11.0s; record root-marker diameter, root-label bounding box, and the pixel gap between the marker's lower edge and the label's nearest edge. Run the same 5-viewer association check. Accept the candidate only if the label-to-marker gap is at most 24 pixels in at least 9 of 10 samples and at least 4 of 5 viewers identify the root-label unit within 2 seconds.",
+  "fake_evidence": false
+}

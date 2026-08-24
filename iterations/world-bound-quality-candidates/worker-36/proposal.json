@@ -1,0 +1,36 @@
+{
+  "worker": "worker-36",
+  "axis": "outsider QA comprehension",
+  "finding": "An outsider can see that this is a read-only World snapshot, but cannot reliably decode the visual grammar on first viewing. The title/stamp and final footer establish habitat/read-only intent, while the central node network, cyan/gray state colors, yellow parcels, and tiny truncated labels appear before any plain-language mapping. The result can be read as an abstract network or dashboard rather than as a bounded habitat with aggregate traces and a receipt.",
+  "candidate_change": "Add one persistent fixed-in-frame orientation legend directly under the title, before the habitat animation, and keep it visible through the end: \"WORLD = center · DOTS = agents · CYAN = working · GRAY = idle · LINES = bounded links · YELLOW = aggregate task parcels · RECEIPT = read-only snapshot\". Use the existing visual colors and terms only; add no new data, geometry, agent identifiers, reasoning, credentials, or claims.",
+  "evidence": {
+    "source": [
+      "scenes/film_world_bound_agents_v1.py:21-28 establishes only the title and READ-ONLY stamp.",
+      "scenes/film_world_bound_agents_v1.py:40-47 creates the central WORLD object and label.",
+      "scenes/film_world_bound_agents_v1.py:59-78 maps working/idle to cyan/gray nodes and renders labels at font_size 7.5, truncated to 17 characters.",
+      "scenes/film_world_bound_agents_v1.py:80-84 introduces the 13 WORKING · 2 IDLE · 60 TASKS summary after the network and labels.",
+      "scenes/film_world_bound_agents_v1.py:91-109 introduces yellow task parcels and the phrase source-bound only near the end.",
+      "scenes/film_world_bound_agents_v1.py:111-120 introduces RECEIPT and the not-a-chat footer at the end."
+    ],
+    "canonical": {
+      "path": "canonical/world-bound-film-source.v1.json",
+      "observed": "The source claim is a read-only habitat with bounded traces and receipts; the allowed source fields include agent id, model family, status, restart count, and aggregate counts. Aggregates are 15 selected agents, 13 working, 2 idle, and 60 tasks."
+    },
+    "video": {
+      "requested_path": "showcase/films/WorldBoundAgentsV1.mp4",
+      "actual_path_used": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "metadata": "854x480 H.264, 15 fps, 172 frames, 11.466016 seconds",
+      "sha256": "77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153",
+      "frame_observations": [
+        "0.8s: title/stamp and floor are visible; no orientation mapping is present.",
+        "4.0s: central WORLD ring and radial agent nodes/lines are visible; the visual roles are not explained on screen.",
+        "8.0s: the 13 WORKING · 2 IDLE · 60 TASKS summary is visible, while the agent labels form a small, low-legibility cluster.",
+        "10.2-11.2s: TASK PARCELS, RECEIPT, and the not-a-chat footer arrive late; the plain-language relationship between these elements is still not stated."
+      ]
+    },
+    "measurement_status": "Observed evidence only; no outsider comprehension study has been run yet."
+  },
+  "falsifier": "Run a blind comprehension check at the delivered 854x480 size with viewers who have not seen the source. If at least 4 of 5 viewers, by 5 seconds, can correctly identify the center, node meaning, cyan/gray status distinction, and that the scene is not a chat/reasoning view without an added legend, this finding is falsified.",
+  "next_measurement": "Render the proposal variant without changing the canonical data. A/B it against the current MP4 with 5 outsiders at 854x480. At 5 seconds ask four forced-choice questions (center, dots, cyan/gray, and whether the visual shows chat/reasoning); record accuracy and time-to-answer. Compare first-pass comprehension and false chat attribution; predeclare a pass as at least 4/5 viewers answering at least 3/4 correctly with zero unsupported-reasoning attribution.",
+  "fake_evidence": false
+}

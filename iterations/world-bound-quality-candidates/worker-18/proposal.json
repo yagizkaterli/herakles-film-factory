@@ -1,0 +1,36 @@
+{
+  "worker": "worker-18",
+  "axis": "snapshot timestamp treatment",
+  "finding": "The scene exposes only the epoch-millisecond suffix from snapshot_id in the visible stamp, while the canonical read-only snapshot provides a human-readable created_at timestamp. The existing matching render visibly shows 'SNAPSHOT 1787556209107 · READ-ONLY', which is precise but not immediately legible to an outsider as a capture time.",
+  "candidate_change": {
+    "scope": "scenes/film_world_bound_agents_v1.py:24",
+    "change": "Build the visible stamp from source['created_at'] instead of source['snapshot_id'].split(':')[-1]. Keep the existing READ-ONLY qualifier and placement unchanged.",
+    "target_text_example": "SNAPSHOT 2026-08-24T07:23:29.107Z · READ-ONLY",
+    "atomicity": "timestamp display only; no change to snapshot identity, scene geometry, timing, privacy boundary, or canonical source"
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py",
+      "locator": "line 24",
+      "observation": "The current stamp formats source['snapshot_id'].split(':')[-1]."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json",
+      "locator": "lines 4-5",
+      "observation": "The same snapshot has snapshot_id 'herakles-production:snapshot:0:1787556209107' and created_at '2026-08-24T07:23:29.107Z'."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "method": "ffprobe plus a frame extracted at 0.5 seconds",
+      "observation": "The matching render is H.264, 854x480, 15 fps, 11.466016 seconds; the inspected visible frame shows the epoch-millisecond stamp. The user-listed showcase/films/WorldBoundAgentsV1.mp4 path is absent in this workspace, so that path was not claimed as measured."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py",
+      "method": "python -m py_compile scenes/film_world_bound_agents_v1.py",
+      "observation": "Static syntax check passed with exit code 0; no production file was modified."
+    }
+  ],
+  "falsifier": "After applying the candidate in an isolated copy and rendering, extract a frame after the 0.55-second intro fade. Falsify the candidate if the visible stamp does not contain the exact canonical created_at value, if the epoch suffix remains the primary displayed timestamp, if READ-ONLY is lost, or if the ISO string clips or collides with the title at the target render size.",
+  "next_measurement": "Render the isolated candidate at the existing 480p15 preset; inspect frames at 0.5s and 1.0s, compare OCR/manual text against canonical.created_at, and verify the stamp remains inside the top safe area. Record the frame timestamp, render path, and pass/fail result without copying any forbidden source fields.",
+  "fake_evidence": false
+}

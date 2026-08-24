@@ -1,0 +1,36 @@
+{
+  "worker": "worker-12",
+  "axis": "color semantics",
+  "finding": "The semantic palette is consistent for agent nodes and task parcels, but the aggregate metric Text object at scenes/film_world_bound_agents_v1.py:80-84 is rendered entirely in working cyan (#70E5F2). In the rendered frame, this makes IDLE and TASKS inherit the visual meaning of WORKING even though the canonical snapshot reports 13 working, 2 idle, and 60 tasks.",
+  "candidate_change": {
+    "scope": "scenes/film_world_bound_agents_v1.py:80-84, the live_text object only",
+    "change": "Replace the single live_text Text with one horizontally arranged fixed-in-frame VGroup of three metric Text segments and neutral separators: '<working_selected> WORKING' in #70E5F2, '<idle_selected> IDLE' in the existing idle gray #64747C, and '<task_count> TASKS' in the existing task amber #F0BC67. Preserve the current font, font size, position, wording, and source-bound stats values.",
+    "atomicity": "No changes to agent geometry, task parcels, animation timing, captions, canonical data, or production render pointers."
+  },
+  "evidence": [
+    {
+      "kind": "source",
+      "path": "scenes/film_world_bound_agents_v1.py:60-68",
+      "observation": "Working agents and labels use #70E5F2; idle agents and labels use #64747C."
+    },
+    {
+      "kind": "source",
+      "path": "scenes/film_world_bound_agents_v1.py:80-84",
+      "observation": "The complete 'WORKING · IDLE · TASKS' aggregate line is one Text object with color #70E5F2."
+    },
+    {
+      "kind": "canonical",
+      "path": "canonical/world-bound-film-source.v1.json",
+      "observation": "aggregates contains working_selected=13, idle_selected=2, and task_count=60; fake_evidence=false."
+    },
+    {
+      "kind": "render_qa",
+      "path": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "measurement": "ffprobe: 854x480, 11.466016 seconds, 172 frames; a frame sampled at approximately 9 seconds shows the aggregate line as a single cyan run while TASK PARCELS is amber and agent labels distinguish cyan working from gray idle.",
+      "limitation": "The requested showcase/films/WorldBoundAgentsV1.mp4 path is absent; QA used the matching repository render above."
+    }
+  ],
+  "falsifier": "Render the candidate to a temporary output and inspect the stabilized aggregate-metric shot at 854x480. Falsify the candidate if any of the three metric segments does not retain its intended semantic color, if the VGroup clips or collides with the task caption, or if an outside viewer still cannot map the three counts to working, idle, and tasks without consulting the source.",
+  "next_measurement": "Render only the candidate scene to a temporary directory; compare the same timestamp against the baseline with a color-mask check for #70E5F2, #64747C, and #F0BC67 in the metric region, plus a two-person outsider comprehension check asking which number represents each state/category. Record the render path, timestamp, frame dimensions, and pass/fail outcome.",
+  "fake_evidence": false
+}

@@ -1,0 +1,35 @@
+{
+  "worker": "worker-29",
+  "axis": "camera focal target",
+  "finding": "The scene sets phi, theta, and focal_distance but does not set an explicit frame_center, so the camera target remains the default origin. The narrative hub is slightly above that target: the root is at y=-0.15 while the agent activity plane and task orbits are at y=0.20. In the baseline render, the habitat field is visually low-priority but the floor grid dominates the frame; shifting the target to the activity plane improves vertical balance without changing camera angle or zoom.",
+  "candidate_change": "In scenes/film_world_bound_agents_v1.py, extend the existing set_camera_orientation call with frame_center=[0, 0.20, 0]. Keep phi=66*DEGREES, theta=-58*DEGREES, and focal_distance=22 unchanged. This is a proposal only; the production file was not modified.",
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:19",
+      "observation": "The current call specifies phi=66*DEGREES, theta=-58*DEGREES, and focal_distance=22, with no frame_center argument."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json",
+      "observation": "The read-only snapshot contains 15 selected agents, 13 working, 2 idle, and 60 tasks; no camera target or geometry beyond the permitted aggregate/source fields is claimed."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:42-44,58,96",
+      "observation": "Measured source coordinates place the root at y=-0.15, agent nodes at y=0.22 or 0.30, and task orbits at y=0.20."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "The available render is 854x480, 15 fps, 172 frames, and 11.466016 seconds. The requested showcase/films/WorldBoundAgentsV1.mp4 path is absent, so that path was not used as evidence."
+    },
+    {
+      "source": "/tmp/world-bound-candidate.M0SPcl/media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "A temporary-copy render with only frame_center=[0,0.20,0] added completed successfully with the same 854x480, 15 fps, 172-frame output."
+    },
+    {
+      "source": "baseline and candidate frame n=90 (6.0 seconds)",
+      "observation": "Using the same bright-cyan connected-component threshold on the agent-field pixels, the measured node-like vertical envelope moved from y=73..359 in baseline to y=103..375 in the candidate; the envelope midpoint moved from 216 to 239 pixels, toward the 240-pixel frame midpoint."
+    }
+  ],
+  "falsifier": "Reject this candidate if the exact showcase render shows any agent node, task parcel, orbit, or fixed label clipped at the top/bottom edges, if the n=90 node-field midpoint is farther from y=240 than baseline, or if the candidate changes phi, theta, focal_distance, source counts, or privacy claims.",
+  "next_measurement": "Render the candidate to the intended showcase output, then inspect n=90 and the final frame at 854x480. Record the node-field bounding box, edge-clearance for every visible node and parcel, fixed-label collisions, and exact duration/frame count; accept only if all 15 agents remain represented and the midpoint/clearance result reproduces the temporary render without production-source changes.",
+  "fake_evidence": false
+}

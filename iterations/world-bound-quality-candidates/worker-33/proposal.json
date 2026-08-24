@@ -1,0 +1,36 @@
+{
+  "worker": 33,
+  "axis": "task-to-worker relationship",
+  "finding": "The current film makes World-to-worker membership visible, but not task-to-worker ownership. Worker nodes and their lines are generated from the 15 agent records, while the 60-task aggregate is rendered as only three independent orbit parcels. The source contains no authoritative task assignment relation, so a viewer cannot identify which worker owns any task without inventing a mapping.",
+  "candidate_change": "Add a privacy-approved, source-authoritative task assignment relation only if the upstream snapshot can provide it. Render each sourced task parcel with a bounded edge or anchor to its assigned worker and expose the assignment status in the receipt. When the relation is absent, retain aggregate parcels but label the state TASK→WORKER UNMEASURED; never infer ownership from array order, worker status, pulse order, or orbit radius.",
+  "evidence": [
+    {
+      "receipt_path": "/root/herakles-film-factory/scenes/film_world_bound_agents_v1.py:59-73,91-109",
+      "command": "nl -ba scenes/film_world_bound_agents_v1.py | sed -n '59,109p'",
+      "output": "Worker lines are created from root.get_center() to each agent position; task parcels are separately created at radii [3.7, 4.25, 4.8]. The source comment says the task parcels are aggregate, source-bound markers, and no task-to-worker edge is created."
+    },
+    {
+      "receipt_path": "/root/herakles-film-factory/canonical/world-bound-film-source.v1.json:10-29",
+      "command": "jq -c '{agent_count:(.agents|length), task_count:.aggregates.task_count, top_level_keys:keys, has_task_assignments:has(\"task_assignments\"), privacy_allowed:.privacy.allowed, fake_evidence}' canonical/world-bound-film-source.v1.json",
+      "output": "{\"agent_count\":15,\"task_count\":60,\"top_level_keys\":[\"agents\",\"aggregates\",\"created_at\",\"fake_evidence\",\"film_claim\",\"privacy\",\"schema\",\"snapshot_id\",\"source_authority\"],\"has_task_assignments\":false,\"privacy_allowed\":[\"agent id\",\"model family\",\"status\",\"restart count\",\"aggregate counts\"],\"fake_evidence\":false}"
+    },
+    {
+      "receipt_path": "/root/herakles-film-factory/media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "command": "ffprobe -v error -show_entries format=duration,size:stream=width,height,avg_frame_rate -of json media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4; extract frame at 10.4s",
+      "output": "Measured render: duration 11.466016s, 854x480, H.264, 806189 bytes. At 10.4s the frame visibly contains 13 WORKING, 2 IDLE, 60 TASKS, three small task parcels on the outer orbit, and the text TASK PARCELS · source-bound · no fabricated geometry; no parcel-to-worker assignment is visible."
+    },
+    {
+      "receipt_path": "/root/herakles-film-factory/showcase/films/WorldBoundAgentsV1.mp4",
+      "command": "test ! -e showcase/films/WorldBoundAgentsV1.mp4",
+      "output": "exit=0: the requested showcase path is absent. The visual measurement above uses the existing rendered copy under media/videos; no evidence is claimed for the absent path."
+    },
+    {
+      "receipt_path": "/root/herakles-film-factory/scenes/film_world_bound_agents_v1.py; /root/herakles-film-factory/canonical/world-bound-film-source.v1.json",
+      "command": "python -m py_compile scenes/film_world_bound_agents_v1.py && python -m json.tool canonical/world-bound-film-source.v1.json >/dev/null",
+      "output": "py_compile=PASS; canonical_json=PASS"
+    }
+  ],
+  "falsifier": "This finding is falsified if a fresh source snapshot contains an authoritative worker assignment for every task and the current render, without inferred position/order semantics, lets an independent QA reviewer identify the owner for at least 95% of a predeclared 20-task sample with zero ambiguous or unassigned markers. It is also falsified if the source authority explicitly defines task_count as aggregate-only and does not claim per-task ownership.",
+  "next_measurement": "Obtain a fresh privacy-reviewed snapshot and record whether an assignment relation exists, its row count, task coverage, worker-ID matches, and duplicate/ambiguous assignments. Render at the same 854x480 target, predeclare a 20-task sample (or all supplied assignments), and have an independent reviewer map each marker to a worker; report exact, unassigned, and ambiguous counts with frame timestamps. If assignment data is absent, measure that the explicit TASK→WORKER UNMEASURED state is shown and that no inferred edge is rendered.",
+  "fake_evidence": false
+}

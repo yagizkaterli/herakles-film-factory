@@ -1,0 +1,23 @@
+{
+  "worker": "worker-14",
+  "axis": "task parcel meaning",
+  "finding": "The film exposes only one authoritative task value, aggregates.task_count = 60, but renders three identical orbiting spheres. The fixed text calls them source-bound task parcels without explaining whether each sphere is a task, a group, or an activity band. This makes the parcel geometry semantically ambiguous and can imply an unsupported count of three.",
+  "candidate_change": "Replace the hard-coded three-orbit/three-sphere parcel block with one aggregate parcel marker whose visible label is mechanically derived from stats['task_count'], for example: 'TASK PARCELS · 60 aggregate tasks · per-task geometry unavailable'. Keep the marker source-bound, but do not create task identities, categories, or parcel-to-agent links because the canonical snapshot contains no task-level records.",
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:91-109",
+      "observation": "The parcel section hard-codes radii [3.7, 4.25, 4.8], creates three spheres, and labels them only 'source-bound · no fabricated geometry'."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:27-29",
+      "observation": "The snapshot exposes task_count = 60 as an aggregate and sets fake_evidence = false; it does not expose task records or parcel groupings."
+    },
+    {
+      "source": "showcase/films/WorldBoundAgentsV1.mp4",
+      "observation": "The requested showcase file is absent from the workspace, so no video-frame QA observation is claimed."
+    }
+  ],
+  "falsifier": "After implementation, this candidate is falsified if the rerender still shows multiple unlabeled parcel symbols, if the visible parcel count is not driven by aggregates.task_count, or if a reviewer still interprets the marker as three individual tasks rather than one aggregate of 60 tasks.",
+  "next_measurement": "Render a fresh showcase from the unchanged canonical snapshot and inspect the task-parcel interval: verify exactly one parcel marker, a visible '60 aggregate tasks' value, and an explicit per-task-geometry limitation. Then rerun with task_count changed in an isolated test fixture and verify that only the displayed count changes; record screenshot/frame path and render metadata in the QA receipt.",
+  "fake_evidence": false
+}

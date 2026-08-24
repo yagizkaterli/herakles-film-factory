@@ -1,0 +1,40 @@
+{
+  "worker": 20,
+  "axis": "reduced-motion fallback",
+  "finding": "The scene source has no reduced-motion branch or switch. Its construct() path calls self.play 14 times, including 7 working-node pulse pairs at 0.12 seconds per leg, so a reduced-motion preference cannot be honored at the scene level.",
+  "candidate_change": {
+    "scope": "candidate only; do not edit production files in this proposal",
+    "proposal": "Add one explicit HERAKLES_REDUCED_MOTION=1 scene flag and route every reveal/create/write animation through a small helper. In reduced mode, add the same final mobjects directly instead of playing transitions, and skip the repeated node scale/opacity pulse loop; keep labels, counts, receipt, footer, and final hold visible. Preserve the current timing and pulse behavior when the flag is unset.",
+    "acceptance": [
+      "Normal mode remains behaviorally unchanged.",
+      "Reduced mode has no repeated pulse animation and no perceptible transition sequence.",
+      "Reduced mode preserves the same source-bound text, counts, objects, and final receipt state."
+    ]
+  },
+  "evidence": [
+    {
+      "path": "scenes/film_world_bound_agents_v1.py",
+      "lines": "28,38,47,75-76,78,84,88-89,97,104,109,115,120-121",
+      "measurement": "rg found 14 self.play calls; the pulse loop applies two 0.12-second animations to pulses[:7], and the scene ends with self.wait(1.0)."
+    },
+    {
+      "path": "scenes/film_world_bound_agents_v1.py",
+      "measurement": "Case-insensitive search for reduced-motion, prefers-reduced-motion, and HERAKLES_REDUCED_MOTION returned no matches."
+    },
+    {
+      "path": "canonical/world-bound-film-source.v1.json",
+      "measurement": "The supplied snapshot declares fake_evidence=false and permits only agent id, model family, status, restart count, and aggregate counts; no extra source data was used."
+    },
+    {
+      "path": "showcase/films/WorldBoundAgentsV1.mp4",
+      "measurement": "The supplied path does not exist in the workspace, so duration, frame cadence, and visual playback QA were not measured."
+    },
+    {
+      "command": "python -m py_compile scenes/film_world_bound_agents_v1.py",
+      "measurement": "Read-only syntax check completed successfully."
+    }
+  ],
+  "falsifier": "A read-only inspection or test render that finds a documented, wired reduced-motion switch already intercepting all scene animations and suppressing the 7 pulse pairs while preserving the final scene would falsify this finding.",
+  "next_measurement": "In an isolated candidate branch, render once with the flag unset and once with HERAKLES_REDUCED_MOTION=1. Compare frame-to-frame differences and final-frame object/text presence; require reduced mode to omit pulse/transition changes while retaining all labels, counts, task parcels, receipt, and footer.",
+  "fake_evidence": false
+}

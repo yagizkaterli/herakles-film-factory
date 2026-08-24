@@ -1,0 +1,31 @@
+{
+  "worker": "worker-32",
+  "axis": "idle-state stillness",
+  "finding": "Idle is visually differentiated but not authored as an explicit stillness state: the two canonical idle agents use the muted color, smaller sphere, and dark limb, while only working nodes enter the pulse loop. Because idle nodes still pass through the shared node/label entrance animations and there is no idle-specific hold or settle window, their stillness is inferable rather than unmistakable.",
+  "candidate_change": "Add one explicit idle-state hold after the shared node/label entrance and before the final receipt build: collect idle nodes from the canonical status, leave their position, scale, opacity, and label unchanged during the hold, and keep all activity animation scoped to working nodes. The hold must not add new data or animate the idle agents.",
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:59-73",
+      "observation": "status==\"working\" selects the active styling and only working nodes are appended to pulses; idle styling is muted/smaller but has no dedicated stillness behavior."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:75-89",
+      "observation": "All limbs, nodes, and labels use shared entrance animations; the later scale/opacity pulse loop runs only on pulses[:7], so idle non-pulsing is currently an indirect consequence."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:10-27",
+      "observation": "The source snapshot contains 15 selected agents: 13 working and 2 idle, with privacy restrictions limited to approved operational fields."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "ffprobe measured a real repo render at 854x480, 15 fps, 172 frames, 11.466016 seconds. Frame spot-checks at 8.0s and 10.5s show the two muted idle nodes remaining visually at rest while the scene completes its build."
+    },
+    {
+      "source": "showcase/films/WorldBoundAgentsV1.mp4",
+      "observation": "The user-provided showcase path was not present in the workspace; no evidence is claimed from that path."
+    }
+  ],
+  "falsifier": "Reject this candidate if a candidate render changes an idle node's position, scale, opacity, or label during the explicit hold; if either idle node enters the working pulse sequence; if the hold is absent or shorter than the declared QA window; or if the change exposes any non-allowlisted source data.",
+  "next_measurement": "Render the candidate from the unchanged canonical snapshot. Record the hold start/end timestamps and compare fixed crops around both idle nodes across the hold at 15 fps: require zero geometric movement and a mean absolute pixel difference <= 2/255 after excluding compression noise, while confirming the working pulse count remains 7 and the overlay remains 13 WORKING / 2 IDLE / 60 TASKS. Also verify the output duration and frame count with ffprobe.",
+  "fake_evidence": false
+}

@@ -1,0 +1,33 @@
+{
+  "worker": "worker-06",
+  "axis": "world silhouette",
+  "finding": "The scene describes the World as a bounded field, but its visible silhouette is not closed: the floor is only a 7x5 tile grid and no perimeter object is created. In the render, the repeated tiles continue to the frame edges while the radial worker lines and task orbits extend beyond the implied field, so the habitat reads more like an open panel than a contained place.",
+  "candidate_change": {
+    "scope": "world silhouette only",
+    "change": "Add a thin, low-profile rectangular perimeter rim around the existing floor footprint, without changing the tile grid, camera, agent positions, labels, task parcels, or source data. Derive its corners from the current tile bounds: x = +/-6.86 and z = +/-4.74 (tile centers -6..6 and -4..4 plus half-dimensions 0.86 and 0.74); place the four segments just above the floor at y about -0.34, using the existing cyan family (#58C9D8), restrained opacity, and a narrow stroke. Keep the rim behind the agents and fixed-frame text.",
+    "intended_result": "The first readable geometric silhouette becomes a closed habitat boundary, while the WORLD root and all live traces remain inside it. No new world facts, agent facts, or task geometry are introduced.",
+    "production_files_touched": false
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:30-38",
+      "observation": "The floor is generated from x in range(-6, 7, 2) and z in range(-4, 5, 2), producing 35 Prism tiles with dimensions [1.72, .1, 1.48]; the scene creates no outer frame or boundary object after the floor group."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:49-68, 88-108",
+      "observation": "Agent limbs and nodes are placed around the root, and three task orbits use radii 3.7, 4.25, and 4.8. These traces are visually present, but the source provides no explicit enclosing silhouette for them."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "measurement": "H.264, 854x480, 15 fps, 172 frames, 11.466016 seconds; SHA-256 77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153.",
+      "observation": "Visual checks at approximately 3.0s, 6.0s, 9.0s, and 11.4s show the tile field reaching the image edges without a visible enclosing rim; at the final check the task-orbit circles are also visible beyond the implied tile field. The requested showcase/films/WorldBoundAgentsV1.mp4 path is absent; this existing same-name render is the inspected artifact."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:2-9,27-29",
+      "observation": "The read-only snapshot contains 15 agents (13 working, 2 idle), 60 tasks, and the claim that workers leave bounded traces and receipts. Its privacy block forbids reasoning, credentials, secrets, and prompt content; fake_evidence is false."
+    }
+  ],
+  "falsifier": "The silhouette hypothesis is falsified if, in a blinded comparison of current and candidate renders, fewer than 4 of 5 viewers judge the candidate as more clearly bounded, or if any of the four rim segments is clipped, occludes an agent/label, or makes the WORLD root harder to locate in any key frame.",
+  "next_measurement": "Render the candidate at the same 854x480, 15 fps settings. Sample 3.0s, 6.0s, 9.0s, and 11.4s; record rim-segment visibility, frame-edge margin, and overlap with nodes/labels, then run a 5-viewer blinded pairwise boundedness check. Accept only if all four segments remain visible with at least an 8-pixel edge margin, no protected text or node is occluded, at least 4 of 5 viewers choose the candidate, and source-derived counts remain 13 working, 2 idle, and 60 tasks.",
+  "fake_evidence": false
+}

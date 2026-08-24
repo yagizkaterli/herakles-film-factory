@@ -1,0 +1,54 @@
+{
+  "worker": "worker-10",
+  "axis": "label typography",
+  "finding": "Per-agent labels are rendered in a small monospace face (font_size 7.5) and are fixed in the frame. The source produces 15 labels; five canonical labels are 16-17 characters long, so the current 17-character cap leaves long identifiers visually dense and, for some identifiers, visibly truncated. The supplied showcase MP4 was not present at the requested path, so video legibility was not claimed or measured.",
+  "candidate_change": {
+    "scope": "per-agent label Text at scenes/film_world_bound_agents_v1.py:67 only",
+    "current": {
+      "font": "DejaVu Sans Mono",
+      "font_size": 7.5,
+      "text_rule": "short[:17]"
+    },
+    "proposed": {
+      "font": "DejaVu Sans",
+      "font_size": 8.5,
+      "weight": "NORMAL",
+      "text_rule": "short[:17]"
+    },
+    "invariants": [
+      "Keep the existing label strings and 17-character cap.",
+      "Keep label positions, colors, fixed-in-frame behavior, reveal timing, and all non-agent typography unchanged.",
+      "Do not alter the production scene or canonical source in this proposal."
+    ]
+  },
+  "evidence": [
+    {
+      "kind": "source",
+      "location": "scenes/film_world_bound_agents_v1.py:59-68",
+      "observation": "Each canonical agent is paired with one label; labels use DejaVu Sans Mono at font_size 7.5 and short[:17]."
+    },
+    {
+      "kind": "source",
+      "location": "scenes/film_world_bound_agents_v1.py:77-78",
+      "observation": "The complete labels group is added as fixed-in-frame mobjects and then faded in."
+    },
+    {
+      "kind": "canonical_measurement",
+      "location": "canonical/world-bound-film-source.v1.json:10-26",
+      "observation": "The canonical snapshot contains 15 agents. Derived display-label lengths are 11, 10, 13, 10, 8, 12, 13, 6, 9, 11, 17, 17, 17, 16, and 17; five therefore reach at least 16 characters."
+    },
+    {
+      "kind": "environment_check",
+      "observation": "fc-match resolves both DejaVu Sans and DejaVu Sans Mono; the scene source compiles and the canonical JSON parses."
+    },
+    {
+      "kind": "video_measurement",
+      "status": "not_available",
+      "location": "showcase/films/WorldBoundAgentsV1.mp4",
+      "observation": "The requested file was absent in the workspace, so no frame-level readability claim was made."
+    }
+  ],
+  "falsifier": "Reject this candidate if a same-settings render with the proposed label style fails to resolve DejaVu Sans, causes any agent-label overlap/occlusion at the label reveal frame, or leaves more than 2 of 15 labels unreadable at 100% playback size. Also reject it if any invariant outside label typography changes.",
+  "next_measurement": "Render the scene to a temporary output using the existing camera and timing, capture the label reveal frame and final frame, and inspect all 15 labels at 100% size. Record font availability, overlap count, unreadable-label count, and whether the five 16-17-character labels remain distinguishable. Compare against the current render if the missing MP4 is restored.",
+  "fake_evidence": false
+}

@@ -1,0 +1,57 @@
+{
+  "worker": "worker-31",
+  "axis": "working-state pulse behavior",
+  "finding": {
+    "summary": "The current activity cue is a single, fast pass over only the first seven working nodes, while the canonical snapshot contains thirteen working nodes.",
+    "impact": "Six working agents receive no pulse cue, and the 0.12 s expand plus 0.12 s restore per node makes the state signal difficult to read at the rendered 15 fps cadence.",
+    "scope": "Visual behavior only; idle-state rendering and source privacy boundary remain unchanged."
+  },
+  "candidate_change": {
+    "intent": "Make working state legible as a bounded, repeated activity signal without implying hidden reasoning or changing source data.",
+    "production_file_untouched": true,
+    "proposed_change": "In the pulse block, retain the existing status gate (`if working: pulses.append(node)`) and replace the one-shot `for node in pulses[:7]` sequence with two deterministic, staggered cycles over all `pulses`. Use a modest scale/opacity excursion (for example scale 1.22 and opacity 0.70, restored to scale 1.0 and opacity 0.92), with each phase long enough to occupy at least 4 frames at 15 fps and with a fixed lag between nodes.",
+    "guardrails": [
+      "Never include idle nodes in the pulse list.",
+      "Do not add agent-specific text, task content, reasoning, credentials, or other non-canonical data.",
+      "Keep the change confined to the working-state pulse timing/coverage block."
+    ],
+    "acceptance": [
+      "All 13 canonical working nodes show the same deterministic pulse pattern.",
+      "The 2 canonical idle nodes remain visually idle throughout the pulse interval.",
+      "The pulse is readable at 854x480, 15 fps without obscuring labels or receipt/task-parcel cues."
+    ]
+  },
+  "evidence": [
+    {
+      "kind": "canonical_snapshot",
+      "source": "/root/herakles-film-factory/canonical/world-bound-film-source.v1.json:27",
+      "observed": "selected_agents=15, working_selected=13, idle_selected=2, task_count=60"
+    },
+    {
+      "kind": "status_gate",
+      "source": "/root/herakles-film-factory/scenes/film_world_bound_agents_v1.py:58-73",
+      "observed": "A node is appended to pulses only when agent status equals working; idle nodes are excluded by construction."
+    },
+    {
+      "kind": "pulse_coverage_and_timing",
+      "source": "/root/herakles-film-factory/scenes/film_world_bound_agents_v1.py:86-89",
+      "observed": "The current loop iterates over pulses[:7] and gives each selected node 0.12 s expand plus 0.12 s restore, for 1.68 s total pulse animation."
+    },
+    {
+      "kind": "render_metadata",
+      "source": "/root/herakles-film-factory/media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observed": "ffprobe measured 854x480, 15 fps, 172 frames, 11.466016 s; SHA-256 is 77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153."
+    }
+  ],
+  "falsifier": "After a QA-only rerender, if fewer than 13 working-node ROIs show two pulse peaks, if either idle-node ROI changes during the pulse window, or if the pulse cannot be distinguished at 15 fps without label occlusion, reject this candidate.",
+  "next_measurement": {
+    "render_target": "A new QA-only 480p15 artifact; do not overwrite production media or scene files.",
+    "procedure": [
+      "Render the proposal in an isolated output directory using the same canonical snapshot.",
+      "Use ffprobe to verify 854x480 and 15 fps, then sample the pulse window frame-by-frame.",
+      "Measure luminance/area changes in the 13 working-node ROIs and the 2 idle-node ROIs; require two peaks per working ROI and no threshold-crossing change in idle ROIs.",
+      "Have a visual QA pass confirm labels, task parcels, receipt, and footer remain readable."
+    ]
+  },
+  "fake_evidence": false
+}

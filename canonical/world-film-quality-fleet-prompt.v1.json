@@ -1,0 +1,31 @@
+{
+  "schema": "herakles.world-film-quality-fleet-prompt.v1",
+  "mission": "Improve the World-bound HERAKLES film through 40 isolated, atomic quality passes.",
+  "source_film": "showcase/films/WorldBoundAgentsV1.mp4",
+  "source_scene": "scenes/film_world_bound_agents_v1.py",
+  "source_manifest": "canonical/world-bound-film-source.v1.json",
+  "room": "de2b53bf-a6a6-459b-a393-b30210d6fb46",
+  "rules": [
+    "read the source scene and manifest before proposing a change",
+    "one worker = one atomic change axis; do not rewrite the whole film",
+    "candidate artifacts go under iterations/world-bound-quality-candidates/worker-<n>/",
+    "do not alter production scene, latest pointer, or canonical truth",
+    "JSON output only with finding, candidate path, evidence, falsifier, and next measurement",
+    "no hidden reasoning, credentials, raw thoughts, or secret values",
+    "ImageGen may propose art direction; geometry and captions remain deterministic code-owned",
+    "optimize for outsider comprehension and cinematic coherence, not decorative complexity"
+  ],
+  "axes": [
+    "opening proposition clarity", "closing proposition clarity", "camera framing", "camera pacing", "depth hierarchy",
+    "world silhouette", "root habitat readability", "worker node legibility", "active-vs-idle contrast", "label typography",
+    "label collision avoidance", "color semantics", "receipt-seal readability", "task parcel meaning", "orbit meaning",
+    "stigmergic trace motion", "source-bound identity continuity", "snapshot timestamp treatment", "privacy boundary clarity", "reduced-motion fallback",
+    "first 3 seconds hook", "last 3 seconds payoff", "narrative beat ordering", "pause/breathing room", "visual rhythm",
+    "material hierarchy", "lighting contrast", "background noise reduction", "camera focal target", "scale cues",
+    "working-state pulse behavior", "idle-state stillness", "task-to-worker relationship", "receipt-to-world relationship", "aggregate metric phrasing",
+    "outsider QA comprehension", "accessibility contrast", "caption safe area", "film receipt completeness", "source manifest integrity"
+  ],
+  "deliverable": {"path_pattern":"iterations/world-bound-quality-candidates/worker-<n>/proposal.json","required_fields":["worker","axis","finding","candidate_change","evidence","falsifier","next_measurement","fake_evidence"]},
+  "acceptance": ["candidate is atomic", "candidate names exact source line or scene object", "candidate has a falsifier", "candidate improves comprehension or aesthetics without inventing evidence"],
+  "fake_evidence": false
+}

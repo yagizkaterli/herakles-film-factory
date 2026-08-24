@@ -1,0 +1,32 @@
+{
+  "worker": "worker-34",
+  "axis": "receipt-to-world relationship",
+  "finding": "The existing RECEIPT seal is created as an isolated torus at a fixed position, while WORLD is a separate root object. No visual connector or shared anchor tells an outsider that the receipt belongs to this World snapshot. The manifest supplies a snapshot_id and aggregate counts, but no receipt payload or receipt object to visualize.",
+  "candidate_change": {
+    "target": "scenes/film_world_bound_agents_v1.py:111-115",
+    "operation": "Add one deterministic receipt_bridge Line from root.get_center() to seal.get_center(), using the existing receipt color, and Create it immediately before the existing seal animation.",
+    "intended_effect": "Make the existing RECEIPT seal visibly terminate at the WORLD root, so it reads as the receipt of the rendered read-only snapshot rather than as a detached badge.",
+    "data_boundary": "Use only existing root/seal geometry. Do not add a receipt id, payload, claim, or other value absent from canonical/world-bound-film-source.v1.json. Keep the seal, RECEIPT label, and source-bound text unchanged."
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:40-47",
+      "observation": "WORLD is instantiated as root with a separate root_ring and WORLD label."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:111-115",
+      "observation": "RECEIPT is instantiated independently as seal, moved to [0, 0.62, 0], and animated without a relation object to root."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:4,27-29",
+      "observation": "The canonical data contains snapshot_id, aggregate counts, the World/receipt film claim, and fake_evidence=false; it contains no receipt object or receipt payload."
+    },
+    {
+      "source": "showcase/films/WorldBoundAgentsV1.mp4",
+      "observation": "The requested QA artifact was absent at inspection time, so no current-frame, timing, or visual-comprehension claim is made."
+    }
+  ],
+  "falsifier": "Reject this candidate if a receipt-beat frame still leaves the seal visually detached from WORLD, or if a blind 2-second comprehension test has fewer than 4 of 5 viewers identify RECEIPT as belonging to the WORLD root. Also reject it if the bridge is read as a worker limb or task orbit, or if it requires any invented receipt data.",
+  "next_measurement": "Render the candidate scene with the production render command, capture the first frame containing the bridge and seal, and verify that the bridge endpoints touch the root and seal in the rendered view. Then run a 5-person blind identification test on that frame and record the count answering 'the receipt of this World snapshot'. Do not compare against the current MP4 until showcase/films/WorldBoundAgentsV1.mp4 is restored.",
+  "fake_evidence": false
+}

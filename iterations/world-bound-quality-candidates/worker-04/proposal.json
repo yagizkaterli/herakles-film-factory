@@ -1,0 +1,16 @@
+{
+  "worker": "worker-04",
+  "axis": "camera pacing",
+  "finding": "The scene has no camera pacing after the opening setup: the camera is initialized once at phi=66 degrees, theta=-58 degrees, focal_distance=22 and is never moved afterward. The visual beats therefore accumulate in one unchanged 3D framing. The available render is 11.466 seconds long at 15 fps with 172 video frames and no audio stream; its contact-sheet review shows the same framing from the habitat reveal through the receipt hold. The requested showcase/films/WorldBoundAgentsV1.mp4 path is absent, so the measured render was the repository copy at media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4.",
+  "candidate_change": "Add three subtle, continuous camera beats without changing scene content: hold the current wide establishing view through the title/floor reveal; during the root-and-agent build (source timeline approximately 1.45-5.00 seconds), dolly in about 8% with a small azimuth shift; when task orbits/parcels begin (approximately 7.13-8.48 seconds), pull back about 12% and settle on the receipt/footer composition. Use smooth easing, no hard cuts, preserve the final receipt hold, and keep all source-bound labels, counts, geometry, and privacy boundaries unchanged.",
+  "evidence": [
+    "scenes/film_world_bound_agents_v1.py:19 calls set_camera_orientation once; there are no subsequent camera movement calls.",
+    "scenes/film_world_bound_agents_v1.py:28-120 schedules the visual beats as self.play animations while leaving the camera unchanged; the pulse loop at lines 87-89 is object animation only.",
+    "scenes/film_world_bound_agents_v1.py:121 ends with a 1.0-second wait, providing a receipt/footer hold that can remain intact after the proposed pull-back.",
+    "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4 measured with ffprobe: 854x480, 15/1 nominal fps, 172 frames, 11.466016 seconds, video-only.",
+    "Visual QA contact sheet sampled at 1 fps from the repository render shows a persistent framing while floor, root, agents, task orbits, parcels, receipt, and footer are added in sequence."
+  ],
+  "falsifier": "Reject this candidate if a rerender still has no measurable camera transform change between the establishing frame and the agent-build/task-parcel beats, or if the camera moves introduce a hard cut, crop important labels, reduce the final receipt/footer hold below 1.0 second, or alter source-bound content.",
+  "next_measurement": "Rerender the candidate and record camera position/orientation/focal-distance samples at approximately 0.5, 2.5, 4.5, 7.5, 8.5, and 10.5 seconds. Verify at least two intentional transform deltas, no cut-like frame discontinuity, readable labels at each beat, and a final static hold of at least 1.0 second; also report duration, frame count, resolution, and audio-stream presence with ffprobe.",
+  "fake_evidence": false
+}

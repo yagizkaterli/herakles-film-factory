@@ -1,0 +1,38 @@
+{
+  "worker": "worker-25",
+  "axis": "visual rhythm",
+  "finding": {
+    "statement": "The current cut has a long linear build, a dense pulse burst, and a comparatively flat closing hold. The nominal animation schedule reaches the live text at 5.45s, spends 1.68s on seven pulse pairs, then uses 2.85s for orbit/parcels/labels/seal/footer before a 1.0s hold.",
+    "impact": "The visual beat is front-loaded into sequential reveals and does not recur as a clear motif after the agent cluster is established. This makes the habitat feel assembled once, rather than continuously alive."
+  },
+  "candidate_change": {
+    "type": "timing-only experiment",
+    "change": "Re-time the existing reveal into three readable beats: setup (title/floor/root), cluster (limbs/nodes/labels), and receipt (pulses/orbits/parcels/seal). Keep all source-bound objects, camera, copy, colors, and semantics unchanged. Use 0.15s breathing gaps between the cluster sub-beats, pulse the 13 working nodes in two alternating groups (7+6) with 0.10s up and 0.10s down per node, and reduce the terminal hold from 1.0s to 0.6s so the closing beat lands without a long plateau.",
+    "success_criterion": "The same information remains legible while motion has three discernible beats and no single reveal block exceeds 1.0s without a visual change."
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py",
+      "measurement": "Explicit run_time values sum to 5.45s through live_text; pulses[:7] contributes 7 * (0.12s + 0.12s) = 1.68s; orbit/parcels/task_text/seal/footer contributes 2.85s; self.wait(1.0) adds the terminal hold.",
+      "basis": "Source inspection of lines 28-121; no production file changed."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "measurement": "ffprobe reports 854x480, 15 fps, 172 frames, and 11.466016s duration.",
+      "basis": "Read-only ffprobe measurement of the provided showcase video."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "measurement": "At 1.0s sampling, frame-difference luma average is 2.14098 at 1.06667s but 0.00172473 at 11.066s, consistent with a strong early transition and a nearly static closing hold.",
+      "basis": "Read-only ffmpeg tblend= difference + signalstats sample; this is a motion proxy, not a perceptual score."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json",
+      "measurement": "The snapshot contains 13 working agents, 2 idle agents, and 60 tasks; the candidate preserves those counts and the read-only claim.",
+      "basis": "Read-only source snapshot inspection."
+    }
+  ],
+  "falsifier": "Reject this candidate if a rendered A/B review shows that the three beats are not reliably identifiable at normal playback, if any agent/task count or source-bound label changes, or if the motion proxy and blinded human ratings show no improvement or a regression in perceived continuity.",
+  "next_measurement": "Render the timing-only candidate to a separate preview, then compare it with the supplied video using 15 fps frame-difference energy by 0.25s bins and a blinded 5-point visual-rhythm rating from at least 3 reviewers. Record duration, beat-boundary timestamps, readability, and any semantic drift.",
+  "fake_evidence": false
+}

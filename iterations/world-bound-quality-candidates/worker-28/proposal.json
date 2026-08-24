@@ -1,0 +1,28 @@
+{
+  "worker": "worker-28",
+  "axis": "background noise reduction",
+  "finding": "The current film is silent: the scene defines visual objects and animations only, and the rendered MP4 contains no audio stream. Background-noise reduction is therefore not measurable or applicable to this artifact.",
+  "candidate_change": {
+    "scope": "render/export QA only; production files unchanged",
+    "proposal": "Add a gate that probes the rendered artifact before any denoise step. If no audio stream exists, record the axis as not-applicable and preserve the file. If an intentional audio stream is introduced later, compare a declared quiet reference segment with the program segment before and after denoise, and accept only a result with a lower measured noise floor and no declared speech/transient regression.",
+    "atomic_axis": "background noise reduction",
+    "production_files_touched": false
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:1-18",
+      "observation": "The scene imports JSON, pathlib, NumPy, and Manim, reads the canonical snapshot, sets the visual camera background, and contains no audio/sound/music/ambient/noise setup."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "ffprobe reports nb_streams=1 with only a video stream: H.264, 854x480, 172 frames, duration 11.466016 seconds. The audio-stream probe returns an empty streams list. SHA-256: 77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:6-9,29",
+      "observation": "The canonical source forbids encrypted reasoning, raw thoughts, credentials, environment secrets, and prompt content; its fake_evidence flag is false. No such material is used in this proposal."
+    }
+  ],
+  "falsifier": "This finding is falsified if a hash-identified future render of WorldBoundAgentsV1 contains an intentional audio stream, or if an independently reproduced render contains audio that can be segmented into a quiet reference and program interval. In that case, measure the noise floor and speech/transient preservation instead of treating the axis as not-applicable.",
+  "next_measurement": "Run ffprobe -v error -select_streams a -show_entries stream=index,codec_name,channels,sample_rate,duration -of json on the candidate render. If audio exists, record pre/post RMS or LUFS for a declared quiet reference segment and program segment, plus a speech/transient preservation check; if audio is absent, retain an explicit not-applicable result.",
+  "fake_evidence": false
+}

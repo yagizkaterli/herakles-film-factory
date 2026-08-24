@@ -1,30 +1,30 @@
 {
   "schema": "herakles.world-bound-film-source.v1",
-  "snapshot": {
-    "id": "herakles-native:snapshot:1787435102",
-    "schema_version": "herakles.system-snapshot.v2",
-    "cursor": 0,
-    "captured_at": "2026-08-22T21:45:02.929572+00:00",
-    "endpoint": "/v2/snapshot"
+  "source_authority": "HERAKLES-WORLD read-only snapshot",
+  "snapshot_id": "herakles-production:snapshot:0:1787556209107",
+  "created_at": "2026-08-24T07:23:29.107Z",
+  "privacy": {
+    "allowed": ["agent id", "model family", "status", "restart count", "aggregate counts"],
+    "forbidden": ["encrypted reasoning", "raw thoughts", "credentials", "environment secrets", "prompt content"]
   },
-  "measured_domains": {
-    "agents": 17,
-    "tasks": 2,
-    "queues": 2,
-    "rooms": 2,
-    "evidence": 2,
-    "receipts": 2,
-    "eon_layers": 4,
-    "world_fields": 5
-  },
-  "scene_binding": {
-    "trace": "evidence",
-    "question_gate": "tasks",
-    "route_split": "queues",
-    "eon_stratum": "eon_layers",
-    "authority_field": "world_fields",
-    "receipt_seal": "receipts"
-  },
-  "rule": "Every visible object must resolve to this snapshot or be explicitly marked narrative-only.",
+  "agents": [
+    {"id":"codex-nobet.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-oda@atolye.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-oda@benchmark.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-oda@boardy.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-oda@film.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-oda@kara-oda.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-oda@koloni-os.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-oda@ml.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-oda@paper.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-oda@tasarim.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-sef@harness.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-sef@hercules.service","model":"codex","status":"working","restarts":0},
+    {"id":"codex-sef@hterm-komuta.service","model":"codex","status":"working","restarts":0},
+    {"id":"bildmaker-sonnet.service","model":"claude","status":"idle","restarts":0},
+    {"id":"bildmaker-uretici.service","model":"claude","status":"idle","restarts":0}
+  ],
+  "aggregates": {"selected_agents":15,"working_selected":13,"idle_selected":2,"task_count":60,"labelled_corpus":7985,"reward_model":"kosum-odul-v1"},
+  "film_claim": "The World is not a dashboard: it is a read-only habitat where live workers leave bounded traces and receipts.",
   "fake_evidence": false
 }

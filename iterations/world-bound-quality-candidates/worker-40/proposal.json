@@ -1,0 +1,32 @@
+{
+  "worker": "worker-40",
+  "axis": "source manifest integrity",
+  "finding": "The canonical manifest passes its internal integrity checks, but the inspected render is not cryptographically bound to the exact manifest bytes. The scene reads the manifest at render time and uses snapshot_id and aggregate values, yet it emits no manifest digest or receipt. The quality prompt declares showcase/films/WorldBoundAgentsV1.mp4 as the source film, but that path is absent; the same-name render exists only under media/videos/film_world_bound_agents_v1/480p15/. QA can therefore verify the manifest and the MP4 independently, but cannot prove that this artifact was rendered from this exact manifest.",
+  "candidate_change": {
+    "scope": "render-boundary source manifest integrity only; production scene and canonical truth remain unchanged",
+    "change": "Add a QA-only preflight/postflight receipt around the existing SOURCE load at scenes/film_world_bound_agents_v1.py:8 and the source/aggregate use at lines 15-18 and 80. Read and freeze the manifest bytes once, validate schema, unique agent IDs, allowed statuses, selected/working/idle aggregate equality, and absence of forbidden data; record the manifest SHA-256 and snapshot_id. After rendering, record the artifact path and SHA-256, and fail the gate when the declared source_film path is missing or the receipt does not carry the same manifest digest. Do not change visible geometry, copy, source values, or production files.",
+    "expected_manifest_sha256": "8e6049e7f72d8f7553a665c3dc7b1e65b81d3a9b68e8fe2106a1af391e04e503",
+    "production_files_touched": false
+  },
+  "evidence": [
+    {
+      "source": "canonical/world-bound-film-source.v1.json:1-29",
+      "observation": "JSON parsing succeeds; the manifest has 15 unique agents, recomputed counts of 13 working and 2 idle, and all three corresponding aggregate fields match. No forbidden-data keys are present and fake_evidence is false. SHA-256 is 8e6049e7f72d8f7553a665c3dc7b1e65b81d3a9b68e8fe2106a1af391e04e503."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:8,15-18,80",
+      "observation": "The scene loads canonical/world-bound-film-source.v1.json, reads agents and aggregates, renders source['snapshot_id'], and renders aggregate working_selected, idle_selected, and task_count. There is no manifest validation, digest, or render receipt in the inspected source."
+    },
+    {
+      "source": "canonical/world-film-quality-fleet-prompt.v1.json:4-6",
+      "observation": "The declared source_film is showcase/films/WorldBoundAgentsV1.mp4 and the declared source_manifest is canonical/world-bound-film-source.v1.json. The showcase MP4 path is absent on disk."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "The same-name render exists and ffprobe reports one H.264 video stream at 854x480, 15 fps, 172 frames, and 11.466016 seconds; its SHA-256 is 77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153. MP4 metadata contains only encoder/render comment fields, not the manifest snapshot ID or digest."
+    }
+  ],
+  "falsifier": "This finding is falsified if an independently verifiable receipt for the inspected WorldBoundAgentsV1 artifact records the exact manifest SHA-256 8e6049e7f72d8f7553a665c3dc7b1e65b81d3a9b68e8fe2106a1af391e04e503, the matching snapshot_id, the artifact SHA-256, and a resolvable declared source_film path, with the aggregate checks passing.",
+  "next_measurement": "Run the candidate QA gate without changing production files. Assert the manifest digest and recomputed aggregates, emit a sidecar receipt for the render, and verify that the receipt links the manifest digest to the artifact SHA-256 77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153. Separately resolve or flag the declared showcase path; acceptance requires a resolvable path and an exact manifest-to-artifact digest match.",
+  "fake_evidence": false
+}

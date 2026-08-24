@@ -1,0 +1,38 @@
+{
+  "worker": "worker-37",
+  "axis": "accessibility contrast",
+  "finding": "The two idle worker labels reuse the idle node color #64747C and are rendered as 7.5-size text. Against the film's dark surfaces, that palette is below a 4.5:1 normal-text contrast target: 4.16:1 on the camera background #04070C, 3.61:1 on the habitat tile #101B21, and 3.05:1 on the WORLD root fill #152B31. The available 854x480 render also shows the small gray labels in the dense center label band, where the low luminance separation is difficult to resolve.",
+  "candidate_change": {
+    "scope": "candidate-only label styling; production scene file remains untouched",
+    "change": "In the label construction block at scenes/film_world_bound_agents_v1.py:60-68, keep the existing node color and all geometry, font size, truncation, placement, animation, and working-label color unchanged. Derive a label_color separately: use #70E5F2 for working labels and #A8C0C8 for idle labels, then pass label_color to Text(..., color=label_color).",
+    "expected_contrast": {
+      "idle_label_color": "#A8C0C8",
+      "on_camera_background": "10.61:1",
+      "on_habitat_tile": "9.19:1",
+      "on_world_root_fill": "7.76:1",
+      "on_tile_stroke": "6.62:1"
+    },
+    "atomicity": "Only idle-label luminance contrast changes; status data, status semantics, node appearance, and layout remain unchanged."
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:60-68",
+      "observation": "working is derived from agent status, idle and working nodes/labels share the same color variable, idle is #64747C, and labels use font_size 7.5."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:24-29",
+      "observation": "The snapshot contains exactly 2 idle and 13 working agents; only allowed status/id data is used, and fake_evidence is false."
+    },
+    {
+      "kind": "wcag_relative_luminance_calculation",
+      "observation": "Using the WCAG 2.x sRGB relative-luminance formula on the declared source colors, current #64747C measures 4.16:1 on #04070C, 3.61:1 on #101B21, and 3.05:1 on #152B31. Proposed #A8C0C8 measures 10.61:1, 7.76:1, and 7.76:1 respectively; it also measures 6.62:1 against the #24363C tile stroke."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "ffprobe reports one H.264 video stream at 854x480, 15 fps, 172 frames, and 11.466016 seconds. Extracted checks around 4s and 8s show the worker labels as a small, overlapping center band over dark floor geometry. The requested showcase/films/WorldBoundAgentsV1.mp4 path is absent, so this matching render path was used for QA."
+    }
+  ],
+  "falsifier": "Falsify this candidate if a same-settings candidate render still produces any settled idle-label/background pair below 4.5:1 at 854x480, or if the brighter idle label causes working and idle statuses to be confused when viewed in color and grayscale. A failure caused only by label size or overlap is outside this contrast-only finding and should not be counted as a contrast pass.",
+  "next_measurement": "Render the candidate to a temporary non-production path at the existing 854x480, 15 fps settings. At one settled label frame and one later task/receipt frame, isolate both idle label regions, sample their adjacent local backgrounds, and record WCAG 2.x contrast ratios plus a color/grayscale status-identification check. Accept the contrast candidate only if the minimum representative ratio for both idle labels is at least 4.5:1 in both frames and all 13 working labels retain the existing #70E5F2 color. Keep the candidate render and any measurement artifacts outside production paths.",
+  "fake_evidence": false
+}

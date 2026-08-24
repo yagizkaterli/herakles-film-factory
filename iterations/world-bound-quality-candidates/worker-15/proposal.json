@@ -1,0 +1,27 @@
+{
+  "worker": "worker-15",
+  "axis": "orbit meaning",
+  "finding": "Mevcut film üç eşmerkezli task orbit'i ve her birinde bir parcel gösteriyor; ancak parcel'lar sabit başlangıç noktalarına yerleştiriliyor. Kodda parcel oluşturulduktan sonra yalnızca RECEIPT, footer ve bekleme adımları var. Kanonik snapshot yalnızca aggregate task_count=60 sağlıyor; üç ayrı lane, rota veya parcel yörüngesi için kaynak alanı yok.",
+  "candidate_change": "Üç statik task orbit'i tek bir açıkça etiketlenmiş aggregate-trace orbit'ine indir. Kaynak destekli tek nicelik olan 60 TASKS'i göster; bir receipt marker'ı orbit üzerinde bir kez tam tur döndürerek bunun zaman içinde gösterilen agregat iz olduğunu anlat. Yanına 'AGGREGATE TRACE · NOT ROUTING' uyarısı ekle. Marker'ı herhangi bir agent'a, göreve veya nedensel rotaya bağlama; bu hareketin snapshot verisine ek olay üretmediğini koru.",
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:91-104",
+      "observation": "Üç orbit radius=[3.7, 4.25, 4.8] ile çiziliyor ve üç parcel [radius, .2, 0] konumuna yerleştiriliyor; parcel'lar yalnızca GrowFromCenter ile görünür oluyor."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:111-121",
+      "observation": "Parcel oluşturma adımından sonra seal/footer animasyonları ve wait var; parcel veya orbit için hareket/timeline güncellemesi yok."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:27-29",
+      "observation": "Kaynak aggregate olarak task_count=60 veriyor ve film claim'i bounded traces/receipts ile sınırlı; per-task rota, lane veya yörünge alanı yok."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "ffprobe ölçümü: H.264, 854x480, 172 frame, 15 fps, 11.466016 saniye. t=8.0 ve t=10.8 örnek karelerinde orbit/parcel yerleşimi aynı; son kare farkları seal/footer yazılarının eklenmesinden kaynaklanıyor."
+    }
+  ],
+  "falsifier": "Yeni render'da aggregate-trace marker'ı açık etiket olmadan agent veya task rotası gibi okunuyorsa; ya da t=parcel görünür olduktan sonra marker bir tam turu tamamlamıyorsa aday başarısızdır. Ayrıca snapshot kaynağına per-task/lane verisi eklenmeden üç farklı orbit anlamı korunuyorsa aday desteklenmez.",
+  "next_measurement": "Aday değişiklik sonrası aynı çözünürlük ve fps ile render al. t=parcel görünür, t=orta tur ve t=son karede marker merkezini üç karede piksel koordinatı olarak kaydet; başlangıç ve bitiş açı farkını ölç ve yaklaşık 2π, agent/task rotası iddiası olmadığını kontrol et. İki bağımsız değerlendiriciye yalnızca kareleri ve caption'ı gösterip 'aggregate zaman izi mi, routing mi?' sınıflandırmasını al; routing okuması %10'u aşarsa adayı geri çek.",
+  "fake_evidence": []
+}

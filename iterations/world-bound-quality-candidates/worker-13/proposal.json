@@ -1,0 +1,33 @@
+{
+  "worker": "worker-13",
+  "axis": "receipt-seal readability",
+  "finding": "The RECEIPT label is legible but fragile at the delivered 854x480 size: it is rendered at font_size 14 in a fixed bottom-center position, immediately above the footer, while the seal torus remains in the 3D world. This weakens the label-to-seal association and leaves little vertical clearance from the footer in the final shot.",
+  "candidate_change": {
+    "scope": "receipt-seal readability only; proposal only, production files unchanged",
+    "change": "Use one dedicated label treatment: increase seal_label from font_size 14 to 18 and place it slightly higher with a larger bottom buffer (for example, to_edge(DOWN, buff=.38)). Keep the word RECEIPT, torus geometry, footer copy, source data, and all other layout elements unchanged.",
+    "intended_result": "At delivery resolution, RECEIPT should read as a distinct seal annotation with clear separation from the footer while remaining visually associated with the receipt torus.",
+    "production_files_touched": false
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:111-120",
+      "observation": "The seal torus is placed at a 3D world coordinate, but seal_label is a fixed-in-frame Text object with font_size 14 and bottom buffer .22; the footer is another fixed-in-frame Text object with font_size 15 and bottom buffer .02. The two labels therefore occupy adjacent bottom-frame bands while the torus and label are not in the same coordinate system."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "measurement": "H.264, 854x480, 15 fps, 172 frames, 11.466016 seconds; SHA-256 77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153.",
+      "observation": "Visual inspection of the receipt-present final section around t=11.0s shows RECEIPT at bottom center directly above the footer. The label is materially smaller than the footer and has only a narrow visual gap from it."
+    },
+    {
+      "source": "showcase/films/WorldBoundAgentsV1.mp4",
+      "observation": "The user-specified showcase path is absent in this workspace; no visual claim is attributed to that missing path. The hash-identified media render above is the existing WorldBoundAgentsV1 artifact inspected instead."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:6-9,29",
+      "observation": "The snapshot allows only agent id, model family, status, restart count, and aggregate counts; it forbids raw thoughts, credentials, environment secrets, and prompt content. The proposal uses none of the forbidden material, and fake_evidence is false."
+    }
+  ],
+  "falsifier": "The readability finding is falsified if a same-resolution baseline measurement on the receipt-present frames shows at least 16 px of RECEIPT glyph height, at least 8 px of clear vertical separation from the footer, and 5 of 5 blinded reviewers can identify the label on first glance without confusing it with the footer. If those conditions already hold, the candidate change is not justified for this axis.",
+  "next_measurement": "Render baseline and candidate at the same 854x480/15 fps settings. On the final 15 receipt-present frames, record the RECEIPT bounding-box height, the minimum vertical gap to the footer, and text-to-background contrast from fixed crops. Run a 5-person blinded first-glance check at native resolution. Accept the candidate only if glyph height is at least 16 px, the minimum gap is at least 8 px, first-glance identification is at least 4/5, and no footer readability regression is observed.",
+  "fake_evidence": false
+}

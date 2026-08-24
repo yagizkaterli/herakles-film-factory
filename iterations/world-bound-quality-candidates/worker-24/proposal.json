@@ -1,0 +1,39 @@
+{
+  "worker": "worker-24",
+  "axis": "pause/breathing room",
+  "finding": "The film has only one explicit settling interval: the final self.wait(1.0). The network, live-count, pulse, task-parcel, receipt, and footer beats otherwise run back-to-back, so the accumulated state has little time to be read before the next layer arrives.",
+  "candidate_change": {
+    "scope": "candidate only; no production files changed",
+    "edits": [
+      {
+        "after_source_line": 78,
+        "change": "Add self.wait(0.60) after the agent-label animation, before live_text is written.",
+        "purpose": "Give the completed habitat/network state a readable breath before metrics appear."
+      },
+      {
+        "after_source_line": 109,
+        "change": "Add self.wait(0.60) after task_text is written, before the receipt seal appears.",
+        "purpose": "Let the task-parcel claim settle before the closing receipt beat."
+      }
+    ],
+    "expected_delta_seconds": 1.20,
+    "preserve": "Keep all scene content and the existing final self.wait(1.0) unchanged."
+  },
+  "evidence": {
+    "source": [
+      "scenes/film_world_bound_agents_v1.py:75-78 shows the network build and labels as consecutive plays with no wait.",
+      "scenes/film_world_bound_agents_v1.py:80-109 runs live_text, seven pulse pairs, task orbits, parcels, and task_text without an interstitial wait.",
+      "scenes/film_world_bound_agents_v1.py:121 is the only explicit self.wait call and is 1.0 seconds."
+    ],
+    "render_measurement": {
+      "path": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "duration_seconds": 11.466016,
+      "frames": 172,
+      "frame_rate": "15/1"
+    },
+    "visual_check": "A contact sheet sampled at 0, 2, 4, 6, 8, and 10 seconds shows continuous accumulation from floor/root to network, metrics, parcels, and closing receipt; no mid-film hold is visible. The requested showcase/films/WorldBoundAgentsV1.mp4 path was absent, so the existing media render path above was used."
+  },
+  "falsifier": "Reject this candidate if a rerender with the two waits does not create two visibly stable reading windows, or if a blind review still cannot identify the network/metrics and task-parcel beats more reliably than the baseline. Also reject it if the added holds make the 12.67-second target feel inert rather than breathable.",
+  "next_measurement": "Apply the candidate in an isolated render, verify duration is approximately 12.67 seconds with ffprobe, then compare baseline and candidate at 15 fps using identical samples around the two insertion points. Run a blind 3-beat readability check: can a reviewer name the current beat before the next visual layer appears? Record pass/fail and the measured durations; do not infer unmeasured results.",
+  "fake_evidence": false
+}

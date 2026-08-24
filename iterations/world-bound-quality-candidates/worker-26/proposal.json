@@ -1,0 +1,36 @@
+{
+  "worker": "worker-26",
+  "axis": "material hierarchy",
+  "finding": "Material hierarchy is legible by category but not by world priority: the 13 working agent spheres use a bright cyan fill with near-white stroke, while the WORLD root uses a dark fill with a bright cyan stroke and an additional cyan torus. In the rendered artifact, the repeated floor tiles and the luminous agent nodes compete with the root; the root reads as another node instead of the primary substrate/anchor.",
+  "candidate_change": {
+    "scope": "material hierarchy only",
+    "change": "Assign the WORLD root a distinct, higher-value substrate material: raise its fill from #152B31 to a restrained warm light material and keep the ring as a lower-contrast edge, while lowering working-node stroke brightness from #E8FFFF to the working fill family (#70E5F2). Keep idle nodes gray and task parcels gold unchanged.",
+    "intended_result": "The eye should read WORLD first, working traces second, task parcels third, and the habitat floor last, without changing geometry, copy, source data, or status semantics."
+  },
+  "evidence": [
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:34-35",
+      "observation": "The habitat floor is built from 35 repeated tiles with fill #101B21 and stroke #24363C; this creates a large, repeated material field behind all entities."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:40-47",
+      "observation": "The WORLD root has dark fill #152B31, bright #A3E9F0 stroke, and a separate #58C9D8 torus; its material family overlaps the working traces."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:60-68",
+      "observation": "Working and idle nodes are differentiated by fill/color, but working nodes also receive near-white #E8FFFF strokes and are rendered as bright spheres."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "measurement": "854x480, 15 fps, 172 frames, 11.466016 seconds",
+      "observation": "Sampled frames show the cyan/white agent spheres and root ring competing for the strongest cool highlight; the floor tile grid remains visually persistent."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:27-29",
+      "observation": "The source is a read-only snapshot with 13 working agents, 2 idle agents, 60 tasks, and fake_evidence=false; the candidate does not alter these source facts."
+    }
+  ],
+  "falsifier": "After the candidate render, if blinded viewers still identify a working agent or task parcel as the primary anchor before WORLD in at least 4 of 5 trials, or if the root becomes less distinguishable from the floor, this material-only hypothesis is falsified.",
+  "next_measurement": "Render the unchanged shot and the candidate at the same 854x480 settings. Use the final six sampled frames and a 5-person blinded identification test. Record first-identified anchor (WORLD / working node / task parcel / floor), plus mean luminance and edge contrast for masked WORLD, working-node, task-parcel, and floor regions. Accept only if WORLD is first in at least 4/5 trials, working-vs-idle remains distinguishable, and no source/copy/geometry diff is introduced.",
+  "fake_evidence": false
+}

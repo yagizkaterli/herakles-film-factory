@@ -1,0 +1,36 @@
+{
+  "worker": "worker-35",
+  "axis": "aggregate metric phrasing",
+  "finding": "The aggregate values are source-faithful, but the on-screen phrase does not identify the selected-agent scope or expose the total denominator; TASKS is also an unlabeled aggregate field.",
+  "candidate_change": {
+    "target": "scenes/film_world_bound_agents_v1.py:80",
+    "current": "{working_selected} WORKING · {idle_selected} IDLE · {task_count} TASKS",
+    "proposed": "SELECTED AGENTS {working_selected} WORKING · {idle_selected} IDLE · {selected_agents} TOTAL · TASK COUNT {task_count} · SNAPSHOT",
+    "constraint": "Change phrasing only; preserve the source values and do not add an inferred task denominator."
+  },
+  "evidence": [
+    {
+      "source": "canonical/world-bound-film-source.v1.json:27",
+      "observation": "The canonical aggregate is selected_agents=15, working_selected=13, idle_selected=2, task_count=60."
+    },
+    {
+      "source": "canonical/world-bound-film-source.v1.json:10-25",
+      "observation": "There are 15 agent rows: 13 with status=working and 2 with status=idle; a read-only snapshot is the stated source authority."
+    },
+    {
+      "source": "scenes/film_world_bound_agents_v1.py:80-84",
+      "observation": "The current rendered aggregate text is exactly formatted as 13 WORKING · 2 IDLE · 60 TASKS and is driven by the aggregate fields."
+    },
+    {
+      "source": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "observation": "ffprobe succeeded: H.264, 854x480, 15 fps, 172 frames, 11.466016 seconds."
+    },
+    {
+      "source": "read-only QA command",
+      "observation": "Computed row counts matched the canonical aggregates: 15 total, 13 working, 2 idle; the JSON assertion passed."
+    }
+  ],
+  "falsifier": "This candidate is falsified if the selected_agents denominator is not the intended scope for working_selected and idle_selected, if task_count is defined as a selected-agent subset requiring a different label, or if rendered QA shows the proposed phrase truncating or obscuring the existing metric block.",
+  "next_measurement": "Render the candidate phrase at the existing 854x480 output settings, then inspect the aggregate text block for legibility and compare exact displayed values against the canonical JSON: 13 working, 2 idle, 15 selected total, 60 task count. Record any overflow, overlap, or semantic disagreement; do not claim improvement without that render check.",
+  "fake_evidence": false
+}

@@ -1,0 +1,61 @@
+{
+  "worker": "worker-17",
+  "axis": "source-bound identity continuity",
+  "finding": "The scene derives each label from a source agent id, but line 77 registers the labels with add_fixed_in_frame_mobjects(labels). The rendered labels therefore lose their world-space attachment to the corresponding node and collapse into a small central overlay band; at 854x480 they visibly overlap in the 3s, 5s, 8s and 11s samples. This weakens the film's claim that each visible worker is a source-bound object.",
+  "candidate_change": {
+    "production_file": "scenes/film_world_bound_agents_v1.py",
+    "exact_target": "line 77, labels VGroup",
+    "replacement": "self.add_fixed_orientation_mobjects(labels)",
+    "keep_unchanged": [
+      "agent['id'] as the label source",
+      "short[:17] deterministic display policy",
+      "node and label position calculation at lines 65-68",
+      "canonical manifest and all production files for this proposal"
+    ],
+    "why": "Fixed-orientation labels remain readable toward the camera while staying in the same 3D coordinate system as their node. This is one atomic registration change: it restores node-to-label spatial continuity without adding unsupported identity data."
+  },
+  "evidence": [
+    {
+      "kind": "source_read",
+      "path": "scenes/film_world_bound_agents_v1.py",
+      "lines": "59-68, 71, 77",
+      "observation": "The label text is deterministically derived from agent['id'], positioned from pos, collected into labels, then attached as fixed-in-frame objects."
+    },
+    {
+      "kind": "canonical_manifest",
+      "path": "canonical/world-bound-film-source.v1.json",
+      "lines": "10-27",
+      "observation": "The snapshot contains 15 selected agents (13 working, 2 idle); the rendered scene uses the same agents list and aggregate counts."
+    },
+    {
+      "kind": "render_qa",
+      "requested_path": "showcase/films/WorldBoundAgentsV1.mp4",
+      "requested_path_status": "missing",
+      "inspected_path": "media/videos/film_world_bound_agents_v1/480p15/WorldBoundAgentsV1.mp4",
+      "metadata": "854x480, H.264, 15 fps nominal, 11.466016 seconds, 172 frames",
+      "samples": ["t=3s", "t=5s", "t=8s", "t=11s"],
+      "observation": "All samples show the worker labels in a central horizontal band with visible collisions/low separation while the nodes remain distributed around WORLD."
+    },
+    {
+      "kind": "integrity",
+      "sha256": {
+        "scene": "9a8431c53d797377c9434c538ad2d33533c28fa5c11584ac2a5f9666c2897491",
+        "manifest": "8e6049e7f72d8f7553a665c3dc7b1e65b81d3a9b68e8fe2106a1af391e04e503",
+        "inspected_render": "77a364129f1409a4b11a0e861c477f374a815e4a4b49174c5d5747d64aa6a153"
+      }
+    }
+  ],
+  "falsifier": "Reject this candidate if a fresh render with the same manifest and camera still places labels in one central band, or if any of the 15 source agents cannot be matched one-to-one with a nearby visible label in at least two of the four sampled timestamps. Also reject it if fixed-orientation rendering makes labels unreadable at 854x480.",
+  "next_measurement": {
+    "render": "Render the candidate scene at 480p15 from the unchanged canonical manifest.",
+    "sample_timestamps_seconds": [3, 5, 8, 11],
+    "qa_checks": [
+      "Count 15 node-label pairs against the 15 manifest ids.",
+      "For each sample, record the pixel distance from each label centroid to its node centroid.",
+      "Record label-label overlap percentage and count any ambiguous node-label assignments.",
+      "Confirm the 13-working/2-idle visual state and aggregate text remain unchanged."
+    ],
+    "pass_condition": "15/15 bijective node-label matches in every sample, no central-band collapse, zero ambiguous assignments, and no loss of label readability."
+  },
+  "fake_evidence": false
+}
