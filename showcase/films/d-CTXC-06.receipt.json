@@ -1,0 +1,16 @@
+{
+  "schema": "herakles.film-receipt.v1",
+  "id": "d-CTXC-06",
+  "title": "Context to Event to Decision",
+  "source": "cards/kontrat.json",
+  "scene": "scenes/film_ctxc06_context_event_decision_3d.py",
+  "gif": "docs/media/hero.gif",
+  "mp4": "docs/media/d-CTXC-06-hero.mp4",
+  "sha256": {
+    "gif": "2eb9243a1f06e5c9c3eab9264cc6d854b37a163078feed933d77e380e831bb27",
+    "mp4": "f935b4f9ad85c5796e9690240abd7cd11ca2af02b6d9c5970bd0b605c93b73d0"
+  },
+  "duration_seconds": 5.466341,
+  "claim": "Raw files are gathered into a context capsule, become an event, then produce a decision.",
+  "fake_evidence": false
+}

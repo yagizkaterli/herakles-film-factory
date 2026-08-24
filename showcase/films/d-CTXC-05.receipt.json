@@ -1,0 +1,16 @@
+{
+  "schema": "herakles.film-receipt.v1",
+  "id": "d-CTXC-05",
+  "title": "Fail-Closed Context Gate",
+  "source": "cards/kontrat.json",
+  "scene": "scenes/film_ctxc05_gate_3d.py",
+  "gif": "docs/media/gate.gif",
+  "mp4": "docs/media/d-CTXC-05-gate.mp4",
+  "sha256": {
+    "gif": "0933bd8b7a2f514547c99f575cb74c862dccbba51a8f8af9353d7c3a02cf93e6",
+    "mp4": "d568707b58c71a9652e85eb63a1f6f2f4e3991b3592e5dbc3a54749d5c0c78ed"
+  },
+  "duration_seconds": 7.198698,
+  "claim": "An incomplete context capsule is rejected; a complete capsule crosses the render gate.",
+  "fake_evidence": false
+}

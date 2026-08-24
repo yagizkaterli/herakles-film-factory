@@ -128,6 +128,26 @@
       "render": "showcase/films/s6-universe-rebuild.mp4",
       "preview": "showcase/films/s6-universe-rebuild-preview.gif",
       "receipt": "showcase/films/s6-universe-rebuild.receipt.json"
+    },
+    {
+      "id": "d-CTXC-05",
+      "title": "Fail-Closed Context Gate",
+      "status": "deterministic-render",
+      "question": "What happens when the context capsule is incomplete?",
+      "source": "cards/kontrat.json",
+      "render": "docs/media/d-CTXC-05-gate.mp4",
+      "preview": "docs/media/gate.gif",
+      "receipt": "showcase/films/d-CTXC-05.receipt.json"
+    },
+    {
+      "id": "d-CTXC-06",
+      "title": "Context to Event to Decision",
+      "status": "deterministic-render",
+      "question": "How does a file pile become a decision trace?",
+      "source": "cards/kontrat.json",
+      "render": "docs/media/d-CTXC-06-hero.mp4",
+      "preview": "docs/media/hero.gif",
+      "receipt": "showcase/films/d-CTXC-06.receipt.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"
