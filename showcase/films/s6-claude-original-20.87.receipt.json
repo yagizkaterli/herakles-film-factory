@@ -1,0 +1,23 @@
+{
+  "schema": "herakles.film-receipt.v1",
+  "id": "s6-claude-original-20.87",
+  "title": "S6 Construction — Claude Final F06",
+  "status": "retrieved-and-verified",
+  "source": "VPS root /root/herakles-film-factory/showcase/films/s6-universe-rebuild.mp4",
+  "caption_contract": "canonical/s6-twitter-explainer.v2.json",
+  "tweet": "canonical/s6-tweet-variant-a.v1.json",
+  "render": {
+    "asset": "showcase/films/s6-claude-original-20.87.mp4",
+    "preview": "showcase/films/s6-claude-original-20.87-preview.gif",
+    "sha256": "01645899a961a03225882056ea5dd98ee52f57209c9162cf014c919c6c9de4d7",
+    "preview_sha256": "86695df88b06b25cbb1c8c1ff14b6c367c338acdab5774536d0feea7bd5b33a4",
+    "duration_seconds": 20.866667,
+    "resolution": "854x480"
+  },
+  "qa": {
+    "f06_final_frame_checked": true,
+    "answer_caption_present": true,
+    "paper_framing": "paper claims yes; disagreement is scoped",
+    "fake_evidence": false
+  }
+}

@@ -170,6 +170,16 @@
       "preview": "showcase/films/w1-evidence-thread-tweet.gif",
       "receipt": "showcase/films/w1-evidence-thread-tweet.receipt.json",
       "tweet": "canonical/w1-evidence-thread-tweet.v1.json"
+    },
+    {
+      "id": "s6-claude-original-20.87",
+      "title": "S6 Construction — Claude Final F06",
+      "status": "retrieved-and-verified",
+      "question": "Can the film answer the question and scope the disagreement?",
+      "source": "VPS root artifact + https://alpo.ge/s6.pdf",
+      "render": "showcase/films/s6-claude-original-20.87.mp4",
+      "receipt": "showcase/films/s6-claude-original-20.87.receipt.json",
+      "tweet": "canonical/s6-tweet-variant-a.v1.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"
