@@ -1,0 +1,28 @@
+{
+  "schema": "herakles.w1-evidence-thread-fleet-prompt.v1",
+  "reference": "iterations/w1/concept-01-evidence-thread.png",
+  "source_boundary": "ImageGen reference is visual grammar only; it is not operational evidence.",
+  "mission": "Turn the evidence-thread visual grammar into a public, tweet-ready film concept for the S6 paper.",
+  "visual_spine": [
+    "source artifact",
+    "luminous evidence stream",
+    "transparent Context Capsule",
+    "torus family and cusp hexagonal fibre",
+    "closed S6 claim with a receipt/world trace"
+  ],
+  "constraints": [
+    "one causal move per beat",
+    "no unreadable pseudo-text",
+    "no decorative dashboard UI",
+    "paper claim must be framed as a claim, not consensus fact",
+    "deterministic Manim reconstruction plan required",
+    "return JSON only for the candidate artifact"
+  ],
+  "deliverable": {
+    "path_pattern": "iterations/w1/fleet-candidates/worker-<n>.json",
+    "required_fields": ["worker", "one_sentence_story", "beats", "persistent_objects", "caption_script", "manim_plan", "falsifier", "fake_evidence"],
+    "beats": 5
+  },
+  "evaluation": ["audience_clarity", "causal_legibility", "source_parity", "object_continuity", "craft"],
+  "fake_evidence": false
+}
