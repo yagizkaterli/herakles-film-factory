@@ -1,0 +1,35 @@
+{
+  "id": "evidence-world-film-v1",
+  "status": "concept-keyframe-ready",
+  "thesis": "A trustworthy agent system is a world with memory, gates, and recoverable traces—not a stream of chat bubbles.",
+  "visual_grammar": {
+    "world": "layered basalt evidence terrain",
+    "intake": "amber excavation basin",
+    "boundary": "transparent crystalline context capsule",
+    "verification": "cyan falsifier gate and receipt bridge",
+    "network": "sparse filaments between distant islands",
+    "caption_policy": "all words added deterministically in code; generated frame contains no text"
+  },
+  "acts": [
+    {"id":"A1","name":"raw_trace","camera":"low_orbit_left","action":"amber trace fragments rise from the excavation basin"},
+    {"id":"A2","name":"capsule","camera":"slow_push_center","action":"fragments converge inside the transparent capsule; incomplete evidence remains outside"},
+    {"id":"A3","name":"falsifier","camera":"lateral_track_right","action":"the cyan gate rejects one incomplete stream and opens for a measured one"},
+    {"id":"A4","name":"world_state","camera":"pullback","action":"the verified receipt becomes a bridge to the living network of islands"}
+  ],
+  "deterministic_overlay": [
+    "TRACE",
+    "CAPSULE",
+    "FALSIFIER",
+    "RECEIPT",
+    "WORLD STATE"
+  ],
+  "negative_constraints": [
+    "no dashboard panels",
+    "no floating random labels",
+    "no unreadable generated typography",
+    "no humanoid robot characters",
+    "no unrelated collage scenes"
+  ],
+  "asset": "assets/generated/evidence-world-keyframe-v1.png",
+  "next_build": "deterministic Three.js blocking pass, then Manim timing/overlay pass"
+}
