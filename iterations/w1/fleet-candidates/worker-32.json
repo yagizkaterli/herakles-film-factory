@@ -1,0 +1,150 @@
+{
+  "worker": 32,
+  "one_sentence_story": "A source card crosses a custody corridor: each beat makes one visible transformation, but the final S6 paper claim closes only when its ordinal trail can be replayed and falsified.",
+  "beats": [
+    {
+      "beat": 1,
+      "title": "Source enters",
+      "visual": "A warm paper source card stands on the left basalt island. One clearly legible source-pointer line lights up, then emits a single amber filament toward the center.",
+      "causal_move": "source pointer -> evidence stream",
+      "on_screen_copy": "START WITH A SOURCE POINTER",
+      "source_pointer": "W1-MANIFEST.json source_set; this beat asserts no world event"
+    },
+    {
+      "beat": 2,
+      "title": "Context separates",
+      "visual": "The amber filament enters a transparent Context Capsule. Inside it, an amber source rail remains distinct from a cyan claim token; they never merge into one undifferentiated glow.",
+      "causal_move": "evidence stream -> context-bound claim token",
+      "on_screen_copy": "CONTEXT IS A BOUNDARY, NOT PROOF",
+      "source_pointer": "G-VITRIN/3B1B-ANLATI-BILGI.md Rule 7: flag approximations and say what the animation does not prove"
+    },
+    {
+      "beat": 3,
+      "title": "Object persists",
+      "visual": "Three concentric torus rings form around the same cyan claim token. The token keeps its orientation and label while the camera does not cut; the amber source rail stays visible behind the capsule.",
+      "causal_move": "claim token -> persistent object with provenance",
+      "on_screen_copy": "KEEP THE OBJECT CONTINUOUS",
+      "source_pointer": "02 Projects/lobi/LOBI-OBSERVABILITY-MOTION-v7/MOTION-CONTRACT-v7.md, Motion primitive 3: Object continuity"
+    },
+    {
+      "beat": 4,
+      "title": "World trace replays",
+      "visual": "The cyan token exits the capsule along a blue filament that touches three fixed hexagonal fibre cusps in order. Each cusp leaves a small receipt tab; the terrain reads as a traversable world, not a dashboard.",
+      "causal_move": "claim token -> ordered world trace",
+      "on_screen_copy": "A CLAIM NEEDS A REPLAYABLE TRACE",
+      "source_pointer": "P-HERAKLES-PAPER/DRAFT-FINAL.md Section 07 lines 624-628: memory is described as traversable world; receipt and world event remain required future witnesses"
+    },
+    {
+      "beat": 5,
+      "title": "Claim closes with a brake",
+      "visual": "At the right scroll, the torus aperture closes into a hexagonal seal beside a readable receipt card. The wording visibly labels the statement as a paper claim and places its refuter on the same card.",
+      "causal_move": "ordered trace + receipt -> qualified paper claim",
+      "on_screen_copy": "PAPER CLAIM / S6: EON = ORDINAL EVENT ORDER / NOT WALL CLOCK",
+      "secondary_copy": "REFUTE IF ORDER DEPENDS ONLY ON WALL TIME",
+      "source_pointer": "P-HERAKLES-PAPER/DRAFT-FINAL.md Section 06 lines 484-506; claim is not presented as consensus fact"
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source-card",
+      "role": "source artifact",
+      "continuity": "fixed left anchor from beat 1 through beat 5",
+      "receipt_requirement": "show a real source pointer in a later production pass; this concept does not invent one"
+    },
+    {
+      "id": "amber-stream",
+      "role": "luminous evidence stream",
+      "continuity": "one unbroken path from source-card into capsule; source rail never recolors into the claim token"
+    },
+    {
+      "id": "context-capsule",
+      "role": "transparent boundary",
+      "continuity": "center anchor; contains the claim token and preserves source/claim separation"
+    },
+    {
+      "id": "torus-family",
+      "role": "continuity and recurrence",
+      "continuity": "three rings are created once in beat 3 and remain attached to the same token"
+    },
+    {
+      "id": "cusp-fibre",
+      "role": "hexagonal world-trace checkpoints",
+      "continuity": "three fixed cusps receive the exiting filament in event order"
+    },
+    {
+      "id": "receipt-tab",
+      "role": "world/render witness placeholder",
+      "continuity": "tabs accumulate at trace cusps; they are not evidence until backed by a real receipt"
+    }
+  ],
+  "caption_script": [
+    "Begin at the source pointer.",
+    "A context capsule separates what was observed from what is claimed.",
+    "The claim token stays the same object while its provenance stays attached.",
+    "A world trace gives the claim an ordered path that can be replayed.",
+    "The paper's S6 claim is qualified: EON is proposed as ordinal event order, not a wall clock; the trace must remain falsifiable."
+  ],
+  "manim_plan": {
+    "scene": "EvidenceThread32",
+    "render": {
+      "resolution": "1920x1080",
+      "frame_rate": 30,
+      "duration_seconds": 22,
+      "camera": "fixed orthographic ThreeDCamera at (0, 0, 15), focal point (0, 0, 0), no cuts"
+    },
+    "coordinate_layout": {
+      "source_card": [-6.1, -0.65, 0],
+      "capsule": [0.0, 0.0, 0],
+      "torus_family": [0.0, 0.0, 0.25],
+      "cusp_fibre": [[2.9, -0.55, 0], [4.15, -0.2, 0], [5.35, -0.55, 0]],
+      "receipt_card": [6.0, -0.35, 0]
+    },
+    "geometry": [
+      "source-card = Polygon with fixed points [(-6.35,-1.35,0),(-5.15,-1.05,0),(-5.05,0.65,0),(-6.25,0.45,0)] plus Text source pointer",
+      "amber-stream = ParametricFunction over fixed cubic Bezier control points [(-5.05,-0.55,0),(-3.0,-1.25,0),(-1.55,0.85,0),(-0.35,0.0,0)]",
+      "context-capsule = transparent RoundedRectangle width 2.25 height 2.8 corner_radius 0.12 stroke cyan opacity 0.7",
+      "claim-token = cyan RegularPolygon(n=6, radius=0.42) with a smaller diamond cutout; label uses Text, never generated texture",
+      "torus-family = three deterministic Torus objects with major_radius [0.85, 1.08, 1.31], minor_radius 0.075, fixed rotations [0, PI/6, -PI/6]",
+      "cusp-fibre = three RegularPolygon(n=6, radius 0.30) objects with one fixed V-shaped inward cusp line; no noise or random displacement",
+      "blue-trace = ParametricFunction over fixed cubic Bezier control points [(-0.15,0.0,0), (1.2,0.55,0), (3.35,-1.0,0), (5.65,-0.4,0)]",
+      "receipt-card = white Text group with exact copy from beat 5 and a fixed 3-row ruled tab"
+    ],
+    "timeline": [
+      {"frames": "0-132", "action": "FadeIn source-card; Create amber-stream; reveal source pointer"},
+      {"frames": "132-264", "action": "MoveAlongPath amber-stream into capsule; FadeIn source rail and claim-token without changing source rail color"},
+      {"frames": "264-396", "action": "Create three torus rings; rotate each by a fixed angle over 30 frames; keep token and source-card stationary"},
+      {"frames": "396-528", "action": "Create blue-trace; MoveAlongPath token to cusp-fibre checkpoints; add one receipt-tab per checkpoint in order"},
+      {"frames": "528-660", "action": "Transform torus aperture into hex seal; FadeIn receipt-card and secondary falsifier copy; hold final state for 18 frames"}
+    ],
+    "determinism": [
+      "set_seed(32) before scene construction even though no stochastic primitive is used",
+      "all paths, coordinates, colors, labels, durations, and rotations are constants",
+      "no image-text extraction, random particle field, dashboard widget, or unverified world payload",
+      "reduced_motion = render all final states at frame 0, preserve copy and object order, remove travel and rotation"
+    ]
+  },
+  "falsifier": {
+    "statement": "This visual direction fails if the claimed EON order can only be reconstructed from wall-clock timestamps and cannot be replayed from an ordinal event sequence.",
+    "test": "Provide a real EON/world-event snapshot plus a render receipt; replay the trace with clock values hidden, then replay it with event order permuted.",
+    "refuting_observation": "If the same ordered result cannot be recovered without wall-clock values, or if permuting event order leaves the result unchanged, reject the S6 framing.",
+    "evidence_boundary": "The concept contains no world snapshot, event stream, or render receipt; ImageGen/reference pixels are not evidence."
+  },
+  "fake_evidence": false,
+  "local_receipts": [
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "command": "jq -r '[.schema, .deliverable.path_pattern, (.deliverable.beats|tostring), (.deliverable.required_fields|length|tostring), (.fake_evidence|tostring)] | @tsv' ...",
+      "observed": "herakles.w1-evidence-thread-fleet-prompt.v1\titerations/w1/fleet-candidates/worker-<n>.json\t5\t8\tfalse"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "command": "identify -format 'format=%m width=%w height=%h colorspace=%[colorspace] bytes=%b\\n' ...",
+      "observed": "format=PNG width=1672 height=941 colorspace=sRGB bytes=1.78898MB"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md",
+      "command": "nl -ba ... | sed -n '484,507p'",
+      "observed": "Section 06 states EON as ordinal/event-based and not wall-clock; lines 502-506 define the counter surface wording."
+    }
+  ]
+}

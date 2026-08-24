@@ -1,0 +1,56 @@
+{
+  "worker": 16,
+  "one_sentence_story": "Tek bir kaynak parcasi, cusp kilidiyle baglam kapsulunde hizalanir; torus ailesi boyunca ilerleyip dunya izine bagli, test edilebilir bir S6 paper claim olarak kapanir.",
+  "beats": [
+    {"beat": 1, "name": "source_artifact", "visual": "Amber kaynak sayfasi ve tek isaretli satir, koyu altigen zeminde solda belirir.", "causal_move": "Tek bir amber parcacik kaynak satirindan kopar.", "on_screen_text": ["SOURCE", "OBSERVED LINE"]},
+    {"beat": 2, "name": "evidence_stream", "visual": "Parcacik, uc buyuk dugumlu tek bir amber sinyal hatti boyunca akar.", "causal_move": "Parcacik kaynak konumunu koruyarak Context Capsule girisine ulasir.", "on_screen_text": ["TRACE 01", "TRACE 02", "TRACE 03"]},
+    {"beat": 3, "name": "context_capsule_cusp_lock", "visual": "Saydam Context Capsule acilir; cusp-hex fibre parcaciklari merkezde tek bir altigen dugume hizalar, parazit soluklasir.", "causal_move": "Baglam, akisi durdurmadan sinyali ortak geometriye kilitler.", "on_screen_text": ["CONTEXT CAPSULE", "CUSP LOCK"]},
+    {"beat": 4, "name": "torus_family", "visual": "Mavi hat iki ic ice torus ve cusp hexagonal fibre cevresinde doner; ayni hat nesne devamini korur.", "causal_move": "Kilitlenmis baglam tasinabilir ve tekrarlanabilir bir yapiya donusur.", "on_screen_text": ["TORUS FAMILY", "FIBRE CONTINUES"]},
+    {"beat": 5, "name": "claim_with_world_trace", "visual": "Hat beyaz receipt/world trace noktasina baglanir; kartta yalnizca S6 PAPER CLAIM, TESTABLE ve FROM TRACE yazisi vardir.", "causal_move": "Claim kapanir ama yeni dunya iziyle sinanabilmesi icin kesikli acik ok birakir.", "on_screen_text": ["S6 PAPER CLAIM", "TESTABLE", "FROM TRACE"]}
+  ],
+  "persistent_objects": [
+    {"id": "source_page", "role": "source_artifact", "continuity": "Solda kalir; finalde daha dusuk parlaklikta korunur."},
+    {"id": "evidence_thread", "role": "luminous_evidence_stream", "continuity": "Tek CubicBezier path; kaynak, kapsul, torus ve receipt arasinda ayni izdir."},
+    {"id": "context_capsule", "role": "transparent_Context_Capsule", "continuity": "Beat 3'te belirir, finalde saydam outline olarak kalir."},
+    {"id": "torus_cusp_family", "role": "torus_family_and_cusp_hexagonal_fibre", "continuity": "Beat 4'te olusur, finalde ayni mavi donus faziyla korunur."},
+    {"id": "world_receipt", "role": "closed_claim_world_trace", "continuity": "Finalde parlak nokta, kisa hane ve kesikli acik test oku olarak kalir."}
+  ],
+  "caption_script": [
+    "01 Kaynaktan tek bir gozlem sec.",
+    "02 Gozlemi izlenebilir bir evidence stream olarak tas.",
+    "03 Context Capsule akisi durdurmadan cusp kilidi kurar.",
+    "04 Kilitlenmis baglam torus ailesinde tasinabilir yapiya doner.",
+    "05 S6 paper claim: dunya iziyle bagli, test edilebilir iddia; consensus fact degil."
+  ],
+  "manim_plan": {
+    "render_contract": "Deterministic 16:9; no random seed; all positions, colors, durations and labels explicit.",
+    "canvas": "1920x1080",
+    "scene": "EvidenceThreadWorker16",
+    "background": "#05070A",
+    "palette": {"amber": "#F2B66D", "cyan": "#75D9FF", "white": "#F3F7FA", "slate": "#1A2830"},
+    "layout": {"source_page_center": [-5.4, -0.2, 0], "capsule_center": [0, 0, 0], "torus_center": [2.55, 0, 0], "world_receipt_center": [5.35, -0.15, 0]},
+    "beats": [
+      {"number": 1, "duration_seconds": 3.0, "actions": ["Create(source_page)", "Write(SOURCE)", "Pulse(highlighted_line)"]},
+      {"number": 2, "duration_seconds": 3.5, "actions": ["Create(evidence_thread)", "MoveAlongPath(source_dot, evidence_thread, run_time=2.4)", "Create(trace_dots, count=3)"]},
+      {"number": 3, "duration_seconds": 4.0, "actions": ["FadeIn(context_capsule)", "Create(cusp_hex_fibre)", "Transform(trace_dots, cusp_node)", "Dim(unlocked_noise)"]},
+      {"number": 4, "duration_seconds": 4.0, "actions": ["Create(torus_pair)", "Rotate(torus_pair, angle=TAU, axis=UP, run_time=2.8)", "MoveAlongPath(cusp_node, evidence_thread, run_time=1.2)"]},
+      {"number": 5, "duration_seconds": 4.0, "actions": ["Create(world_receipt)", "Write(S6_PAPER_CLAIM)", "Write(TESTABLE)", "Create(dashed_open_test_arrow)", "Hold(final_frame, run_time=1.0)"]}
+    ],
+    "total_duration_seconds": 18.5,
+    "text_policy": "Only exact labels listed in beats; no generated pseudo-text; deterministic sans font.",
+    "evidence_boundary": "Reference image is visual grammar only; operational evidence needs source pointers, World trace data and render receipts."
+  },
+  "falsifier": {
+    "claim_under_test": "The evidence-thread process can preserve source-linked context while carrying an S6 paper claim to a world trace.",
+    "refuting_observation": "A replay loses the source pointer, changes cusp/torus object identity, or yields no independently inspectable World trace/receipt.",
+    "paper_status": "Paper claim under test, not a consensus fact."
+  },
+  "fake_evidence": false,
+  "receipts": {
+    "shared_prompt": {"path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "command": "wc -c 02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "observed": "1232 bytes"},
+    "visual_reference": {"path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "command": "wc -c .../concept-01-evidence-thread.png && identify .../concept-01-evidence-thread.png", "observed": "1788980 bytes; PNG 1672x941; 8-bit sRGB"},
+    "manifest": {"path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/W1-MANIFEST.json", "command": "sed -n '1,260p' .../W1-MANIFEST.json", "observed": "schema herakles.film-iteration-batch.v1; range 01-20; fake_evidence false; 20 iteration entries"},
+    "candidate_directory": {"path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates", "command": "find .../fleet-candidates -maxdepth 1 -type f -name '*.json' | wc -l", "observed": "0 before worker-16 write; worker-16-existing=no before write"},
+    "card": {"path": "02 Projects/Sistem-Insa/gorevler/_oda-kuyruk/sistem-analizi-s106/islenen/d-W1-EVIDENCE-THREAD-16.md", "command": "sed -n '1,220p' .../d-W1-EVIDENCE-THREAD-16.md", "observed": "worker id 16; required action is JSON candidate at shared-prompt path pattern"}
+  }
+}

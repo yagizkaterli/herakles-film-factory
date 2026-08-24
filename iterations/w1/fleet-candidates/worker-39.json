@@ -1,0 +1,41 @@
+{
+  "worker": 39,
+  "one_sentence_story": "A single amber pulse leaves a source artifact, crosses a transparent Context Capsule, reaches a torus family whose cusp opens a hexagonal fibre, and closes as a receipt-backed S6 paper claim with a visible world trace.",
+  "evidence_boundary": "The ImageGen reference supplies visual grammar only. Source pointers, World traces, and render receipts are the operational evidence boundary.",
+  "beats": [
+    {"beat": 1, "title": "Source before conclusion", "causal_move": "One source-bound amber pulse leaves a fixed artifact; nothing else moves.", "visual": "A warm paper sheet sits on a copper hexagonal stratum at frame left. A single amber dot detaches and becomes a thin filament. The sheet uses readable labels only: SOURCE.", "voiceover": "Start with one source artifact, not with the conclusion.", "on_screen_text": ["SOURCE"], "state": "open"},
+    {"beat": 2, "title": "Context changes the route", "causal_move": "The pulse enters the transparent capsule, which exposes its context boundary without changing the pulse.", "visual": "The amber filament passes through a glass rectangular capsule. A thin cyan outline appears around the capsule; the pulse remains amber, making source and context visually distinct.", "voiceover": "Context does not become evidence; it makes the route inspectable.", "on_screen_text": ["CONTEXT CAPSULE"], "state": "bounded"},
+    {"beat": 3, "title": "One route, one unresolved gap", "causal_move": "The capsule emits one blue continuation toward a torus family, while a deliberately missing filament segment stays visible.", "visual": "The camera tracks the pulse from the capsule to three nested torus rings. The middle ring has one open arc aligned with the incoming route; the gap is held in negative space rather than filled by decoration.", "voiceover": "The thread can travel, but one link is still unresolved.", "on_screen_text": ["OPEN SEGMENT"], "state": "unresolved"},
+    {"beat": 4, "title": "The cusp is a test point", "causal_move": "At the torus cusp, the blue filament forks into a hexagonal fibre; the fork tests the claim but does not prove it.", "visual": "The open torus arc tightens to a luminous cusp. A small hexagonal fibre rotates once and receives the pulse. The torus family remains visible behind it, preserving object continuity and the missing-segment scar.", "voiceover": "At the cusp, the paper's S6 statement becomes a claim to test, not a fact to inherit.", "on_screen_text": ["S6 CLAIM"], "state": "claim-under-test"},
+    {"beat": 5, "title": "Close with receipt, leave the world trace", "causal_move": "Only a matched world trace closes the filament into a receipt seal; the unresolved remainder stays outside the seal.", "visual": "The hexagonal fibre sends a blue pulse to a white receipt sheet at frame right. Hash ticks lock into a closed luminous volume, while a short unsealed tail points to a small WORLD TRACE marker. The seal closes the evidence thread, not the theorem.", "voiceover": "The S6 paper claim closes here only as a receipt-backed claim; whatever the world trace cannot match remains open.", "on_screen_text": ["RECEIPT", "WORLD TRACE"], "state": "receipt-backed-claim"}
+  ],
+  "persistent_objects": [
+    {"id": "source_artifact", "form": "warm paper sheet on a copper hexagonal stratum", "identity_rule": "stays at frame-left and emits exactly one amber pulse"},
+    {"id": "evidence_pulse", "form": "one thin filament with amber source half and blue routed half", "identity_rule": "same pulse persists through every beat; color changes only at the capsule boundary"},
+    {"id": "context_capsule", "form": "transparent rectangular volume", "identity_rule": "never hides the pulse; its boundary is always visible"},
+    {"id": "torus_family", "form": "three nested torus rings with one aligned missing arc", "identity_rule": "survives camera travel and retains the missing segment"},
+    {"id": "cusp_fibre", "form": "small luminous hexagonal fibre at the cusp", "identity_rule": "rotates once, then remains fixed as the receipt carrier"},
+    {"id": "receipt_seal", "form": "closed luminous volume with hash ticks and an unsealed tail", "identity_rule": "closes only after the world-trace match event"}
+  ],
+  "caption_script": {
+    "hook": "What if a proof film followed one trace instead of showing a finished diagram?",
+    "lines": ["A source artifact emits one pulse.", "Context makes the route inspectable, not true.", "A missing segment keeps the question alive.", "At the cusp, the S6 paper statement is shown as a claim under test.", "Only a matched world trace can close the receipt; the rest stays open."],
+    "closing": "Evidence is a route with a receipt, not a glow that looks like certainty.",
+    "alt_text": "Dark hexagonal terrain carries an amber source pulse through a transparent capsule into nested torus rings; a cusp opens a hexagonal fibre before a matched world trace closes a receipt seal, while an unresolved tail remains visible."
+  },
+  "manim_plan": {
+    "frame": "16:9, 1280x720, fixed camera with one dolly from source to receipt",
+    "coordinate_system": "x in [-7, 7], y in [-4, 4], z in [-1, 1]; source (-5.0, 0.0, 0), capsule (-1.5, 0.0, 0), torus family (1.6, 0.0, 0), receipt (5.2, 0.0, 0)",
+    "palette": {"background": "#05080B", "source_amber": "#F3A64A", "route_blue": "#64D9FF", "capsule_cyan": "#A8F0FF", "receipt_white": "#EAF7FF", "unresolved_gray": "#6F7E86"},
+    "objects": ["Polygon(6 vertices) for each hexagonal stratum", "Rectangle plus five short Lines for the source and receipt sheets; no pseudo-text", "RoundedRectangle(stroke_opacity=0.65, fill_opacity=0.08) for Context Capsule", "Three ParametricFunction torus arcs with one deterministic gap from theta=0.32 to theta=0.68", "RegularPolygon(n=6) for cusp fibre", "Torus-like receipt seal with eight fixed hash ticks"],
+    "timeline_seconds": {"beat_1": 3, "beat_2": 3, "beat_3": 4, "beat_4": 4, "beat_5": 5},
+    "animation_rules": ["Create all persistent objects before play; animate only opacity, stroke width, position, and rotation.", "Use LaggedStart for one pulse only; no random seeds, noise, or camera shake.", "At beat 3, never draw the missing arc; hold it for 1 second.", "At beat 5, animate seal closure only after a named world_trace_match event in the scene code.", "End on a 2-second hold with the unsealed tail visible."]
+  },
+  "falsifier": "Reject this candidate if the source artifact, the world trace, or the render receipt is absent; if the torus gap is filled before the match event; or if the S6 statement is narrated as established fact rather than as a paper claim.",
+  "fake_evidence": false,
+  "local_measurement_receipts": [
+    {"subject": "shared prompt", "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "command": "stat -c 'path=%n bytes=%s' <path>", "output": "bytes=1232"},
+    {"subject": "visual reference", "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "command": "identify <path>", "output": "PNG 1672x941 8-bit sRGB"},
+    {"subject": "existing fleet candidate count before worker 39", "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates", "command": "find <path> -maxdepth 1 -type f -name 'worker-*.json' | wc -l", "output": "0"}
+  ]
+}

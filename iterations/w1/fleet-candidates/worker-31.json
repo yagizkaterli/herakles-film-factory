@@ -1,0 +1,192 @@
+{
+  "worker": 31,
+  "concept_id": "W1-EVIDENCE-THREAD-31",
+  "one_sentence_story": "A single sourced filament is tensioned through a transparent Context Capsule, closes into a torus family, survives a cusp-shaped hexagonal fibre test, and ends as an explicitly provisional S6 paper claim with a pointer-only world trace.",
+  "beats": [
+    {
+      "beat": 1,
+      "time": "00:00-00:07",
+      "causal_move": "One source artifact emits one amber filament.",
+      "visual_action": "A cream source card stands on a dark hexagonal plinth at lower left. A single amber fibre leaves its bottom edge; no second strand or aggregate appears.",
+      "on_screen_text": ["SOURCE ARTIFACT"],
+      "source_pointer": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md:622-626",
+      "claim_boundary": "The source pointer is a paper source. The reference image is used only for visual grammar, not as evidence."
+    },
+    {
+      "beat": 2,
+      "time": "00:07-00:14",
+      "causal_move": "The filament becomes a readable evidence stream.",
+      "visual_action": "Three fixed amber pulses travel along the same fibre toward the center. Each pulse leaves a short afterglow, making direction and continuity visible without adding dashboard UI.",
+      "on_screen_text": ["TRACE"],
+      "source_pointer": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json#visual_spine",
+      "claim_boundary": "The pulses are an animation device for causal legibility, not measured event data."
+    },
+    {
+      "beat": 3,
+      "time": "00:14-00:22",
+      "causal_move": "The evidence stream enters one transparent Context Capsule.",
+      "visual_action": "The fibre passes through a glass rectangular capsule. A pale-blue outline locks around the amber pulse only after contact; the source card, fibre, and capsule remain visible together.",
+      "on_screen_text": ["CONTEXT CAPSULE"],
+      "source_pointer": "02 Projects/Sistem-Insa/gorevler/G-VITRIN/3B1B-ANLATI-BILGI.md:33-36",
+      "claim_boundary": "The capsule is a visual container for context, not a claim that the paper has measured a physical capsule."
+    },
+    {
+      "beat": 4,
+      "time": "00:22-00:31",
+      "causal_move": "The contexted filament closes into a torus family and exposes one cusp hexagonal fibre.",
+      "visual_action": "The capsule rotates a quarter turn. The fibre folds into three concentric, offset torus loops around it; one loop tightens into a six-sided cusp fibre at the front. Motion pauses for a half-second at the cusp so the transformation can be read.",
+      "on_screen_text": ["TORUS FAMILY", "CUSP FIBRE"],
+      "source_pointer": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json#visual_spine",
+      "claim_boundary": "Torus and cusp geometry are the candidate's visual grammar. They are not presented as a theorem, measurement, or ImageGen evidence."
+    },
+    {
+      "beat": 5,
+      "time": "00:31-00:40",
+      "causal_move": "The closed loop receives a paper-claim label and a non-fabricated world-trace pointer.",
+      "visual_action": "The torus family holds still. A small receipt plate docks beneath the capsule, linked by the same blue line. The final text is set in two tiers so the hedge is impossible to miss.",
+      "on_screen_text": [
+        "PAPER CLAIM / S6",
+        "The paper proposes: memory can be a traversable world, not only a log.",
+        "WORLD TRACE / POINTER ONLY"
+      ],
+      "source_pointer": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md:622-626",
+      "world_trace_pointer": "World snapshot (VPS /v2/snapshot)",
+      "claim_boundary": "S6 is framed as a paper claim. The world-trace plate shows a pointer slot only; no snapshot contents, consensus, or operational evidence is fabricated."
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_card",
+      "shape": "cream vertical card on dark hexagonal plinth",
+      "color": "warm ivory with amber underlight",
+      "role": "source artifact",
+      "persistence": "introduced in beat 1 and remains visible through beat 5"
+    },
+    {
+      "id": "evidence_fibre",
+      "shape": "single curved filament with three pulse markers",
+      "color": "amber before capsule, pale blue after capsule",
+      "role": "luminous evidence stream",
+      "persistence": "same path identity throughout; only color and topology change at named beats"
+    },
+    {
+      "id": "context_capsule",
+      "shape": "transparent rectangular prism with thin cyan edges",
+      "color": "glass cyan",
+      "role": "context container",
+      "persistence": "center anchor from beat 3 through final frame"
+    },
+    {
+      "id": "torus_family",
+      "shape": "three concentric offset torus loops",
+      "color": "pale blue with white cusp highlight",
+      "role": "closed evidence structure",
+      "persistence": "created in beat 4 and held in beat 5"
+    },
+    {
+      "id": "receipt_plate",
+      "shape": "small dark plate with a single blue link line",
+      "color": "graphite and blue",
+      "role": "receipt/world-trace boundary marker",
+      "persistence": "introduced only in beat 5 and remains static"
+    }
+  ],
+  "caption_script": {
+    "tweet_text": "What makes a memory more than a log? Follow one sourced filament: source -> trace -> context -> closed structure. The ending is a paper claim, not consensus: the paper proposes memory can be a traversable world. The world trace is shown as a pointer, not invented proof.",
+    "voiceover": [
+      "Start with one source.",
+      "Follow its trace.",
+      "Context makes the trace legible.",
+      "The loop closes, but the geometry is only the film's visual grammar.",
+      "Paper claim, not consensus: the paper proposes that memory can be a traversable world. The trace pointer is not fabricated evidence."
+    ],
+    "end_card": "PAPER CLAIM / S6 -- pointer shown, proof not invented"
+  },
+  "manim_plan": {
+    "render": {
+      "resolution": "1920x1080",
+      "fps": 30,
+      "duration_seconds": 40,
+      "background": "#030608",
+      "anti_aliasing": "fixed renderer defaults; no stochastic noise",
+      "determinism": "fixed camera, fixed coordinates, fixed interpolation, no random seed or particle system"
+    },
+    "camera": {
+      "projection": "orthographic",
+      "azimuth_degrees": -58,
+      "elevation_degrees": 20,
+      "frame_center": [0.0, 0.0, 0.0],
+      "scale": 8.2
+    },
+    "coordinate_layout": {
+      "source_card_center": [-4.8, -0.7, 0.0],
+      "capsule_center": [0.0, 0.0, 0.4],
+      "receipt_plate_center": [0.0, -2.4, -0.2],
+      "torus_major_radii": [1.55, 1.85, 2.15],
+      "torus_minor_radius": 0.08,
+      "cusp_vertices": 6
+    },
+    "construction": [
+      "Use Polygon(6) for the dark plinth and Rectangle for the source card; use real Text objects for every label.",
+      "Use one ParametricFunction for the fibre with a fixed cubic Bezier path; move three Dot pulse markers with linear interpolation.",
+      "Use a transparent Prism or grouped Rectangle faces for the capsule; reveal its cyan outline with Create only after the pulse reaches its center.",
+      "Use three Torus objects with fixed major radii and fixed phase offsets; transform the front loop into a six-vertex cusp fibre with a named Transform.",
+      "Freeze all geometry at the final frame, then Write the two-tier paper-claim text and receipt plate without adding charts, counters, or pseudo-text."
+    ],
+    "beat_schedule": [
+      {"start": 0, "end": 7, "actions": ["FadeIn(source_card)", "Create(evidence_fibre)"]},
+      {"start": 7, "end": 14, "actions": ["MoveAlongPath(pulse_1)", "MoveAlongPath(pulse_2)", "MoveAlongPath(pulse_3)"]},
+      {"start": 14, "end": 22, "actions": ["Create(context_capsule_outline)", "Indicate(contexted_pulse)"]},
+      {"start": 22, "end": 31, "actions": ["Rotate(capsule, 90_degrees)", "Create(torus_family)", "Transform(front_torus, cusp_fibre)", "Wait(0.5_seconds)"]},
+      {"start": 31, "end": 40, "actions": ["Create(receipt_plate_link)", "Write(paper_claim_text)", "Write(world_trace_pointer)", "Wait(1.0_seconds)"]}
+    ],
+    "readability_rules": [
+      "No label appears before its object is visible.",
+      "Keep the paper-claim hedge on screen for the complete final hold.",
+      "Use source, context, claim, and pointer text only; no dashboard panels or unreadable pseudo-text."
+    ]
+  },
+  "falsifier": {
+    "observation_to_test": "The film makes a causal chain legible while keeping the S6 statement visibly provisional.",
+    "reject_if": [
+      "A cold viewer cannot order at least four of the five objects as source, trace, capsule, torus/cusp, claim-pointer.",
+      "The final frame is paraphrased as a consensus fact rather than as a paper proposal.",
+      "The torus family appears before the capsule has visibly received the filament, breaking the one-causal-move-per-beat rule.",
+      "The render introduces a second source strand, a decorative dashboard, or any data-like world trace without a verified receipt."
+    ],
+    "refutation_receipt_needed": "outsider comprehension notes plus deterministic render receipt; this candidate does not claim either test has already run"
+  },
+  "fake_evidence": false,
+  "local_receipts": [
+    {
+      "claim": "Shared prompt schema, constraints, five-beat requirement, and output path were read from disk.",
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "measurement": "1232 bytes; 28 lines; sha256 59cc1bf2a1d592ccee93787bcb2c343b5a0ccd5d925465fa08d06e1738f740a9",
+      "command": "wc -c -l <path>; sha256sum <path>"
+    },
+    {
+      "claim": "The visual reference was inspected as a 16:9 PNG and is treated only as visual grammar.",
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "measurement": "PNG 1672x941; 1788980 bytes; sha256 75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508",
+      "command": "identify <path>; sha256sum <path>; view_image(<path>)"
+    },
+    {
+      "claim": "The W1 batch manifest names the ImageGen reference and sets a source-and-receipt truth boundary.",
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/W1-MANIFEST.json",
+      "measurement": "4035 bytes; 40 lines; sha256 cea69a707129c4a5135c5508781a79dff6f2f78948a37b745d8b101a6a2b98b8",
+      "command": "wc -c -l <path>; sha256sum <path>"
+    },
+    {
+      "claim": "The paper source frames memory as a traversable world and marks unmeasured claims honestly.",
+      "path": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md:622-626",
+      "measurement": "65185 bytes; 1196 lines; sha256 051626af2a114910a61d441e2695ed180413b5da72a6d6ee951fb73ff24b3e46; targeted excerpt at lines 622-626",
+      "command": "wc -c -l <path>; sha256sum <path>; rg -n -C 3 'Memory as world|A log becomes a memory-world' <path>"
+    },
+    {
+      "claim": "The narrative source requires visual object permanence and an explicit honest-limits hedge.",
+      "path": "02 Projects/Sistem-Insa/gorevler/G-VITRIN/3B1B-ANLATI-BILGI.md",
+      "measurement": "14233 bytes; 153 lines; sha256 ec486468884be69a33c5567bfd9064ae3156635ed52eb4656d7dc3d3745194c2; targeted excerpts at lines 33-36 and 63-69",
+      "command": "wc -c -l <path>; sha256sum <path>; rg -n -C 3 'Visual object permanence|Honest limits' <path>"
+    }
+  ]
+}

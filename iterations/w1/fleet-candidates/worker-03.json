@@ -1,0 +1,138 @@
+{
+  "worker": "03",
+  "candidate_title": "EON Cusp: a receipt can close a claim, not turn it into truth",
+  "one_sentence_story": "A source fragment becomes an ordered evidence stream, passes through a transparent Context Capsule and a torus-shaped cusp, then closes as an explicitly labelled S6 paper claim beside a world trace and receipt.",
+  "beats": [
+    {
+      "beat": 1,
+      "name": "source-fragment",
+      "causal_move": "A single source artifact is isolated from the dark terrain.",
+      "visual": "On the left, one warm paper card rises from a low hexagonal plinth; all text is replaced by three clean ruled lines and one legible label: SOURCE.",
+      "motion": "The card lifts 12 px and emits one amber point; no other object moves.",
+      "caption": "Start with the source, not the verdict.",
+      "receipt_role": "The artifact is an input pointer, not evidence supplied by the image reference.",
+      "source_receipt": "shared prompt source_boundary; concept-01-evidence-thread.png is visual grammar only"
+    },
+    {
+      "beat": 2,
+      "name": "one-stream-order",
+      "causal_move": "The source emits one ordered stream instead of branching into dashboard noise.",
+      "visual": "The amber point travels along one Bezier ribbon toward center. Five evenly spaced pulses carry ordinal positions 01, 02, 03, 04, 05 as large readable marks.",
+      "motion": "Only the next pulse brightens as it advances; previous pulses dim but remain on the same path.",
+      "caption": "Order is a sequence of events, not a wall clock.",
+      "receipt_role": "The visualizes the Section 6 distinction between ordinal sequence and global calendar time.",
+      "source_receipt": "sections/06-eon-ordinal-time.md:13-23"
+    },
+    {
+      "beat": 3,
+      "name": "context-capsule",
+      "causal_move": "The stream is constrained by context before it is allowed to become a claim.",
+      "visual": "A transparent glass capsule appears around the stream. Inside it, one crisp line reads EVENT-ORDERED; beneath it a smaller line reads NOT WALL-CLOCK.",
+      "motion": "The capsule closes with four vertical edges; the stream continues through it without changing path.",
+      "caption": "Context narrows what the stream is allowed to mean.",
+      "receipt_role": "The capsule is a visual reasoning boundary, not a measured operational component.",
+      "source_receipt": "sections/06-eon-ordinal-time.md:3-9,19-24"
+    },
+    {
+      "beat": 4,
+      "name": "torus-cusp-test",
+      "causal_move": "The constrained stream passes one falsifier gate before closure.",
+      "visual": "Three nested torus rings rotate slowly around the stream. A single hexagonal cusp fibre crosses the innermost ring and displays the readable test label COUNTER ON EON. A thin rejected branch falls dark beneath the ring and is labelled WALL-CLOCK.",
+      "motion": "The cusp fibre turns 60 degrees; the accepted stream stays luminous, while the rejected branch fades to zero.",
+      "caption": "A claim stays alive only while its disqualifying observation is visible.",
+      "receipt_role": "The test is derived from the falsifier requirement and from EON as the remaining-edge counter surface; the render does not create a live measurement.",
+      "source_receipt": "sections/06-eon-ordinal-time.md:26-35; sections/07-memory-as-world.md:21-27"
+    },
+    {
+      "beat": 5,
+      "name": "claim-receipt-world-trace",
+      "causal_move": "The surviving stream is sealed as a paper claim beside its receipt and world trace.",
+      "visual": "On the right, a cool paper receipt and a small traversable hex-world node appear. The final plate reads PAPER CLAIM (S6), then EON PLACES THE REMAINING-EDGE COUNTER ON AN ORDINAL/EVENT SURFACE. A final footer reads CLAIM, NOT CONSENSUS FACT.",
+      "motion": "The torus stops, the receipt receives one cyan tick, and the world node lights only after the claim plate is visible.",
+      "caption": "Closed on the page; still open to falsification in the world.",
+      "receipt_role": "The receipt records the source path and claim boundary; it does not certify truth.",
+      "source_receipt": "sections/06-eon-ordinal-time.md:60-79,81-90; P-HERAKLES-PAPER/PLAN.md:22-27,54-60"
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_card",
+      "continuity": "present from beat 1 to beat 5; left anchor never changes",
+      "role": "source artifact",
+      "visual_rule": "warm amber paper, three readable rules, SOURCE label",
+      "evidence_boundary": "reference image is visual grammar only"
+    },
+    {
+      "id": "evidence_stream",
+      "continuity": "one Bezier path from source_card through capsule and torus to receipt",
+      "role": "luminous ordered event stream",
+      "visual_rule": "amber before capsule, white at capsule, cyan after capsule"
+    },
+    {
+      "id": "context_capsule",
+      "continuity": "appears at beat 3 and remains transparent through beat 5",
+      "role": "context boundary",
+      "visual_rule": "four-sided glass prism, no decorative UI"
+    },
+    {
+      "id": "torus_family",
+      "continuity": "appears at beat 4 and freezes at beat 5",
+      "role": "claim test and cusp gate",
+      "visual_rule": "three nested torus rings plus one hexagonal cusp fibre"
+    },
+    {
+      "id": "receipt_world_node",
+      "continuity": "enters at beat 5 and is the final right-side anchor",
+      "role": "receipt plus traversable world trace",
+      "visual_rule": "cool paper receipt connected to one glowing hex node"
+    }
+  ],
+  "caption_script": [
+    {"time": "00:00-00:04", "text": "Start with the source, not the verdict."},
+    {"time": "00:04-00:08", "text": "Order is a sequence of events, not a wall clock."},
+    {"time": "00:08-00:12", "text": "Context narrows what the stream is allowed to mean."},
+    {"time": "00:12-00:16", "text": "A claim stays alive only while its disqualifying observation is visible."},
+    {"time": "00:16-00:20", "text": "Closed on the page; still open to falsification in the world."}
+  ],
+  "manim_plan": {
+    "canvas": {"width": 1672, "height": 941, "fps": 24, "duration_seconds": 20},
+    "determinism": {"seed": 3, "renderer": "Cairo", "randomness": "none", "camera": "fixed orthographic"},
+    "palette": {"background": "#05080B", "amber": "#F3B562", "white": "#DDF6FF", "cyan": "#54D9FF", "rejected": "#28343A"},
+    "timeline": [
+      {"seconds": "0-4", "action": "Create source_card and its plinth; FadeIn source_card; emit one amber Dot."},
+      {"seconds": "4-8", "action": "Create one CubicBezier path; move five fixed Dot pulses with lag_ratio 0.2; write ordinal labels 01-05."},
+      {"seconds": "8-12", "action": "Create translucent Prism capsule; Write EVENT-ORDERED and NOT WALL-CLOCK; keep path geometry unchanged."},
+      {"seconds": "12-16", "action": "Create three Torus objects and one Polygon hex cusp; rotate cusp by 60 degrees; draw accepted path and FadeOut rejected branch."},
+      {"seconds": "16-20", "action": "Create receipt_card, world_node, claim_plate and footer; tick receipt; freeze torus and hold final frame for 1 second."}
+    ],
+    "legibility": "Use only the listed uppercase labels; no generated pseudo-text, no dense dashboard panels.",
+    "object_continuity_check": "source_card and evidence_stream exist in every frame; capsule from 8s; torus from 12s; receipt_world_node from 16s."
+  },
+  "falsifier": {
+    "test": "Read the authoritative EON/defter source and check whether the remaining-edge counter is actually ordered by wall-clock time or is not written to EON.",
+    "refuting_observation": "A measured source showing wall-clock as the primary ordering surface, or showing the remaining-edge counter outside EON, refutes this visual claim.",
+    "status": "test_required; the film does not supply the measurement",
+    "receipt": "sections/06-eon-ordinal-time.md:26-35,54-58,81-90"
+  },
+  "fake_evidence": false,
+  "receipts": {
+    "prompt": {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "measured_bytes": 1232,
+      "measurement": "wc -c -> 1232"
+    },
+    "reference": {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "measured_bytes": 1788980,
+      "measured_dimensions": "1672x941",
+      "measurement": "wc -c -> 1788980; identify -> PNG 1672x941"
+    },
+    "beat_count": {
+      "expected_from_prompt": 5,
+      "written": 5,
+      "measurement": "jq '.beats | length' -> 5"
+    },
+    "candidate_path": "iterations/w1/fleet-candidates/worker-03.json",
+    "source_boundary": "ImageGen reference is visual grammar only; it is not operational evidence."
+  }
+}

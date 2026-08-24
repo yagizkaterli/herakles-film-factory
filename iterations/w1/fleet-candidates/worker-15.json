@@ -1,0 +1,114 @@
+{
+  "worker": 15,
+  "one_sentence_story": "A single amber evidence trace leaves a source artifact, passes through a transparent Context Capsule, becomes a six-sided cusp fibre, persists as a linked torus family, and closes as a testable S6 paper claim beside a separate world-trace receipt.",
+  "beats": [
+    {
+      "id": 1,
+      "causal_move": "The source artifact emits one trace.",
+      "visual": "A warm paper sheet stands on a dark basalt tile at left; one amber filament exits its lower edge and travels right.",
+      "on_screen_text": "SOURCE TRACE",
+      "audio": "A dry paper click, then one low pulse as the filament starts."
+    },
+    {
+      "id": 2,
+      "causal_move": "The trace enters the transparent Context Capsule.",
+      "visual": "The filament passes through a glass capsule at center; the capsule reveals a quiet inner frame without adding dashboard panels.",
+      "on_screen_text": "CONTEXT CAPSULE",
+      "audio": "The pulse acquires a clean glass resonance; no new voiceover claim is introduced."
+    },
+    {
+      "id": 3,
+      "causal_move": "The capsule compresses the trace into a cusp hexagonal fibre.",
+      "visual": "At the capsule exit, the amber line pinches once into a luminous six-sided cusp; the original line remains visibly attached.",
+      "on_screen_text": "CUSP FIBRE",
+      "audio": "A single tightening tone marks the one geometric change."
+    },
+    {
+      "id": 4,
+      "causal_move": "The cusp fibre unfolds into a persistent torus family.",
+      "visual": "The six-sided fibre opens into three linked torus rings along the same path; the source filament remains the spine through every ring.",
+      "on_screen_text": "TORUS FAMILY",
+      "audio": "Three evenly spaced tones establish family membership without implying proof."
+    },
+    {
+      "id": 5,
+      "causal_move": "The trace is paired with a receipt slot and a framed paper claim.",
+      "visual": "The torus family settles beside a white receipt strip and a restrained title card: PAPER CLAIM / TESTABLE; the receipt strip is a world-trace slot, not invented data.",
+      "on_screen_text": "PAPER CLAIM / TESTABLE",
+      "audio": "The music resolves only after the receipt/world-trace marker appears; the narrator says the claim remains open to falsification."
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "amber_trace",
+      "role": "causal spine from source to claim",
+      "continuity": "Present in beats 1-5; color stays amber; never cuts or respawns."
+    },
+    {
+      "id": "source_artifact",
+      "role": "visible origin of the trace",
+      "continuity": "Pinned at left in beats 1-5 and connected by the same path."
+    },
+    {
+      "id": "context_capsule",
+      "role": "transparent transformation boundary",
+      "continuity": "Centered in beats 2-5; alpha lowers after beat 3 but the outline remains."
+    },
+    {
+      "id": "cusp_hexagonal_fibre",
+      "role": "bridge between context and torus family",
+      "continuity": "Born in beat 3, stays as the leftmost joint of the family in beats 4-5."
+    },
+    {
+      "id": "torus_family",
+      "role": "three linked forms carrying the same trace",
+      "continuity": "Constructed once in beat 4 and held in place through beat 5."
+    },
+    {
+      "id": "world_trace_receipt_slot",
+      "role": "external check surface",
+      "continuity": "Appears only in beat 5; contains no fabricated identifier or measurement."
+    }
+  ],
+  "caption_script": "A trace can keep its identity while its form changes. This film follows one source artifact through context, cusp fibre, and a torus family. The S6 paper claim is shown as a paper claim, not consensus fact: it closes only beside a world-trace receipt and remains falsifiable.",
+  "manim_plan": {
+    "render_contract": "Deterministic Manim scene, 16:9 landscape, fixed camera, no random seeds, no external image or generated evidence.",
+    "coordinate_system": "Use x in [-8.4, 8.4] and y in [-4.7, 4.7]; keep source at (-5.7, -0.2), capsule at (0, 0), and claim card at (5.2, 2.7).",
+    "construction_order": [
+      "Create basalt tiles, source artifact, and three short readable labels.",
+      "Draw one ParametricFunction for amber_trace from source to capsule; animate Create once.",
+      "Create the capsule as a Rectangle with fill_opacity=0.06 and stroke_opacity=0.75; reveal its inner frame.",
+      "Replace only the local trace segment at the capsule exit with a six-vertex Polygon; preserve both endpoints.",
+      "Build three Torus objects with fixed radii (1.05, 0.34), fixed rotations, and one continuous glowing path.",
+      "Add a blank receipt strip labelled WORLD TRACE / RECEIPT SLOT and a separate card labelled PAPER CLAIM / TESTABLE.",
+      "Hold the full composition for 2 seconds; keep all causal objects visible."
+    ],
+    "timing_seconds": [3, 3, 3, 4, 4],
+    "accessibility": "All semantic labels are short, high-contrast, and rendered as real text; no pseudo-text texture is used."
+  },
+  "falsifier": "The visual claim is refuted for this concept if the trace cannot be matched continuously from source artifact to torus family, if the world-trace receipt cannot be supplied independently, or if the paper claim is presented as established fact rather than a testable claim.",
+  "fake_evidence": false,
+  "truth_boundary": "The reference image supplies visual grammar only. This candidate supplies a deterministic reconstruction plan; it does not assert a paper result or invent a world event.",
+  "local_measurements": [
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "command": "jq prompt fields",
+      "output": "schema=herakles.w1-evidence-thread-fleet-prompt.v1; beats=5; required_fields=8; visual_spine_count=5; constraint_count=6; fake_evidence=false"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "command": "identify; sha256sum",
+      "output": "PNG 1672x941, 8-bit sRGB, 1.7061MiB; sha256=75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/gorevler/**/d-W1-EVIDENCE-THREAD-*.md",
+      "command": "find matching cards | wc -l",
+      "output": "40"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/W1-MANIFEST.json",
+      "command": "sed manifest",
+      "output": "range=01-20; I15 question=Bir nesne sahne boyunca nasil ayni kalir?; next_gate threshold=0.82"
+    }
+  ]
+}

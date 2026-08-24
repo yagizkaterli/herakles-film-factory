@@ -1,0 +1,108 @@
+{
+  "worker": 13,
+  "one_sentence_story": "Two independent chiefs send differently coloured evidence traces into one transparent Context Capsule; their intersection grows a torus family with a cusp hexagonal fibre, and the S6 paper claim closes only when the shared shape is paired with a world trace and receipt.",
+  "beats": [
+    {
+      "beat": 1,
+      "title": "Two source artifacts",
+      "causal_move": "Establish two independent starting points before any interpretation.",
+      "visual": "A warm amber paper artifact enters from frame left and a cool cyan receipt sheet enters from frame right; each has only a few legible labels: SOURCE A, SOURCE B, and an immutable short hash.",
+      "caption": "Two traces. No conclusion yet.",
+      "evidence_boundary": "The artifacts are source pointers, not proof of the S6 claim."
+    },
+    {
+      "beat": 2,
+      "title": "Parallel evidence streams",
+      "causal_move": "Convert each source artifact into one continuous trace without merging their identities.",
+      "visual": "Each sheet emits one luminous ribbon over the dark fractured world plate: amber from SOURCE A, cyan from SOURCE B. Small dots advance along both ribbons in deterministic lockstep.",
+      "caption": "Independent paths stay visible.",
+      "evidence_boundary": "The ribbons encode evidence movement, not an inferred consensus."
+    },
+    {
+      "beat": 3,
+      "title": "Capsule intersection",
+      "causal_move": "Make the shared context explicit at the first point where both traces overlap.",
+      "visual": "A transparent glass Context Capsule rises around the crossing. The amber and cyan ribbons remain visible through it; a single white intersection node appears only after both streams arrive.",
+      "caption": "Context is the gate, not decoration.",
+      "evidence_boundary": "The capsule is a model of shared context; it does not certify either source."
+    },
+    {
+      "beat": 4,
+      "title": "Shape at the crossing",
+      "causal_move": "Translate the intersection node into the candidate geometric object while preserving the incoming traces.",
+      "visual": "The white node unfolds into a small torus, then duplicates into a restrained torus family. A hexagonal cusp fibre locks at the centre; the capsule stays transparent and the two ribbons continue through the object.",
+      "caption": "A structure appears where the traces intersect.",
+      "evidence_boundary": "The torus family is the film's visual hypothesis, not a measured result."
+    },
+    {
+      "beat": 5,
+      "title": "Provisional close",
+      "causal_move": "Bind the visual hypothesis to a checkable external trace before displaying the claim.",
+      "visual": "A compact receipt card docks beside the torus: WORLD TRACE, SNAPSHOT ID, and RECEIPT HASH are legible. Only then does the lower caption appear: S6 CLAIM - PAPER PROPOSAL. The final frame keeps a small open bracket beside the claim to signal falsifiability.",
+      "caption": "S6 is a paper claim, closed here only with a receipt/world trace.",
+      "evidence_boundary": "The film does not present S6 as consensus fact; disagreement or a missing world trace leaves the bracket open."
+    }
+  ],
+  "persistent_objects": [
+    {
+      "name": "source_artifact_A",
+      "appearance": "warm amber paper sheet",
+      "continuity": "enters left in beat 1, remains at the left anchor, and is linked to the amber stream in every later frame"
+    },
+    {
+      "name": "source_artifact_B",
+      "appearance": "cool cyan receipt sheet",
+      "continuity": "enters right in beat 1, remains at the right anchor, and is linked to the cyan stream in every later frame"
+    },
+    {
+      "name": "evidence_stream_A",
+      "appearance": "amber luminous ribbon with sparse dots",
+      "continuity": "one uninterrupted path from source A through the capsule and torus to the final receipt"
+    },
+    {
+      "name": "evidence_stream_B",
+      "appearance": "cyan luminous ribbon with sparse dots",
+      "continuity": "one uninterrupted path from source B through the capsule and torus to the final receipt"
+    },
+    {
+      "name": "context_capsule",
+      "appearance": "transparent glass rectangular capsule",
+      "continuity": "appears at the crossing in beat 3 and remains transparent around the torus family"
+    },
+    {
+      "name": "torus_family_with_cusp_fibre",
+      "appearance": "white-blue torus family with a central hexagonal cusp fibre",
+      "continuity": "grows from the intersection node and remains the visual centre through the closing receipt"
+    },
+    {
+      "name": "world_receipt_card",
+      "appearance": "small dark card with high-contrast monospace labels",
+      "continuity": "docks in beat 5 only; it is the explicit boundary between visual hypothesis and paper claim"
+    }
+  ],
+  "caption_script": [
+    {"time_s": 0.0, "text": "TWO TRACES", "voiceover": "Start with two sources, not a conclusion."},
+    {"time_s": 3.2, "text": "INDEPENDENT PATHS", "voiceover": "Keep their provenance visible as the evidence moves."},
+    {"time_s": 6.4, "text": "CONTEXT CAPSULE", "voiceover": "The shared context is the first gate."},
+    {"time_s": 9.6, "text": "INTERSECTION -> STRUCTURE", "voiceover": "The shape is a hypothesis born at the intersection."},
+    {"time_s": 13.0, "text": "S6 CLAIM - PAPER PROPOSAL", "voiceover": "This is a paper claim, and it closes only with a world trace and receipt."}
+  ],
+  "manim_plan": {
+    "renderer": "Manim Community deterministic 16:9",
+    "frame": "1672x941 reference composition; render at 1920x1080 with fixed camera",
+    "coordinate_system": "fixed world-space anchors: source_A=(-5.4,-0.8), capsule=(0,0), source_B=(5.4,-0.8), receipt=(3.8,1.9)",
+    "randomness": "none; seed=13; all point positions, stroke widths, and timings explicitly generated",
+    "geometry": "Use ParametricFunction for two cubic Bezier ribbons; use Surface for a torus family with radii [0.48, 0.72, 0.96]; use a regular hexagon for the cusp fibre; use RoundedRectangle with opacity 0.16 for the capsule",
+    "timeline": [
+      "0.0-2.8: FadeIn source artifacts and exact labels",
+      "2.8-5.8: Create amber and cyan ribbons with synchronized dot lag",
+      "5.8-8.7: Grow capsule; reveal intersection node after both dot groups arrive",
+      "8.7-12.3: Transform node into torus family; rotate 18 degrees, then lock; draw hexagonal cusp fibre",
+      "12.3-16.0: Dock receipt card; write exact receipt labels; reveal provisional S6 caption and open bracket"
+    ],
+    "text_policy": "All text is explicit Text objects with the listed strings; no generated texture text or pseudo-text.",
+    "export_receipt": "Write render metadata, scene name, seed, frame rate, and output hash beside the MP4."
+  },
+  "falsifier": "Refute the closing visual claim if the two source hashes do not converge on the same normalized context, if the world snapshot does not contain the displayed trace, or if the receipt hash cannot be reproduced; in any case keep S6 CLAIM - PAPER PROPOSAL bracketed and do not convert it into a fact.",
+  "fake_evidence": false
+}

@@ -1,0 +1,49 @@
+{
+  "worker": 25,
+  "one_sentence_story": "A source artifact crosses a transparent context capsule, becomes a constrained torus-family test, and ends as a paper claim only when a separate world trace supplies a receipt.",
+  "beats": [
+    {"id": 1, "title": "SOURCE ARTIFACT", "causal_move": "Name the input before any transformation.", "visual": "A warm paper sheet rises from the left basalt island with one crisp rectangular mark and three actual ruled lines.", "narration": "Start with the artifact we can point to.", "evidence_boundary": "Input object, not proof of the final S6 claim."},
+    {"id": 2, "title": "EVIDENCE STREAM", "causal_move": "Move the artifact through one continuous stream.", "visual": "An amber ribbon leaves the paper with three evenly spaced square markers and stops at the capsule boundary; no dashboard UI.", "narration": "The evidence moves as a trace, not as a dashboard.", "evidence_boundary": "Continuity of the proposed move, not truth established by glow."},
+    {"id": 3, "title": "CONTEXT CAPSULE", "causal_move": "Expose the context operation without breaking continuity.", "visual": "A transparent rectangular capsule encloses the stream; amber markers align vertically while a cyan far-face outline appears.", "narration": "Context is a bounded operation that can be inspected.", "evidence_boundary": "Visual model of context handling, not a measured result from the PNG."},
+    {"id": 4, "title": "TORUS TEST", "causal_move": "Turn the bounded trace into a testable geometric family.", "visual": "The stream becomes two cyan torus loops around one hexagonal fibre with one highlighted cusp; the split is the only new event.", "narration": "The proposed structure is now a geometric test, with a cusp that can fail.", "evidence_boundary": "Candidate model of the paper proposal, not a consensus fact."},
+    {"id": 5, "title": "CLAIM + WORLD TRACE", "causal_move": "Close the claim only after a separate world trace arrives.", "visual": "A white receipt sheet enters from the right; a circular seal draws only after contact. Final readable labels are SOURCE -> TEST -> TRACE and S6 CLAIM.", "narration": "This receipt can support an S6 claim; it cannot turn the claim into consensus.", "evidence_boundary": "Paper claim backed by a world trace in the story, not a declaration that S6 is proven."}
+  ],
+  "persistent_objects": [
+    {"id": "source_sheet", "continuity": "Born in beat 1; remains the left anchor through beat 5.", "style": "warm ivory paper, amber edge light, no pseudo-text"},
+    {"id": "evidence_ribbon", "continuity": "One path morphs amber to cyan; never replaced by a cutaway.", "style": "two parallel strokes with sparse square markers"},
+    {"id": "context_capsule", "continuity": "Appears in beat 3 and remains as a faint wireframe shell.", "style": "transparent glass rectangle, thin cyan-white edges"},
+    {"id": "torus_family", "continuity": "Constructed from the exiting ribbon; loops stay attached to the cusp fibre.", "style": "two cyan torus loops, identical radii"},
+    {"id": "cusp_fibre", "continuity": "Resolves from the stream into one faceted hexagonal fibre at beat 4.", "style": "six-sided prism, one bright cusp marker"},
+    {"id": "world_receipt", "continuity": "Enters only in beat 5 and triggers the seal.", "style": "cool white paper, three actual ruled lines, circular seal"}
+  ],
+  "caption_script": [
+    "1/5 Start with the source artifact.",
+    "2/5 Carry one trace through the evidence stream.",
+    "3/5 Make context visible and bounded.",
+    "4/5 Test the torus family at its cusp.",
+    "5/5 A world trace can support an S6 claim; it is not consensus fact."
+  ],
+  "manim_plan": {
+    "canvas": {"reference_px": [1672, 941], "aspect_ratio": "1672/941", "receipt": "identify: PNG 1672x941"},
+    "coordinate_system": "Fixed 16:9 frame, normalized x [-8,8], y [-4.5,4.5], static camera.",
+    "determinism": {"seed": 25, "randomness": "none", "render_fps": 30, "object_ids": ["source_sheet", "evidence_ribbon", "context_capsule", "torus_family", "cusp_fibre", "world_receipt"]},
+    "palette": {"background": "#03080B", "ground": "#101923", "amber": "#F6B85B", "cyan": "#6FE8FF", "paper": "#F4F1E8", "text": "#E9F7FA"},
+    "beats": [
+      {"id": 1, "seconds": 2.4, "animation": "FadeIn sheet and SOURCE; draw three ruled Line objects."},
+      {"id": 2, "seconds": 2.8, "animation": "Create one CubicBezier; MoveAlongPath three square markers."},
+      {"id": 3, "seconds": 2.8, "animation": "Create capsule wireframe; Transform marker positions into a vertical stack."},
+      {"id": 4, "seconds": 3.0, "animation": "Transform path tail into two ParametricFunction torus loops; pulse one cusp once."},
+      {"id": 5, "seconds": 3.0, "animation": "Draw receipt, connect cyan trace, draw seal, reveal literal labels only."}
+    ],
+    "text_policy": "Render only literal labels SOURCE, TEST, TRACE, and S6 CLAIM; no generated paragraph texture or pseudo-text."
+  },
+  "falsifier": "The candidate is weakened if the world trace cannot be reproduced from the stated source and context operation, if deterministic reruns change the cusp test, or if an alternative context operation yields the same receipt without the torus relation.",
+  "fake_evidence": false,
+  "source_reference_role": "The supplied PNG is visual grammar only: dark faceted ground, amber/cyan stream, transparent capsule, and separated receipt object. It is not operational evidence.",
+  "receipts": [
+    {"what": "prompt measurement", "path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "command": "stat -c 'bytes=%s' prompt.json", "output": "bytes=1232"},
+    {"what": "reference measurement", "path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "command": "identify concept-01-evidence-thread.png", "output": "PNG 1672x941 1672x941+0+0 8-bit sRGB"},
+    {"what": "reference identity", "path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "command": "sha256sum concept-01-evidence-thread.png", "output": "75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508"},
+    {"what": "candidate beat count", "path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates/worker-25.json", "command": "jq '.beats | length' worker-25.json", "output": "5"}
+  ]
+}

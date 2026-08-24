@@ -1,0 +1,54 @@
+{
+  "worker": "06",
+  "one_sentence_story": "A warm source artifact sends one continuous evidence thread through a transparent Context Capsule, where a torus family and cusp hexagonal fibre make one bounded transformation before the trace closes as an explicitly provisional S6 paper claim.",
+  "beats": [
+    {"beat": 1, "title": "SOURCE CAPTURE", "causal_move": "The source artifact is isolated as the only starting object.", "visual_action": "A warm paper artifact rises from a dark hexagonal platform; a single amber source marker locks to its lower edge.", "on_screen_text": "SOURCE ARTIFACT", "duration_seconds": 2.2},
+    {"beat": 2, "title": "THREAD RELEASE", "causal_move": "The locked source marker becomes one luminous evidence stream.", "visual_action": "One deterministic amber-to-white bezier thread leaves the marker and travels across the terrain; no second stream or dashboard appears.", "on_screen_text": "ONE EVIDENCE THREAD", "duration_seconds": 2.3},
+    {"beat": 3, "title": "CAPSULE TEST", "causal_move": "The stream enters the transparent Context Capsule and is locally constrained by the cusp fibre.", "visual_action": "A glass capsule fades in around the existing thread; three fixed torus rings settle around a six-sided cusp fibre while the thread makes one visible bend.", "on_screen_text": "CONTEXT CAPSULE", "duration_seconds": 2.5},
+    {"beat": 4, "title": "TRACE EXIT", "causal_move": "The constrained stream exits cold-blue and lands on a receipt/world-trace marker.", "visual_action": "The same thread exits the capsule, crosses the blue side of the terrain, and terminates at a white receipt strip above a dark world-trace platform.", "on_screen_text": "RECEIPT / WORLD TRACE", "duration_seconds": 2.5},
+    {"beat": 5, "title": "BOUNDED CLAIM", "causal_move": "The observed trace is labelled as a paper claim with its falsification condition still open.", "visual_action": "A compact claim card appears beside the receipt; the thread remains visible behind it so the claim cannot detach from its source path.", "on_screen_text": "S6 PAPER CLAIM / TEST PENDING", "duration_seconds": 2.5}
+  ],
+  "persistent_objects": [
+    {"id": "source_artifact", "role": "warm input document", "continuity": "present from beat 1 through beat 5"},
+    {"id": "evidence_thread", "role": "single causal carrier", "continuity": "created at beat 2, passes through the capsule, exits to the world trace, never duplicated"},
+    {"id": "context_capsule", "role": "transparent local constraint", "continuity": "introduced at beat 3 and remains visible as a ghost outline"},
+    {"id": "torus_family", "role": "three fixed ring forms inside the capsule", "continuity": "appears at beat 3 and remains as a dim structural echo"},
+    {"id": "cusp_hexagonal_fibre", "role": "six-sided fibre at the capsule center", "continuity": "fixed in the capsule and used as the visible transformation anchor"},
+    {"id": "receipt_world_trace", "role": "cold output and external trace", "continuity": "receives the thread in beat 4 and anchors the claim card in beat 5"}
+  ],
+  "caption_script": [
+    "A source artifact enters the frame.",
+    "One evidence thread carries the causal move.",
+    "Inside the Context Capsule, the cusp fibre constrains the torus family.",
+    "The trace exits with a receipt and a world-facing check.",
+    "S6 is shown here as a paper claim, not a consensus fact. Test the trace; keep the falsifier open."
+  ],
+  "manim_plan": {
+    "scene": "EvidenceThreadWorker06",
+    "canvas": "16:9",
+    "duration_seconds": 12.0,
+    "fps": 30,
+    "coordinate_frame": "fixed Manim frame from x=-8 to 8 and y=-4.5 to 4.5",
+    "randomness": "none; no random seed, noise, or procedural variation",
+    "palette": {"background": "#05080A", "warm_source": "#F3B35B", "thread_mid": "#F9E3A8", "cold_trace": "#70D7FF", "capsule": "#B8EEFF", "claim_text": "#F4F7F8", "terrain": "#182126"},
+    "layout": {"source_artifact_center": [-5.2, -0.55], "capsule_center": [0.0, -0.15], "receipt_world_trace_center": [5.2, -0.55], "claim_card_center": [4.6, 2.65]},
+    "geometry": {
+      "thread_path": "CubicBezier([-4.55,-0.35,0],[-2.8,-1.5,0],[-1.1,0.9,0],[0.0,-0.05,0]) followed by a fixed mirrored exit to [4.55,-0.35,0]",
+      "torus_family": "three ParametricFunction rings with radii 0.72, 0.56, 0.39 and fixed z-order",
+      "cusp_hexagonal_fibre": "Polygon with fixed six vertices around [0.0,-0.15,0], plus one fixed inward cusp notch",
+      "terrain": "fixed hexagonal platform polygons only; no generated texture"
+    },
+    "timing": ["0.0-2.2 source artifact and source marker", "2.2-4.5 thread Create along fixed path", "4.5-7.0 capsule, torus family, and cusp fibre FadeIn", "7.0-9.5 exit path and receipt/world trace landing", "9.5-12.0 claim card and bounded close"],
+    "text_rule": "Use Manim Text with the exact short labels in the beats; do not render pseudo-document lines as evidence."
+  },
+  "falsifier": "An independent reconstruction or observed counter-trace that preserves the same source and context but fails to produce the claimed cusp-fibre constraint, or produces a different trace under the stated mapping, would refute this proposed S6 claim. The film itself cannot serve as the evidence.",
+  "fake_evidence": false,
+  "source_boundary": "The supplied image is used only for visual grammar: warm source, luminous stream, transparent capsule, torus/cusp structure, and cold receipt/world trace. It is not operational evidence.",
+  "receipts": [
+    {"measurement": "reference_dimensions", "command": "identify -format '%wx%h\\n' /root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "result": "1672x941"},
+    {"measurement": "reference_sha256", "command": "sha256sum /root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "result": "75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508"},
+    {"measurement": "shared_prompt_sha256", "command": "sha256sum /root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "result": "59cc1bf2a1d592ccee93787bcb2c343b5a0ccd5d925465fa08d06e1738f740a9"},
+    {"measurement": "candidate_count_before_write", "command": "find /root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates -maxdepth 1 -type f -name 'worker-*.json' | wc -l", "result": "0"},
+    {"measurement": "worker_06_preexisting", "command": "test -e /root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates/worker-06.json && echo present || echo absent", "result": "absent"}
+  ]
+}

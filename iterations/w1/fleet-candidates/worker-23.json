@@ -1,0 +1,199 @@
+{
+  "worker": 23,
+  "concept_name": "returning-cusp-receipt",
+  "evidence_boundary": "The supplied visual reference is visual grammar only; no ImageGen output is treated as operational evidence.",
+  "one_sentence_story": "A pinned source artifact emits one luminous trace; a transparent context capsule holds it, the trace becomes a torus-family candidate with a highlighted cusp hexagonal fibre, and only a returning world trace plus receipt closes the S6 paper claim as a claim.",
+  "beats": [
+    {
+      "id": "B1-source-pin",
+      "duration_s": 2.2,
+      "visual_action": "A warm paper-like source artifact rises from an amber hexagonal stratum at frame-left and locks to a small circular anchor.",
+      "on_screen_text": ["SOURCE ARTIFACT"],
+      "causal_move": "The source is pinned before any interpretation appears.",
+      "source_pointer": "02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json#visual_beats[0]"
+    },
+    {
+      "id": "B2-trace-emits",
+      "duration_s": 2.1,
+      "visual_action": "One thin amber filament leaves the anchor, undulates across the hexagonal terrain, and acquires evenly spaced hash ticks.",
+      "on_screen_text": ["WORLD TRACE"],
+      "causal_move": "The pinned source produces one visible trace; no branch or second stream is introduced.",
+      "source_pointer": "02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json#source_facts[1]"
+    },
+    {
+      "id": "B3-context-hold",
+      "duration_s": 2.2,
+      "visual_action": "A transparent upright capsule grows around the filament at frame-center; the filament passes through unchanged while a single context ring appears inside.",
+      "on_screen_text": ["CONTEXT CAPSULE"],
+      "causal_move": "The capsule separates context from the source trace without replacing the trace.",
+      "source_pointer": "02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json#world_binding"
+    },
+    {
+      "id": "B4-cusp-candidate",
+      "duration_s": 2.7,
+      "visual_action": "Inside the capsule, three restrained torus outlines appear as a family; their shared center tightens into one outlined hexagonal cusp fibre, while the outer filament turns cyan.",
+      "on_screen_text": ["TORUS FAMILY", "CUSP FIBRE", "PAPER CLAIM"],
+      "causal_move": "The held context is rendered as a geometric candidate, not as a consensus result.",
+      "source_pointer": "02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json#source_facts[3]"
+    },
+    {
+      "id": "B5-receipt-close",
+      "duration_s": 2.8,
+      "visual_action": "A dotted cyan world trace returns from the cusp to the original source anchor; hash ticks fill a closed luminous receipt volume, and the final lock reads as a bounded claim.",
+      "on_screen_text": ["S6 CLAIM — CANDIDATE", "RECEIPT + WORLD TRACE"],
+      "causal_move": "The claim closes only after the return trace and receipt seal are both visible.",
+      "source_pointer": "02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json#source_facts[5]"
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source-artifact",
+      "form": "single warm document plane on an amber hexagonal stratum",
+      "first_seen": "B1",
+      "last_seen": "B5",
+      "continuity_rule": "Never morph into the capsule or claim seal; keep its anchor fixed at x=-5.2."
+    },
+    {
+      "id": "evidence-thread",
+      "form": "one thin filament with 12 evenly spaced hash ticks",
+      "first_seen": "B2",
+      "last_seen": "B5",
+      "continuity_rule": "Use one ParametricFunction path; recolor amber to cyan only after B3 and preserve the original source endpoint."
+    },
+    {
+      "id": "context-capsule",
+      "form": "transparent rectangular prism with one inner ring",
+      "first_seen": "B3",
+      "last_seen": "B4",
+      "continuity_rule": "Scale from zero to full height; do not cut away or teleport the evidence thread."
+    },
+    {
+      "id": "torus-family-cusp",
+      "form": "three thin torus outlines plus one outlined hexagonal cusp fibre",
+      "first_seen": "B4",
+      "last_seen": "B5",
+      "continuity_rule": "Keep the cusp outline visible after the torus family dims; it is the candidate object carried into the seal."
+    },
+    {
+      "id": "receipt-seal",
+      "form": "closed translucent volume with hash ticks and a small return-arrow",
+      "first_seen": "B5",
+      "last_seen": "B5",
+      "continuity_rule": "Opacity reaches 1 only after the return trace reaches the source anchor."
+    }
+  ],
+  "caption_script": [
+    {
+      "beat": "B1",
+      "text": "Start with the source, not the answer.",
+      "placement": "lower-left",
+      "max_lines": 1
+    },
+    {
+      "beat": "B2",
+      "text": "One trace leaves the world.",
+      "placement": "lower-center",
+      "max_lines": 1
+    },
+    {
+      "beat": "B3",
+      "text": "Context can hold a trace without becoming its proof.",
+      "placement": "lower-center",
+      "max_lines": 1
+    },
+    {
+      "beat": "B4",
+      "text": "The S6 geometry is shown here as a paper claim — not consensus fact.",
+      "placement": "upper-left",
+      "max_lines": 2
+    },
+    {
+      "beat": "B5",
+      "text": "It closes only when the receipt returns to the source.",
+      "placement": "lower-center",
+      "max_lines": 1
+    }
+  ],
+  "manim_plan": {
+    "scene_class": "EvidenceThreadS6Worker23",
+    "determinism": {
+      "seed": 23023,
+      "randomness": "none",
+      "renderer": "Cairo",
+      "frame_rate": 30,
+      "resolution": [1920, 1080],
+      "background": "#05080B"
+    },
+    "frame": {
+      "reference_aspect_ratio": 1.77683,
+      "reference_receipt": "iterations/w1/concept-01-evidence-thread.png sha256=75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508",
+      "coordinate_space": "Manim frame x=-7..7, y=-3.94..3.94; use camera.frame_width=14"
+    },
+    "palette": {
+      "terrain": "#101820",
+      "amber_trace": "#F6B45B",
+      "cyan_trace": "#7DEBFF",
+      "capsule_stroke": "#B7E9F2",
+      "cusp": "#F3E3B2",
+      "paper_claim": "#D6DEE5",
+      "receipt": "#B8FFF4"
+    },
+    "anchors": {
+      "source": [-5.2, -0.25, 0],
+      "capsule": [0.0, 0.15, 0],
+      "claim": [4.6, 0.15, 0],
+      "terrain_y": -1.65
+    },
+    "geometry_construction": [
+      "Build 11 fixed hexagonal Polygon strata from a literal coordinate list; no noise or runtime sampling.",
+      "Build the evidence thread with one ParametricFunction and a deterministic 12-dot hash tick group sampled at fixed t values.",
+      "Build the capsule with transparent Prism faces and one Circle ring; keep fill_opacity <= 0.12 until B5.",
+      "Build the torus family with three fixed minor_radius values and a fixed rotation; build the cusp fibre from one regular hexagon plus six short radial segments.",
+      "Build the receipt seal from a rounded Rectangle, eight fixed hash ticks, and one Arc return arrow; do not use generated text or texture.",
+      "Use MathTex only for the short literal labels S6 CLAIM — CANDIDATE and RECEIPT + WORLD TRACE; use Text for all other captions."
+    ],
+    "timeline": [
+      {"beat": "B1", "seconds": [0.0, 2.2], "animation": "FadeIn source, GrowFromCenter anchor"},
+      {"beat": "B2", "seconds": [2.2, 4.3], "animation": "Create trace with ShowPassingFlash, then reveal fixed hash ticks"},
+      {"beat": "B3", "seconds": [4.3, 6.5], "animation": "Grow capsule, then Create inner ring; trace remains continuous"},
+      {"beat": "B4", "seconds": [6.5, 9.2], "animation": "Create torus family, Transform shared center into hexagonal cusp, recolor trace"},
+      {"beat": "B5", "seconds": [9.2, 12.0], "animation": "MoveAlongPath return trace, fill receipt hash ticks, then FadeIn bounded claim label"}
+    ],
+    "legibility_gate": "At 1920x1080 every label is <= 2 lines, uses no pseudo-text, and the final claim label remains readable with the receipt visible.",
+    "reduced_motion": "Replace path animations with sequential opacity changes while preserving all five settled states and the final return-trace relation.",
+    "render_receipt_requirement": "A future render must record the exact Manim command, output path, frame count, and sha256; this candidate is not a render receipt."
+  },
+  "falsifier": {
+    "claim_under_test": "The visual makes a bounded S6 paper claim legible as a receipt-gated candidate rather than a consensus fact.",
+    "would_refute": [
+      "A first-pass viewer cannot recover the five-step order source -> trace -> context -> candidate geometry -> receipt.",
+      "The receipt seal can become opaque before the return world trace reaches the source anchor.",
+      "The words PAPER CLAIM or S6 CLAIM — CANDIDATE are absent, unreadable, or visually outweighed by a definitive result statement.",
+      "The torus family or cusp fibre is mistaken for measured evidence because the scene offers no visible source pointer or receipt boundary."
+    ],
+    "test_boundary": "This is a film-concept falsifier; it does not validate the mathematical S6 claim."
+  },
+  "fake_evidence": false,
+  "receipts": [
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "command": "jq -r '.deliverable.required_fields | length, .deliverable.beats, .fake_evidence, .deliverable.path_pattern, (.constraints | length)' w1-evidence-thread-fleet-prompt.v1.json",
+      "output": "8; 5; false; iterations/w1/fleet-candidates/worker-<n>.json; 6"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "command": "identify -format 'width=%w height=%h channels=%[channels] colorspace=%[colorspace]\\n' concept-01-evidence-thread.png; sha256sum concept-01-evidence-thread.png",
+      "output": "width=1672 height=941 channels=srgb colorspace=sRGB; sha256=75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/W1-MANIFEST.json",
+      "command": "jq -r '.iterations | length, .range, .fake_evidence' W1-MANIFEST.json",
+      "output": "20; 01-20; false"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json",
+      "command": "jq -r '.schema, (.source_facts | length), (.visual_beats | length), .fake_evidence' s6-modular-family-film.v1.json",
+      "output": "herakles.math-film-source.v1; 7; 5; false"
+    }
+  ]
+}

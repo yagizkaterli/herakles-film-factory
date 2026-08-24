@@ -1,0 +1,65 @@
+{
+  "worker": 24,
+  "candidate_id": "W1-24-missing-link",
+  "one_sentence_story": "A source-bound amber thread enters a transparent context capsule, exposes its missing link at the cusp, and closes into an S6 paper claim only when the world trace and receipt arrive together.",
+  "beats": [
+    {"index": 1, "title": "Source enters the frame", "causal_move": "A single warm paper source artifact emits one amber evidence thread.", "visual_action": "Place one legible source card at x=-5.3, y=-1.1; draw one amber cubic Bezier thread from its lower-right edge toward the capsule. Keep the surrounding world dark and empty.", "on_screen_text": "SOURCE ARTIFACT", "duration_seconds": 3.0},
+    {"index": 2, "title": "Context makes the thread inspectable", "causal_move": "The thread enters a transparent capsule that reveals its context instead of hiding it.", "visual_action": "Fade in a glass rectangular capsule at x=0, y=0 with a thin cyan outline; the amber thread remains visible through it, while three small context anchors appear on the capsule wall.", "on_screen_text": "CONTEXT CAPSULE", "duration_seconds": 3.2},
+    {"index": 3, "title": "The cusp reveals the missing link", "causal_move": "At the cusp, the smooth torus family twists and opens a visible seam rather than silently becoming proof.", "visual_action": "Morph the capsule core into one torus ring with a six-sided fibre marker at the right edge; pin three small labels 3, 4, and infinity on the base curve; rotate the torus by exactly 120 degrees and open a 22-degree seam at the cusp. Stop the luminous stream at that gap and show a small red open-circle marker, not a dashboard warning.", "on_screen_text": "CLAIM LINK OPEN", "duration_seconds": 4.0},
+    {"index": 4, "title": "Receipt crosses the seam", "causal_move": "A separate world-trace receipt supplies the missing link and reconnects the stream.", "visual_action": "Introduce a white receipt strip from x=5.3, y=-1.0; its cyan trace line crosses the seam only after the receipt touches the hexagonal cusp marker. Keep the source thread amber and the receipt trace cyan so parity remains visible.", "on_screen_text": "WORLD TRACE / RECEIPT", "duration_seconds": 3.8},
+    {"index": 5, "title": "Bounded claim closes", "causal_move": "The joined source, context, geometry, and receipt close into a bounded S6 paper claim.", "visual_action": "Close the seam into a clean hexagonal dP6 fibre, then dissolve the torus scaffold into a thin S6 outline. Place one restrained claim line beneath it: 'PAPER CLAIM: the chosen construction is diffeomorphic to S6'. Keep a small OPEN marker beside the line for all stronger deployment claims.", "on_screen_text": "PAPER CLAIM / S6", "duration_seconds": 4.0}
+  ],
+  "persistent_objects": [
+    {"id": "source_card", "role": "source artifact", "continuity": "Never changes identity; warm paper rectangle with one source pointer line."},
+    {"id": "amber_evidence_thread", "role": "source-bound evidence stream", "continuity": "One cubic Bezier path from source to capsule; it pauses at the cusp seam and resumes only after receipt contact."},
+    {"id": "context_capsule", "role": "transparent context boundary", "continuity": "The glass capsule is the only container; no dashboard panels or decorative widgets are added."},
+    {"id": "torus_family", "role": "paper geometry", "continuity": "One torus ring rotates, opens at the cusp, and resolves into the hexagonal fibre."},
+    {"id": "cusp_hexagonal_fibre", "role": "dP6 cusp marker", "continuity": "Six vertices remain fixed while the seam opens and closes."},
+    {"id": "special_points", "role": "three source-bound special points", "continuity": "Labels 3, 4, and infinity stay pinned to the same base-curve coordinates through the cusp transition."},
+    {"id": "world_receipt", "role": "receipt/world trace", "continuity": "White receipt strip with a cyan trace; it is the only object allowed to bridge the missing link."},
+    {"id": "bounded_s6_claim", "role": "paper claim surface", "continuity": "Appears only after the bridge; remains explicitly labelled as a paper claim."}
+  ],
+  "caption_script": [
+    "A thread is not proof because it glows.",
+    "At the cusp, the missing link stays visible.",
+    "Only a source-bound world trace can close it.",
+    "PAPER CLAIM: in the cited construction, the total space resolves to S6.",
+    "The film shows the receipt boundary; it does not manufacture evidence."
+  ],
+  "manim_plan": {
+    "renderer": "opengl",
+    "canvas": "16:9, 1920x1080",
+    "frame_rate": 24,
+    "background": "#05070A",
+    "palette": {"source_amber": "#F6B84A", "trace_cyan": "#63D9FF", "paper_white": "#F3F0E8", "geometry_blue": "#8DDCFF", "open_red": "#E46A63", "ink": "#101418"},
+    "coordinate_system": "fixed camera; x in [-7,7], y in [-3.9,3.9], z=0",
+    "geometry": {
+      "source_card": "RoundedRectangle(width=2.0,height=2.6,corner_radius=0.08) at (-5.3,-1.1,0)",
+      "context_capsule": "Transparent Prism(width=3.0,height=3.2,depth=0.55) at (0,0,0), stroke_width=1.2",
+      "torus_family": "ParametricSurface(u,v -> ((1+0.45*cos(v))*cos(u),(1+0.45*cos(v))*sin(u),0.22*sin(v))) scaled 1.15",
+      "cusp_hexagonal_fibre": "RegularPolygon(n=6,radius=0.82) at (2.15,0,0), vertex 0 fixed at angle PI/6",
+      "special_points": "Text('3') at (-1.8,2.15,0), Text('4') at (0.1,2.15,0), Text('infinity') at (2.0,2.15,0), fixed z=0",
+      "world_receipt": "Rectangle(width=1.8,height=2.4) at (5.3,-1.0,0) with exactly 8 horizontal receipt rules"
+    },
+    "timeline": [
+      "0.0-3.0 Create source_card; Create amber_evidence_thread with lag_ratio=0.0.",
+      "3.0-6.2 Create context_capsule; Draw three context anchors; keep thread visible through glass.",
+      "6.2-10.2 Create special_points; Transform capsule core into torus_family; Rotate(angle=2*PI/3); Open cusp seam=22 degrees; pause stream.",
+      "10.2-14.0 Create world_receipt; Trace cyan receipt path; bridge seam only on contact callback.",
+      "14.0-18.0 Close seam; Transform torus_family into hexagonal fibre; Write bounded_s6_claim; hold final frame for 1.0 seconds."
+    ],
+    "determinism": "No random seeds, no noise textures, no external images, no generated text; all labels are explicit Text objects and all coordinates are constants."
+  },
+  "falsifier": {
+    "reject_if": ["The seam closes before the world_receipt reaches the cusp.", "The three special points 3, 4, infinity or the cusp transition cannot be located in the render.", "The hexagonal fibre is not visibly six-sided or the S6 line is presented as consensus fact.", "The render uses the ImageGen reference as operational evidence or invents a receipt/world snapshot."],
+    "test": "Render twice from the same scene file and compare frame hashes; reject if the frame sequence differs."
+  },
+  "fake_evidence": false,
+  "source_receipts": [
+    {"claim": "Shared prompt schema and required delivery fields", "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "command": "jq -r 'keys[]' 02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "output": "constraints deliverable evaluation fake_evidence mission reference schema source_boundary visual_spine"},
+    {"claim": "Visual reference dimensions and color space", "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "command": "identify -format 'width=%w height=%h colorspace=%[colorspace] filesize=%b\\n' 02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "output": "width=1672 height=941 colorspace=sRGB filesize=1.78898MB"},
+    {"claim": "Visual reference identity", "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "command": "sha256sum 02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "output": "75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508"},
+    {"claim": "S6 geometry and falsifier boundary", "path": "02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json", "command": "wc -l -c 02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json && sha256sum 02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json", "output": "28 1397; 17a42d8d968f71f622f822e38eb85b829ce1397c1c8f3bbf9562996ada7bf56e"},
+    {"claim": "Paper boundary for memory and falsifier language", "path": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md", "command": "wc -l -c 02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md && rg -n -i 'S6|false-positive|falsifier|Memory as world' 02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md", "output": "1196 65185; section 07 at line 622; falsifier/evidence boundary matches at lines 13, 121, 640-653, 863"}
+  ]
+}

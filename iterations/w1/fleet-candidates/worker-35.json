@@ -1,0 +1,122 @@
+{
+  "worker": 35,
+  "one_sentence_story": "A single amber source pulse crosses a transparent Context Capsule, makes one deterministic pass through a torus family and cusp hexagonal fibre, then returns as a cyan world-trace receipt that keeps the S6 paper statement visibly provisional.",
+  "beats": [
+    {
+      "beat": 1,
+      "duration_s": 2.4,
+      "causal_move": "The source artifact emits one identifiable evidence pulse.",
+      "visual": "A warm paper artifact stands alone on an amber hexagonal plinth; one bright dot leaves its lower edge and the rest of the frame stays nearly black.",
+      "on_screen_text": "SOURCE ARTIFACT",
+      "transition": "The dot becomes the head of a thin amber stream aimed at the capsule."
+    },
+    {
+      "beat": 2,
+      "duration_s": 2.8,
+      "causal_move": "The pulse enters the Context Capsule and receives a readable provenance token.",
+      "visual": "The stream crosses into a glass rectangular capsule; a small interior label locks to the dot: SOURCE-01 / CONTEXT-01. No other interface elements appear.",
+      "on_screen_text": "CONTEXT CAPSULE",
+      "transition": "The capsule outline brightens once, indicating capture rather than proof."
+    },
+    {
+      "beat": 3,
+      "duration_s": 3.2,
+      "causal_move": "The captured pulse follows one member of the torus family instead of branching into unrelated paths.",
+      "visual": "Inside the glass, three concentric torus rings fade in as a family; only the middle ring carries the moving pulse, which completes one clockwise orbit and leaves a short afterimage.",
+      "on_screen_text": "TORUS FAMILY / ONE PATH",
+      "transition": "The selected ring contracts toward a six-sided cusp fibre at the capsule exit."
+    },
+    {
+      "beat": 4,
+      "duration_s": 2.8,
+      "causal_move": "The pulse passes the cusp hexagonal fibre and is transformed into a single cyan exit trace.",
+      "visual": "A wireframe hexagonal fibre pinches once at its cusp; the pulse passes through the pinch without duplicating, and the stream changes from amber to cyan at the exit plane.",
+      "on_screen_text": "CUSP FIBRE / TRACE",
+      "transition": "The cyan stream leaves the capsule and settles onto a cool blue circular world marker."
+    },
+    {
+      "beat": 5,
+      "duration_s": 3.0,
+      "causal_move": "The exit trace writes a receipt that closes back to the source without presenting the paper claim as settled fact.",
+      "visual": "A clean receipt sheet rises from the world marker with three readable lines: SOURCE-01, CONTEXT-01, TRACE-01. A fine return arc links TRACE-01 back to the source plinth; a small amber note remains outside the loop: S6 PAPER CLAIM.",
+      "on_screen_text": "CLOSED TRACE / CLAIM, NOT CONSENSUS",
+      "transition": "Hold on the closed arc, receipt, and the still-visible provisional claim label for the final frame."
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_artifact",
+      "role": "fixed origin and return anchor",
+      "style": "warm ivory paper, amber rim light, no pseudo-text"
+    },
+    {
+      "id": "evidence_stream",
+      "role": "single causal carrier from source to world trace",
+      "style": "amber before capsule, cyan after capsule, one moving pulse"
+    },
+    {
+      "id": "context_capsule",
+      "role": "visible boundary where provenance is captured",
+      "style": "transparent glass cuboid with restrained cyan edge highlight"
+    },
+    {
+      "id": "torus_cusp_structure",
+      "role": "one transformation path inside the capsule",
+      "style": "three thin torus rings plus one wireframe hexagonal cusp fibre"
+    },
+    {
+      "id": "world_trace_receipt",
+      "role": "terminal receipt and reversible closure",
+      "style": "cool white sheet, three legible identifiers, blue circular marker"
+    }
+  ],
+  "caption_script": [
+    "1/5 A source artifact emits one pulse.",
+    "2/5 The Context Capsule records where that pulse was observed.",
+    "3/5 One torus path carries it; the family stays visible, but the animation chooses one path.",
+    "4/5 The cusp hexagonal fibre changes the stream's state without inventing a second trace.",
+    "5/5 S6 paper claim: this closed trace is a proposed construction, not consensus. The receipt is the falsifiable handoff."
+  ],
+  "manim_plan": {
+    "canvas": "16:9, 1672x941 reference composition, black background #05080B",
+    "coordinate_system": "Frame x from -8.0 to 8.0 and y from -4.5 to 4.5; source at (-5.4,-0.65), capsule at (0.0,-0.25), world marker at (5.5,-0.65).",
+    "palette": {
+      "amber": "#F4A340",
+      "paper": "#F4E7C5",
+      "cyan": "#45D7FF",
+      "blue": "#6CA7C8",
+      "ink": "#DDEBF2",
+      "background": "#05080B"
+    },
+    "determinism": "Set seed=35; use fixed DecimalNumber-free labels; all geometry uses fixed coordinates; no noise, camera shake, random particle placement, or generated text.",
+    "construction": [
+      "Draw a low-opacity hexagonal plinth and a paper Polygon for source_artifact.",
+      "Create evidence_stream as a ParametricFunction with a fixed cubic Bezier path; animate one Dot along alpha from 0 to 1.",
+      "Fade in context_capsule as four translucent Rectangle faces and two cyan edge lines; add only the two provenance identifiers.",
+      "Create three ParametricSurface torus rings with radii (1.10, 0.16), (1.35, 0.16), and (1.60, 0.16); animate only the middle ring's pulse.",
+      "Create the cusp fibre from six fixed line segments meeting at one cusp point; recolor the stream at the exit with a single UpdateFromAlphaFunc.",
+      "Draw world_trace_receipt from a fixed Polygon and three Text lines; draw the return arc only after TRACE-01 appears."
+    ],
+    "timing": "Use beats [2.4, 2.8, 3.2, 2.8, 3.0] seconds; every beat has one causal animation and one 0.25 second settle hold.",
+    "readability": "Use Text at minimum 0.24 frame-height equivalent, high-contrast ink, and no text smaller than the three receipt identifiers."
+  },
+  "falsifier": "The candidate is falsified if a fixed rerun with the same source and context identifiers cannot reproduce the same single exit trace and receipt, or if a controlled perturbation of the capsule context changes the trace while the receipt remains unchanged. The animation itself is not evidence for the S6 paper claim.",
+  "fake_evidence": false,
+  "receipts": [
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "measurement": "jq reported schema=herakles.w1-evidence-thread-fleet-prompt.v1, beats=5, required_fields=8, constraints=6, visual_spine=5, fake_evidence=false.",
+      "command": "jq -r '... structural counts ...' < prompt"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "measurement": "identify measured PNG 1672x941, 8-bit sRGB, 1.7061MiB; sha256=75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508.",
+      "command": "identify <reference> && sha256sum <reference>"
+    },
+    {
+      "path": "iterations/w1/fleet-candidates/worker-35.json",
+      "measurement": "Worker id is 35 and beats array length is 5 by construction; post-write jq validation is required before report acceptance.",
+      "command": "jq -e '.worker == 35 and (.beats|length) == 5 and .fake_evidence == false' < worker-35.json"
+    }
+  ]
+}

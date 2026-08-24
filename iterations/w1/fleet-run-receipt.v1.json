@@ -1,0 +1,15 @@
+{
+  "schema": "herakles.w1-fleet-run-receipt.v1",
+  "prompt": "canonical/w1-evidence-thread-fleet-prompt.v1.json",
+  "reference": "iterations/w1/concept-01-evidence-thread.png",
+  "remote": "root@herakles-runtime:/root/vault-homebase",
+  "queue": "gorevler/_oda-kuyruk/sistem-analizi-s106",
+  "requested_workers": 40,
+  "claimed_workers": 40,
+  "candidate_json_written": 35,
+  "candidate_json_valid": 35,
+  "blocked_workers": 5,
+  "blocker": "shared candidate directory was root:root 0755 until corrected to herakles:herakles 2775",
+  "active_codex_peak_observed": 48,
+  "fake_evidence": false
+}

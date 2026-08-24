@@ -1,0 +1,161 @@
+{
+  "worker": "05",
+  "concept": "Inspection aperture",
+  "one_sentence_story": "A source artifact becomes an inspectable S6 claim only after one continuous evidence stream passes through a transparent Context Capsule, resolves into a torus family and cusp hexagonal fibre, and ends beside a receipt that leaves the claim open to a world trace.",
+  "beats": [
+    {
+      "index": 1,
+      "title": "Source artifact enters the frame",
+      "causal_move": "A readable source sheet emits the first amber marker, so the film has a named origin before any geometry appears.",
+      "visual_action": "On a locked three-quarter view of a black hexagonal terrain, a warm paper sheet at x=-5.5 receives a single amber point. The only visible text is SOURCE and a short readable citation line: \"paper input / sample 01\".",
+      "caption": "Start with the source, not the conclusion.",
+      "duration_seconds": 3.0
+    },
+    {
+      "index": 2,
+      "title": "Evidence stream crosses context",
+      "causal_move": "The amber marker travels as a three-strand luminous stream into the capsule, making context the transformation between source and claim.",
+      "visual_action": "Three parallel amber Bezier paths leave the sheet, stay visibly connected, then enter a glass rectangular capsule at x=-1.6. The capsule label reads CONTEXT CAPSULE. A faint inner divider appears only when the stream crosses it.",
+      "caption": "Context is a passage, not decoration.",
+      "duration_seconds": 4.0
+    },
+    {
+      "index": 3,
+      "title": "Geometry is resolved, not asserted",
+      "causal_move": "The stream exits the capsule and its two outer strands close into a torus family while the center strand pinches into a hexagonal fibre.",
+      "visual_action": "At x=1.0, two strands become three nested torus rings with fixed radii 0.62, 0.82, and 1.02. The center strand narrows through one cusp and changes from circular to a six-sided cross-section. Amber remains at the capsule side; cyan begins only after the cusp.",
+      "caption": "The form is the consequence of the route.",
+      "duration_seconds": 5.0
+    },
+    {
+      "index": 4,
+      "title": "The world trace tests the closure",
+      "causal_move": "A cyan branch reaches a white receipt surface, and the receipt draws one external trace that can agree with or break the geometry.",
+      "visual_action": "The torus and fibre remain visible while a cyan branch lands on a tilted receipt at x=5.0. The receipt contains only RECEIPT and WORLD TRACE / RUN 01. A thin white trace line is drawn from the receipt outward and stops at a marked test point; no success state is shown.",
+      "caption": "A receipt can test a claim; it cannot certify it by itself.",
+      "duration_seconds": 4.0
+    },
+    {
+      "index": 5,
+      "title": "Close with a bounded S6 claim",
+      "causal_move": "The geometry and receipt hold in one inspection aperture while a claim label appears with an explicit falsifier, closing the film without turning the paper claim into consensus.",
+      "visual_action": "The camera makes one slow, deterministic push toward the capsule-to-receipt corridor. A restrained lower-left title reads S6 CLAIM, with the subtitle CLAIM OPEN TO WORLD TRACE. The torus family, hexagonal cusp, source, and receipt remain in frame as persistent objects.",
+      "caption": "S6 is shown here as a paper claim, kept open to falsification.",
+      "duration_seconds": 4.0
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_sheet",
+      "role": "source artifact",
+      "appearance": "warm ivory paper on a dark hexagonal plinth",
+      "fixed_anchor": [-5.5, -0.55, 0.0],
+      "readable_text": ["SOURCE", "paper input / sample 01"]
+    },
+    {
+      "id": "evidence_stream",
+      "role": "luminous evidence stream",
+      "appearance": "three parallel strands, amber before the capsule and cyan after the cusp",
+      "fixed_anchor": "Bezier control points are explicit in manim_plan"
+    },
+    {
+      "id": "context_capsule",
+      "role": "transparent Context Capsule",
+      "appearance": "glass rectangular prism with one internal divider and a thin cyan edge",
+      "fixed_anchor": [-1.6, 0.0, 0.0],
+      "readable_text": ["CONTEXT CAPSULE"]
+    },
+    {
+      "id": "torus_family",
+      "role": "resolved torus family",
+      "appearance": "three nested translucent torus rings",
+      "fixed_anchor": [1.0, 0.22, 0.0],
+      "radii": [0.62, 0.82, 1.02]
+    },
+    {
+      "id": "cusp_hex_fibre",
+      "role": "cusp hexagonal fibre",
+      "appearance": "one continuous fibre whose cross-section changes to six sides at the cusp",
+      "fixed_anchor": [2.15, 0.0, 0.0],
+      "cross_section_sides": 6
+    },
+    {
+      "id": "world_receipt",
+      "role": "receipt/world trace",
+      "appearance": "white tilted receipt with a single external trace line",
+      "fixed_anchor": [5.0, -0.25, 0.0],
+      "readable_text": ["RECEIPT", "WORLD TRACE / RUN 01"]
+    }
+  ],
+  "caption_script": {
+    "tweet": "A source enters context. A thread resolves into a torus family and a cusp hexagonal fibre. The film closes on an S6 paper claim beside a receipt and a world trace: inspectable, bounded, falsifiable.",
+    "on_screen": [
+      "Start with the source, not the conclusion.",
+      "Context is a passage, not decoration.",
+      "The form is the consequence of the route.",
+      "A receipt can test a claim; it cannot certify it by itself.",
+      "S6 is shown here as a paper claim, kept open to falsification."
+    ],
+    "final_disclaimer": "S6 CLAIM / PAPER CLAIM / NOT CONSENSUS FACT"
+  },
+  "manim_plan": {
+    "render": {
+      "pixel_width": 1672,
+      "pixel_height": 941,
+      "frame_rate": 30,
+      "background": "#05080A",
+      "seed": 5,
+      "anti_aliasing": "fixed Manim defaults; no stochastic effects"
+    },
+    "coordinate_system": {
+      "camera_frame": [14.0, 7.875],
+      "origin": [0.0, 0.0, 0.0],
+      "camera_start": [0.0, 0.0, 8.0],
+      "camera_end": [0.35, 0.05, 7.55]
+    },
+    "palette": {
+      "terrain": "#11191D",
+      "amber": "#F6B65E",
+      "cyan": "#68D9F4",
+      "paper": "#F3E8CF",
+      "white": "#E9F3F5",
+      "claim": "#BFD7E0"
+    },
+    "construction": [
+      "Create 12 fixed hexagonal terrain plates from a literal coordinate list; do not use random placement.",
+      "Create source_sheet, context_capsule, torus_family, cusp_hex_fibre, and world_receipt before animations so object identity persists across all beats.",
+      "Build the three evidence strands from fixed cubic Bezier control points: source=(-5.5,-0.2), entry=(-3.8,0.2), capsule=(-1.6,0.0), exit=(-0.2,-0.15), cusp=(2.15,0.0), receipt=(5.0,-0.25). Offset strands by -0.10, 0.0, and 0.10 in y.",
+      "Use Create, MoveAlongPath, Transform, and FadeIn only; set every run_time explicitly and avoid ambient or noise animation.",
+      "At beat 3 use three ParametricFunction torus rings with radii 0.62, 0.82, and 1.02; use a fixed six-vertex Polygon as the fibre cross-section at the cusp and interpolate its scale along the central strand.",
+      "At beat 4 draw the receipt trace as a fixed Line with a visible test endpoint; do not color it green or red because outcome is not established.",
+      "At beat 5 keep all persistent objects at opacity 0.72 or higher, then use one fixed 0.45 second camera push and reveal the final disclaimer text with Write.",
+      "Use Text or MarkupText for every label with explicit font_size values; render all labels at font_size 24 or larger and never generate pseudo-text."
+    ],
+    "timing": {
+      "beat_1": [0.0, 3.0],
+      "beat_2": [3.0, 7.0],
+      "beat_3": [7.0, 12.0],
+      "beat_4": [12.0, 16.0],
+      "beat_5": [16.0, 20.0],
+      "total_seconds": 20.0
+    }
+  },
+  "falsifier": "The candidate is refuted if a measured source/context pair fails to preserve the predicted closure of the torus family, if the cusp fibre does not resolve to six sides under the stated construction, or if the external world trace contradicts the claimed relation. The animation presents none of these as already measured.",
+  "fake_evidence": false,
+  "local_measurements": {
+    "reference_image": {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "width_px": 1672,
+      "height_px": 941,
+      "colorspace": "sRGB",
+      "bytes": 1788980,
+      "sha256": "75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508",
+      "receipt": "identify -format 'width=%w height=%h colorspace=%[colorspace] filesize=%b\\n' ... ; sha256sum ..."
+    },
+    "shared_prompt": {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "line_count": 28,
+      "receipt": "wc -l < ..."
+    }
+  }
+}

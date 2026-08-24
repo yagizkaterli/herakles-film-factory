@@ -1,0 +1,47 @@
+{
+  "worker": 10,
+  "one_sentence_story": "A source folio emits one amber trace into a transparent Context Capsule; a single 90-degree hinge-gate locks that trace to a cusp fibre, wakes a torus family, and closes beside a qualified S6 paper claim with a separate world-trace receipt.",
+  "beats": [
+    {"beat": 1, "causal_move": "source_artifact_emits_trace", "duration_s": 2.4, "visual": "Dark hexagonal terrain. One upright ivory source folio at x=-5.4 emits exactly one warm amber filament to the right; no dashboard or pseudo-text.", "screen_label": "SOURCE ARTIFACT", "transition": "The filament is the only moving object; the folio stays fixed."},
+    {"beat": 2, "causal_move": "trace_enters_context_capsule", "duration_s": 2.6, "visual": "The filament crosses into a glass rectangular Context Capsule at x=-1.5. Three translucent planes align around it, showing bounded context as volume rather than UI.", "screen_label": "CONTEXT CAPSULE", "transition": "The amber core gains a cyan edge but remains one continuous stream."},
+    {"beat": 3, "causal_move": "hinge_gate_checks_trace", "duration_s": 2.8, "visual": "At x=1.0, a small hexagonal cusp fibre sits on a graphite hinge. The trace reaches it; the hinge rotates exactly 90 degrees and locks. The torus family remains dim and closed.", "screen_label": "TRACE CHECK", "transition": "Closed means not linked; open means the trace is carried forward."},
+    {"beat": 4, "causal_move": "accepted_trace_closes_torus_family", "duration_s": 2.7, "visual": "The locked cusp pulls the cyan filament through three nested torus rings at x=2.7. The rings light once in sequence and settle as one stable family; a fine line continues right.", "screen_label": "TORUS FAMILY", "transition": "The same rings persist before and after the link; only their illumination changes."},
+    {"beat": 5, "causal_move": "claim_receives_world_trace", "duration_s": 3.0, "visual": "At x=5.1, a pale paper sheet receives the cyan line and folds into a restrained hexagonal closure. A separate circular world-trace marker sits outside it. The only readable copy is: 'S6 PAPER CLAIM' and 'TRACE-LINKED, NOT CONSENSUS'.", "screen_label": "S6 PAPER CLAIM", "transition": "The final state is closed but qualified: a paper claim with a trace, not a consensus fact."}
+  ],
+  "persistent_objects": [
+    {"id": "source_folio", "type": "upright_source_artifact", "anchor": "left", "style": "matte ivory paper, warm amber rim", "continuity": "fixed; emits one filament"},
+    {"id": "evidence_filament", "type": "single_polyline_stream", "anchor": "source_to_claim", "style": "amber at source, cyan after capsule, sparse particles", "continuity": "one continuous path; no duplicates"},
+    {"id": "context_capsule", "type": "transparent_rectangular_prism", "anchor": "center_left", "style": "glass cyan edges, low-opacity planes", "continuity": "fixed from beat 2"},
+    {"id": "hinge_cusp_fibre", "type": "hexagonal_cusp_on_hinge", "anchor": "center", "style": "graphite hinge, cyan cusp, one 90-degree rotation", "continuity": "closed until beat 3, then locked open"},
+    {"id": "torus_family", "type": "three_nested_tori", "anchor": "center_right", "style": "dark steel before link, cyan edge after link", "continuity": "same three rings; sequential illumination"},
+    {"id": "claim_sheet_and_receipt", "type": "paper_claim_with_world_trace_marker", "anchor": "right", "style": "pale sheet, separate trace marker", "continuity": "qualified closure; never a verification badge"}
+  ],
+  "caption_script": [
+    {"timecode": "00:00-00:02", "text": "A source leaves one trace."},
+    {"timecode": "00:02-00:05", "text": "Context gives the trace a boundary."},
+    {"timecode": "00:05-00:08", "text": "A hinge makes the link legible."},
+    {"timecode": "00:08-00:11", "text": "The linked trace closes a torus family."},
+    {"timecode": "00:11-00:14", "text": "S6 is a paper claim with a world trace, not consensus."}
+  ],
+  "manim_plan": {
+    "canvas": {"resolution": [1672, 941], "aspect_ratio": "1672:941", "background": "#05080B", "camera": "fixed orthographic, shallow z offsets"},
+    "coordinate_system": {"x_range": [-6.5, 6.5], "y_range": [-3.6, 3.6], "origin": [0, 0, 0], "object_centres": {"source_folio": [-5.4, 0.15, 0], "context_capsule": [-1.5, 0.15, 0], "hinge_cusp_fibre": [1.0, 0.15, 0], "torus_family": [2.7, 0.15, 0], "claim_sheet_and_receipt": [5.1, 0.15, 0]}},
+    "determinism": {"seed": 1010, "randomness": "disabled", "particle_count": 18, "fixed_dt": 1.0, "render_fps": 24, "stroke_widths": {"filament": 3.0, "ring": 2.2, "fine_receipt": 1.2}},
+    "construction_order": ["static dark hexagonal terrain", "source_folio and claim_sheet_and_receipt with explicit labels", "one ParametricFunction evidence_filament with fixed control points", "context_capsule from transparent Polygon faces and cyan Line edges", "hinge_cusp_fibre from regular hexagon, cusp point, fixed hinge axis", "three Torus objects with major radii [0.72, 0.52, 0.32] and minor radius 0.055", "Create stream then Rotate hinge by PI/2", "illuminate torus objects in order [0, 1, 2]", "deterministic Transform for paper closure and Create for world marker"],
+    "animation_timeline": [
+      {"beat": 1, "frames": 58, "action": "Create(source_folio); Create(evidence_filament, run_time=2.4)"},
+      {"beat": 2, "frames": 62, "action": "Create(context_capsule); MoveAlongPath(stream_head, capsule_entry_path)"},
+      {"beat": 3, "frames": 67, "action": "Rotate(hinge_cusp_fibre, angle=PI/2); Indicate(cusp_lock)"},
+      {"beat": 4, "frames": 65, "action": "LaggedStart(ShowPassingFlash(torus_0), ShowPassingFlash(torus_1), ShowPassingFlash(torus_2), lag_ratio=0.18)"},
+      {"beat": 5, "frames": 72, "action": "Transform(claim_sheet, closed_claim_shape); Create(world_trace_marker); Write(two_line_label)"}
+    ],
+    "text_policy": "Render only explicit labels with a bundled deterministic font; no generated pseudo-text."
+  },
+  "falsifier": "The concept fails if a viewer cannot identify the hinge rotation as the single acceptance move, or if the final S6 paper claim reads as verified consensus without the qualifier and separate world-trace marker.",
+  "fake_evidence": false,
+  "receipts": {
+    "shared_prompt": {"path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "schema": "herakles.w1-evidence-thread-fleet-prompt.v1", "required_fields_count": 8, "beats_required": 5, "source_boundary": "ImageGen reference is visual grammar only; it is not operational evidence."},
+    "visual_reference": {"path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "bytes": 1788980, "dimensions_px": [1672, 941], "format": "PNG", "measured_with": ["stat --printf='%s'", "identify"]},
+    "local_counts": {"candidate_worker": 10, "beats_written": 5, "persistent_objects_written": 6, "caption_lines_written": 5, "animation_beats_written": 5, "fake_evidence": false}
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "worker": 22,
+  "concept_name": "audit-seam",
+  "one_sentence_story": "A source artifact sends one luminous thread through a transparent context capsule, where a cusp opens an auditable seam and a paper claim closes only after the hexagonal fibre leaves a world trace.",
+  "beats": [
+    {
+      "id": "B1",
+      "title": "source enters",
+      "causal_move": "A single paper sheet descends onto a dark hexagonal world tile and emits one amber evidence thread.",
+      "visual_action": "Keep the sheet as the persistent source object; animate only its seal opening and the first thread pulse.",
+      "on_screen_text": "SOURCE",
+      "source_pointer": "canonical/s6-modular-family-film.v1.json#source_facts",
+      "receipt_object": "A small amber source marker remains attached to the thread origin."
+    },
+    {
+      "id": "B2",
+      "title": "special points separate",
+      "causal_move": "The thread crosses three clean waypoints labelled 3, 4, and infinity, separating the special points without adding interface chrome.",
+      "visual_action": "Place three luminous nodes on the same path; the torus ring repeats once at each node and keeps its orientation.",
+      "on_screen_text": "3   4   infinity",
+      "source_pointer": "canonical/s6-modular-family-film.v1.json#source_facts",
+      "receipt_object": "Each node receives one visible tick on the thread, not a dashboard panel."
+    },
+    {
+      "id": "B3",
+      "title": "cusp opens seam",
+      "causal_move": "At the cusp, the torus fibre twists once and opens one seam while the transparent Context Capsule passes over it.",
+      "visual_action": "Rotate the fibre by a fixed quarter-turn, split one highlighted arc, then freeze the capsule around the split; do not dissolve the source.",
+      "on_screen_text": "CUSP / MONODROMY",
+      "source_pointer": "canonical/s6-modular-family-film.v1.json#source_facts",
+      "receipt_object": "The open seam is the only new object; its two endpoints carry matching cyan dots."
+    },
+    {
+      "id": "B4",
+      "title": "fibre becomes hexagon",
+      "causal_move": "The opened fibre resolves into a six-sided dP6 polygon and its three opposite side pairs meet as one visible stitch.",
+      "visual_action": "Transform the torus cross-section into a regular six-sided outline, then animate side pairs 1-4, 2-5, and 3-6 meeting in sequence.",
+      "on_screen_text": "HEXAGONAL dP6",
+      "source_pointer": "canonical/s6-modular-family-film.v1.json#source_facts",
+      "receipt_object": "Three stitch flashes remain as a compact world trace beside the polygon."
+    },
+    {
+      "id": "B5",
+      "title": "claim closes with receipt",
+      "causal_move": "Only after all three stitches close, the capsule reveals a restrained paper claim and routes the thread into a final receipt node.",
+      "visual_action": "Draw the final boundary around the hexagon, then reveal the claim label and a world-trace glyph made of real short text, never pseudo-text.",
+      "on_screen_text": "PAPER CLAIM: TOTAL SPACE ~ S6\nRECEIPT: SOURCE -> CUSP -> dP6 -> CLOSURE",
+      "source_pointer": "canonical/s6-modular-family-film.v1.json#falsifier",
+      "receipt_object": "A white receipt strip is stamped CLOSED only at the end; the claim remains explicitly attributed to the paper."
+    }
+  ],
+  "persistent_objects": [
+    {
+      "name": "source_sheet",
+      "role": "source artifact",
+      "continuity_rule": "Never remove it; amber thread origin stays visible in every beat."
+    },
+    {
+      "name": "evidence_thread",
+      "role": "luminous causal path",
+      "continuity_rule": "One path only; it changes colour from amber to cyan at the capsule boundary."
+    },
+    {
+      "name": "context_capsule",
+      "role": "transparent context boundary",
+      "continuity_rule": "Appears at B3 and remains around the seam, fibre, and final claim."
+    },
+    {
+      "name": "torus_family",
+      "role": "repeating fibre family",
+      "continuity_rule": "Same ring geometry at the three special points; only the cusp instance twists."
+    },
+    {
+      "name": "receipt_strip",
+      "role": "world trace",
+      "continuity_rule": "Blank until B5, then receives the four-step trace and CLOSED stamp."
+    }
+  ],
+  "caption_script": [
+    "A source starts the thread.",
+    "The family marks 3, 4, and infinity.",
+    "At the cusp, monodromy opens one seam.",
+    "The fibre becomes a hexagonal dP6 surface; opposite sides stitch in pairs.",
+    "Paper claim: after closure, the total space is S6. The receipt shows the path."
+  ],
+  "manim_plan": {
+    "renderer": "Manim Community Edition",
+    "determinism": "Set a fixed seed, fixed camera, fixed colours, fixed z-order, and fixed frame rate; all geometry is constructed from named points and line segments.",
+    "output": {
+      "pixel_width": 1672,
+      "pixel_height": 941,
+      "frame_rate": 15,
+      "aspect_receipt": "identify -format '%wx%h' concept-01-evidence-thread.png -> 1672x941"
+    },
+    "scene_order": [
+      "Create source_sheet, three waypoint nodes, torus rings, context_capsule, and receipt_strip before animation.",
+      "Use LaggedStart only for the single evidence_thread pulse; use Transform for torus-to-hexagon.",
+      "Use explicit ValueTrackers for cusp rotation and seam gap; no random noise or generated text.",
+      "Write captions from a fixed list of five strings with a monospace font and safe line lengths.",
+      "Export a final frame and a receipt JSON containing source pointer, seed, render command, and output hash."
+    ],
+    "negative_space_rule": "No panels, buttons, gauges, fake logs, or unreadable pseudo-text; only source, thread, capsule, fibre, claim, and receipt remain."
+  },
+  "falsifier": {
+    "rule": "Reject this candidate if the render does not preserve the three special points, cusp monodromy, the hexagon/dP6 fibre, and the final S6 closure.",
+    "operational_test": "Frame-by-frame inspection must find 3, 4, infinity, one opened cusp seam, six countable sides, three opposite-side stitches, and the final claim plus receipt.",
+    "source_pointer": "canonical/s6-modular-family-film.v1.json#falsifier"
+  },
+  "fake_evidence": false,
+  "receipts": [
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "command": "jq -r '.deliverable.required_fields | length' w1-evidence-thread-fleet-prompt.v1.json; jq -r '.deliverable.beats' w1-evidence-thread-fleet-prompt.v1.json; jq -r '.fake_evidence' w1-evidence-thread-fleet-prompt.v1.json; jq -r '.deliverable.path_pattern' w1-evidence-thread-fleet-prompt.v1.json; jq -r '.constraints | length' w1-evidence-thread-fleet-prompt.v1.json",
+      "output": "8; 5; false; iterations/w1/fleet-candidates/worker-<n>.json; 6"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "command": "identify -format '%wx%h %b bytes\\n' concept-01-evidence-thread.png",
+      "output": "1672x941 1.78898MB bytes"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "command": "sha256sum concept-01-evidence-thread.png",
+      "output": "75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/W1-MANIFEST.json",
+      "command": "jq -r '.iterations | length' W1-MANIFEST.json; jq -r '.range' W1-MANIFEST.json; jq -r '.fake_evidence' W1-MANIFEST.json",
+      "output": "20; 01-20; false"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json",
+      "command": "jq -r '.schema' s6-modular-family-film.v1.json; jq -r '.source_facts | length' s6-modular-family-film.v1.json; jq -r '.falsifier' s6-modular-family-film.v1.json",
+      "output": "herakles.math-film-source.v1; 7; If the rendered transition does not preserve the three special points, cusp monodromy, hexagon/dP6 fibre and S6 closure, reject the film."
+    }
+  ]
+}

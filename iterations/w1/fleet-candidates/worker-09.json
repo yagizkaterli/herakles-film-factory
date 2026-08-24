@@ -1,0 +1,56 @@
+{
+  "worker": "09",
+  "iteration": "I09",
+  "visual_verb": "advance",
+  "one_sentence_story": "A single source trace advances through three visible EON gates, keeps its context capsule intact, and closes as a clearly marked S6 paper claim beside a world-trace receipt slot.",
+  "paper_claim": {
+    "text": "Paper claim: the S6 construction may be readable as a closed evidence path when its context, torus family, cusp fibre, and world trace remain connected.",
+    "status": "claim_only",
+    "not_consensus": true,
+    "evidence_boundary": "This film concept does not establish the claim; source pointers, World snapshots/events, and a render receipt must do that."
+  },
+  "beats": [
+    {"beat": 1, "title": "SOURCE", "causal_move": "A source artifact emits one amber trace packet.", "visual_action": "A warm paper slab stands on the left with one legible SOURCE label. One amber line exits its lower edge and carries exactly three bright event pulses.", "on_screen_text": ["SOURCE", "event 01"], "continuity": "The three-pulse packet becomes the same line used in every later beat."},
+    {"beat": 2, "title": "EON GATE 01", "causal_move": "The trace crosses its first EON boundary and gains a time marker.", "visual_action": "The camera tracks with the packet across dark hexagonal terrain. A thin vertical gate rises; the packet passes through it, and a ring marker flips from EON 01 to EON 02.", "on_screen_text": ["EON 01", "EON 02"], "continuity": "The source slab remains in the far-left background as a dim origin point."},
+    {"beat": 3, "title": "CONTEXT CAPSULE", "causal_move": "The trace is contextualized without being replaced.", "visual_action": "The amber packet enters a transparent glass capsule. Inside, a short cyan hexagonal fibre locks onto it; only CONTEXT and SCOPE are shown, never pseudo-text.", "on_screen_text": ["CONTEXT", "SCOPE"], "continuity": "The original amber pulses remain visible through the capsule while the cyan fibre becomes a second strand."},
+    {"beat": 4, "title": "TORUS FAMILY", "causal_move": "The contextualized trace advances through a torus family and exposes the cusp fibre.", "visual_action": "The capsule opens into three nested luminous torus rings. The cyan strand travels around the nearest ring, then bends once at one hexagonal cusp fibre. A boundary tick marks the passage.", "on_screen_text": ["TORUS", "CUSP"], "continuity": "The amber source strand and cyan context strand remain braided; neither is discarded at the cusp."},
+    {"beat": 5, "title": "CLAIM / RECEIPT", "causal_move": "The closed path becomes a claim with an explicit receipt dependency.", "visual_action": "The torus closes into a hexagonal seal. Beside it, a clean card reads S6 CLAIM and NEEDS RECEIPT. A white world-trace line docks into a receipt frame; the card glows only after the dock is visible.", "on_screen_text": ["S6 CLAIM", "NEEDS RECEIPT", "WORLD TRACE"], "continuity": "The same three event pulses become three white ticks inside the receipt frame."}
+  ],
+  "persistent_objects": [
+    {"id": "source_slab", "role": "source artifact origin", "appearance": "warm paper slab, readable SOURCE label", "lifecycle": "enters beat 1, stays dimly visible through beat 5"},
+    {"id": "evidence_packet", "role": "single causal trace", "appearance": "amber line with three pulses", "lifecycle": "emits in beat 1 and remains continuous through the final receipt"},
+    {"id": "context_capsule", "role": "transparent context carrier", "appearance": "glass rectangular capsule with cyan hexagonal fibre", "lifecycle": "appears in beat 3, opens in beat 4, leaves a cyan strand in beat 5"},
+    {"id": "torus_family", "role": "geometric transformation stage", "appearance": "three nested cyan-white torus rings and one cusp hexagonal fibre", "lifecycle": "forms in beat 4 and closes into the beat 5 seal"},
+    {"id": "receipt_frame", "role": "world-trace dependency", "appearance": "white outlined frame with three tick slots", "lifecycle": "appears in beat 5 and remains visibly separate from the claim card"}
+  ],
+  "caption_script": [
+    "1/5 A source emits one trace.",
+    "2/5 The trace advances across an EON boundary.",
+    "3/5 Context is added without erasing the source.",
+    "4/5 The path crosses a torus family and a cusp fibre.",
+    "5/5 Paper claim, not consensus: the S6 path closes only beside a world-trace receipt."
+  ],
+  "manim_plan": {
+    "canvas": "16:9, 1672x941 reference framing, camera-safe 1200x675 logical units",
+    "coordinate_system": "x is source-to-claim progression; y is vertical EON gate height; z is depth only for capsule and torus parallax",
+    "palette": {"background": "#050A0D", "source_amber": "#F4B35F", "context_cyan": "#65D9F5", "receipt_white": "#EAF7FA", "claim_muted": "#A9B7BE"},
+    "timing_seconds": {"beat_1": 2.4, "beat_2": 2.2, "beat_3": 2.6, "beat_4": 3.0, "beat_5": 2.8},
+    "deterministic_construction": [
+      "Set seed=9 and use fixed DecimalNumber values for all event pulse positions.",
+      "Create labels only from explicit short strings: SOURCE, EON 01, EON 02, CONTEXT, SCOPE, TORUS, CUSP, S6 CLAIM, NEEDS RECEIPT, WORLD TRACE.",
+      "Build evidence_packet as one VMobject with three fixed pulse submobjects; move it through named gate coordinates rather than redrawing it.",
+      "Build context_capsule from fixed translucent Rectangle and edge lines; keep the cyan fibre as a separate VMobject.",
+      "Build torus_family from three fixed ParametricFunction rings with radii [1.15, 1.55, 1.95] and one fixed six-sided cusp marker.",
+      "Use lag_ratio=0 and fixed run_time values; no random camera shake, noise, or generated text.",
+      "At beat 5, animate only the three receipt ticks after the world-trace line docks; do not imply backend verification that is not present."
+    ],
+    "receipts_to_capture": ["source pointer or World snapshot identifier for each event pulse", "render command, commit hash, output path, dimensions, and checksum", "frame-level check that the final claim remains labeled as a claim"]
+  },
+  "falsifier": "The concept is refuted if a source pointer or World event cannot reproduce the three-pulse path across the shown EON boundary, or if the final render upgrades the S6 claim to an established fact without a world-trace receipt.",
+  "fake_evidence": false,
+  "local_measurements": [
+    {"subject": "shared prompt", "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "command": "stat -c 'path=%n bytes=%s mtime=%y' <prompt>", "output": "bytes=1232", "sha256": "59cc5b2a1d592ccee93787bcb2c343b5a0ccd5d925465fa08d06e1738f740a9"},
+    {"subject": "visual reference", "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "command": "identify -format 'format=%m width=%w height=%h channels=%[channels] colorspace=%[colorspace] bytes=%b' <reference>", "output": "format=PNG width=1672 height=941 channels=srgb colorspace=sRGB bytes=1.78898MB", "sha256": "75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508"},
+    {"subject": "worker mapping", "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/W1-MANIFEST.json", "command": "jq -r '.range, .iterations[8].id, .iterations[8].visual_verb, .iterations[8].source_pointer' <manifest>", "output": "01-20\\nI09\\nadvance\\nEON ledger"}
+  ]
+}

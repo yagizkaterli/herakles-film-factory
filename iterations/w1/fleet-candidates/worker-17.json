@@ -1,0 +1,103 @@
+{
+  "worker": 17,
+  "title": "Cusp Relay: izden S6 iddiasina",
+  "one_sentence_story": "Tek bir kaynak izi cam Context Capsule icinde baglama kavusur, torus ailesi ve cusp hexagonal fibre olarak dunya izine doner, sonra S6 PAPER CLAIM yalniz okunabilir bir makbuz/world-trace kosuluyla kapanir.",
+  "imagegen_reference": "iterations/w1/concept-01-evidence-thread.png",
+  "source_boundary": "The image reference supplies visual grammar only; it is not operational evidence.",
+  "beats": [
+    {
+      "beat": 1,
+      "move": "extract",
+      "visual": "A single amber source artifact, a paper-like witness plate with one legible label SOURCE ARTIFACT, emits one thin amber pulse from its marked edge. The camera holds on the artifact before the pulse travels.",
+      "on_screen": ["SOURCE ARTIFACT", "Which trace can leave this object?"],
+      "narration": "Start with one witness, not a system overview. The question is opened before the abstraction.",
+      "causal_change": "The artifact produces exactly one evidence pulse.",
+      "receipt_status": "source object is a film prop; no evidence claim is made"
+    },
+    {
+      "beat": 2,
+      "move": "contextualize",
+      "visual": "The pulse enters a transparent rectangular Context Capsule. Three translucent planes slide into alignment around the pulse; the capsule stays fixed while the planes provide the context.",
+      "on_screen": ["CONTEXT CAPSULE", "context changes the path"],
+      "narration": "The capsule does not certify the source. It makes the missing context visible as a change in route.",
+      "causal_change": "Adding context bends the same persistent pulse into a new direction.",
+      "receipt_status": "contextual transformation is a visual hypothesis, not a measured event"
+    },
+    {
+      "beat": 3,
+      "move": "compile",
+      "visual": "At the capsule exit, the bent pulse compiles into three persistent torus rings at different scales. One cusp hexagonal fibre passes through the rings and turns once at the capsule's exit normal. No particles or dashboard panels are introduced.",
+      "on_screen": ["TORUS FAMILY", "CUSP FIBRE"],
+      "narration": "The geometry is the consequence of the route: family first, then the cusp that records where the route turns.",
+      "causal_change": "The contextualized pulse becomes a traceable torus-and-cusp object family.",
+      "receipt_status": "geometry is deterministic Manim output to be built; ImageGen is not evidence"
+    },
+    {
+      "beat": 4,
+      "move": "trace",
+      "visual": "The cusp fibre reaches a dark hexagonal World Trace plate. A single receipt slot opens only when the fibre endpoint touches the plate; the torus family remains visible behind it. If no verified receipt is supplied, the slot remains visibly OPEN.",
+      "on_screen": ["WORLD TRACE", "RECEIPT: OPEN"],
+      "narration": "A beautiful path is not enough. The world link must be supplied by a real pointer or remain open.",
+      "causal_change": "The visual chain receives a world-trace checkpoint without inventing a receipt.",
+      "receipt_status": "receipt value is injected from a verified local World event or render receipt; absent input stays OPEN"
+    },
+    {
+      "beat": 5,
+      "move": "bound_claim",
+      "visual": "A thin claim bracket closes around the final endpoint, not around the whole scene. The bracket contains the readable label S6 PAPER CLAIM. A second line states the claim in plain text; below it, the receipt/world-trace pointer remains visible. The claim bracket does not turn green unless an external verification input exists.",
+      "on_screen": ["S6 PAPER CLAIM", "mechanical work -> machine; real reasoning -> LLM", "NOT CONSENSUS", "RECEIPT / WORLD TRACE"],
+      "narration": "The film closes a paper claim, not a consensus fact: mechanical work to the machine, real reasoning to the LLM. What would refute it stays on screen as the next test.",
+      "causal_change": "The claim becomes bounded by its receipt pointer and explicit falsifier rather than by visual confidence.",
+      "receipt_status": "claim framing follows the paper source; truth status remains candidate until independent receipt and falsifier test"
+    }
+  ],
+  "persistent_objects": [
+    {"id": "source_artifact", "shape": "single upright witness plate", "color": "warm amber", "role": "source artifact", "continuity": "never replaced; only its emitted pulse changes state"},
+    {"id": "evidence_stream", "shape": "one thin luminous curve with a moving pulse", "color": "amber before capsule, cyan after capsule", "role": "evidence stream", "continuity": "one curve morphs through all five beats; no duplicate stream"},
+    {"id": "context_capsule", "shape": "transparent rectangular capsule with three planes", "color": "glass blue-white", "role": "context boundary", "continuity": "fixed world position; internal planes align once in beat 2"},
+    {"id": "torus_family", "shape": "three nested torus rings", "color": "cool cyan", "role": "compiled family", "continuity": "introduced once in beat 3 and held through the close"},
+    {"id": "cusp_hexagonal_fibre", "shape": "hexagonal cross-section fibre with one cusp turn", "color": "white-cyan core with amber entry edge", "role": "traceable route endpoint", "continuity": "the same fibre touches the World Trace plate and claim bracket"},
+    {"id": "world_trace_plate", "shape": "dark hexagonal plate with one receipt slot", "color": "charcoal with restrained white type", "role": "world link and receipt boundary", "continuity": "slot state is OPEN until a real receipt is injected"},
+    {"id": "claim_bracket", "shape": "thin open-to-closed rectangular bracket", "color": "neutral white; no success green by default", "role": "claim boundary", "continuity": "closes around the claim endpoint only in beat 5"}
+  ],
+  "caption_script": [
+    {"beat": 1, "text": "Which trace can leave this object?"},
+    {"beat": 2, "text": "Context changes the path."},
+    {"beat": 3, "text": "A trace can be followed when its turn remains visible."},
+    {"beat": 4, "text": "World trace required. Receipt OPEN if absent."},
+    {"beat": 5, "text": "S6 PAPER CLAIM: mechanical work -> machine; real reasoning -> LLM. NOT CONSENSUS."}
+  ],
+  "manim_plan": {
+    "scene": "CuspRelayScene",
+    "frame": {"width": 16, "height": 9, "background": "#05080A"},
+    "camera": "orthographic, three-quarter view; one slow lateral drift from source to world trace; no cuts",
+    "coordinate_contract": {"source_artifact": [-5.2, -0.1, 0.0], "context_capsule": [0.0, 0.15, 0.0], "world_trace_plate": [5.0, -0.2, 0.0], "torus_family_center": [2.0, -0.05, 0.2]},
+    "palette": {"amber_source": "#F1A84B", "cyan_trace": "#77D9F2", "glass": "#BEEBFA", "charcoal_world": "#18242A", "claim_text": "#F2F5F4", "warning_open": "#F0C36A"},
+    "animation_rules": [
+      "Use one causal animation per beat: pulse emission, plane alignment, geometry compile, plate contact, claim bracket close.",
+      "Use Transform or ReplacementTransform only when identity is preserved; do not redraw the evidence stream.",
+      "Use Text/Markup for every label; never use texture text or pseudo-glyphs.",
+      "During the S6 sentence, freeze torus and capsule; only the claim bracket and receipt state may move.",
+      "Render RECEIPT: OPEN when receipt_id is null; never generate a fake hash or fake World event.",
+      "Keep all decorative particles disabled; glow is limited to the moving evidence pulse and fibre core."
+    ],
+    "receipt_hooks": [
+      "source_pointer: World snapshot or source artifact pointer supplied by the production manifest",
+      "world_trace_pointer: verified World event or snapshot pointer; if missing, preserve OPEN state",
+      "render_receipt: generated by the deterministic render job after code execution",
+      "claim_verification: external falsifier result, never inferred from the reference image"
+    ],
+    "qa_checks": ["beat_count == 5", "all required visual-spine objects persist", "no unreadable pseudo-text", "S6 label contains PAPER CLAIM and NOT CONSENSUS", "missing receipt cannot render as accepted", "one causal move per beat"]
+  },
+  "falsifier": {
+    "question": "Does the S6 paper claim survive when a measured workflow shows that a supposedly mechanical step still requires genuine reasoning, or when the receipt/world trace cannot be independently reproduced?",
+    "required_test": "Run the same bounded workflow with a held-out human-readable task set; classify each step before execution, attach its real receipt, and have an independent reviewer inspect whether the claimed mechanical/reasoning boundary predicts the observed route.",
+    "refuted_if": [
+      "A reproducible held-out case requires LLM reasoning for a step classified as mechanical, without a changed boundary rule.",
+      "The displayed World Trace pointer or render receipt cannot be located or reproduced independently.",
+      "The animation closes S6 while RECEIPT: OPEN remains, or treats the ImageGen reference as evidence."
+    ],
+    "status": "candidate falsifier plan; no operational result claimed"
+  },
+  "fake_evidence": false
+}

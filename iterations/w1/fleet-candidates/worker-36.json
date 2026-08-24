@@ -1,0 +1,168 @@
+{
+  "schema": "herakles.w1-evidence-thread-candidate.v1",
+  "worker": 36,
+  "candidate_id": "W36-CUSP-LOCK",
+  "distinct_angle": "Iki sicaklikli iz: amber kaynak akisi, mavi dunyaya donen receipt; cusp hex fibre akisin secim noktasini gorunur kilar.",
+  "one_sentence_story": "Bir kaynak artefakti amber bir iz uretir, iz Context Capsule icinde tek bir baglama sabitlenir, torus ailesinin cusp fibre'i uzerinden gecerek sagda ayri bir receipt/world trace'e ulasir; bunun yaninda S6 yalniz bir paper claim olarak acik kalir.",
+  "beats": [
+    {
+      "beat": 1,
+      "time_s": [0.0, 2.2],
+      "causal_move": "source artifact appears",
+      "visual_action": "Soldaki koyu hex platformun ustunde tek, okunabilir SOURCE etiketi tasiyan krem renkli sayfa artefakti yukselir; altindaki amber halka sadece bu nesneyi aydinlatir.",
+      "screen_text": ["SOURCE"],
+      "voiceover": "Her iz bir kaynakla baslar.",
+      "continuity": "source_artifact sonraki butun beatlerde soldaki sabit origin noktasinda kalir."
+    },
+    {
+      "beat": 2,
+      "time_s": [2.2, 4.5],
+      "causal_move": "source emits one evidence stream",
+      "visual_action": "Kaynak halkasindan tek amber spline cikar; spline uzerindeki seyrek nokta atimlari soldan merkeze ilerler. Arka plan agi gorunur ama hareket etmez.",
+      "screen_text": ["TRACE"],
+      "voiceover": "Kaynak, kanit izini tek bir akista tasir.",
+      "continuity": "amber_stream kaynakta baslar ve beat 3te kapsulun icine girer; yeni paralel akis acilmaz."
+    },
+    {
+      "beat": 3,
+      "time_s": [4.5, 7.2],
+      "causal_move": "stream is held by context",
+      "visual_action": "Akisin orta dugumunde seffaf dikdortgen Context Capsule cizilir. Akisin onundeki tek isaret kapsul icinde durur; kapsul icinde sadece CONTEXT etiketi bulunur.",
+      "screen_text": ["CONTEXT"],
+      "voiceover": "Baglam, izi suslemek icin degil, onu tasimak icin tutar.",
+      "continuity": "context_capsule beat 3te olusur ve beat 5e kadar saydam govde olarak kalir; amber nokta icinde kilitlenir."
+    },
+    {
+      "beat": 4,
+      "time_s": [7.2, 9.8],
+      "causal_move": "context selects a torus-cusp route",
+      "visual_action": "Kapsulun cevresinde iki ince torus ve bir yarim torus ailesi acilir. Tek mavi cusp hexagonal fibre, amber noktayi bir kavisle sag yone tasir; diger toruslar soluk kalir.",
+      "screen_text": ["CUSP"],
+      "voiceover": "Secim noktasi, izi bir sonraki dunyaya baglayan cusp'tur.",
+      "continuity": "torus_family kapsul merkezine ortalanir; cusp_fibre tek aktif rota olarak beat 5e uzanir."
+    },
+    {
+      "beat": 5,
+      "time_s": [9.8, 12.8],
+      "causal_move": "route closes against a receipt/world trace",
+      "visual_action": "Mavi fibre sagdaki kagit receipt ve altindaki concentric world trace halkasinda sonlanir. Receipt yaninda iki satirlik buyuk, okunabilir metin belirir: S6 CLAIM / PAPER CLAIM. Metin damga gibi kapanmaz; etrafindaki halka acik bir kontur olarak kalir.",
+      "screen_text": ["S6 CLAIM", "PAPER CLAIM"],
+      "voiceover": "Bu kapanis, S6 icin bir paper claimdir; receipt ve world trace olmadan consensus degildir.",
+      "continuity": "source_artifact, amber_stream, context_capsule ve torus_family kadrajda kalir; receipt_world_trace son durum olarak sagda kalir."
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_artifact",
+      "role": "source artifact",
+      "initial_state": "left cream paper on amber-lit hex platform",
+      "final_state": "still visible as origin, no duplicate"
+    },
+    {
+      "id": "amber_stream",
+      "role": "luminous evidence stream",
+      "initial_state": "absent",
+      "final_state": "continuous source-to-capsule trace, then hands off to blue route"
+    },
+    {
+      "id": "context_capsule",
+      "role": "transparent Context Capsule",
+      "initial_state": "absent",
+      "final_state": "transparent central container holding one trace marker"
+    },
+    {
+      "id": "torus_family",
+      "role": "torus family",
+      "initial_state": "absent",
+      "final_state": "three fixed-radius rings around capsule, only one route active"
+    },
+    {
+      "id": "cusp_fibre",
+      "role": "cusp hexagonal fibre",
+      "initial_state": "absent",
+      "final_state": "single blue fibre from cusp to receipt/world trace"
+    },
+    {
+      "id": "receipt_world_trace",
+      "role": "closed S6 claim endpoint",
+      "initial_state": "absent",
+      "final_state": "paper receipt plus concentric world trace, open contour not proof stamp"
+    }
+  ],
+  "caption_script": {
+    "hook": "What does an evidence thread look like when the claim stays falsifiable?",
+    "beats": [
+      "A source emits one trace.",
+      "The trace moves as a single luminous stream.",
+      "Context holds the trace at one readable point.",
+      "A cusp fibre selects the route through a torus family.",
+      "The endpoint is a receipt/world trace; S6 remains a paper claim, not consensus fact."
+    ],
+    "closing_caption": "Source -> trace -> context -> cusp -> receipt/world trace. S6: paper claim, awaiting falsification.",
+    "copy_rule": "All on-screen text is short, exact, and rendered as real text; no pseudo-text texture."
+  },
+  "manim_plan": {
+    "renderer": "CairoRenderer",
+    "scene": "EvidenceThreadW36",
+    "canvas": {
+      "pixel_width": 1672,
+      "pixel_height": 941,
+      "aspect_ratio": "1672:941 measured from reference",
+      "frame_width": 14.0,
+      "frame_height": 7.8767942584
+    },
+    "timing": {
+      "frame_rate": 30,
+      "duration_s": 12.8,
+      "total_frames": 384,
+      "easing": "smooth, fixed per beat; no random timing"
+    },
+    "determinism": {
+      "random_seed": 36,
+      "background": "#020507",
+      "stroke_widths": {"primary": 2.0, "secondary": 1.0, "glow_core": 3.0},
+      "fixed_palette": {"amber": "#F4B45F", "cyan": "#66D9FF", "paper": "#F0E5C9", "ink": "#071016"},
+      "camera": "fixed orthographic camera; no camera shake; no depth-of-field"
+    },
+    "construction_order": [
+      "Create fixed hex platform polygons and static background graph nodes.",
+      "Create source_artifact as a Rectangle plus two Text lines; write once, then hold.",
+      "Animate one CubicBezier amber_stream with a fixed list of 31 control samples.",
+      "Create context_capsule as transparent Prism-like rectangle with fixed opacity 0.22.",
+      "Create three ParametricFunction torus projections with radii [0.92, 1.14, 1.36]; opacity [0.55, 0.38, 0.22].",
+      "Create cusp_fibre as one cyan CubicBezier with a fixed hexagonal cusp marker.",
+      "Create receipt_world_trace from a paper Rectangle, two Text objects, and four concentric Ellipse outlines.",
+      "Use LaggedStart only for object reveal; all object positions and labels are explicit constants."
+    ],
+    "beat_durations_s": [2.2, 2.3, 2.7, 2.6, 3.0],
+    "text_safety": "Use real Manim Text with font_size 28-34, max two short lines at endpoint; never raster pseudo-text."
+  },
+  "falsifier": {
+    "statement": "If the source pointer cannot be linked to the displayed receipt/world trace through a reproducible event sequence, or if an independent rerun produces a different route, this visual does not support the S6 claim.",
+    "required_checks": [
+      "source pointer resolves to a specific artifact",
+      "world trace contains a matching event or snapshot receipt",
+      "same fixed Manim inputs reproduce the same five-beat route",
+      "independent evaluator can identify the claim as a paper claim rather than a consensus fact"
+    ],
+    "visual_behavior_on_failure": "Keep PAPER CLAIM outline open and turn the endpoint fibre gray; never show a verified stamp."
+  },
+  "fake_evidence": false,
+  "local_measurement_receipts": [
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "command": "sed -n '1,260p <prompt>",
+      "observed": "beats=5; path_pattern=iterations/w1/fleet-candidates/worker-<n>.json; fake_evidence=false"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "command": "identify <reference>",
+      "observed": "1672x941 PNG, 8-bit sRGB, 1788980 bytes from stat"
+    },
+    {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/W1-MANIFEST.json",
+      "command": "jq '[.iterations[]] | length' <manifest>",
+      "observed": "20 iterations; imagegen_reference=iterations/w1/concept-01-evidence-thread.png"
+    }
+  ]
+}

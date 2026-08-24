@@ -1,0 +1,148 @@
+{
+  "worker": 18,
+  "one_sentence_story": "A single evidence thread carries one source observation through a transparent context test, resolves into a torus family and cusp hexagonal fibre, then closes as a labelled S6 paper claim beside an independently readable world trace.",
+  "beats": [
+    {
+      "beat": 1,
+      "title": "Source observation",
+      "causal_move": "A warm paper source artifact emits one measured amber thread; nothing else moves yet.",
+      "visual": "Low, wide orthographic view. A cream evidence folio stands on a dark hexagonal ground plate. Its only legible label is SOURCE OBSERVATION. One amber filament leaves its marked line.",
+      "on_screen_text": ["SOURCE OBSERVATION"],
+      "transition": "The amber filament advances from the marked line toward the capsule."
+    },
+    {
+      "beat": 2,
+      "title": "Context capsule",
+      "causal_move": "The same thread enters a transparent capsule, where a cool-blue context shell appears around it without changing its path.",
+      "visual": "The camera tracks with the filament into a glass rectangular capsule. A faint internal grid and one small hexagonal fibre make the context boundary visible; the source folio remains in frame at the far left.",
+      "on_screen_text": ["CONTEXT CAPSULE"],
+      "transition": "The capsule walls become briefly luminous as the thread crosses the boundary."
+    },
+    {
+      "beat": 3,
+      "title": "Topology resolves",
+      "causal_move": "Inside the capsule, the line folds once into a torus family and exposes a cusp hexagonal fibre as the local structural witness.",
+      "visual": "The filament makes one controlled loop, becoming three nested torus rings with shared orientation. At the cusp, a small six-sided fibre locks onto the loop; no extra nodes or dashboard elements appear.",
+      "on_screen_text": ["TORUS FAMILY", "CUSP FIBRE"],
+      "transition": "The six-sided fibre pulls the blue half of the thread through the final cusp vertex."
+    },
+    {
+      "beat": 4,
+      "title": "World trace",
+      "causal_move": "The blue thread exits the capsule and lands on a cool slate world-trace plate, producing a visible receipt mark.",
+      "visual": "The camera continues rightward. The thread terminates at a white curled receipt over a concentric trace plate on the same fractured terrain. The torus and capsule stay visible behind it, preserving object continuity.",
+      "on_screen_text": ["WORLD TRACE", "RECEIPT"],
+      "transition": "A single circular pulse travels from the receipt back to the cusp and stops."
+    },
+    {
+      "beat": 5,
+      "title": "Claim closes",
+      "causal_move": "A restrained title card places the proposed S6 claim between the source and trace, while the geometry remains visible as its provenance path.",
+      "visual": "The terrain dims, leaving the amber source, blue trace, capsule, torus family, cusp fibre, and receipt in a clean horizontal chain. A dark translucent claim panel appears above the chain with large readable type.",
+      "on_screen_text": ["S6 CLAIM", "PROPOSED BY PAPER", "RECEIPT + WORLD TRACE"],
+      "claim_text": "S6 claim: this evidence-thread construction may connect the observed source to the traced world structure.",
+      "transition": "The word CLAIM remains; the receipt pulse fades, leaving the proposed status explicit."
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_folio",
+      "role": "source artifact",
+      "appearance": "warm cream paper folio with one large source mark and short readable label",
+      "continuity": "enters at beat 1 and stays anchored at the left edge through beat 5"
+    },
+    {
+      "id": "evidence_thread",
+      "role": "luminous evidence stream",
+      "appearance": "amber before the capsule, white at the cusp, cool blue after the capsule",
+      "continuity": "one spline object with a fixed source endpoint and trace endpoint; only its revealed arc changes"
+    },
+    {
+      "id": "context_capsule",
+      "role": "transparent Context Capsule",
+      "appearance": "glass rectangular prism with low-opacity cyan edges and a sparse internal grid",
+      "continuity": "appears in beat 2 and remains as a dim provenance object in beats 3-5"
+    },
+    {
+      "id": "torus_family",
+      "role": "topological family",
+      "appearance": "three nested torus rings with one shared normal and restrained cyan glow",
+      "continuity": "born from the thread in beat 3; never replaced by a new diagram"
+    },
+    {
+      "id": "cusp_hex_fibre",
+      "role": "cusp hexagonal fibre",
+      "appearance": "small six-sided fibre at the torus cusp, white core with blue edge light",
+      "continuity": "locks once in beat 3 and receives the beat-4 pulse"
+    },
+    {
+      "id": "world_trace_receipt",
+      "role": "receipt/world trace",
+      "appearance": "white curled receipt over a slate concentric trace plate",
+      "continuity": "enters in beat 4 and remains the right endpoint in beat 5"
+    }
+  ],
+  "caption_script": {
+    "tweet_caption": "One source observation. One context boundary. One topology witness. The S6 connection shown here is a proposed paper claim, carried to a receipt and world trace so the route stays inspectable.",
+    "beat_captions": [
+      "Start with the source observation.",
+      "Make the context boundary visible.",
+      "Let the thread resolve into a torus family and cusp fibre.",
+      "Carry the result to a receipt and world trace.",
+      "State the S6 connection as a proposed claim, not consensus fact."
+    ],
+    "end_card": "S6 CLAIM / PROPOSED BY PAPER / RECEIPT + WORLD TRACE"
+  },
+  "manim_plan": {
+    "canvas": "16:9, 1672x941 reference framing, orthographic camera",
+    "palette": {
+      "background": "#05080A",
+      "terrain": "#182329",
+      "source_amber": "#F5B55E",
+      "capsule_cyan": "#7FDBFF",
+      "thread_white": "#F4FBFF",
+      "claim_panel": "#0B1216"
+    },
+    "determinism": "Set random_seed=18; use fixed Decimal-like constants for all anchors; no noise, random sampling, or runtime text generation.",
+    "construction": [
+      "Create fixed hexagonal ground plates at x=-5.4,-3.7,-1.9,0.0,1.9,3.7,5.4 with z=-0.8 and deterministic rotations.",
+      "Place source_folio at x=-5.0, context_capsule at x=0.0, and world_trace_receipt at x=5.0; keep these anchors unchanged after creation.",
+      "Build evidence_thread as one ParametricFunction with five fixed control points; reveal it with Create and color by t interval rather than replacing the spline.",
+      "At beat 3, transform only the middle spline interval into three fixed Torus objects and one fixed six-sided fibre; use Rotate and Transform with explicit run_time values.",
+      "At beat 4, reveal the receipt pulse with a single Dot moving on the existing spline; stop it at the trace plate.",
+      "At beat 5, FadeToColor the terrain and add one claim panel with explicit Text objects for S6 CLAIM, PROPOSED BY PAPER, and RECEIPT + WORLD TRACE."
+    ],
+    "timing_seconds": {
+      "beat_1": 3.0,
+      "beat_2": 3.0,
+      "beat_3": 4.0,
+      "beat_4": 3.0,
+      "beat_5": 4.0
+    },
+    "readability_guards": [
+      "Use Text, never generated pseudo-text or texture text, for every label.",
+      "Keep labels at a fixed minimum screen height and hold each for at least 1.5 seconds.",
+      "Do not add UI panels, legends, counters, or decorative dashboard controls."
+    ]
+  },
+  "falsifier": "The visual story is falsified if the source thread can reach the receipt without crossing the capsule or without producing the torus/cusp witness. The paper claim is refuted by a reproducible source-to-world counterexample in which the proposed S6 connection fails; the reference image cannot establish or refute that mathematics by itself.",
+  "fake_evidence": false,
+  "local_receipts": {
+    "shared_prompt": {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "sha256": "59cc1bf2a1d592ccee93787bcb2c343b5a0ccd5d925465fa08d06e1738f740a9",
+      "measured": "JSON parsed successfully; visual_spine=5, constraints=6, required_fields=8, beats=5, evaluation=5, fake_evidence=false"
+    },
+    "visual_reference": {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "sha256": "75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508",
+      "measured": "width=1672 height=941 colorspace=sRGB filesize=1.78898MB"
+    },
+    "candidate_directory": {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates",
+      "pre_write_json_count": 0,
+      "measurement_receipt": "find ... -maxdepth 1 -type f -name '*.json' | wc -l => 0"
+    },
+    "source_boundary": "The reference image was used for visual grammar only; no ImageGen output is treated as operational evidence."
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "worker": 27,
+  "one_sentence_story": "Bir kaynak parcasi, Context Capsule icinde tek bir nedensel donusumden gecerek cusp hexagonal fibre'a tutunan torus ailesini kurar; son karede bunun S6 icin bir paper claim oldugu acikca yazilir ve claim disindan gelen dunya izi makbuz olur.",
+  "beats": [
+    {"beat": 1, "title": "Kaynak parcasi", "causal_move": "Kaynak artefakti gorunur olur ve tek bir okuma parcasi altin bir anchor noktasina indirgenir.", "visual_action": "Karanlik, cokgen bir zemin uzerinde solda bir kagit levha belirir. Levhanin ustunde okunabilir iki satir vardir: SOURCE / FRAGMENT. Levhadan tek bir amber nokta cikar.", "narration": "Her sey, yeniden kurulabilir tek bir kaynak parcasi ile baslar.", "continuity": "Amber anchor, sonraki beatlerde stream'in baslangic dugumu olarak kalir.", "on_screen_text": ["SOURCE", "FRAGMENT"]},
+    {"beat": 2, "title": "Izole akim", "causal_move": "Amber anchor, Context Capsule'a girmeden once tek bir luminous evidence stream'e donusur.", "visual_action": "Anchor'dan cikan amber stream, zemindeki baglantilardan ayrilarak sag-orta hatta ilerler. Stream uzerinde yalnizca bir isaret vardir: EVIDENCE.", "narration": "Kaniti dekoratif bir aga yaymak yerine tek bir iz boyunca tasiyoruz.", "continuity": "Stream kesilmez; rengi capsule'a girerken amberden soguk ciyana yumusar.", "on_screen_text": ["EVIDENCE"]},
+    {"beat": 3, "title": "Context Capsule", "causal_move": "Stream, ayni kaynagi ve baglami gosteren saydam kapsulden gecerek bir geometrik temsil uretir.", "visual_action": "Stream, merkezdeki saydam dikdortgen prizmaya girer. Kapsulun icinde okunabilir CONTEXT etiketi ve tek bir beyaz merkez noktasi vardir; merkez nokta stream'in ritmiyle parildar.", "narration": "Baglam, kaniti kapatmaz; hangi kosulda okundugunu gorunur kilar.", "continuity": "Kapsulun merkez noktasi, torus ailesinin ilk cekirdek dugumu olur.", "on_screen_text": ["CONTEXT"]},
+    {"beat": 4, "title": "Torus ailesi ve cusp", "causal_move": "Kapsulden cikan cekirdek, iki torus halkasini ve onlari birlestiren hexagonal cusp fibre'i olusturur.", "visual_action": "Beyaz merkez nokta once ince bir torus, sonra onunla ortak ekseni paylasan ikinci torus olarak genisler. Cusp noktasinda altigen kesitli kisa bir fibre amber-ciyan gecisiyle iki halkayi kilitler.", "narration": "Temsil, bir sekil koleksiyonu degil; kapsulden gelen tek akimin korudugu bir aile ve onun cusp bagidir.", "continuity": "Iki torus ve hexagonal fibre son kareye kadar ayni konumda kalir; yalnizca kamera hafifce yanal hareket eder.", "on_screen_text": ["TORUS FAMILY", "CUSP FIBRE"]},
+    {"beat": 5, "title": "Claim ve dunya izi", "causal_move": "Geometri kapanir; ekran, S6 ifadesini paper claim olarak sinirlar ve claim disindan gelen receipt/world trace'i ayri bir isikla gosterir.", "visual_action": "Torus ailesi kapanmis bir haloda durur. Sagda beyaz bir receipt levhasi belirir ve stream'in son ucuna baglanir. Levhada okunabilir iki satir vardir: S6 / PAPER CLAIM ve RECEIPT / WORLD TRACE. S6 satiri claim cercevesi icinde, receipt satiri cerceve disinda tutulur.", "narration": "Sonuc, S6 icin bir paper claim'dir; dis dunya izi ise iddiayi tasimaz, yalnizca izlenebilir bir makbuz saglar.", "continuity": "Source anchor, evidence stream, capsule, torus ailesi ve cusp fibre kadrajda kalir; receipt yeni ve ayri bir nesne olarak eklenir.", "on_screen_text": ["S6 / PAPER CLAIM", "RECEIPT / WORLD TRACE"]}
+  ],
+  "persistent_objects": [
+    {"id": "source_anchor", "shape": "small_circle", "color": "amber", "role": "source artefact'in tek cikis noktasi", "lifetime": "beat 1-5"},
+    {"id": "evidence_stream", "shape": "single_smooth_bezier_ribbon_with_three_parallel_strokes", "color": "amber_to_cyan", "role": "tek nedensel evidence akisi", "lifetime": "beat 2-5"},
+    {"id": "context_capsule", "shape": "transparent_rectangular_prism", "color": "low_alpha_cyan", "role": "Context Capsule; akisin baglam donusum noktasi", "lifetime": "beat 3-5"},
+    {"id": "torus_family", "shape": "two_parametric_tori", "color": "white_with_cyan_edge", "role": "kapsulden tureyen geometri ailesi", "lifetime": "beat 4-5"},
+    {"id": "cusp_hexagonal_fibre", "shape": "short_hexagonal_prism_along_cusp_tangent", "color": "amber_cyan", "role": "torus ailesini kilitleyen cusp baglantisi", "lifetime": "beat 4-5"},
+    {"id": "world_trace_receipt", "shape": "white_paper_panel_with_one_connector", "color": "white", "role": "claim disi receipt/world trace", "lifetime": "beat 5"}
+  ],
+  "caption_script": ["01 Kaynak parcasi: SOURCE / FRAGMENT.", "02 Tek bir EVIDENCE stream'i Context Capsule'a tasinir.", "03 Baglam, donusumun kosulunu gorunur kilar.", "04 Donusum torus ailesini ve cusp hexagonal fibre'i kurar.", "05 S6 burada bir PAPER CLAIM'dir; RECEIPT / WORLD TRACE iddianin yerine gecmez."],
+  "manim_plan": {
+    "render": {"frame": "16:9", "pixel_size": [1672, 941], "background": "#02070B", "frame_rate": 30, "seed": 2701, "camera": "orthographic"},
+    "coordinate_system": {"x_range": [-8, 8], "y_range": [-4.5, 4.5], "z_range": [-3, 3]},
+    "layers": ["dark_hexagonal_terrain_static", "source_and_stream", "context_capsule", "torus_family_and_fibre", "receipt_panel_and_labels"],
+    "beats": [
+      {"beat": 1, "duration_s": 2.2, "construct": "FadeIn(source_panel); GrowFromPoint(source_anchor, source_panel.get_right())"},
+      {"beat": 2, "duration_s": 2.8, "construct": "Create(evidence_stream); MoveAlongPath(stream_glow, evidence_stream)"},
+      {"beat": 3, "duration_s": 2.6, "construct": "Create(context_capsule, stroke_opacity=0.65); MoveAlongPath(source_anchor, capsule_center)"},
+      {"beat": 4, "duration_s": 3.4, "construct": "Create(torus_a); Transform(torus_a, torus_b); GrowFromCenter(cusp_hexagonal_fibre)"},
+      {"beat": 5, "duration_s": 3.0, "construct": "Create(receipt_panel); Write(claim_label); Write(world_trace_label); Hold(1.2)"}
+    ],
+    "geometry_parameters": {"torus_a_major_radius": 1.35, "torus_a_minor_radius": 0.22, "torus_b_major_radius": 1.35, "torus_b_minor_radius": 0.22, "torus_b_center": [2.35, 0.0, 0.0], "cusp_center": [1.18, 0.0, 0.0], "fibre_hex_radius": 0.18, "stream_control_points": [[-6.2, -0.7, 0.0], [-3.8, -0.45, 0.0], [-1.2, 0.3, 0.0], [1.0, 0.1, 0.0], [4.6, -0.3, 0.0]]},
+    "text_rule": "Only the exact labels listed in each beat are rendered; no generated pseudo-text or filler glyphs.",
+    "determinism_rule": "Use fixed seed 2701, fixed coordinates, fixed durations, fixed camera, and no random terrain mutation."
+  },
+  "falsifier": "Bu aday, Context Capsule'den cikan tek stream torus ailesini ve cusp fibre'i nedensel olarak kuruyor iddiasinda bulunur; capsule gosterilmeden ayni torus ailesinin cikmasi, source anchor ile son geometri arasinda bag kurulmamasi veya paper claim etiketinin consensus fact gibi sunulmasi bu iddiayi curutur.",
+  "fake_evidence": false,
+  "receipts": {
+    "candidate_path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates/worker-27.json",
+    "candidate_prewrite_check": "candidate_absent=1; candidate_dir_present=1",
+    "shared_prompt_path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+    "shared_prompt_measurement": {"bytes": 1232, "lines": 28, "command": "wc -l -c <shared-prompt>"},
+    "visual_reference_path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+    "visual_reference_measurement": {"bytes": 1788980, "dimensions": [1672, 941], "format": "PNG", "command": "stat -c 'bytes=%s' <reference>; identify <reference>"},
+    "required_beat_count": 5,
+    "beat_count_check": "JSON beats array contains exactly five objects; measured after write in report.",
+    "required_fields_check": ["worker", "one_sentence_story", "beats", "persistent_objects", "caption_script", "manim_plan", "falsifier", "fake_evidence"],
+    "source_boundary": "Reference image was used for visual grammar only; it is not operational evidence."
+  }
+}

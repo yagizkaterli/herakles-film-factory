@@ -1,0 +1,49 @@
+{
+  "worker": "04",
+  "one_sentence_story": "A single world event is woven into a luminous audit braid, separated from interpretation inside a transparent Context Capsule, and closed as a falsifiable S6 paper claim only when the braid returns with a world-trace receipt.",
+  "beats": [
+    {"beat": 1, "title": "Source enters the loom", "causal_move": "A source artifact emits one amber event bead; the bead is the only new moving object.", "visual": "Place a warm paper card on the left hex tile with readable labels SOURCE ARTIFACT and EVENT 01. A thin amber filament leaves its lower edge.", "caption": "Start with the thing that happened, not the conclusion.", "object_state": "source_artifact=visible; evidence_stream=one_amber_bead; context_capsule=absent; s6_claim=absent"},
+    {"beat": 2, "title": "Evidence becomes traceable", "causal_move": "The amber filament becomes a two-rail luminous stream and crosses one measured checkpoint.", "visual": "Animate the bead along parallel amber and cyan rails over dark hexagonal ground. Show only WORLD TRACE and a small unfilled receipt ring; add no dashboard widgets.", "caption": "The trace is a path through the world, not a decorative glow.", "object_state": "source_artifact=anchored; evidence_stream=two_rail_amber_cyan; world_trace=checkpoint_ring; context_capsule=absent; s6_claim=absent"},
+    {"beat": 3, "title": "Context is held apart", "causal_move": "The stream passes through a transparent capsule that contains context while the source card remains outside it.", "visual": "Grow a glass rectangular capsule at center around the rails. Reveal three readable tokens inside: CONTEXT, SCOPE, TIME. Keep SOURCE ARTIFACT outside the glass.", "caption": "Context can travel with evidence without becoming the evidence.", "object_state": "source_artifact=outside_capsule; evidence_stream=through_capsule; context_capsule=transparent_with_three_tokens; world_trace=checkpoint_ring; s6_claim=absent"},
+    {"beat": 4, "title": "Geometry is proposed", "causal_move": "A six-sided cusp fibre grows from the capsule exit and reveals a torus family labeled as a proposal, not a result.", "visual": "Extrude a small hexagonal cusp at the capsule exit, then sweep the cyan rail into three concentric torus loops. Show PROPOSED GEOMETRY while the amber source rail stays unbroken.", "caption": "The shape is a model of the trace, not proof by appearance.", "object_state": "source_artifact=outside_capsule; evidence_stream=two_rail_continuous; context_capsule=transparent; torus_family=three_loops; cusp_fibre=hexagonal; s6_claim=paper_claim_pending"},
+    {"beat": 5, "title": "Claim closes with a receipt", "causal_move": "The torus family closes into an S6 loop only after the world-trace ring fills; the final label preserves uncertainty.", "visual": "Pulse the checkpoint ring, then close the torus/cusp path into a hex-cusped loop. Put S6 PAPER CLAIM inside and RECEIPT: WORLD TRACE 01 below. End with source, capsule, braid, and loop visible.", "caption": "S6 is shown as a paper claim backed by a trace receipt, not as consensus fact.", "object_state": "source_artifact=anchored; evidence_stream=closed_braid; context_capsule=transparent; torus_family=closed_loop; cusp_fibre=hexagonal; s6_claim=explicit_paper_claim; receipt=world_trace_01"}
+  ],
+  "persistent_objects": [
+    {"id": "source_artifact", "form": "warm paper card on left hex tile", "continuity": "never enters the Context Capsule"},
+    {"id": "evidence_stream", "form": "two parallel amber/cyan rails with one moving bead", "continuity": "same rails remain visible from source to final loop"},
+    {"id": "context_capsule", "form": "transparent glass rectangle with CONTEXT, SCOPE, TIME", "continuity": "appears at beat 3 and stays centered"},
+    {"id": "world_trace_receipt", "form": "unfilled checkpoint ring that becomes a receipt pulse", "continuity": "the final claim cannot close before this ring fills"},
+    {"id": "torus_cusp", "form": "three cyan torus loops joined by a hexagonal cusp fibre", "continuity": "grows from proposed geometry into the final paper-claim loop"}
+  ],
+  "caption_script": [
+    "1 / Start with the source artifact.",
+    "2 / Let one event leave a world trace.",
+    "3 / Carry context, but keep it separate.",
+    "4 / Treat the torus and cusp as proposed geometry.",
+    "5 / Close S6 only as a paper claim with a world-trace receipt."
+  ],
+  "manim_plan": {
+    "engine": "Manim Community v0.19.x",
+    "scene": "EvidenceLoomWorker04",
+    "frame": "16:9 landscape; 1672x941 reference aspect ratio",
+    "render": "1920x1080, 30 fps, fixed 24-second timeline",
+    "determinism": "No randomness; fixed coordinates, fixed z-order, fixed colors, and explicit animation durations",
+    "palette": {"background": "#02070A", "ground": "#13232A", "source_amber": "#F3B562", "stream_cyan": "#63D9F5", "receipt_white": "#F5F7F2", "claim_outline": "#A8DADC"},
+    "timing": [
+      "0.0-4.0s: FadeIn source card; Create one amber bead and filament.",
+      "4.0-8.0s: Transform filament into two rails; Move bead across checkpoint ring.",
+      "8.0-12.5s: Grow capsule; FadeIn CONTEXT, SCOPE, TIME tokens.",
+      "12.5-18.0s: Extrude hex cusp; Create three torus loops; FadeIn PROPOSED GEOMETRY.",
+      "18.0-24.0s: Pulse receipt ring; close loop; FadeIn S6 PAPER CLAIM and RECEIPT: WORLD TRACE 01."
+    ],
+    "camera": "Orthographic fixed camera; no cuts; slow 2D parallax only on ground hex tiles",
+    "text_rule": "Use only listed short labels; render them as real text with high contrast and no pseudo-text"
+  },
+  "falsifier": "If the source artifact, context capsule, torus/cusp geometry, or final S6 label can appear without the world-trace receipt pulse, the causal story is false; if the receipt is not independently resolvable to a World snapshot/event, the visual supports only a proposed paper claim and must not be presented as consensus evidence.",
+  "fake_evidence": false,
+  "receipts": {
+    "shared_prompt": {"path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "command": "stat --printf='%n | bytes=%s | mtime=%y\\n' '<path>'", "observed": "bytes=1232; mtime=2026-08-24 05:59:09.279386023 +0300"},
+    "visual_reference": {"path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "command": "stat --printf='%n | bytes=%s | mtime=%y\\n' '<path>'; identify -format 'width=%w height=%h channels=%[channels] colorspace=%[colorspace]\\n' '<path>'", "observed": "bytes=1788980; width=1672; height=941; channels=srgb; colorspace=sRGB"},
+    "manifest": {"path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/W1-MANIFEST.json", "command": "sed -n '1,260p' '<path>'", "observed": "batch=W1; range=01-20; truth_boundary=ImageGen references are hypotheses; fake_evidence=false"}
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "worker": 38,
+  "one_sentence_story": "A single source record enters a transparent Context Capsule, becomes a traversable torus-world with a hexagonal cusp, and returns as a bounded S6 paper claim with its receipt and falsifier attached.",
+  "story_receipt": "Visual grammar: 02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json:6-18; claim boundary: 02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md:624-648,662-672",
+  "evidence_boundary": "The reference image supplies visual grammar only; it is not operational evidence. The S6 statement is shown as a paper claim, not as consensus fact.",
+  "beats": [
+    {"id": 1, "time": "00:00-00:07", "title": "Ask at the source", "visual": "On a black field, one warm paper card stands on a dark hexagonal world tile. Readable text: SOURCE LOG and one source pointer. One amber claim seed is outside the card.", "caption": "Can a record be a place you can enter?", "causal_move": "The question attaches the claim seed to one named source record.", "receipt": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md:622-628"},
+    {"id": 2, "time": "00:07-00:14", "title": "Carry the record", "visual": "The amber claim seed travels along one luminous evidence stream from the source card into a transparent rectangular Context Capsule at center. Source card, label, and world tile remain unchanged.", "caption": "First, keep the record attached to the move.", "causal_move": "The claim becomes admissible only by carrying its source pointer into the capsule.", "receipt": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json:6-11,13-18"},
+    {"id": 3, "time": "00:14-00:23", "title": "Make the place", "visual": "Inside the capsule, the seed unfolds into three stable cyan torus rings. One hexagonal fibre grows from the rings and ends in a cusp. No dashboard, counters, or extra symbols enter.", "caption": "If memory is a world, the record must have a traversable shape.", "causal_move": "The stored record is rendered as a world-form rather than as a separate map icon.", "receipt": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md:624-634"},
+    {"id": 4, "time": "00:23-00:31", "title": "Touch the trace", "visual": "The cusp fibre crosses the capsule boundary and touches the original hexagonal world tile. The tile opens into a short WORLD TRACE label and one receipt marker; all other geometry freezes.", "caption": "The world trace is the receipt of where the record can be visited.", "causal_move": "The cusp links the transformed record back to one concrete world trace.", "receipt": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md:655-660; source boundary: prompt lines 4 and 11"},
+    {"id": 5, "time": "00:31-00:40", "title": "Close, but leave a way out", "visual": "The amber stream completes a loop from source card through capsule, torus family, cusp, and world trace back to a final claim card. It reads S6 PAPER CLAIM, RECORD = TERRAIN, NOT CONSENSUS. A red open notch labelled FALSIFIER remains visible.", "caption": "S6 paper claim: the record is the terrain. This film does not prove it; a missing trace or broken traversal would refute this form.", "causal_move": "The claim closes only with both a receipt/world trace and an explicit falsifier route.", "receipt": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md:624-628,642-648,662-672"}
+  ],
+  "persistent_objects": [
+    {"id": "source_card", "geometry": "single upright paper rectangle on left hex tile", "color": "warm amber and off-white", "role": "source artifact", "continuity_rule": "Never redraw or relabel after beat 1; only the stream leaves it.", "receipt": "prompt lines 6-8,11; paper lines 624-628"},
+    {"id": "claim_seed", "geometry": "one small amber diamond", "color": "amber", "role": "one bounded paper claim candidate", "continuity_rule": "The same diamond moves; it is never duplicated.", "receipt": "prompt lines 13-18; paper lines 662-672"},
+    {"id": "context_capsule", "geometry": "transparent rectangular prism at center", "color": "cyan outline with 18 percent opacity fill", "role": "Context Capsule", "continuity_rule": "It stays centered and only changes from empty to containing the seed.", "receipt": "prompt lines 8-10"},
+    {"id": "torus_family", "geometry": "three concentric torus rings with one hexagonal cusp fibre", "color": "cyan", "role": "traversable world form", "continuity_rule": "The rings rotate once, then freeze; the cusp remains attached.", "receipt": "prompt lines 10-11; paper lines 624-634"},
+    {"id": "world_trace", "geometry": "original dark hex tile plus one receipt marker", "color": "slate with cyan trace line", "role": "concrete world trace", "continuity_rule": "The same tile is used for source, contact, and closing frame.", "receipt": "prompt lines 7-11; paper lines 655-660"},
+    {"id": "falsifier_port", "geometry": "red notch cut into the final loop", "color": "red, no glow", "role": "visible route that can break the claim", "continuity_rule": "It appears only in beat 5 as the consequence of the falsifier test.", "receipt": "paper lines 642-648"}
+  ],
+  "caption_script": [
+    {"beat": 1, "text": "Can a record be a place you can enter?", "receipt": "02 Projects/Sistem-Insa/gorevler/G-VITRIN/3B1B-ANLATI-BILGI.md:5-20"},
+    {"beat": 2, "text": "First, keep the record attached to the move.", "receipt": "w1-evidence-thread-fleet-prompt.v1.json:13-18"},
+    {"beat": 3, "text": "If memory is a world, the record must have a traversable shape.", "receipt": "DRAFT-FINAL.md:624-634"},
+    {"beat": 4, "text": "The world trace is the receipt of where the record can be visited.", "receipt": "DRAFT-FINAL.md:655-660"},
+    {"beat": 5, "text": "S6 paper claim: the record is the terrain. This film does not prove it.", "receipt": "DRAFT-FINAL.md:624-628,662-672"}
+  ],
+  "manim_plan": {
+    "canvas": {"pixel_width": 1672, "pixel_height": 941, "frame_rate": 30, "receipt": "identify output: width=1672 height=941 channels=srgb colorspace=sRGB"},
+    "render": "Use a fixed orthographic camera, black background, fixed camera center (0,0,0), and no random particle system. Seed all color and point lists from worker=38.",
+    "palette": {"background": "#050709", "amber": "#F2A65A", "cyan": "#8DEBFF", "slate": "#26343A", "red": "#E05A5A", "paper": "#F4E7CF"},
+    "scene_graph": [
+      "Create source_card as Polygon([(-6,-1.3,0),(-4.2,-1.3,0),(-4.2,1.3,0),(-6,1.3,0)]).",
+      "Create world_trace as one six-sided Polygon centered at (-4.9,-2.0,0); reuse its object identity across all beats.",
+      "Create context_capsule as a fixed-width translucent RectangleGroup centered at (0,0,0).",
+      "Create torus_family with ParametricSurface major radii [1.35,1.65,1.95], minor radius 0.06, and fixed rotations [0,PI/6,-PI/6].",
+      "Create cusp_fibre as one Polyline with six points forming a hexagonal cusp; attach its first point to the torus center.",
+      "Create one amber claim_seed Diamond and move that same object along four fixed cubic Bezier segments.",
+      "Create falsifier_port as a red V-shaped notch and keep it hidden until beat 5."
+    ],
+    "timing": [
+      "Beat 1: FadeIn(source_card, world_trace), then Write(question) over 42 frames.",
+      "Beat 2: MoveAlongPath(claim_seed, source_to_capsule_path, 42 frames); no other object moves.",
+      "Beat 3: Transform(claim_seed, torus_family, 36 frames), then Create(cusp_fibre, 24 frames).",
+      "Beat 4: MoveAlongPath(cusp_fibre, capsule_to_trace_path, 36 frames); freeze all rings while the trace label is written.",
+      "Beat 5: Create(loop_path, 30 frames), Write(final_claim_and_not_consensus, 36 frames), then FadeIn(falsifier_port) and hold 30 frames."
+    ],
+    "verification_hooks": [
+      "Assert exactly 5 beats and exactly one moving primary object per beat.",
+      "Assert every visible text string is in the caption_script or the fixed labels SOURCE LOG, WORLD TRACE, S6 PAPER CLAIM, NOT CONSENSUS, FALSIFIER.",
+      "Assert no particle emitter, dashboard panel, counter, or unlabelled symbol is instantiated.",
+      "Assert final frame contains source_card, context_capsule, torus_family, world_trace, receipt marker, and falsifier_port."
+    ],
+    "receipt": "Prompt requires a deterministic Manim reconstruction plan at w1-evidence-thread-fleet-prompt.v1.json:13-18."
+  },
+  "falsifier": {
+    "test": "Run a source-pinned traversal test: if the record can be traversed while the visited world place is absent from the record, or if a recorded place has no reachable world trace, the literal claim RECORD = TERRAIN is refuted for that sample.",
+    "paper_status": "This is a proposed falsifier for a paper claim; it is not a report that the test has been run.",
+    "receipt": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md:642-648,662-672"
+  },
+  "fake_evidence": false,
+  "receipts": {
+    "shared_prompt": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json:1-28",
+    "reference_measurement": "command: identify -format 'width=%w height=%h channels=%[channels] colorspace=%[colorspace] filesize=%b\\n' concept-01-evidence-thread.png -> width=1672 height=941 channels=srgb colorspace=sRGB filesize=1.78898MB",
+    "reference_hash": "command: sha256sum concept-01-evidence-thread.png -> 75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508",
+    "source_measurement": "command: wc -l -c DRAFT-FINAL.md -> 1196 lines, 65185 bytes",
+    "candidate_path": "iterations/w1/fleet-candidates/worker-38.json"
+  }
+}

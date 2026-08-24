@@ -1,0 +1,149 @@
+{
+  "worker": "07",
+  "one_sentence_story": "A marked source fragment sends one luminous trace through a transparent context capsule, where a torus family and cusp hexagonal fibre become a testable S6 paper claim that ends at a world receipt.",
+  "beats": [
+    {
+      "beat": 1,
+      "title": "Mark the source",
+      "causal_move": "A single bold mark on an amber source sheet is isolated; everything else stays dark and still.",
+      "visual_action": "Start on a low black basalt plane with one upright source sheet at left. The sheet has one readable label, SOURCE ARTIFACT, and one underlined mark; no paragraph texture or pseudo-text.",
+      "on_screen_text": "SOURCE ARTIFACT",
+      "camera": "Wide 16:9 frame, slow 6 degree push toward the marked line."
+    },
+    {
+      "beat": 2,
+      "title": "Release one trace",
+      "causal_move": "The marked line emits one amber filament that travels rightward and leaves a short sequence of bright receipt points.",
+      "visual_action": "Animate one cubic Bezier ribbon from the source mark to screen center. The ribbon is the only moving object; receipt points appear exactly on its path, one at a time.",
+      "on_screen_text": "TRACE",
+      "camera": "Keep the source in the left third and pan with the leading point without cutting."
+    },
+    {
+      "beat": 3,
+      "title": "Contain context",
+      "causal_move": "The same filament enters a transparent capsule, and the capsule boundary closes around the segment without changing its route.",
+      "visual_action": "A glass rectangular capsule rises around the middle of the existing ribbon. A thin cyan cross-section closes once; the amber input remains visible through the glass and the background network dims.",
+      "on_screen_text": "CONTEXT CAPSULE",
+      "camera": "Center the capsule; use a 0.4 second rack focus from the source to the enclosed segment."
+    },
+    {
+      "beat": 4,
+      "title": "Expose the geometry",
+      "causal_move": "Inside the capsule, the enclosed trace resolves into three nested torus loops, then one hexagonal fibre appears at their cusp.",
+      "visual_action": "Grow three concentric torus objects from the trace midpoint in sequence. At the shared cusp, draw one six-sided fibre tube in blue; do not add labels or extra dashboard panels.",
+      "on_screen_text": "TORUS FAMILY  /  CUSP FIBRE",
+      "camera": "Orbit 12 degrees around the capsule while keeping the cusp at the visual center."
+    },
+    {
+      "beat": 5,
+      "title": "Close with a receipt",
+      "causal_move": "The blue cusp fibre exits as a white receipt line and lands on a small world-trace tile beside a claim card marked as a paper claim.",
+      "visual_action": "Extend the same fibre to a white curled receipt on the right. Reveal a compact card with the exact text S6 PAPER CLAIM and below it TEST AGAINST TRACE; stamp one check-shaped world-trace glyph only after the line lands.",
+      "on_screen_text": "S6 PAPER CLAIM\nTEST AGAINST TRACE",
+      "camera": "Pull back to the original wide composition so source, capsule, geometry, and receipt remain simultaneously visible."
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_sheet",
+      "role": "source artifact",
+      "continuity": "Amber upright sheet remains in the left third from beat 1 through beat 5; only its mark emits the trace."
+    },
+    {
+      "id": "evidence_ribbon",
+      "role": "luminous evidence stream",
+      "continuity": "One cubic Bezier path is extended, never replaced; amber before the capsule and cyan after the cusp."
+    },
+    {
+      "id": "context_capsule",
+      "role": "transparent Context Capsule",
+      "continuity": "The same glass box encloses the midpoint from beat 3 through beat 5."
+    },
+    {
+      "id": "torus_family",
+      "role": "torus family",
+      "continuity": "Three torus loops share one centerline and persist after the capsule opens visually."
+    },
+    {
+      "id": "cusp_fibre",
+      "role": "cusp hexagonal fibre",
+      "continuity": "One six-sided blue tube begins at the torus cusp and becomes the receipt line."
+    },
+    {
+      "id": "world_receipt",
+      "role": "world trace",
+      "continuity": "White receipt tile is absent until beat 5, then remains as the final destination."
+    }
+  ],
+  "caption_script": {
+    "tweet": "One source mark. One trace. One context capsule. The torus family and cusp fibre are shown as the route of an S6 paper claim, not as consensus. The last frame asks for a reconstruction against the world trace.",
+    "beats": [
+      "01 / SOURCE ARTIFACT",
+      "02 / TRACE LEAVES A RECEIPT PATH",
+      "03 / CONTEXT IS ENCLOSED",
+      "04 / TORUS FAMILY, THEN CUSP FIBRE",
+      "05 / S6 PAPER CLAIM -> TEST AGAINST TRACE"
+    ],
+    "accessibility": "Describe the film as a left-to-right evidence path: amber source sheet, amber light ribbon, glass capsule, three torus rings with one blue hexagonal fibre, then a white receipt tile."
+  },
+  "manim_plan": {
+    "renderer": "Manim Community Edition OpenGL",
+    "frame": "16:9",
+    "determinism": "Set random seed to 7; use no random points, noise, particle systems, or external assets. All positions, colors, radii, and timings are constants.",
+    "palette": {
+      "background": "#05080B",
+      "basalt": "#172027",
+      "source_amber": "#F2B45B",
+      "stream_amber": "#FFC96E",
+      "capsule_cyan": "#8FE9FF",
+      "geometry_blue": "#46C7FF",
+      "receipt_white": "#F1F7F8",
+      "claim_ink": "#DDE7E8"
+    },
+    "scene_graph": [
+      "Create a fixed 12 by 6.75 coordinate frame and a dark basalt hex-tile plane with six explicitly listed tiles.",
+      "Create source_sheet as a Polygon plus one Text label and one Line mark; use only readable text.",
+      "Create evidence_ribbon from a fixed CubicBezier with control points [(-5.0,-0.6,0),(-3.2,-0.4,0),(-1.8,0.45,0),(0.0,0.0,0)]; extend it with Create.",
+      "Create receipt_points at fixed alpha values [0.18,0.36,0.54,0.72,0.90] using LaggedStart, then create the capsule around the midpoint.",
+      "Create three ParametricFunction torus loops with fixed radii [0.72,0.98,1.24] and fixed rotation angles [0, 0.22, -0.18]; reveal in order.",
+      "Create the cusp fibre as a fixed six-vertex Polygon extruded with a Tube-like line approximation; connect it to the existing ribbon with a Transform matching the endpoint.",
+      "Create the receipt tile, claim card, and world-trace glyph only in beat 5; use Write for text and Stamp for the glyph.",
+      "Finish with a fixed camera frame containing all persistent objects; no image generation or imported raster evidence is used."
+    ],
+    "timing_seconds": {
+      "beat_1": 2.4,
+      "beat_2": 2.8,
+      "beat_3": 2.6,
+      "beat_4": 3.2,
+      "beat_5": 3.0,
+      "total": 14.0
+    },
+    "validation": [
+      "Assert exactly five beat groups and exactly one evidence_ribbon path.",
+      "Assert the final text contains PAPER CLAIM and TEST AGAINST TRACE.",
+      "Render twice with seed 7 and compare frame hashes; the hashes must match.",
+      "Check that no generated texture, pseudo-text block, dashboard panel, or consensus wording is present."
+    ]
+  },
+  "falsifier": "The visual proposal is falsified if an independent reconstruction cannot recover the same torus-family and cusp-fibre relation from the stated source trace, or if the world receipt cannot be reproduced from the claimed route. The film does not establish the S6 claim; it only makes the paper claim inspectable.",
+  "fake_evidence": false,
+  "receipts": {
+    "prompt": {
+      "path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "sha256": "59cc1bf2a1d592ccee93787bcb2c343b5a0ccd5d925465fa08d06e1738f740a9",
+      "measured_with": "stat -c and sha256sum; python json.load",
+      "measured_values": "bytes=1232; beats_required=5; required_fields=8; visual_spine=5; constraints=6; fake_evidence=False"
+    },
+    "visual_reference": {
+      "path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "sha256": "75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508",
+      "measured_with": "stat -c, sha256sum, identify",
+      "measured_values": "bytes=1788980; width=1672; height=941; colorspace=sRGB; channels=srgb"
+    },
+    "fleet_inventory": {
+      "path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates",
+      "measured_with": "find -maxdepth 1 -type f -name worker-*.json | wc -l",
+      "measured_values": "candidate_count=0 before Worker 07; worker-07 absent"
+    }
+  }
+}

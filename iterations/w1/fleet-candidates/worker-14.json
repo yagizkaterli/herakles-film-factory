@@ -1,0 +1,156 @@
+{
+  "worker": 14,
+  "one_sentence_story": "A single source trace seeds the next question: it passes through a transparent Context Capsule, makes an S6 paper claim legible, and closes only if a verified world trace and receipt arrive.",
+  "beats": [
+    {
+      "beat": 1,
+      "visual_verb": "anchor",
+      "causal_move": "Pin one concrete source artifact before any geometry appears.",
+      "stage": ["source_artifact", "eon_stratum", "question_gate"],
+      "on_screen_text": ["SOURCE", "ONE TRACE"],
+      "evidence_boundary": "A source pointer is present; this is not yet a claim or proof.",
+      "source_pointer": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/W1-MANIFEST.json#source_set"
+    },
+    {
+      "beat": 2,
+      "visual_verb": "pull",
+      "causal_move": "Lift one thin amber filament from the source and let it carry three visible receipt ticks.",
+      "stage": ["source_artifact", "evidence_trace"],
+      "on_screen_text": ["TRACE", "EVENT RESIDUE"],
+      "evidence_boundary": "The filament visualizes a trace; it is not treated as proof by itself.",
+      "source_pointer": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/herakles-film-grammar.v1.json#own_primitives.trace"
+    },
+    {
+      "beat": 3,
+      "visual_verb": "contain",
+      "causal_move": "Route the trace through a transparent Context Capsule without breaking its identity.",
+      "stage": ["source_artifact", "evidence_trace", "context_capsule"],
+      "on_screen_text": ["CONTEXT CAPSULE", "SAME TRACE"],
+      "evidence_boundary": "Context changes the readable route; it does not upgrade the trace into consensus.",
+      "source_pointer": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json#visual_spine"
+    },
+    {
+      "beat": 4,
+      "visual_verb": "propose",
+      "causal_move": "Let the exiting blue trace fold into a torus family and a cusp hexagonal fibre, opening one typed question gate.",
+      "stage": ["source_artifact", "evidence_trace", "context_capsule", "torus_family", "cusp_hexagonal_fibre", "question_gate"],
+      "on_screen_text": ["S6 CLAIM", "PAPER CLAIM - NOT CONSENSUS"],
+      "evidence_boundary": "The S6 statement is framed as a paper claim under test, not as an established fact.",
+      "source_pointer": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json#visual_spine"
+    },
+    {
+      "beat": 5,
+      "visual_verb": "close",
+      "causal_move": "Accept closure only when a world trace docks with the claim and a receipt-seal becomes complete; otherwise hold the gate open.",
+      "stage": ["source_artifact", "evidence_trace", "context_capsule", "torus_family", "cusp_hexagonal_fibre", "receipt_seal", "world_trace"],
+      "on_screen_text": ["WORLD TRACE", "RECEIPT", "FALSIFIABLE"],
+      "evidence_boundary": "Closure is conditional on a verified runtime receipt; this candidate supplies no fake evidence.",
+      "source_pointer": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/herakles-film-grammar.v1.json#scene_grammar"
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_artifact",
+      "form": "warm paper slab on a dark eon stratum",
+      "continuity": "introduced beat 1; remains visible through beat 5; only opacity may recede"
+    },
+    {
+      "id": "evidence_trace",
+      "form": "one amber filament that shifts to blue after the capsule",
+      "continuity": "same path object throughout; transform and color interpolation only; never duplicate"
+    },
+    {
+      "id": "context_capsule",
+      "form": "transparent rectangular volume with a stable center anchor",
+      "continuity": "introduced beat 3; stays fixed while the camera changes scale"
+    },
+    {
+      "id": "torus_family",
+      "form": "three concentric torus rings with one highlighted route",
+      "continuity": "introduced beat 4; rings stay registered to the capsule exit"
+    },
+    {
+      "id": "cusp_hexagonal_fibre",
+      "form": "single cusp with a hexagonal fibre cross-section",
+      "continuity": "introduced beat 4; remains the geometric witness of the paper claim"
+    },
+    {
+      "id": "receipt_seal",
+      "form": "closed luminous volume with hash ticks",
+      "continuity": "incomplete outline until verified receipt; closure is never autoplayed"
+    },
+    {
+      "id": "world_trace",
+      "form": "short cyan pointer from claim to receipt origin",
+      "continuity": "appears only after a real world event is supplied; absent state is visibly open"
+    }
+  ],
+  "caption_script": [
+    {
+      "beat": 1,
+      "caption": "Start with one source, not an answer.",
+      "voiceover": "A trace enters the film before the claim does."
+    },
+    {
+      "beat": 2,
+      "caption": "A trace is a residue of an event, not proof by itself.",
+      "voiceover": "The line carries its origin with it."
+    },
+    {
+      "beat": 3,
+      "caption": "Context makes the route readable without changing the object.",
+      "voiceover": "The capsule adds context, not consensus."
+    },
+    {
+      "beat": 4,
+      "caption": "The S6 result is shown as a paper claim under test.",
+      "voiceover": "Geometry makes the question visible; it does not settle it."
+    },
+    {
+      "beat": 5,
+      "caption": "Only a verified world trace can close the claim.",
+      "voiceover": "If the receipt is missing, the gate stays open."
+    }
+  ],
+  "manim_plan": {
+    "render": {
+      "logical_frame": "16:9",
+      "resolution": "1920x1080",
+      "frame_rate": 24,
+      "background": "near-black",
+      "camera": "orthographic; one continuous left-to-right dolly with fixed object anchors"
+    },
+    "determinism": [
+      "Use named coordinates and fixed radii; no random seed, noise, or particle simulation.",
+      "Build every object from SVG paths or native Manim primitives with stable IDs.",
+      "Use one State object for source_pointer, trace_state, claim_state, and receipt_state.",
+      "At each beat, animate exactly one causal change; keep all prior objects in the scene graph.",
+      "Do not render pseudo-text; use only the short labels listed in each beat."
+    ],
+    "palette": {
+      "source": "amber",
+      "trace_before_capsule": "amber",
+      "trace_after_capsule": "electric cyan",
+      "capsule": "low-opacity cyan glass",
+      "claim": "white with amber underline",
+      "unverified_gate": "dim cyan outline",
+      "verified_receipt": "full cyan-white seal"
+    },
+    "timeline": [
+      "0.0-3.5s: draw source_artifact and one open question_gate; hold 0.4s.",
+      "3.5-7.0s: grow evidence_trace from the source anchor; reveal three hash ticks.",
+      "7.0-11.0s: move the same trace through context_capsule; interpolate amber to cyan.",
+      "11.0-15.5s: construct torus_family and cusp_hexagonal_fibre at the capsule exit; reveal S6 CLAIM label.",
+      "15.5-20.0s: wait for world_trace input; if verified, close receipt_seal, otherwise keep the question_gate open and end on FALSIFIABLE."
+    ],
+    "reduced_motion": "Keep all five states, labels, object continuity, and open-versus-closed receipt state; replace travel with crossfades and direct visibility changes."
+  },
+  "falsifier": "If the source pointer cannot be reconciled with a world event and a verified receipt, the claim must not close; render the receipt outline incomplete and leave the question gate open.",
+  "fake_evidence": false,
+  "receipts": [
+    "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+    "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/herakles-film-grammar.v1.json",
+    "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/W1-MANIFEST.json",
+    "gorevler/P-HERAKLES-PAPER/sections/10-constraint-calibration.md"
+  ]
+}

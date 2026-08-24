@@ -1,0 +1,50 @@
+{
+  "worker": 21,
+  "one_sentence_story": "A single luminous thread carries a source artifact through a transparent Context Capsule, resolves into a torus family and cusp hexagonal fibre, then locks an explicitly provisional S6 paper claim to a separate world trace.",
+  "beats": [
+    {"beat": 1, "title": "Source ledger", "causal_move": "The source artifact emits one indexed evidence thread.", "visual_action": "A warm paper tile at frame-left unfolds into three legible rows labeled SOURCE, DATE, and HASH; one gold line exits its bottom edge while all other marks remain inert.", "on_screen_text": ["SOURCE", "DATE", "HASH"], "narration": "Begin with the artifact, not the conclusion.", "continuity": "Keep the paper tile, its three labels, and the gold thread for every later beat."},
+    {"beat": 2, "title": "Context Capsule", "causal_move": "The thread enters a transparent capsule that exposes context without adding a second conclusion.", "visual_action": "A cyan glass rectangular capsule grows around the moving gold thread; a small inner tag labeled CONTEXT appears, and the thread changes to a gold-cyan gradient only after crossing the capsule boundary.", "on_screen_text": ["CONTEXT"], "narration": "Context changes how the trace is read; it does not become evidence by decoration.", "continuity": "The source tile stays visible at frame-left and the same thread remains unbroken through the capsule."},
+    {"beat": 3, "title": "Torus family", "causal_move": "The contextualized thread closes into a family of related loops.", "visual_action": "At capsule exit, the line bends into three concentric torus loops with one moving cyan marker. Each loop receives a compact visible label TORUS-1, TORUS-2, or TORUS-3; no dashboard panels appear.", "on_screen_text": ["TORUS-1", "TORUS-2", "TORUS-3"], "narration": "The same trace now shows a family, not three unrelated objects.", "continuity": "The capsule remains behind the torus family as a translucent anchor; the source thread becomes the innermost loop."},
+    {"beat": 4, "title": "Cusp fibre", "causal_move": "A single cusp in the torus family selects one hexagonal fibre.", "visual_action": "The moving marker pauses at the upper-right cusp of TORUS-2; a thin hexagonal fibre extrudes from that cusp toward a small cyan node labeled FIBRE, while the other loops dim but remain readable.", "on_screen_text": ["CUSP", "FIBRE"], "narration": "One cusp supplies the candidate fibre to test.", "continuity": "The source, capsule, and all three loops remain in one horizontal composition; only the selected fibre brightens."},
+    {"beat": 5, "title": "Claim beside trace", "causal_move": "The selected fibre is placed beside a receipt/world trace, and the S6 statement is sealed as a paper claim rather than a fact.", "visual_action": "A cool paper receipt appears at frame-right with readable labels RECEIPT, WORLD TRACE, and TRACE-ID. Above it, a dark claim plate opens with exactly two lines: PAPER CLAIM and S6: PROPOSED. A final bracket connects the bright fibre to the receipt but stops short of marking the claim verified.", "on_screen_text": ["PAPER CLAIM", "S6: PROPOSED", "RECEIPT", "WORLD TRACE", "TRACE-ID"], "narration": "The paper proposes an S6 claim; the receipt and world trace are the check, not a consensus stamp.", "continuity": "The bracket is the only new connector in the final beat; it ends at the receipt and never becomes an equals sign."}
+  ],
+  "persistent_objects": [
+    {"id": "source_artifact", "shape": "warm parchment rectangle with three ruled rows", "color": "#D99A3D", "anchor": "left third", "lifetime": "beats 1-5"},
+    {"id": "evidence_thread", "shape": "single cubic Bezier path with 3 px core and 1 px glow", "color": "#F4B860 to #65D8FF", "anchor": "source to capsule to torus family", "lifetime": "beats 1-5"},
+    {"id": "context_capsule", "shape": "transparent cyan glass cuboid", "color": "#7CD9F2 at 18 percent opacity", "anchor": "center", "lifetime": "beats 2-5"},
+    {"id": "torus_family", "shape": "three concentric elliptical torus loops", "color": "#65D8FF with dim cyan siblings", "anchor": "center-right", "lifetime": "beats 3-5"},
+    {"id": "cusp_hexagonal_fibre", "shape": "six-segment hexagonal fibre extrusion from one cusp", "color": "#C7F3FF", "anchor": "upper-right cusp of TORUS-2", "lifetime": "beats 4-5"},
+    {"id": "world_trace_receipt", "shape": "cool white receipt sheet with ruled lines", "color": "#D9F5FF", "anchor": "right third", "lifetime": "beat 5"},
+    {"id": "paper_claim_plate", "shape": "matte charcoal title plate with amber edge", "color": "#171D22 and #F4B860", "anchor": "above receipt", "lifetime": "beat 5"}
+  ],
+  "caption_script": [
+    {"time": "00:00-00:03", "text": "Evidence starts at the source artifact."},
+    {"time": "00:03-00:06", "text": "Context is visible as a transformation step, not a hidden premise."},
+    {"time": "00:06-00:09", "text": "The trace closes into a torus family."},
+    {"time": "00:09-00:12", "text": "One cusp selects the hexagonal fibre to test."},
+    {"time": "00:12-00:16", "text": "S6 is shown as a paper claim; the receipt and world trace remain the test."}
+  ],
+  "manim_plan": {
+    "engine": "Manim Community",
+    "canvas": "16:9, 1672x941 reference ratio, render at 1920x1080",
+    "background": "#05090C",
+    "duration_seconds": 16,
+    "determinism": {"seed": 21021, "randomness": "none", "coordinate_system": "fixed Frame(width=14.0, height=7.875)", "stroke_policy": "all geometry uses explicit stroke widths and opacities", "text_policy": "use a bundled sans font and exact literal strings from on_screen_text"},
+    "timeline": [
+      {"seconds": "0-3", "actions": ["FadeIn(source_artifact)", "Write(SOURCE/DATE/HASH)", "Create(evidence_thread)", "MoveAlongPath(gold_marker, evidence_thread, run_time=1.2)"]},
+      {"seconds": "3-6", "actions": ["GrowFromCenter(context_capsule)", "Write(CONTEXT)", "TransformColor(evidence_thread, warm_to_cyan, path_arc=0)"]},
+      {"seconds": "6-9", "actions": ["Create(torus_family, lag_ratio=0.0)", "MoveAlongPath(cyan_marker, inner_torus)", "Write(TORUS-1/TORUS-2/TORUS-3)"]},
+      {"seconds": "9-12", "actions": ["Indicate(cusp_point)", "Create(hexagonal_fibre, rate_func=linear)", "Write(CUSP/FIBRE)", "SetOpacity(non_selected_loops, 0.42)"]},
+      {"seconds": "12-16", "actions": ["FadeIn(world_trace_receipt)", "Write(RECEIPT/WORLD TRACE/TRACE-ID)", "FadeIn(paper_claim_plate)", "Write(PAPER CLAIM/S6: PROPOSED)", "Create(bracket_to_receipt)", "Hold(1.0)"]}
+    ],
+    "camera": "single static camera; no zoom, pan, or cut",
+    "verification_frame": "At t=15.0, assert source_artifact, context_capsule, torus_family, cusp_hexagonal_fibre, paper_claim_plate, and world_trace_receipt are visible; assert no equals sign or VERIFIED label exists."
+  },
+  "falsifier": {"claim_scope": "This is a visual candidate for communicating a paper claim, not evidence for the S6 claim.", "refuted_if": ["A source-to-receipt causal path cannot be reconstructed from the five beats.", "The final frame visually implies that the S6 claim is verified or consensus fact.", "The cusp fibre cannot be identified as the selected output of exactly one torus-family cusp.", "The same evidence thread is not traceable from source through capsule into the torus family."], "test": "Show the film without narration to three independent viewers and require them to name the source, transformation, selected fibre, and verification boundary in order."},
+  "fake_evidence": false,
+  "receipts": [
+    {"kind": "prompt", "path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "measurement": "jq parse succeeded; deliverable.beats=5; fake_evidence=false; required_fields count=7"},
+    {"kind": "reference_image", "path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "measurement": "identify output: PNG 1672x941, 8-bit sRGB, 1.7061MiB"},
+    {"kind": "output", "path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates/worker-21.json", "measurement": "worker=21; beats=5; persistent_objects=7; caption_script=5; fake_evidence=false"}
+  ]
+}

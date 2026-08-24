@@ -1,0 +1,41 @@
+{
+  "worker": 28,
+  "one_sentence_story": "A traceable source artifact crosses a single luminous custody line, is conditioned by a transparent Context Capsule, resolves into a torus family with a cusp hexagonal fibre, and ends as an explicitly labelled S6 paper claim beside its receipt and world trace.",
+  "beats": [
+    {"beat": 1, "time_s": [0.0, 1.6], "title": "Source is the start", "action": "Reveal one amber source sheet on a dark hexagonal plinth; show only the legible labels SOURCE and S6 PAPER CLAIM.", "causal_move": "The source artifact becomes the origin of the thread.", "camera": "Locked 16:9 wide shot; source anchor at x=-5.4, y=-0.15, z=0.", "visual": "Warm amber key light from below; all background network nodes remain dim and static."},
+    {"beat": 2, "time_s": [1.6, 3.2], "title": "Evidence travels", "action": "Draw one continuous cubic Bezier stream from the source sheet toward center; animate three small trace particles along the same path, shifting from amber to ice blue after the midpoint.", "causal_move": "The source is converted into a visible evidence trace without adding a second storyline.", "camera": "Keep the locked wide shot; the path is the only moving object besides its particles.", "visual": "Two parallel strokes, one 7 px core and one 2 px halo; particle spacing is deterministic at 0.0, 0.55, and 1.10 seconds."},
+    {"beat": 3, "time_s": [3.2, 4.8], "title": "Context is bounded", "action": "A transparent glass capsule grows around the midpoint of the stream; the path remains visible through it and a clean label reads CONTEXT CAPSULE.", "causal_move": "The same trace is given a bounded context container.", "camera": "No cut; capsule centered at x=0.0, y=0.15, z=0 with a 1.7 by 2.5 unit footprint.", "visual": "Cyan edge strokes at 35 percent opacity, one soft internal reflection, no dashboard panels or pseudo-text."},
+    {"beat": 4, "time_s": [4.8, 6.4], "title": "Structure resolves", "action": "The capsule contracts into a torus family: two nested torus rings remain on the stream axis while a small hexagonal fibre pinches at the cusp between them.", "causal_move": "Bounded context is represented as the proposed geometric structure.", "camera": "Use a 12 degree yaw and 8 degree pitch only during the morph, then settle back to the original angle.", "visual": "Outer torus in ice blue, inner torus in pale cyan, cusp hexagonal fibre in white; all geometry has fixed stroke and no random motion."},
+    {"beat": 5, "time_s": [6.4, 8.0], "title": "Claim closes with a receipt", "action": "Extend the same stream to a white receipt sheet on the right plinth; reveal two large readable labels, CLAIM and WORLD TRACE, then place a small closed hexagon seal beside the line endpoint.", "causal_move": "The geometric proposal is closed as a paper claim with a traceable receipt, not as consensus fact.", "camera": "Final wide composition: source x=-5.4, capsule/torus x=0.0, receipt x=5.2; hold for 1.0 second.", "visual": "Receipt is cool white with blue edge light; the words PAPER CLAIM remain visible until fade-out."}
+  ],
+  "persistent_objects": [
+    {"id": "source_artifact", "role": "origin", "continuity": "Amber sheet and left hexagonal plinth persist from beat 1 through beat 5.", "geometry": "Rounded rectangle sheet with one solid source marker and readable SOURCE label; no simulated paragraph text."},
+    {"id": "evidence_stream", "role": "causal_spine", "continuity": "One Bezier path is extended, never replaced; it passes through the capsule, torus cusp, and receipt endpoint.", "geometry": "Core stroke plus halo stroke with deterministic particle positions."},
+    {"id": "context_capsule", "role": "bounded_context", "continuity": "Glass capsule is created in beat 3 and its outline contracts into the torus family in beat 4.", "geometry": "Transparent rectangular prism with cyan outline and a single internal reflection."},
+    {"id": "torus_family", "role": "proposed_structure", "continuity": "Two nested torus rings and the cusp fibre persist through the closing claim hold.", "geometry": "Two concentric torus curves plus one hexagonal fibre at the shared cusp."},
+    {"id": "receipt_world_trace", "role": "closure", "continuity": "White right-hand receipt sheet appears in beat 5 and keeps the CLAIM framing visible.", "geometry": "Receipt sheet, readable CLAIM / WORLD TRACE labels, and a closed hexagon seal."}
+  ],
+  "caption_script": [
+    "A source artifact enters the frame.",
+    "Its evidence trace stays continuous as it crosses the scene.",
+    "A transparent Context Capsule bounds the context around that trace.",
+    "The capsule resolves into a torus family and a cusp hexagonal fibre.",
+    "The S6 result is presented as a paper claim with a receipt and world trace, not as consensus fact."
+  ],
+  "manim_plan": {
+    "canvas": "16:9, 1672x941 reference composition; render at 1920x1080 while preserving the same normalized anchors.",
+    "coordinate_system": "Frame x in [-8, 8], y in [-4.5, 4.5], z in [-2, 2]; source (-5.4,-0.15,0), capsule (0,0.15,0), receipt (5.2,-0.05,0).",
+    "palette": {"background": "#02070A", "amber_source": "#F3B45B", "ice_blue": "#8FE9FF", "white_receipt": "#EAF8FA", "basalt": "#101A1E"},
+    "primitives": ["Polygon for each six-sided basalt plinth", "RoundedRectangle for source and receipt sheets", "CubicBezier for the single evidence stream", "ParametricFunction for two torus rings", "RegularPolygon(n=6) plus a short line segment for the cusp hexagonal fibre", "Rectangle with stroke opacity 0.35 for the Context Capsule"],
+    "animation_order": ["FadeIn source_artifact", "Create evidence_stream and MoveAlongPath three trace particles", "Create context_capsule around the existing stream", "Transform context_capsule outline into torus_family while preserving the stream endpoint", "Create receipt_world_trace and Write only the five approved labels", "Hold final frame for 1.0 second, then FadeOut background network only"],
+    "timing": "Five beats use 1.6 seconds each; use smooth linear path progress for trace particles and there is no random seed or noise source.",
+    "text_policy": "Render only SOURCE, S6 PAPER CLAIM, CONTEXT CAPSULE, CLAIM, and WORLD TRACE; never render pseudo-paragraphs."
+  },
+  "falsifier": "If an independent reconstruction cannot preserve one source-to-receipt trace while applying the proposed capsule-to-torus mapping, or if the S6 paper's actual definitions do not support the torus-family and cusp-fibre correspondence, this visual concept is falsified as an explanatory rendering.",
+  "fake_evidence": false,
+  "receipts": [
+    {"claim": "The shared prompt requires five beats and eight named fields.", "receipt": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json; deliverable.beats=5; required_fields count=8."},
+    {"claim": "The supplied visual reference is 1672x941 px and 1.7061 MiB in the observed ImageMagick output.", "receipt": "identify '/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png' -> PNG 1672x941; stat -> bytes=1788980."},
+    {"claim": "No worker-*.json filename matched in the existing candidate directory at measurement time.", "receipt": "find '/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates' -maxdepth 1 -type f -name 'worker-*.json' -printf '%f\\n' | sort -V | head -20 -> empty output."}
+  ]
+}

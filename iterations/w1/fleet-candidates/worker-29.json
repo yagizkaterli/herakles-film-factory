@@ -1,0 +1,151 @@
+{
+  "worker": 29,
+  "one_sentence_story": "A single source artifact sends one luminous thread through a transparent context capsule, resolves into a torus family with a cusp hexagonal fibre, and closes an S6 paper claim only when a world trace is visibly attached.",
+  "beats": [
+    {
+      "id": "B1",
+      "name": "source artifact",
+      "causal_move": "A warm paper-like source tile is placed on the left basalt island; one small amber mark leaves its lower edge.",
+      "on_screen_text": ["source artifact"],
+      "motion": "The source tile settles once; the amber mark is the only moving element after the label appears."
+    },
+    {
+      "id": "B2",
+      "name": "luminous evidence stream",
+      "causal_move": "The amber mark becomes a thin, braided evidence stream and travels toward the centre without spawning a second source.",
+      "on_screen_text": ["evidence stream"],
+      "motion": "A single stroke is revealed left-to-right; old portions remain fixed as the camera eases forward."
+    },
+    {
+      "id": "B3",
+      "name": "transparent Context Capsule",
+      "causal_move": "The stream enters a glass capsule; the capsule makes one hidden junction legible as a cyan point, while the source and stream remain visible.",
+      "on_screen_text": ["Context Capsule"],
+      "motion": "The capsule fades from 0 to 1 opacity and the cyan point appears only at the junction; no dashboard chrome enters."
+    },
+    {
+      "id": "B4",
+      "name": "torus family and cusp fibre",
+      "causal_move": "The cyan junction folds into three nested torus rings and ends in one hexagonal cusp fibre, making the evidence shape continuous rather than decorative.",
+      "on_screen_text": ["torus family", "cusp fibre"],
+      "motion": "The same cyan point traces the rings; the six-sided cusp is drawn last and then held still."
+    },
+    {
+      "id": "B5",
+      "name": "closed S6 claim",
+      "causal_move": "A dark claim plaque stays visibly unlatched until a receipt tab carrying the world trace docks to the cusp; only then does the plaque close.",
+      "on_screen_text": ["S6 claim", "paper claim - not consensus fact", "world trace attached"],
+      "motion": "All geometry freezes except the receipt tab; the final frame holds the attached trace and the still-open source-to-world path."
+    }
+  ],
+  "persistent_objects": [
+    {
+      "object": "source_tile",
+      "appearance": "warm ivory rectangular paper tile on an amber-lit island",
+      "role": "source artifact",
+      "continuity": "never replaced; its lower-edge amber mark is the seed of the stream"
+    },
+    {
+      "object": "evidence_stream",
+      "appearance": "one amber-to-cyan braided luminous line",
+      "role": "causal path",
+      "continuity": "the same path runs from source tile through capsule and torus family"
+    },
+    {
+      "object": "context_capsule",
+      "appearance": "transparent glass cuboid with one cyan junction point",
+      "role": "context boundary",
+      "continuity": "stays centred; only opacity and internal point visibility change"
+    },
+    {
+      "object": "torus_family",
+      "appearance": "three nested cyan torus rings",
+      "role": "family of possible traversals",
+      "continuity": "rings are drawn from the capsule junction and remain in the final frame"
+    },
+    {
+      "object": "cusp_hexagonal_fibre",
+      "appearance": "single six-sided cyan cusp at the end of the fibre",
+      "role": "closed S6 boundary marker",
+      "continuity": "the same cusp receives the receipt tab"
+    },
+    {
+      "object": "claim_plaque_and_receipt",
+      "appearance": "charcoal plaque with an ivory receipt tab and green attachment notch",
+      "role": "paper claim plus world trace state",
+      "continuity": "plaque remains unlatched until the final dock; no checkmark appears before attachment"
+    }
+  ],
+  "caption_script": [
+    "A source is not yet a world trace.",
+    "Follow one evidence stream through its context.",
+    "The shape can persist while the interpretation changes.",
+    "The S6 statement is a paper claim, not consensus fact.",
+    "Close it only when the world trace is attached."
+  ],
+  "manim_plan": {
+    "render": {
+      "pixel_width": 1672,
+      "pixel_height": 941,
+      "frame_rate": 30,
+      "background": "#03070A",
+      "randomness": "none"
+    },
+    "coordinate_system": "Three-quarter orthographic stage; source at (-5.3,-0.4,0), capsule at (0,0,0), torus family at (2.6,0.2,0), claim plaque at (5.1,-0.9,0).",
+    "palette": {
+      "source_amber": "#F2B45A",
+      "stream_cyan": "#65D9FF",
+      "capsule_glass": "#B9EFFF",
+      "claim_ink": "#EAF0F2",
+      "receipt_green": "#7CE3A1",
+      "basalt": "#111A1D"
+    },
+    "construction": [
+      "Build the source tile, basalt islands, and plaque from fixed polygons; use no procedural texture or random particles.",
+      "Construct the stream as one ParametricFunction with a deterministic cubic Bezier centreline and two fixed-width offset strokes.",
+      "Construct the capsule as four translucent Line polygons and reveal the cyan junction with a single FadeIn.",
+      "Construct torus rings from fixed ParametricFunction samples at radii 1.0, 1.35, and 1.7; rotate each by a fixed angle only during B4.",
+      "Construct the cusp as a regular hexagon with six fixed vertices; morph the final stream endpoint into its centre.",
+      "Construct the receipt tab as a labelled rounded rectangle; animate one Transform from its parked position to the cusp notch, then change the plaque stroke from amber to green."
+    ],
+    "timing": [
+      "B1 0.0-3.5s",
+      "B2 3.5-8.5s",
+      "B3 8.5-14.0s",
+      "B4 14.0-22.0s",
+      "B5 22.0-30.0s",
+      "Hold final frame 2.0s"
+    ],
+    "accessibility": "Every label is rendered as real text; dense claim text is shown during a still frame with no competing motion; reduced-motion mode keeps all objects and swaps travel for opacity changes."
+  },
+  "falsifier": "If the source pointer, context boundary, or world trace is missing, the receipt tab must not dock and the S6 plaque must remain visibly unlatched; a final green closure without that trace would falsify this film's causal story.",
+  "fake_evidence": false,
+  "receipts": {
+    "shared_prompt": {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "command": "wc -l -c '02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json'",
+      "output": "28 1232"
+    },
+    "reference_image": {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "command": "identify -format 'format=%m width=%w height=%h bytes=%b path=%i\\n' '02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png'",
+      "output": "format=PNG width=1672 height=941 bytes=1.78898MB path=02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png"
+    },
+    "paper_source": {
+      "path": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md",
+      "measured_anchors": [
+        "line 13: memory is not a log but a traversable world that work visibly grows",
+        "line 77: 7. Memory as world - memory is a traversable world, not a log",
+        "line 700: work the tribe does is what grows the world"
+      ]
+    },
+    "visual_language_sources": {
+      "vitrin": "02 Projects/Sistem-Insa/gorevler/G-VITRIN/3B1B-ANLATI-BILGI.md lines 33-39: object permanence; lines 43-49: reduced motion at the hardest idea; lines 63-69: honest limits",
+      "motion_contract": "02 Projects/lobi/LOBI-OBSERVABILITY-MOTION-v7/MOTION-CONTRACT-v7.md lines 74-80: factual trace reveal and causal hierarchy; lines 54-60: stable object continuity"
+    },
+    "candidate_shape": {
+      "command": "jq -e '(.worker == 29) and (.beats | length == 5) and (.required_fields_missing // []) == [] and (.fake_evidence == false)' iterations/w1/fleet-candidates/worker-29.json",
+      "expected_output": "true"
+    }
+  }
+}

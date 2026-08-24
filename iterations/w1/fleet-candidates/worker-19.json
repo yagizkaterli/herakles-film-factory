@@ -1,0 +1,161 @@
+{
+  "schema": "herakles.w1-evidence-thread-candidate.v1",
+  "worker": 19,
+  "title": "The seam keeps the receipt",
+  "one_sentence_story": "A paper claim travels from one source page through a transparent context capsule, where a cusp twist turns a repeated torus into a six-sided fibre and closes only when the world trace and render receipt agree.",
+  "source_boundary": "The reference image supplies visual grammar only; the S6 statement remains a paper claim and is not presented as consensus fact.",
+  "beats": [
+    {
+      "beat": 1,
+      "timecode": "00:00-00:03",
+      "causal_move": "A source artifact emits one luminous evidence stream.",
+      "frame": "A single warm paper slab stands on the left; one readable label, SOURCE, is the only text. A thin amber filament leaves its lower edge and crosses a dark hexagonal terrain plane.",
+      "narration": "Start with the source, not the conclusion.",
+      "evidence_anchor": "canonical/s6-modular-family-film.v1.json -> source_url and source_facts"
+    },
+    {
+      "beat": 2,
+      "timecode": "00:03-00:06",
+      "causal_move": "The evidence stream enters a transparent Context Capsule and becomes a bounded claim path.",
+      "frame": "The amber filament passes through a glass rectangular capsule at center. Inside it, a small torus repeats once over a dark base curve; a single clean label, CONTEXT, sits on the capsule face.",
+      "narration": "Context does not decorate the trace; it bounds what the trace can say.",
+      "evidence_anchor": "canonical/w1-evidence-thread-fleet-prompt.v1.json -> visual_spine[2]"
+    },
+    {
+      "beat": 3,
+      "timecode": "00:06-00:09",
+      "causal_move": "The cusp is marked as the only transition point and twists the torus fibre.",
+      "frame": "The capsule opens into a dark base curve with three fixed luminous markers: 3, 4, and infinity. The infinity marker brightens; a cyan seam winds around the torus twice, making the rank-two monodromy visible without extra text.",
+      "narration": "At the cusp, the paper claim places the monodromy: one point, one twist, one causal change.",
+      "evidence_anchor": "canonical/s6-modular-family-film.v1.json -> source_facts[0:3]"
+    },
+    {
+      "beat": 4,
+      "timecode": "00:09-00:13",
+      "causal_move": "The twisted torus contracts into the six-sided toric fibre.",
+      "frame": "The torus remains identity-linked by the cyan seam while its circular cross-section contracts into a glowing hexagon. Six vertices appear as six stable light nodes; the capsule frame fades but the source filament stays continuous.",
+      "narration": "The proposed degeneration is visible as a single contraction: torus to hexagonal dP6 fibre.",
+      "evidence_anchor": "canonical/s6-modular-family-film.v1.json -> single_move and visual_beats[2:4]"
+    },
+    {
+      "beat": 5,
+      "timecode": "00:13-00:17",
+      "causal_move": "The seam closes into a receipt-seal while the source trace remains reachable.",
+      "frame": "The hexagonal fibre folds into a closed luminous volume on the right. A short world trace loops back to the source slab; the seal shows only RECEIPT and a visible hash-tick pattern. The final caption says CLAIM, not FACT.",
+      "narration": "Paper claim: the total space is proposed to close as S6; the film closes the scene only with a source pointer and a render receipt.",
+      "evidence_anchor": "canonical/s6-modular-family-film.v1.json -> visual_beats[4], world_binding, falsifier"
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_artifact",
+      "form": "warm paper slab with SOURCE label",
+      "continuity": "left anchor from beat 1 through beat 5",
+      "meaning": "source pointer, not proof by appearance"
+    },
+    {
+      "id": "evidence_stream",
+      "form": "one amber-to-cyan luminous filament",
+      "continuity": "never cut; changes hue only at the context boundary",
+      "meaning": "causal trace"
+    },
+    {
+      "id": "context_capsule",
+      "form": "transparent rectangular volume",
+      "continuity": "enters at beat 2 and becomes the boundary for the claim path",
+      "meaning": "bounded context"
+    },
+    {
+      "id": "torus_cusp_hex_fibre",
+      "form": "repeated torus, cusp seam, then six-node hexagon",
+      "continuity": "same object key across the contraction; no replacement cut",
+      "meaning": "paper-claimed geometric move"
+    },
+    {
+      "id": "receipt_world_trace",
+      "form": "closed luminous seal with six hash ticks and return trace",
+      "continuity": "appears only after the source path remains visible",
+      "meaning": "claim closure condition"
+    }
+  ],
+  "caption_script": {
+    "tweet_copy": "A paper claim, shown as a chain rather than a verdict: source -> context -> cusp twist -> hexagonal dP6 fibre -> receipt. The proposed S6 closure is shown only with its falsifier and source path.",
+    "on_screen_text": ["SOURCE", "CONTEXT", "3", "4", "infinity", "CLAIM", "RECEIPT"],
+    "spoken_lines": [
+      "Start with the source, not the conclusion.",
+      "Context bounds what the trace can say.",
+      "At the cusp, the paper claim places the monodromy.",
+      "The proposed move is torus to hexagonal dP6 fibre.",
+      "Paper claim: the total space is proposed to close as S6; receipt required."
+    ],
+    "claim_frame": "paper claim, not consensus fact"
+  },
+  "manim_plan": {
+    "scene": "Worker19EvidenceThread",
+    "engine": "Manim ThreeDScene",
+    "canvas": "16:9 orthographic, 1672x941 preview target",
+    "determinism": {
+      "randomness": "none",
+      "seed": null,
+      "geometry": "fixed parametric curves, fixed six-node polygon, fixed camera waypoints",
+      "text_policy": "only exact readable labels; no generated pseudo-text"
+    },
+    "camera": [
+      "fixed wide shot for beat 1",
+      "linear push to capsule center for beat 2",
+      "orbit 18 degrees around the cusp marker for beat 3",
+      "hold orthographic side view during beat 4 contraction",
+      "pull back to source-to-seal wide shot for beat 5"
+    ],
+    "beat_plan": [
+      {"beat": 1, "construct": ["PaperSlab", "BaseCurve", "EvidenceStream"], "animation": "Create source slab, then draw one filament from slab to capsule position."},
+      {"beat": 2, "construct": ["ContextCapsule", "TorusFamily"], "animation": "Fade in glass capsule and grow one torus copy; keep filament continuous."},
+      {"beat": 3, "construct": ["SpecialPoint(3)", "SpecialPoint(4)", "SpecialPoint(infinity)", "CuspSeam"], "animation": "Pulse three markers, then apply two fixed seam turns around the torus."},
+      {"beat": 4, "construct": ["HexagonalFibre"], "animation": "Transform torus cross-section to six-node polygon with the seam as the shared identity path."},
+      {"beat": 5, "construct": ["ReceiptSeal", "WorldTrace"], "animation": "Close the hexagonal volume, draw six hash ticks, and return the trace to the source."}
+    ],
+    "qa_assertions": [
+      "exactly 5 beats are rendered",
+      "the 3, 4, and infinity markers persist into the cusp transition",
+      "the torus-to-hexagon transform has no cut or replacement object",
+      "the final frame contains SOURCE, CLAIM, RECEIPT, and a visible return trace",
+      "reduced motion freezes each beat on its explanatory state"
+    ],
+    "render_receipt": "required: command, output hash, frame count, and final-frame inspection"
+  },
+  "falsifier": {
+    "status": "must_be_tested",
+    "statement": "Reject this candidate if the render drops any of the three special points, fails to show the cusp monodromy, replaces rather than transforms the torus into the hexagonal dP6 fibre, or closes the scene without a reachable source pointer and render receipt.",
+    "source": "02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json -> falsifier",
+    "not_measured_here": "No Manim render or external source-paper verification was run in this worker pass."
+  },
+  "fake_evidence": false,
+  "receipts": {
+    "shared_prompt": {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "bytes": 1232,
+      "sha256": "59cc1bf2a1d592ccee93787bcb2c343b5a0ccd5d925465fa08d06e1738f740a9",
+      "measured_by": "stat --printf='size=%s bytes' and sha256sum"
+    },
+    "visual_reference": {
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "bytes": 1788980,
+      "dimensions": "1672x941",
+      "sha256": "75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508",
+      "measured_by": "identify, stat --printf='size=%s bytes', and sha256sum; visual inspection via view_image"
+    },
+    "s6_canonical": {
+      "path": "02 Projects/Sistem-Insa/canonical/s6-modular-family-film.v1.json",
+      "bytes": 1397,
+      "lines": 28,
+      "sha256": "17a42d8d968f71f622f822e38eb85b829ce1397c1c8f3bbf9562996ada7bf56e",
+      "measured_by": "stat --printf='size=%s bytes', wc -l, and sha256sum"
+    },
+    "candidate_contract": {
+      "required_fields": ["worker", "one_sentence_story", "beats", "persistent_objects", "caption_script", "manim_plan", "falsifier", "fake_evidence"],
+      "expected_beats": 5,
+      "fake_evidence": false,
+      "measured_by": "jq validation after write"
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "worker": 11,
+  "concept": "Witness Relay",
+  "one_sentence_story": "A single source artifact sends one trace through a transparent Context Capsule, where the trace becomes a torus family and cusp hexagonal fibre before returning as an explicitly provisional S6 paper claim with a visible world-trace receipt.",
+  "beats": [
+    {"beat": 1, "title": "Witness arrives", "causal_move": "Place one amber source artifact on a dark hexagonal witness tile and lock its identity with a small source-pointer tab.", "visual": "A warm paper-like artifact is the only bright object on the left; the tab uses legible words SOURCE and POINTER, not decorative pseudo-text.", "transition": "Hold the artifact still for one second, then illuminate only its lower edge."},
+    {"beat": 2, "title": "Trace leaves the witness", "causal_move": "Emit one continuous amber evidence stream from the source-pointer tab toward the center capsule.", "visual": "The stream is a thin double ribbon with three evenly spaced particles; no second branch or dashboard panel appears.", "transition": "The leading particle crosses the capsule boundary while the source artifact and stream tail remain visible."},
+    {"beat": 3, "title": "Context makes structure", "causal_move": "Inside the transparent Context Capsule, the incoming stream resolves into a nested torus family with one cusp hexagonal fibre at the front.", "visual": "The amber line becomes cyan at the glass boundary; three concentric torus rings rotate around a fixed vertical axis, while the hexagonal fibre pulses once at the cusp.", "transition": "The fibre points right and pulls the stream through the capsule without changing the capsule position."},
+    {"beat": 4, "title": "Claim closes with a receipt", "causal_move": "Let the fibre terminate at a white claim card that reads S6 CLAIM and PAPER CLAIM, with a separate WORLD TRACE receipt marker beneath it.", "visual": "The card is visibly labelled as a claim and stays separate from the source artifact; the receipt marker is an outlined seal, not a fabricated metric or consensus badge.", "transition": "The final stream segment underlines the receipt marker once, then stops."},
+    {"beat": 5, "title": "Falsifier remains on screen", "causal_move": "Sweep a narrow red verification gate across the receipt marker: a missing source/world pointer reopens the claim card, while a present pointer leaves the paper claim closed but provisional.", "visual": "Show the two outcomes as one controlled split: OPEN CLAIM on the left branch and PROVISIONAL CLAIM on the right; never show VERIFIED or CONSENSUS.", "transition": "Return to the right branch only after the gate completes, ending with the source, capsule, torus fibre, claim, and receipt all in frame."}
+  ],
+  "persistent_objects": [
+    {"id": "source_artifact", "role": "origin witness", "continuity": "fixed left position, amber illumination, never duplicated"},
+    {"id": "evidence_stream", "role": "causal trace", "continuity": "one spline from source to capsule to claim; amber before capsule and cyan after boundary"},
+    {"id": "context_capsule", "role": "transparent context boundary", "continuity": "fixed center position, glass edges remain readable through all beats"},
+    {"id": "torus_family", "role": "structured context", "continuity": "three rings and one cusp fibre are created once and transformed, not replaced"},
+    {"id": "s6_claim_card", "role": "provisional paper claim", "continuity": "enters only in beat 4 and remains labelled PAPER CLAIM"},
+    {"id": "world_trace_receipt", "role": "required trace pointer", "continuity": "outline marker only; it cannot become evidence by visual glow"}
+  ],
+  "caption_script": [
+    "A witness does not become a claim by glowing.",
+    "The trace crosses a context boundary and takes structure.",
+    "This is an S6 paper claim, not a consensus fact.",
+    "The claim stays closed only while its source and world trace remain inspectable.",
+    "No pointer, no closure."
+  ],
+  "manim_plan": {
+    "canvas": "16:9 landscape; camera frame 14.0 x 7.875; dark near-black background",
+    "coordinate_layout": {"source_artifact": [-5.2, -0.5, 0], "context_capsule": [0.0, 0.0, 0], "s6_claim_card": [5.0, -0.45, 0], "receipt_marker": [5.0, -1.75, 0]},
+    "palette": {"background": "#05090D", "amber_source": "#F4B35F", "cyan_trace": "#6FE7FF", "glass": "#9FE8F5", "claim_white": "#F1F5F7", "falsifier_red": "#FF5C63"},
+    "determinism": "Use fixed frame_rate=30, seed=11, fixed camera, fixed particle offsets [0.0, 0.33, 0.66], and no random noise or auto-layout.",
+    "shot_list": [
+      "0.0-2.0s: FadeIn source artifact, source pointer tab, and witness tile.",
+      "2.0-4.5s: Create one cubic Bezier evidence spline; animate three particles with lag_ratio=0.18.",
+      "4.5-7.0s: FadeIn capsule edges; recolor stream at boundary; Create torus rings and cusp hexagonal fibre.",
+      "7.0-9.5s: Transform fibre endpoint into claim card; Write only SOURCE, POINTER, S6 CLAIM, PAPER CLAIM, WORLD TRACE, and PROVISIONAL CLAIM.",
+      "9.5-12.0s: Sweep verification gate; use two deterministic end-state groups for OPEN CLAIM and PROVISIONAL CLAIM; hold final frame for 1.0s."
+    ],
+    "text_policy": "All on-screen text is short, explicit, and legible at 1672x941 export; do not render filler lines, fake citations, fake measurements, or unreadable pseudo-text."
+  },
+  "falsifier": {"test": "Remove either the source pointer or the world-trace pointer before the verification gate.", "expected_visual_result": "The claim card changes to OPEN CLAIM and the closing underline is removed.", "interpretation": "The animation must not close an S6 paper claim when its trace cannot be inspected; a visual receipt is not operational evidence."},
+  "fake_evidence": false,
+  "receipts": [
+    {"measurement": "shared prompt bytes", "command": "wc -c /root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "output": "1232"},
+    {"measurement": "reference raster dimensions", "command": "identify /root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "output": "PNG 1672x941 1672x941+0+0 8-bit sRGB 1.7061MiB 0.000u 0:00.000"},
+    {"measurement": "reference file size", "command": "stat -c '%s bytes' /root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "output": "1788980 bytes"},
+    {"measurement": "pre-existing worker candidate count", "command": "find /root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates -maxdepth 1 -type f -name 'worker-*.json' | wc -l", "output": "0"}
+  ]
+}

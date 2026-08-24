@@ -1,0 +1,163 @@
+{
+  "worker": "01",
+  "candidate_title": "The Event Braid Closes",
+  "one_sentence_story": "One source-bound paper claim travels as a single luminous edge through a transparent context capsule, becomes an event-ordered torus braid with a cusp hexagonal fibre, and closes only when a source receipt and a measured world snapshot remain visible beside it.",
+  "beats": [
+    {
+      "index": 1,
+      "duration_s": 4.0,
+      "causal_move": "Ask the question before naming the abstraction.",
+      "visual": "A single warm paper artifact enters from the left and locks to a small source pin. The black field stays empty except for the question.",
+      "on_screen": [
+        "WHAT DOES THE CHAIN ACTUALLY PROVE?",
+        "SOURCE RECEIPT",
+        "ek-s94-kararlar.md / K-s94-7"
+      ],
+      "voiceover": "Before we draw a world, ask what the record can actually support.",
+      "receipt": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/kaynak/ek-s94-kararlar.md:37-40"
+    },
+    {
+      "index": 2,
+      "duration_s": 4.5,
+      "causal_move": "Turn the source pointer into one visible evidence stream.",
+      "visual": "A thin amber-white stream grows from the pinned artifact, with a stable origin marker. No counter, dashboard, or extra object appears.",
+      "on_screen": [
+        "SOURCE -> TRACE",
+        "origin stays attached"
+      ],
+      "voiceover": "The source does not become truth; it becomes a trace that can be followed.",
+      "receipt": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/master-production-chain.v1.json: every visible claim has a pointer"
+    },
+    {
+      "index": 3,
+      "duration_s": 4.5,
+      "causal_move": "Make context explicit without changing the trace identity.",
+      "visual": "The stream passes through a transparent rectangular Context Capsule. Its glass edges brighten; the same origin marker remains on the stream and the paper artifact remains in frame.",
+      "on_screen": [
+        "CONTEXT CAPSULE",
+        "origin: K-s94-7",
+        "context is not consensus"
+      ],
+      "voiceover": "Context can explain a record without silently upgrading it into a consensus fact.",
+      "receipt": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md:121-123; 02 Projects/Sistem-Insa/gorevler/G-VITRIN/3B1B-ANLATI-BILGI.md:63-69"
+    },
+    {
+      "index": 4,
+      "duration_s": 5.0,
+      "causal_move": "Encode event order as a visual braid, then expose its boundary.",
+      "visual": "The stream folds into three concentric torus rings. At the only active cusp, one ring opens into a six-sided fibre; all non-active rails dim. The fibre is a visual model, not a measured topology result.",
+      "on_screen": [
+        "EON / ORDINAL EVENT ORDER",
+        "TORUS FAMILY",
+        "CUSP FIBRE",
+        "VISUAL MODEL, NOT PROOF"
+      ],
+      "voiceover": "The film gives event order a shape: a family of loops with one readable exit, not a decorative system diagram.",
+      "receipt": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md:497-520; visual grammar from concept-01-evidence-thread.png"
+    },
+    {
+      "index": 5,
+      "duration_s": 6.0,
+      "causal_move": "Close the claim only at the receipt and world-trace boundary.",
+      "visual": "The hexagonal fibre docks into a quiet receipt plate on the right. The paper artifact, stream origin, capsule, torus family, and fibre all remain visible. A measured snapshot line appears below the claim; no invented event id is added.",
+      "on_screen": [
+        "PAPER CLAIM",
+        "EON MAY SERVE AS AN ORDINAL/EVENT-BASED SURFACE FOR THE REMAINING-EDGE COUNTER",
+        "WORLD TRACE",
+        "snapshot=herakles-native:snapshot:1787435102",
+        "endpoint=/v2/snapshot",
+        "eon_layers=4  receipts=2",
+        "SCENE SUGGESTS; RECEIPT BOUNDS"
+      ],
+      "voiceover": "The paper claim closes as a claim: EON may hold the remaining-edge counter in event order. The receipt bounds the scene; it does not prove the world is true.",
+      "receipt": "02 Projects/Sistem-Insa/canonical/world-bound-film-source.v1.json:1-30; 02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/kaynak/ek-s94-kararlar.md:37-40"
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_artifact",
+      "shape": "single warm paper slab",
+      "color": "amber-white",
+      "role": "source pointer, never a truth badge",
+      "receipt": "ek-s94-kararlar.md:37-40"
+    },
+    {
+      "id": "evidence_stream",
+      "shape": "one luminous cubic Bezier rail",
+      "color": "amber to cyan",
+      "role": "trace from source to receipt",
+      "receipt": "master-production-chain.v1.json source-pointer rule"
+    },
+    {
+      "id": "context_capsule",
+      "shape": "transparent rectangular prism",
+      "color": "cold cyan glass",
+      "role": "explicit context boundary",
+      "receipt": "DRAFT-FINAL.md:121-123"
+    },
+    {
+      "id": "torus_family",
+      "shape": "three concentric torus rings",
+      "color": "deep blue with one white active rail",
+      "role": "narrative encoding of ordinal event order, not measured topology",
+      "receipt": "DRAFT-FINAL.md:497-520; visual reference path in shared prompt"
+    },
+    {
+      "id": "cusp_hexagonal_fibre",
+      "shape": "six-sided fibre at one torus cusp",
+      "color": "white-cyan",
+      "role": "single exit into the receipt/world trace",
+      "receipt": "visual grammar only; no operational evidence claimed"
+    }
+  ],
+  "caption_script": [
+    {"time_s": 0.0, "text": "WHAT DOES THE CHAIN ACTUALLY PROVE?"},
+    {"time_s": 4.0, "text": "SOURCE -> TRACE"},
+    {"time_s": 8.5, "text": "CONTEXT CAPSULE / context is not consensus"},
+    {"time_s": 13.0, "text": "EON / ORDINAL EVENT ORDER"},
+    {"time_s": 18.0, "text": "PAPER CLAIM: EON MAY SERVE AS AN ORDINAL/EVENT-BASED SURFACE FOR THE REMAINING-EDGE COUNTER"},
+    {"time_s": 18.0, "text": "WORLD TRACE: snapshot=herakles-native:snapshot:1787435102 / eon_layers=4 / receipts=2"},
+    {"time_s": 22.0, "text": "SCENE SUGGESTS; RECEIPT BOUNDS"}
+  ],
+  "manim_plan": {
+    "renderer": "Cairo",
+    "frame": {"width_px": 1672, "height_px": 941, "aspect_source": "measured reference image"},
+    "coordinates": {"x_range": [-8.0, 8.0, 1.0], "y_range": [-4.5, 4.5, 1.0], "background": "#05070A"},
+    "palette": {"paper": "#F4C77B", "stream": "#F8D89A", "cyan": "#7DE7FF", "active": "#FFFFFF", "muted": "#31505E", "text": "#F2F7FA"},
+    "timing": {"beat_durations_s": [4.0, 4.5, 4.5, 5.0, 6.0], "total_s": 24.0, "easing": "smooth"},
+    "construction": [
+      "Create all five persistent objects once in construct(); keep source_artifact and origin marker in the scene for the full run.",
+      "Use a fixed CubicBezierPath for evidence_stream; animate only a Dot and a growing stroke along that path.",
+      "Build context_capsule from transparent Prism faces with fixed opacity; never replace it with a UI panel.",
+      "Build torus_family from ParametricSurface torus meshes at fixed radii 1.45, 1.85, and 2.25; rotate each with fixed phase offsets 0, 0.18, and 0.36 radians.",
+      "At beat 4, morph only the active rail into a fixed RegularPolygon(n=6) fibre at the cusp; dim the other rails to 0.58 opacity.",
+      "At beat 5, write only measured source and snapshot labels from the candidate constants; render the claim label in a separate text group with PAPER CLAIM prefix.",
+      "Run with --quality h and -r 1672,941; use no random seed, live network call, or ImageGen pixel as a data input."
+    ],
+    "acceptance_checks": [
+      "beat_count == 5",
+      "each beat contains exactly one causal_move",
+      "source_artifact, evidence_stream, context_capsule, torus_family, and cusp_hexagonal_fibre persist through the closing frame",
+      "final frame contains PAPER CLAIM and a source/world receipt",
+      "no numeric counter is invented; only eon_layers=4 and receipts=2 are copied from the measured world-bound source",
+      "ImageGen reference is used only for visual grammar"
+    ]
+  },
+  "falsifier": {
+    "claim_under_test": "EON may serve as an ordinal/event-based surface for the remaining-edge counter.",
+    "would_refute": [
+      "A source-bound implementation shows the counter is keyed to wall-clock time rather than ordinal events.",
+      "A current world receipt contains no EON layer or records a different counter surface.",
+      "An updated S6 source supersedes K-s94-7 and explicitly rejects the remaining-edge interpretation."
+    ],
+    "required_receipt": "A newer dated source or world snapshot that directly measures the counter surface and its time basis.",
+    "scope": "Until that receipt exists, the film must retain PAPER CLAIM and must not say consensus fact."
+  },
+  "fake_evidence": false,
+  "receipts": {
+    "shared_prompt": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json: schema=herakles.w1-evidence-thread-fleet-prompt.v1, required_fields=7, beats=5, fake_evidence=false",
+    "reference_image": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png: PIL width=1672 height=941 mode=RGB format=PNG; sha256=75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508",
+    "paper_s6": "02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/DRAFT-FINAL.md: # 06 - EON: Ordinal Time; 02 Projects/Sistem-Insa/gorevler/P-HERAKLES-PAPER/kaynak/ek-s94-kararlar.md:37-40",
+    "world_snapshot": "02 Projects/Sistem-Insa/canonical/world-bound-film-source.v1.json: snapshot id=herakles-native:snapshot:1787435102, endpoint=/v2/snapshot, measured eon_layers=4, receipts=2"
+  }
+}

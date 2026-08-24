@@ -1,0 +1,39 @@
+{
+  "worker": 20,
+  "one_sentence_story": "A source artifact enters a transparent Context Capsule, its trace is re-encoded at a hexagonal cusp into a torus family, and the resulting S6 paper claim is closed only when a reproducible world trace returns to the source.",
+  "beats": [
+    {"beat": 1, "title": "Source enters", "causal_move": "A single amber line leaves the source artifact and becomes the luminous evidence stream.", "visual": "On a dark fractured hex-tile ground, a warm paper-shaped source artifact sits at x=-5.4. A readable label SOURCE ARTIFACT is the only text. One amber tracer grows from the artifact toward the center; no data values are invented.", "on_screen_text": "SOURCE ARTIFACT", "duration_seconds": 2.0},
+    {"beat": 2, "title": "Context gates the trace", "causal_move": "The stream crosses the front face of a transparent Context Capsule, which becomes the explicit boundary of interpretation.", "visual": "A glass rectangular prism fades in at x=-1.7, with a thin cyan edge on the incoming side and an amber edge on the outgoing side. The tracer slows to half speed inside the prism; the source remains visible behind it.", "on_screen_text": "CONTEXT CAPSULE", "duration_seconds": 2.2},
+    {"beat": 3, "title": "Cusp re-encodes", "causal_move": "At the capsule exit, the stream passes through a six-sided cusp fibre and splits into three measured-looking but unlabeled loops.", "visual": "A small hexagonal fibre appears at x=0.25. The amber/cyan stream bends through its center; three thin torus rings are drawn one at a time around the fibre, with fixed rotations 0, pi/3, and 2*pi/3. The rings are geometry, not evidence.", "on_screen_text": "CUSP HEX FIBRE", "duration_seconds": 2.4},
+    {"beat": 4, "title": "Claim stays conditional", "causal_move": "The torus family stabilizes into one outlined object while a short claim label appears, explicitly marking the status of the S6 statement.", "visual": "The three rings lock into a restrained cyan torus-family emblem. A black translucent caption plate appears below it with two readable lines: S6 PAPER CLAIM and NOT CONSENSUS FACT. The visual does not show a checkmark or success badge.", "on_screen_text": "S6 PAPER CLAIM / NOT CONSENSUS FACT", "duration_seconds": 2.4},
+    {"beat": 5, "title": "Receipt closes the loop", "causal_move": "A cyan return trace travels from the torus family to a right-side world-trace node and then points back to the source, making closure depend on reproducibility.", "visual": "At x=4.8, a white receipt sheet and one cyan world-trace node appear on a circular platform. The return line is drawn last and stops at a small open circle near the source; the loop remains visibly open until that line arrives. Labels are RECEIPT and WORLD TRACE only.", "on_screen_text": "RECEIPT / WORLD TRACE", "duration_seconds": 3.0}
+  ],
+  "persistent_objects": [
+    {"id": "ground", "description": "A fixed 7 by 3 field of irregular dark hexagonal tiles with shallow relief and sparse cyan network nodes; it establishes source and world-trace parity without dashboard decoration."},
+    {"id": "source_artifact", "description": "One warm paper-like vertical plane at the left, with a blank inset and three short ruled marks; it is a visual source placeholder, not a quoted paper or fabricated result."},
+    {"id": "evidence_stream", "description": "One continuous 3D curve, amber before the capsule and cyan after it, with a fixed-width glow and no numeric payload."},
+    {"id": "context_capsule", "description": "One transparent rectangular prism centered on the stream; its edges persist after the stream exits so the context boundary remains legible."},
+    {"id": "cusp_hex_fibre", "description": "One small regular hexagonal fibre at the capsule exit; it remains visible inside the torus-family emblem."},
+    {"id": "torus_family", "description": "Three thin torus rings with fixed rotations, later grouped as one cyan emblem; they represent the requested torus family and do not function as evidence."},
+    {"id": "receipt_world_trace", "description": "One white receipt sheet plus one cyan node on the right; the return curve links this object back to the source only in the final beat."}
+  ],
+  "caption_script": ["A source enters the thread.", "Context marks the boundary.", "The cusp re-encodes the trace.", "S6 remains a paper claim, not consensus.", "Closure requires a receipt and a world trace."],
+  "manim_plan": {
+    "engine": "Manim Community",
+    "render": "1920x1080, 30 fps, 16:9, orthographic camera, 360 frames, 12.0 seconds",
+    "determinism": "No random calls, no image textures, no network data, no time-dependent values; construct all coordinates from the fixed constants below and render with a fixed scene order.",
+    "constants": {"x_range": [-7.1, 7.1], "y_range": [-4.0, 4.0], "ground_columns": 7, "ground_rows": 3, "capsule_center": [-1.7, 0.2, 0.0], "cusp_center": [0.25, 0.2, 0.0], "torus_center": [1.7, 0.2, 0.0], "receipt_center": [4.8, -0.05, 0.0]},
+    "construction_order": ["Create background and fixed hex-tile ground.", "Create source plane, evidence stream, capsule, cusp fibre, torus rings, receipt sheet, and world-trace node with opacity 0 where introduced later.", "Beat 1: FadeIn source; Create amber stream with Create along its path.", "Beat 2: FadeIn capsule; animate stream speed with a rate function that is constant within the capsule interval.", "Beat 3: Draw hex fibre; Create torus rings sequentially with fixed rotations [0, pi/3, 2*pi/3].", "Beat 4: Transform the three rings into a grouped emblem; FadeIn the two-line claim plate.", "Beat 5: FadeIn receipt and node; Create cyan return curve last; end on a 12-frame hold with no success icon."],
+    "timing": {"beat_1_frames": 60, "beat_2_frames": 66, "beat_3_frames": 72, "beat_4_frames": 72, "beat_5_frames": 90},
+    "style": {"background": "#03070A", "amber": "#F2B35D", "cyan": "#63D9F5", "white": "#E9F3F5", "text_font": "DejaVu Sans", "text_size": 0.24, "stream_stroke_width": 3.0, "stream_glow_layers": 3},
+    "legibility_rule": "Use only the listed short labels as Text objects; keep each label on screen for at least 30 frames and never render pseudo-text on the source or receipt surfaces."
+  },
+  "falsifier": "The visual concept is refuted as an evidence-thread narrative if an independent rerun with the same source artifact, capsule context, and stated construction rule cannot reproduce the same torus-family/cusp relation, or if the receipt cannot be traced back to the source without adding an unshown transformation.",
+  "fake_evidence": false,
+  "evidence_boundary": "The S6 statement is presented only as a paper claim. The torus family, receipt sheet, world-trace node, and luminous stream are visual grammar and provenance metaphors, not empirical proof or consensus evidence.",
+  "local_receipts": {
+    "shared_prompt": {"path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json", "bytes": 1232, "sha256": "59cc1bf2a1d592ccee93787bcb2c343b5a0ccd5d925465fa08d06e1738f740a9", "measurement_command": "stat --printf='%s bytes' <prompt>; sha256sum <prompt>"},
+    "visual_reference": {"path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png", "bytes": 1788980, "sha256": "75db5a987940ff4f98a4419d1acb0c7f5f5add6a5361ad75071ed63a6b45f508", "measurement_command": "stat --printf='%s bytes' <reference>; sha256sum <reference>"},
+    "candidate_directory_before_write": {"path": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates", "file_count": 0, "measurement_command": "find <directory> -maxdepth 1 -type f | wc -l"}
+  }
+}

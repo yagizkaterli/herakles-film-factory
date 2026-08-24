@@ -1,0 +1,125 @@
+{
+  "worker": "08",
+  "one_sentence_story": "A source artifact sends one luminous trace through a transparent context capsule, where the trace becomes a torus-and-cusp construction, then closes as a receipt-backed S6 paper claim whose status remains explicitly provisional.",
+  "beats": [
+    {
+      "beat": 1,
+      "title": "Source emits",
+      "causal_move": "The source artifact releases exactly one amber trace into the scene.",
+      "visual": "A legible paper card marked SOURCE ARTIFACT sits on a dark hexagonal ground plate; one amber line grows from its lower edge toward center.",
+      "on_screen_text": ["SOURCE ARTIFACT"],
+      "duration_seconds": 3.0
+    },
+    {
+      "beat": 2,
+      "title": "Context bounds the trace",
+      "causal_move": "The trace crosses into a transparent capsule, making its context boundary visible without changing the source.",
+      "visual": "A glass rectangular capsule appears around the moving trace; a small cyan label CONTEXT CAPSULE is placed outside the glass, with no dashboard chrome.",
+      "on_screen_text": ["CONTEXT CAPSULE"],
+      "duration_seconds": 3.0
+    },
+    {
+      "beat": 3,
+      "title": "Family appears",
+      "causal_move": "Inside the capsule, the single trace closes into three concentric torus rings, preserving the same cyan path as their spine.",
+      "visual": "Three thin cyan torus rings form sequentially from left to right; the amber input remains visible behind the glass as provenance.",
+      "on_screen_text": ["TORUS FAMILY"],
+      "duration_seconds": 3.5
+    },
+    {
+      "beat": 4,
+      "title": "Cusp is tested",
+      "causal_move": "A small hexagonal fibre locks onto the centre cusp, turning the abstract family into one inspectable construction.",
+      "visual": "A white-blue hexagonal fibre docks at the shared cusp; six short spokes pulse once, then stop. A compact label CUSP FIBRE identifies the object.",
+      "on_screen_text": ["CUSP FIBRE"],
+      "duration_seconds": 3.0
+    },
+    {
+      "beat": 5,
+      "title": "Claim closes with a trace",
+      "causal_move": "The constructed object resolves into a claim card paired with a world-trace receipt, while the claim status stays visibly provisional.",
+      "visual": "The capsule fades to a thin outline; a right-side dark paper card reads PAPER CLAIM — NOT CONSENSUS and S6 CLAIM. A small circular receipt seal and a short world-trace line sit beneath it.",
+      "on_screen_text": ["PAPER CLAIM — NOT CONSENSUS", "S6 CLAIM", "WORLD TRACE / RECEIPT"],
+      "duration_seconds": 4.0
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_artifact",
+      "continuity": "Remains fixed at left from beat 1 through beat 5; only its emitted trace changes state."
+    },
+    {
+      "id": "evidence_stream",
+      "continuity": "One named path, amber at emission and cyan after entering the capsule; never duplicates into decorative streams."
+    },
+    {
+      "id": "context_capsule",
+      "continuity": "Transparent glass boundary enters in beat 2, contains the construction in beats 3-4, and becomes an outline in beat 5."
+    },
+    {
+      "id": "torus_family",
+      "continuity": "Three concentric rings are generated from the same path and remain behind the cusp fibre."
+    },
+    {
+      "id": "cusp_hexagonal_fibre",
+      "continuity": "One hexagonal fibre docks at the shared cusp in beat 4 and remains attached to the final claim card as its visual index."
+    },
+    {
+      "id": "receipt_world_trace",
+      "continuity": "A minimal circular seal plus one labelled trace line appears only after the construction has closed; it is a receipt motif, not proof by itself."
+    }
+  ],
+  "caption_script": [
+    "A source artifact emits one trace.",
+    "Context is made visible before interpretation.",
+    "The trace closes into a torus family.",
+    "A cusp hexagonal fibre makes the construction inspectable.",
+    "The paper claims an S6 relation; this film labels it PAPER CLAIM — NOT CONSENSUS and ends with a world-trace receipt for inspection."
+  ],
+  "manim_plan": {
+    "render_contract": "Set config.pixel_width=1672, config.pixel_height=941, frame_rate=30, background_color='#05080B', renderer='Cairo'. Use no random values, no external image sampling, and no generated text textures.",
+    "coordinate_system": "Use a fixed 16:9 frame with source at (-5.4, -0.2), capsule centre (0.0, 0.0), claim card at (4.2, 0.2), and final receipt at (4.2, -2.1).",
+    "palette": {
+      "background": "#05080B",
+      "amber_source": "#F4B35F",
+      "cyan_stream": "#63D9FF",
+      "white_fibre": "#E8F7FF",
+      "paper": "#D8C39B",
+      "claim_warning": "#F2C879"
+    },
+    "beats": [
+      "0.0-3.0s: FadeIn a rounded source card and a six-sided ground plate; Create Line from source anchor to x=0.0 with rate_func=smooth; Write SOURCE ARTIFACT.",
+      "3.0-6.0s: Create glass capsule from a fixed Rectangle(stroke_opacity=0.55, fill_opacity=0.08); move the trace endpoint to x=1.0; Write CONTEXT CAPSULE outside the capsule.",
+      "6.0-9.5s: Transform the centre trace into three fixed ParametricFunction torus projections with radii [0.95, 1.25, 1.55]; stagger Create by 0.35s; keep source and path visible.",
+      "9.5-12.5s: Create one regular Hexagon and six deterministic spokes at the shared cusp; use one there-and-back opacity pulse; Write CUSP FIBRE.",
+      "12.5-16.5s: Fade the rings to 0.25 opacity, keep the capsule as a thin outline, Write the three final labels on a fixed card, then Create a circular receipt seal and one short WORLD TRACE / RECEIPT line."
+    ],
+    "readability_rules": [
+      "Use DejaVu Sans or another installed sans-serif with explicit font size 28 or larger for all labels at 1672x941.",
+      "Keep each label to one line; use no pseudo-text, paragraph filler, or dashboard widgets.",
+      "Render a frame-level text contrast check manually in the scene design: warm paper labels on dark cards, cyan labels with a dark backing plate."
+    ]
+  },
+  "falsifier": "The visual concept is falsified as an evidence-thread for the paper if a valid counterexample or failed construction shows that the alleged S6 relation cannot be carried from the cited source artifact through the bounded context capsule to the torus family and cusp fibre, or if the final world-trace receipt cannot be independently inspected. The film must then show FAILED TRACE rather than closing the S6 claim.",
+  "fake_evidence": false,
+  "receipts": [
+    {
+      "claim": "The shared prompt specifies five beats and the candidate path pattern.",
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+      "command": "wc -c .../w1-evidence-thread-fleet-prompt.v1.json",
+      "output": "1232 bytes; JSON deliverable beats=5; path_pattern=iterations/w1/fleet-candidates/worker-<n>.json"
+    },
+    {
+      "claim": "The visual reference is a 1672x941 RGB sRGB 8-bit PNG with 1,573,352 pixels.",
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+      "command": "identify -verbose .../concept-01-evidence-thread.png",
+      "output": "Geometry 1672x941; Colorspace sRGB; Type TrueColor; 8-bit red/green/blue channel depth; Number pixels 1.57335M"
+    },
+    {
+      "claim": "No prior worker candidate occupied the worker directory before this artifact.",
+      "path": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates",
+      "command": "find .../fleet-candidates -maxdepth 1 -type f -name 'worker-*.json' | wc -l",
+      "output": "0"
+    }
+  ]
+}

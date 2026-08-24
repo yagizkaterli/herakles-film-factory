@@ -1,0 +1,123 @@
+{
+  "worker": 33,
+  "one_sentence_story": "A single source trace is quarantined in a transparent context capsule, selects one cusp through a torus family, and closes only as a conditional S6 paper claim when a matching world trace returns.",
+  "beats": [
+    {
+      "index": 1,
+      "title": "Source emits one trace",
+      "causal_move": "The source artifact releases exactly one amber evidence particle.",
+      "visual": "A warm paper-like source slab stands on the left terrain plate; its only legible label is SOURCE. One amber point exits its lower edge.",
+      "on_screen_text": ["SOURCE"],
+      "object_state": "source_artifact=visible; evidence_stream=one_amber_particle; claim=absent"
+    },
+    {
+      "index": 2,
+      "title": "Stream crosses the capsule",
+      "causal_move": "The amber particle stretches into one luminous line and enters the capsule.",
+      "visual": "The line travels left to right along a shallow sine path into a transparent rectangular Context Capsule; the terrain grid stays dark and still.",
+      "on_screen_text": ["CONTEXT CAPSULE"],
+      "object_state": "source_artifact=persistent; evidence_stream=amber_line; capsule=entered"
+    },
+    {
+      "index": 3,
+      "title": "Context changes the carrier",
+      "causal_move": "The capsule releases the same line in cool blue, showing a context transition without adding a second source.",
+      "visual": "A small neutral diamond is suspended inside the capsule; after the line passes it, the outgoing segment turns blue. No dashboard panels or pseudo-text appear.",
+      "on_screen_text": [],
+      "object_state": "source_artifact=persistent; capsule=closed; evidence_stream=amber_to_blue; context_token=one_diamond"
+    },
+    {
+      "index": 4,
+      "title": "One cusp is selected",
+      "causal_move": "The blue line enters a family of three torus rings and locks onto one hexagonal cusp fibre.",
+      "visual": "Three low-poly torus rings rotate by a fixed quarter turn; a thin hexagonal fibre spans their shared cusp. The blue stream touches one vertex and pauses.",
+      "on_screen_text": ["S6 CLAIM?"],
+      "object_state": "source_artifact=persistent; capsule=persistent; torus_family=three_rings; cusp_fibre=hexagonal; claim=status_open_question"
+    },
+    {
+      "index": 5,
+      "title": "Receipt closes the loop",
+      "causal_move": "A returned world trace completes the blue path and changes the open question into a conditional paper claim.",
+      "visual": "A white receipt sheet rises on the right from a circular world-trace plate; one blue dot travels back to the cusp, and a restrained label resolves to S6 CLAIM - CONDITIONAL.",
+      "on_screen_text": ["S6 CLAIM - CONDITIONAL"],
+      "object_state": "source_artifact=persistent; capsule=persistent; torus_family=persistent; cusp_fibre=locked; world_trace=returned; claim=status_conditional"
+    }
+  ],
+  "persistent_objects": [
+    {
+      "id": "source_artifact",
+      "form": "warm paper slab on left hexagonal terrain plate",
+      "continuity": "introduced beat 1; remains visible through beat 5"
+    },
+    {
+      "id": "evidence_stream",
+      "form": "single amber-to-blue luminous path",
+      "continuity": "never duplicates; color changes only at capsule exit"
+    },
+    {
+      "id": "context_capsule",
+      "form": "transparent rectangular capsule with one neutral diamond token",
+      "continuity": "introduced beat 2; remains centered through beat 5"
+    },
+    {
+      "id": "torus_family_and_cusp",
+      "form": "three torus rings plus one thin hexagonal cusp fibre",
+      "continuity": "introduced beat 4; remains locked in beat 5"
+    },
+    {
+      "id": "world_receipt_trace",
+      "form": "white receipt sheet on right circular trace plate and one returning blue dot",
+      "continuity": "introduced beat 5; is the only closure signal"
+    }
+  ],
+  "caption_script": [
+    "One trace leaves the source.",
+    "Context changes the carrier, not the origin.",
+    "The family narrows to one cusp.",
+    "A world trace returns.",
+    "The paper's S6 claim is conditional on that receipt."
+  ],
+  "manim_plan": {
+    "frame": "16:9",
+    "camera": "fixed 3D orthographic camera; left-to-right dolly of 0.35 units only at beat 5",
+    "palette": {
+      "background": "#05080B",
+      "terrain": "#18242A",
+      "source_amber": "#F0A34A",
+      "stream_blue": "#6FE7FF",
+      "capsule": "#9EEBFF",
+      "receipt": "#EAF4F4",
+      "claim_text": "#DDECEF"
+    },
+    "coordinates": {
+      "source": [-5.2, -0.6, 0.0],
+      "capsule": [-1.0, 0.0, 0.9],
+      "torus_cusp": [2.0, 0.05, 0.2],
+      "receipt": [5.0, -0.45, 0.0]
+    },
+    "timing": {
+      "beats_seconds": [2.0, 2.5, 2.5, 3.0, 3.5],
+      "transition": "linear for evidence travel; smoothstep for object reveals; no stochastic motion"
+    },
+    "construction": [
+      "Create all terrain plates, source, capsule, torus family, cusp fibre, receipt, and labels before animation.",
+      "Use fixed seeds only for subtle terrain displacement; set seed=33 and keep all object IDs stable.",
+      "Animate the single stream with a ValueTracker from source to capsule, then recolor the outgoing segment blue.",
+      "Rotate each torus exactly PI/2 with phase offsets [0, PI/6, -PI/6]; freeze the fibre at the selected vertex.",
+      "Render the final claim as text, never as texture or pseudo-text; keep the claim visibly conditional."
+    ],
+    "readability": "Use only SOURCE, CONTEXT CAPSULE, S6 CLAIM?, and S6 CLAIM - CONDITIONAL; all labels are vector text."
+  },
+  "falsifier": {
+    "paper_claim_boundary": "The S6 statement is a paper claim, not a consensus fact.",
+    "test": "Replay the same source and context against a recorded world trace; if the returned trace does not match the selected cusp or no receipt exists, the loop stays open.",
+    "visual_failure_state": "Remove the return dot, leave the torus cusp unlocked, and keep the label S6 CLAIM? instead of resolving it."
+  },
+  "fake_evidence": false,
+  "receipts": {
+    "shared_prompt": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+    "visual_reference": "02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+    "visual_reference_role": "visual grammar only; not operational evidence",
+    "measurement_note": "Local measurements and validation receipts are recorded in d-W1-EVIDENCE-THREAD-33.md.rapor.md."
+  }
+}

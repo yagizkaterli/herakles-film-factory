@@ -1,0 +1,60 @@
+{
+  "worker": 30,
+  "one_sentence_story": "A source artifact sends one warm trace into a transparent Context Capsule, where two torus loops are reconciled into one cusp hexagonal fibre before a separately anchored S6 paper claim is shown with its world receipt.",
+  "beats": [
+    {"beat": 1, "name": "source_emits_trace", "causal_move": "The source artifact emits a single warm evidence stream.", "visual_action": "A readable SOURCE card at left opens one gold line labelled TRACE; the line travels across a dark hexagonal terrain plate.", "on_screen_text": ["SOURCE", "TRACE"]},
+    {"beat": 2, "name": "capsule_aligns_context", "causal_move": "The transparent Context Capsule receives the trace and exposes its context boundary.", "visual_action": "A glass capsule appears around the moving line; a short cyan bracket labelled CONTEXT locks to the stream while the source card stays visible behind it.", "on_screen_text": ["CONTEXT"]},
+    {"beat": 3, "name": "torus_family_reconciles", "causal_move": "The contextualized trace resolves into a torus family instead of a single unsupported shape.", "visual_action": "Two luminous torus rings grow from the same stream, rotate in opposite directions, and settle into a stable paired orbit inside the capsule; no dashboard panels or microcopy appear.", "on_screen_text": ["TORUS FAMILY"]},
+    {"beat": 4, "name": "cusp_selects_fibre", "causal_move": "A cusp hexagonal fibre selects the shared transition point of the torus pair.", "visual_action": "The paired rings pinch once at a bright hexagonal cusp; a thin cyan fibre exits the cusp toward the right, while both torus rings remain visible as parent objects.", "on_screen_text": ["CUSP FIBRE"]},
+    {"beat": 5, "name": "claim_receipt_separate", "causal_move": "The selected fibre is presented beside, not merged with, a paper claim and a world receipt.", "visual_action": "The fibre terminates at a clean paper panel labelled S6 CLAIM; below it a separate receipt node labelled WORLD TRACE pulses once and links back to the source path. The claim label remains visibly conditional.", "on_screen_text": ["S6 CLAIM", "WORLD TRACE", "CLAIM UNDER TEST"]}
+  ],
+  "persistent_objects": [
+    {"id": "source_card", "introduced": 1, "continuity": "fixed left anchor; warm paper and amber rim light"},
+    {"id": "evidence_stream", "introduced": 1, "continuity": "one gold-to-cyan spline; never duplicated into unrelated paths"},
+    {"id": "context_capsule", "introduced": 2, "continuity": "transparent glass volume; holds the torus family through beat 4"},
+    {"id": "torus_family", "introduced": 3, "continuity": "two parent rings remain visible after the cusp transition"},
+    {"id": "cusp_hexagonal_fibre", "introduced": 4, "continuity": "single cyan fibre from the shared cusp to the claim panel"},
+    {"id": "s6_claim_panel", "introduced": 5, "continuity": "paper-like panel explicitly marked as a claim under test"},
+    {"id": "world_receipt", "introduced": 5, "continuity": "separate receipt node; links to the source path without certifying the paper claim"}
+  ],
+  "caption_script": [
+    "A source trace enters context.",
+    "Context does not become consensus; it makes the boundary visible.",
+    "The trace resolves as a torus family.",
+    "A cusp selects one shared fibre.",
+    "S6 is shown as a paper claim under test, with a separate world trace receipt."
+  ],
+  "manim_plan": {
+    "render_target": "16:9; use measured reference canvas 1672x941 as the output target",
+    "coordinate_system": "fixed 16:9 frame; source anchor x=-5.8, capsule center x=0, claim panel x=5.1; all y positions are explicit constants",
+    "palette": {"background": "#05080B", "terrain": "#101A20", "source_warm": "#F4B35E", "stream_gold": "#FFD48A", "stream_cyan": "#7CEBFF", "glass": "#8CD9F2", "claim_ink": "#E9F1F4"},
+    "construction": [
+      "Create all geometry from seeded constants; no randomness and no image sampling.",
+      "Build the terrain from a fixed list of 12 extruded hexagonal plates with deterministic z offsets.",
+      "Create the stream as one ParametricFunction with a fixed sinusoidal y profile and animate a Dot along its alpha parameter.",
+      "Create the capsule as a transparent Prism plus two fixed boundary brackets; use FadeIn and Create only.",
+      "Create two Torus objects with fixed major/minor radii and opposite fixed angular velocities; stop both at the same frame.",
+      "Create the cusp as one Hexagon plus a short Line fibre; transform the nearest torus points into the cusp once.",
+      "Create claim and receipt panels with legible Text objects using only the listed labels; never render pseudo-text.",
+      "End on a static frame where claim panel and receipt node are spatially separate and the return link is visible."
+    ],
+    "beat_timing_seconds": [0, 3, 7, 11, 15, 20],
+    "acceptance_checks": [
+      "Exactly 5 causal beats are readable without narration.",
+      "The torus pair persists after cusp formation.",
+      "S6 CLAIM and WORLD TRACE are not fused into one evidence object.",
+      "All visible text is short, actual text; no unreadable filler lines.",
+      "A rerun with the same constants produces the same geometry and frame order."
+    ]
+  },
+  "falsifier": "Refute this candidate if a source pointer or World trace cannot be attached to the final receipt node, if the torus pair disappears before the cusp is legible, or if the final composition makes the S6 paper claim look like a verified consensus fact.",
+  "fake_evidence": false,
+  "claim_boundary": "The S6 item is a paper claim under test. The visual reference and this candidate are design hypotheses, not operational evidence.",
+  "receipts": [
+    {"measurement": "shared_prompt_exists", "command": "test -f '/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json' && echo exists", "output": "exists"},
+    {"measurement": "reference_file_stat", "command": "stat --printf='path=%n\\nsize_bytes=%s\\n' '/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png'", "output": "path=/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png\\nsize_bytes=1788980"},
+    {"measurement": "reference_image_geometry", "command": "identify '/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png'", "output": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png PNG 1672x941 1672x941+0+0 8-bit sRGB 1.7061MiB 0.000u 0:00.000"},
+    {"measurement": "manifest_batch_range", "command": "jq -r '\"batch=\\(.batch) range=\\(.range)\"' '/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/W1-MANIFEST.json'", "output": "batch=W1 range=01-20"},
+    {"measurement": "candidate_beat_count", "command": "jq '.beats | length' '/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/fleet-candidates/worker-30.json'", "output": "5"}
+  ]
+}

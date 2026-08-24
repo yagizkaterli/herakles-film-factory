@@ -1,0 +1,91 @@
+{
+  "worker": 37,
+  "candidate_name": "cusp-relay",
+  "one_sentence_story": "A source artifact sends one luminous trace through a transparent Context Capsule, where a torus family resolves into a cusp hexagonal fibre before landing as a visibly provisional S6 paper claim beside a World trace receipt.",
+  "beats": [
+    {
+      "id": 1,
+      "time": "0.0-2.0s",
+      "action": "Reveal a single warm source artifact on the left platform; its only crisp label is SOURCE ARTIFACT.",
+      "camera": "Locked wide 16:9 frame; slow 4 percent push-in toward the document.",
+      "causal_move": "The source becomes the sole origin of the later trace.",
+      "caption": "Start with the thing that can be pointed to."
+    },
+    {
+      "id": 2,
+      "time": "2.0-4.0s",
+      "action": "Pull one amber filament from the artifact and animate it across the broken hexagonal ground toward center; no extra dashboard elements appear.",
+      "camera": "Keep the source and filament in the same frame so origin and direction remain legible.",
+      "causal_move": "The trace is visibly emitted by the source rather than appearing as decoration.",
+      "caption": "A trace carries provenance forward."
+    },
+    {
+      "id": 3,
+      "time": "4.0-6.5s",
+      "action": "The filament enters a glass prism labeled CONTEXT CAPSULE; inside, it brightens and becomes a cyan line without changing its endpoint.",
+      "camera": "Rack focus from the source to the capsule; preserve a thin amber segment behind the glass as continuity evidence.",
+      "causal_move": "Context changes the trace representation, not its source identity.",
+      "caption": "Context transforms the signal without erasing its origin."
+    },
+    {
+      "id": 4,
+      "time": "6.5-9.0s",
+      "action": "Inside the capsule, one torus grows into a family of three concentric toroidal loops; a single hexagonal cusp fibre branches from their shared point and exits right.",
+      "camera": "Orbit 12 degrees around the capsule, then stop when the cusp aligns with the exit path.",
+      "causal_move": "The family-to-cusp transition is the one geometric move that produces the outgoing claim path.",
+      "caption": "A family of forms narrows to one testable cusp."
+    },
+    {
+      "id": 5,
+      "time": "9.0-12.0s",
+      "action": "The cyan cusp fibre lands on a cool receipt sheet labeled WORLD TRACE RECEIPT; above it, a separate plaque reads S6 PAPER CLAIM and below it NEEDS TRACE.",
+      "camera": "Settle into a balanced wide shot with source at left, capsule center, receipt at right; fade all glow except the receipt edge.",
+      "causal_move": "The claim is presented as a paper claim and remains visibly conditional on the world trace receipt.",
+      "caption": "The paper claim closes only when a world trace can be checked.",
+      "on_screen_text": ["S6 PAPER CLAIM", "NEEDS TRACE", "WORLD TRACE RECEIPT"]
+    }
+  ],
+  "persistent_objects": [
+    {"name": "source_artifact", "visual": "warm ivory document on a low amber-lit hexagonal platform", "continuity": "never leaves the left third of frame; emits the only amber filament"},
+    {"name": "evidence_stream", "visual": "two parallel luminous paths, amber before capsule and cyan after capsule", "continuity": "same spline endpoint is preserved through the capsule transition"},
+    {"name": "context_capsule", "visual": "transparent rectangular prism with a crisp label and a suspended inner diamond", "continuity": "center anchor for all three middle beats"},
+    {"name": "torus_family", "visual": "three thin cyan torus loops sharing one center", "continuity": "appears only inside capsule, then freezes as the cusp exits"},
+    {"name": "cusp_fibre", "visual": "one hexagonal fibre with a sharp cusp node", "continuity": "the only branch allowed; terminates at receipt sheet"},
+    {"name": "world_trace_receipt", "visual": "clean white receipt sheet with a small circular seal, no fake body text", "continuity": "right-side destination and final verification surface"}
+  ],
+  "caption_script": [
+    {"time": "0.0-2.0s", "text": "Start with the thing that can be pointed to."},
+    {"time": "2.0-4.0s", "text": "A trace carries provenance forward."},
+    {"time": "4.0-6.5s", "text": "Context transforms the signal without erasing its origin."},
+    {"time": "6.5-9.0s", "text": "A family of forms narrows to one testable cusp."},
+    {"time": "9.0-12.0s", "text": "The S6 paper claim closes only when a world trace can be checked."}
+  ],
+  "manim_plan": {
+    "scene": "CuspRelay",
+    "frame": "16:9",
+    "renderer": "CairoRenderer",
+    "seed": 37,
+    "randomness": "none",
+    "palette": {"background": "#03070B", "source_amber": "#F3B562", "stream_cyan": "#75E6FF", "glass": "#A8E9FF", "paper": "#F2EFE7", "claim_warning": "#E9C46A"},
+    "construction": [
+      "Create all static platforms and labels before animation; use explicit coordinates in scene units.",
+      "Draw the evidence stream as one cubic Bezier path and reveal it with Create, then transform only its stroke color at the capsule boundary.",
+      "Build the capsule from a translucent Rectangle, four low-opacity edge lines, and one inner Diamond; no image textures.",
+      "Construct torus family with ParametricFunction at radii 0.42, 0.58, 0.74 and fixed 96-sample resolution; construct cusp fibre from six straight hexagon edges plus one outgoing Line.",
+      "Render receipt sheet and claim plaque with crisp Text objects using a bundled sans font; never synthesize pseudo-text.",
+      "Use Succession with durations [2.0, 2.0, 2.5, 2.5, 3.0], then hold the final frame for 0.5 seconds."
+    ],
+    "verification_overlay": "Optional debug-only coordinate grid is disabled in the public render; final frame must retain the three readable labels exactly."
+  },
+  "falsifier": "The concept is falsified if the rendered sequence cannot point from the source artifact to a resolvable World snapshot or event receipt, if the cusp appears without the torus-family transition, or if viewers read S6 PAPER CLAIM as an established consensus fact rather than a conditional paper claim.",
+  "fake_evidence": false,
+  "evidence_boundary": "The supplied image is visual grammar only. No ImageGen output is evidence; the final receipt must be populated from a real source pointer and World snapshot or event at render time.",
+  "receipts": {
+    "shared_prompt": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/canonical/w1-evidence-thread-fleet-prompt.v1.json",
+    "reference_image": "/root/vault-homebase/02 Projects/Sistem-Insa/G-HERAKLES-FILM-FACTORY/iterations/w1/concept-01-evidence-thread.png",
+    "worker_id_measurement": "Card text states Worker id 37; output filename is worker-37.json.",
+    "required_beat_count": 5,
+    "required_fields_count": 8,
+    "candidate_kind": "distinct candidate, not a review"
+  }
+}
