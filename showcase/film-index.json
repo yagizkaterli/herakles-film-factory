@@ -159,6 +159,17 @@
       "preview": "showcase/films/s6-claude-f06-rebuilt-preview.gif",
       "receipt": "showcase/films/s6-claude-f06-rebuilt.receipt.json",
       "tweet": "canonical/s6-tweet-variant-a.v1.json"
+    },
+    {
+      "id": "w1-evidence-thread-tweet",
+      "title": "Source to Receipt — S6 Tweet Film",
+      "status": "deterministic-render",
+      "question": "Can a public viewer follow a paper claim from source to receipt?",
+      "source": "https://alpo.ge/s6.pdf + W1 evidence-thread fleet",
+      "render": "showcase/films/w1-evidence-thread-tweet.mp4",
+      "preview": "showcase/films/w1-evidence-thread-tweet.gif",
+      "receipt": "showcase/films/w1-evidence-thread-tweet.receipt.json",
+      "tweet": "canonical/w1-evidence-thread-tweet.v1.json"
     }
   ],
   "rule": "status=planned means no film asset is presented as released"

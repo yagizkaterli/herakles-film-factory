@@ -1,0 +1,10 @@
+{
+  "schema": "herakles.w1-evidence-thread-tweet.v1",
+  "source": "https://alpo.ge/s6.pdf",
+  "status": "ready-for-human-send",
+  "text": "S⁶ kompleks yapı taşıyabilir mi? 100 yıllık soru.\n\nBir paper \"evet\" diyor ve inşa ediyor. Torus ailesi → cusp'ta altıgen fibre (dP₆) → karşılıklı kenarlar yapıştırılıyor → S⁶.\n\nGörselleştirdim. Her kare paperdan doğrulandı.\n\nalpo.ge/s6.pdf",
+  "video": "showcase/films/w1-evidence-thread-tweet.mp4",
+  "framing": "The paper claims yes; the film shows the source-to-receipt narrative, not independent consensus proof.",
+  "send_action": "human-only",
+  "fake_evidence": false
+}

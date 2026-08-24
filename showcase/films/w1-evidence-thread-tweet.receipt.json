@@ -1,0 +1,29 @@
+{
+  "schema": "herakles.film-receipt.v1",
+  "id": "w1-evidence-thread-tweet",
+  "title": "Source to Receipt — S6 Tweet Film",
+  "status": "deterministic-render",
+  "source": "https://alpo.ge/s6.pdf",
+  "w1_reference": "iterations/w1/concept-01-evidence-thread.png",
+  "candidate_basis": "iterations/w1/fleet-candidates/worker-01.json",
+  "tweet": "canonical/w1-evidence-thread-tweet.v1.json",
+  "scene": "scenes/film_w1_evidence_thread_tweet_3d.py",
+  "render": {
+    "engine": "Manim Community v0.20.1",
+    "asset": "showcase/films/w1-evidence-thread-tweet.mp4",
+    "preview": "showcase/films/w1-evidence-thread-tweet.gif",
+    "duration_seconds": 9.998698,
+    "resolution": "854x480",
+    "sha256": {
+      "mp4": "203d1b34a96a1eb5d34cfd2db758b24d8c918cdfd5267814a1d1bcb6c792cda7",
+      "preview": "ff093bb3da52274b5ae9e6b42f51dc371deb9207b4e9377c2149df9bdc965104"
+    }
+  },
+  "qa": {
+    "source_to_trace": true,
+    "context_capsule": true,
+    "cusp_hexagon": true,
+    "receipt_boundary": true,
+    "fake_evidence": false
+  }
+}
