@@ -2,6 +2,15 @@
   "schema": "herakles.film-showcase-index.v1",
   "films": [
     {
+      "id": "evidence-world-v1",
+      "title": "A Trace Becomes a World",
+      "status": "rendered-v1",
+      "question": "Can a trustworthy agent system be understood as a world with memory, gates, and recoverable traces?",
+      "source": "storyboards/evidence-world-film-v1.json + ImageGen keyframe + deterministic Manim scene",
+      "render": "showcase/films/evidence-world-v1.mp4",
+      "receipt": "showcase/films/evidence-world-v1.receipt.json"
+    },
+    {
       "id": "contextless-agent-proof",
       "title": "Can a blank agent find the thread?",
       "status": "in-progress",
