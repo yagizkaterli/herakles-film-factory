@@ -1,10 +1,11 @@
 {
   "schema": "herakles.latest-film-pointer.v1",
   "status": "deterministic-render",
-  "id": "evidence-world-v1",
-  "preview": "showcase/latest-preview.gif",
-  "render": "showcase/films/evidence-world-v1.mp4",
-  "receipt": "showcase/films/evidence-world-v1.receipt.json",
+  "id": "terra-revenue-curve-20260908",
+  "preview": "showcase/terra-revenue-curve-20260908-preview.gif",
+  "render": "showcase/films/terra-revenue-curve-20260908.mp4",
+  "receipt": "showcase/films/terra-revenue-curve-20260908.receipt.json",
   "update_rule": "Every newly promoted film replaces latest-preview.gif and updates this pointer in the same commit.",
-  "fake_evidence": false
+  "fake_evidence": false,
+  "poster": "showcase/films/terra-revenue-curve-20260908-poster.png"
 }
