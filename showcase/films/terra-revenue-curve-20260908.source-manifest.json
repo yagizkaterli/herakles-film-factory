@@ -1,0 +1,15 @@
+{
+  "schema":"herakles.film-source.v1",
+  "id":"terra-revenue-curve-20260908",
+  "proposition":"Gelir beklentisi ancak demo, pilot ve tekrarlanabilir ürün kanıtlarıyla büyür; rakamlar tahmindir.",
+  "source_files":[
+    "/root/vault-homebase/.fable/kapsul/terra-hackathon-codex-terminal-durum-20260908.json",
+    "/root/vault-homebase/.fable/receipts/terra-hterm-epoch-20260907T150627Z/result.json",
+    "/root/vault-homebase/02 Projects/Sistem-Insa/gorevler/_durum/hafiza/terra-hackathon-codex.jsonl"
+  ],
+  "visible_data":{"month_3_mrr_usd":3000,"month_12_mrr_usd":12100,"month_24_mrr_usd":35100},
+  "uncertainty":["No paying customer or ARR receipt exists in the source set.","Success probabilities and revenue values are scenario assumptions, not observed revenue."],
+  "forbidden":["hidden_reasoning","member_names","raw_rollouts","credentials","live_revenue_claim"],
+  "falsifier":"A paying-customer ledger or measured ARR contradicting these scenario values invalidates the curve.",
+  "authority":"source-bound explanatory film; not a financial forecast or canonical World state"
+}
