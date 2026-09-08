@@ -1,0 +1,15 @@
+{
+  "schema":"herakles.film-storyboard.v1",
+  "id":"terra-revenue-curve-20260908",
+  "duration_seconds":24,
+  "voiceover":false,
+  "beats":[
+    {"id":"B1","seconds":4,"title":"KISA VADE","text":"3 AY / 3K MRR","meaning":"Tek bir net demo ve ilk pilotlar gelir beklentisini başlatır."},
+    {"id":"B2","seconds":5,"title":"KANIT KAPISI","text":"DEMO -> PILOT","meaning":"Rakam gelir değildir; ödeme yapan pilot gerekir."},
+    {"id":"B3","seconds":5,"title":"ORTA VADE","text":"12 AY / 12.1K MRR","meaning":"Tasarım ortakları ve ücretli pilotlar tekrar eden kullanıma dönüşür."},
+    {"id":"B4","seconds":5,"title":"FALSIFIER","text":"TAHMIN DEGIL","meaning":"Müşteri ve ARR makbuzu yoksa eğri varsayım olarak kalır."},
+    {"id":"B5","seconds":5,"title":"UZUN VADE","text":"24 AY / 35.1K MRR","meaning":"Çok ekipli ve tekrarlanabilir ürün ancak bu kapıdan sonra gelir."}
+  ],
+  "source_manifest":"source-manifest.json",
+  "art_direction_reference":"imagegen/terra-revenue-curve.png"
+}
