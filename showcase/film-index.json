@@ -2,6 +2,17 @@
   "schema": "herakles.film-showcase-index.v1",
   "films": [
     {
+      "id": "terra-revenue-curve-20260908",
+      "title": "Beklenen gelir eğrisi: tahmin değil",
+      "status": "deterministic-render",
+      "question": "Can a revenue scenario remain understandable without being presented as measured revenue?",
+      "source": "fable/hff/terra-revenue-20260908/source-manifest.json + ImageGen poster + deterministic Manim scene",
+      "render": "showcase/films/terra-revenue-curve-20260908.mp4",
+      "preview": "showcase/terra-revenue-curve-20260908-preview.gif",
+      "poster": "showcase/films/terra-revenue-curve-20260908-poster.png",
+      "receipt": "showcase/films/terra-revenue-curve-20260908.receipt.json"
+    },
+    {
       "id": "world-v21-live-v1",
       "title": "HERAKLES World v21 — Live Runtime Capture",
       "status": "live-runtime-candidate",
