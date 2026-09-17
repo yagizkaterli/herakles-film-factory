@@ -1,150 +1,102 @@
 # HERAKLES Film Factory
 
-**Turn real work into films people can understand.**
+**Turn system evidence into films a stranger can inspect.**
 
-HERAKLES Film Factory is an evidence-bound animation system. It reads a real HERAKLES snapshot or event, finds the smallest understandable story inside it, renders that story with Manim/ManimGL-compatible scenes, and links the finished film back to the source receipt in HERAKLES World.
+HERAKLES Film Factory is a deterministic visualization layer for selected HERAKLES material. It turns a bounded source/storyboard into rendered video, poster/preview artifacts, and a receipt that records what the render is actually allowed to claim.
 
-> ImageGen sets the art direction. Code owns the geometry. Receipts own the truth.
+> **The film explains. The receipt binds. The source remains authoritative.**
 
-![Context to Event to Decision](docs/media/hero.gif)
+![HERAKLES Film Factory](docs/media/hero.gif)
 
-**README hero:** Context → Event → Decision. [Open the fail-closed gate](docs/media/gate.gif) · [open the current S6 render](showcase/latest-film.json).
+[Latest film pointer](showcase/latest-film.json) · [Film showcase](showcase/README.md) · [Source contract](contracts/film-source.v1.schema.json) · [Receipt contract](contracts/film-receipt.v1.schema.json)
 
-## First 3D film — preview
+## Latest promoted render
 
-| P01 Evidence Terrain | P02 EON Camera Journey |
-|---|---|
-| ![Evidence terrain pilot](showcase/films/evidence-terrain-pilot-3d-preview.gif) | ![EON camera journey pilot](showcase/films/eon-camera-journey-pilot-3d-preview.gif) |
+![Latest Film Factory preview](showcase/latest-preview.gif)
 
-### HERAKLES-native grammar pilot
+The moving pointer in [`showcase/latest-film.json`](showcase/latest-film.json) is the canonical repository-level answer to “what is the latest promoted render?”. It binds the preview, MP4, poster and receipt paths for that promotion.
 
-![Trace becomes a receipt](showcase/films/herakles-trace-to-receipt-grammar-pilot-3d-preview.gif)
+The current pointer identifies `terra-revenue-curve-20260908` as a **deterministic render**. Its receipt explicitly describes the visible revenue curve as scenario assumptions, not measured paying-customer revenue. That distinction is part of the artifact, not README marketing.
 
-[Open the grammar pilot MP4](showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.mp4)
+## What lives here
 
-These are the current pilot renders shown directly on the repository front page. The older contextless-agent render remains archived as a baseline; none of these pilots is the final 100-iteration film.
+A film promotion is expected to keep four surfaces together:
 
-The revised process now begins with a mandatory 100-entry prior-art atlas before any visual candidate can be promoted.
+```text
+source / storyboard
+        ↓
+deterministic scene
+        ↓
+MP4 + preview + poster
+        ↓
+receipt + digests + limitations
+```
 
-The current pilots use Narrowest Range only as a seed. The actual visual language is [HERAKLES Film Grammar](canonical/herakles-film-grammar.v1.json): traces, question-gates, route splits, EON strata, authority fields and receipt seals.
-
-Final publication is gated by [FINAL-PUBLISH-CONTRACT.json](showcase/FINAL-PUBLISH-CONTRACT.json): the final MP4, poster, GIF preview and receipt will be pushed atomically, and the README hero will point to that final preview. Current previews remain explicitly marked as baseline/pilot renders.
-
-## See the pipeline
-
-These are the first generated narrative assets. They are deliberately marked as narrative-only: they explain the film language, not live operational state.
-
-| Trace enters | Hold the question |
-|---|---|
-| ![Trace intake](assets/generated/TraceIntake.gif) | ![Question hold](assets/generated/QuestionHold.gif) |
-
-| Receipt returns | Link back to World |
-|---|---|
-| ![Receipt return](assets/generated/ReceiptReturn.gif) | ![World link](assets/generated/WorldLink.gif) |
-
-[Open the asset manifest](assets/manifest.json) · [Read the render source](scenes/narrative_assets.py)
-
-## Start here
-
-- [Film showcase](showcase/README.md) — what exists, what is planned, and what is not being faked.
-- [Production system](pipeline/README.md) — the state machine and acceptance gates.
-- [Lobi production machine](pipeline/LOBI-PRODUCTION-MACHINE.md) — how one intention becomes a partitioned, receipt-backed film project.
-- [100-iteration image-to-3D loop](pipeline/ITERATION-100-README.md) — how cheap visual search becomes deterministic 3D production.
-- [Audience-first grammar](pipeline/AUDIENCE-FIRST.md) — how a stranger should understand a film.
-- [Frontier repository study](docs/FRONTIER-GITHUB-STUDY.md) — the patterns we borrowed and the constraints we added.
-- [Source contract](contracts/film-source.v1.schema.json) — what a film is allowed to read.
-- [Receipt contract](contracts/film-receipt.v1.schema.json) — what a film must prove.
-
-## First 3D film
-
-[Watch the contextless-agent proof](showcase/films/contextless-agent-proof-3d.mp4) · [poster](showcase/films/contextless-agent-proof-3d-poster.png) · [receipt](showcase/films/contextless-agent-proof-3d.receipt.json)
-
-Status: **in progress**. The render exists; World-link, reduced-motion and outsider-read gates are still open.
+The repository also contains pilots, baselines and blocked work. Their existence does **not** make them released or current. Promotion state is carried by the showcase and latest-film pointer rather than inferred from “an MP4 exists”.
 
 ## Why this exists
 
-HERAKLES produces work across agents, rooms, queues, reviews, receipts and World state. A raw log is difficult to enter. A dashboard hides causality. A decorative animation invents confidence.
+HERAKLES produces traces, receipts, runtime state and agent activity that are hard to understand from raw logs alone. A dashboard can show state but often loses causality; an animation can show causality but can easily invent confidence.
 
-The factory creates a fourth surface: a short film that lets someone with no HERAKLES context see one real transformation.
+Film Factory is the bridge: make one transformation legible without turning the visualization into a new source of truth.
 
-The viewer should be able to answer:
+A useful film should let an outside viewer answer:
 
 1. What am I looking at?
-2. What was stuck or unknown?
-3. What changed?
-4. Why did it change?
-5. Where is the evidence?
+2. What changed?
+3. Why did it change?
+4. What source was used?
+5. What does the film **not** prove?
 
-## The production loop
+## Production model
 
 ```mermaid
 flowchart LR
-  A[HERAKLES snapshot / event] --> B[Question lock]
-  B --> C[Storyboard state machine]
-  C --> D[ImageGen art direction]
-  D --> E[Manim scene]
-  E --> F[MP4 + poster]
-  F --> G[Source parity + outsider QA]
-  G --> H[Film receipt]
-  H --> I[HERAKLES World link]
+  A[bounded source] --> B[storyboard]
+  B --> C[deterministic scene]
+  C --> D[MP4 / GIF / poster]
+  D --> E[QA]
+  E --> F[receipt]
+  F --> G[promotion pointer]
 ```
 
-The image is never the evidence. It is a visual reference. The scene is deterministic code. The receipt carries source digests, render parameters, gate results and the World pointer.
+Image generation may be used for art direction or source imagery, but generated art is not operational evidence. Geometry, timing and explanatory state are owned by code; source/render relationships belong in receipts.
 
-## What a film is
+## Current visual language
 
-Every film is a small, complete argument:
+The repository contains several generations of experiments rather than one finished aesthetic. Current HERAKLES-native work is organized around [`canonical/herakles-film-grammar.v1.json`](canonical/herakles-film-grammar.v1.json), including traces, question gates, route splits, authority fields and receipt seals.
 
-```text
-one concrete witness
-        ↓
-one unresolved question
-        ↓
-one visible obstruction
-        ↓
-one prediction / quiet hold
-        ↓
-one identity-preserving transformation
-        ↓
-one measured consequence
-```
+Pilot renders remain useful as visual research:
 
-The same object must survive the transformation. A task remains the same task. A trace remains the same trace. A receipt remains attached to the same event.
-
-## Authority and honesty
-
-| Layer | What it can do | What it cannot claim |
-|---|---|---|
-| ImageGen | propose mood, material, framing and art direction | live data, task status, receipts or world construction |
-| Manim / ManimGL | render a deterministic explanation | canonical system state by itself |
-| Film Factory | compose, render, validate and receipt a film | write canonical World state |
-| HERAKLES World | mirror snapshots/events and show verified consequences | certify an unverified film |
-| Receipt | prove source/render/QA relationships | replace human or system authority |
-
-Solid World construction still requires the native verified event, evidence and review gates. Provisional work stays visibly provisional; blocked work is a visible stop, not an empty success screen.
-
-## Current project status
-
-| Area | Status |
+| Evidence terrain | EON camera journey |
 |---|---|
-| Repo architecture | scaffolded and pushed |
-| Source/receipt schemas | present |
-| Audience-first grammar | present |
-| HERAKLES World link contract | present |
-| Released films | **none yet** |
-| First film | planned: “Can a blank agent find the thread?” |
+| ![Evidence terrain](showcase/films/evidence-terrain-pilot-3d-preview.gif) | ![EON camera journey](showcase/films/eon-camera-journey-pilot-3d-preview.gif) |
 
-Previous MP4s in the homebase are experiments and review material. They are not presented here as released films until they pass this factory’s source, narrative, render and World-link gates.
+![Trace to receipt grammar pilot](showcase/films/herakles-trace-to-receipt-grammar-pilot-3d-preview.gif)
 
-## HERAKLES connection
+[Open grammar pilot MP4](showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.mp4)
 
-- Lobi room: `de2b53bf-a6a6-459b-a393-b30210d6fb46`
-- World snapshot: `GET /v2/snapshot`
-- World events: `GET /events`
-- Operator commands: `POST /v2/commands` (compatibility alias)
-- Authority: `WORLD_READ_ONLY_MIRROR`
+These are pilots, not automatically the latest promoted film.
 
-The first World integration partition is tracked in the Sistem-Insa big picture: `BUYUK-RESIM-s110-WORLD-VISUAL-INTEGRATION.d2`.
+## Receipt discipline
+
+A receipt can bind source and render metadata; it cannot make an unsupported real-world claim true. For example, the current promoted revenue-curve receipt records source/storyboard/scene/poster/film digests, deterministic-render status, QA fields, and an explicit falsifier while limiting the revenue values to scenario assumptions.
+
+This repository therefore distinguishes:
+
+- **artifact exists** from **artifact is promoted**;
+- **render is deterministic** from **source claim is empirically true**;
+- **visual explanation** from **system authority**;
+- **pilot/baseline** from **current pointer**.
+
+## Explore
+
+- [`showcase/`](showcase/README.md) — public artifact index and film states.
+- [`pipeline/`](pipeline/README.md) — production state machine and gates.
+- [`canonical/`](canonical/) — film grammar and bounded narrative inputs.
+- [`contracts/`](contracts/) — source and receipt schemas.
+- [`scenes/`](scenes/) — deterministic scene code.
+- [`assets/`](assets/) — generated/narrative assets and manifests.
 
 ## Local development
 
@@ -153,12 +105,12 @@ git clone https://github.com/yagizkaterli/herakles-film-factory.git
 cd herakles-film-factory
 ```
 
-The repository currently contains the contracts and production design. A render command will be added only when the first source manifest and storyboard are locked; a command that produces an unreceipted film would be misleading.
+This repository contains historical experiments alongside current surfaces. When reading it programmatically, prefer explicit manifests, receipts and promotion pointers over filename recency or file existence.
 
 ## Non-goals
 
-- no fake task, agent, receipt, count or construction;
-- no generated art presented as live evidence;
-- no definition-first or dashboard-first films;
-- no second ontology or second coordination surface;
-- no “released” label without a playable artifact and receipt.
+- no generated image presented as live HERAKLES state;
+- no operational claim inferred solely from a label or animation;
+- no “released/current” status inferred solely because an MP4 exists;
+- no hidden reasoning serialized into public film artifacts;
+- no visualization treated as a replacement for its underlying evidence.
