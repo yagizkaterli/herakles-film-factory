@@ -1,49 +1,103 @@
 {
- "schema": "herakles.film-receipt.v1",
- "filmId": "shoe-sim-3d",
- "title": "BABANIN ATOLYESI - HERAKLES SIM (3D)",
- "sourceDigest": "309fd44d5532b5ee72ab8fabb7664318e669afa6527dcfd4dba74e41dd9e0581",
- "sceneStateDigest": "309fd44d5532b5ee72ab8fabb7664318e669afa6527dcfd4dba74e41dd9e0581",
- "source": {
-  "pointer": "sim/out-42 + sim/out-43 (SIM-KOSU kapsulleri)",
-  "scene": "scenes/film_shoe_sim_3d.py"
- },
- "render": {
-  "engine": "manim",
-  "version": "0.20.1",
-  "width": 854,
-  "height": 480,
-  "fps": 15.0,
-  "durationSeconds": 43.132357,
-  "output": "showcase/films/shoe-sim-3d.mp4"
- },
- "gates": {
-  "sourceParity": true,
-  "narrative": false,
-  "identity": true,
-  "reducedMotion": false,
-  "outsiderRead": false,
-  "worldLink": false
- },
- "gateNotes": {
-  "narrative": "insan okumasi gerekli",
-  "outsiderRead": "insan/VLM okumasi gerekli",
-  "reducedMotion": "reduced-motion kesimi uretilmedi"
- },
- "worldLink": {},
- "status": "deterministic-render",
- "limit": "Film sim kosularini gosterir; marj/maliyet alt kalemleri UNKNOWN (veri yok).",
- "digests": {
-  "film_sha256": "6c4e2d49f42284f3f27f4dd2129b15570b1be9f5ae88106a1e163e16118c3c97",
-  "poster_sha256": "0f396b894de886d638716bf12b22ba23a6df31c0811b7d91d365f27a66db2dbf",
-  "preview_sha256": "fdcc449c8658e111510e6074b5b80a6dffa128ee67eabdb1b4619ecb365812ec",
-  "scene_sha256": "309fd44d5532b5ee72ab8fabb7664318e669afa6527dcfd4dba74e41dd9e0581",
-  "source_sha256": null
- },
- "qa": {
-  "kare_qa": "PASS (piksel; bos kare yok)",
-  "ocr": "UNKNOWN (tesseract kurulu degil)",
-  "gorsel_yorum": "UNKNOWN (vision yok)"
- },
- "annex": "showcase/films/shoe-sim-3d.hrk-receipt.json"
+  "schema": "herakles.film-receipt.v1",
+  "filmId": "shoe-sim-3d",
+  "title": "BABANIN ATOLYESI - HERAKLES SIM (3D)",
+  "sourceDigest": "309fd44d5532b5ee72ab8fabb7664318e669afa6527dcfd4dba74e41dd9e0581",
+  "sceneStateDigest": "309fd44d5532b5ee72ab8fabb7664318e669afa6527dcfd4dba74e41dd9e0581",
+  "source": {
+    "pointer": "sim/out-42/* + sim/out-43/* (two measured SIM-KOSU runs)",
+    "scene": "scenes/film_shoe_sim_3d.py",
+    "note": "Scene falls back to embedded measured values if sim/ is absent; this repository carries the canonical sim outputs."
+  },
+  "render": {
+    "engine": "manim",
+    "version": "0.20.1",
+    "width": 854,
+    "height": 480,
+    "fps": 15.0,
+    "durationSeconds": 43.132357,
+    "output": "showcase/films/shoe-sim-3d.mp4"
+  },
+  "gates": {
+    "sourceParity": true,
+    "narrative": false,
+    "identity": true,
+    "reducedMotion": false,
+    "outsiderRead": false,
+    "worldLink": false
+  },
+  "gateNotes": {
+    "narrative": "insan okumasi gerekli",
+    "outsiderRead": "insan/VLM okumasi gerekli",
+    "reducedMotion": "reduced-motion kesimi uretilmedi"
+  },
+  "worldLink": {},
+  "status": "deterministic-render",
+  "limit": "Film sim kosularini gosterir; marj/maliyet alt kalemleri UNKNOWN (veri yok).",
+  "qa": {
+    "kare_qa": "PASS (piksel; bos kare yok)",
+    "ocr": "UNKNOWN (tesseract kurulu degil)",
+    "gorsel_yorum": "UNKNOWN (vision yok)"
+  },
+  "annex": "showcase/films/shoe-sim-3d.hrk-receipt.json",
+  "contract": "herakles.final-film-publish.v1",
+  "source_digest": "f65068dba285035907fa77238b3360d9633a85cf748f4ae29d22cabbabd95c1e",
+  "render_command": "cd /root/herakles-film-factory && timeout 1400 manim -ql --disable_caching --media_dir media -o shoe-sim-3d-smoke.mp4 scenes/film_shoe_sim_3d.py ShoeSim3D",
+  "sha256": "6c4e2d49f42284f3f27f4dd2129b15570b1be9f5ae88106a1e163e16118c3c97",
+  "world_link": {
+    "status": "unbound",
+    "note": "no runtime-state projection is bound to this render; gates.worldLink=false"
+  },
+  "outsider_qa": {
+    "status": "not-run",
+    "note": "no human or VLM content read was performed; gates.outsiderRead=false"
+  },
+  "reduced_motion_qa": {
+    "status": "not-provided",
+    "note": "no static-card cut was produced; gates.reducedMotion=false"
+  },
+  "sources": [
+    {
+      "path": "sim/out-42/makbuz.json",
+      "sha256": "af6e7aaccecdd1c916a47ba2d4ee9149728ee79ffdee83bacd785f5f2c78565c",
+      "role": "sim run 42 receipt (KABUL path)"
+    },
+    {
+      "path": "sim/out-42/olaylar.jsonl",
+      "sha256": "04b87f7fbb426bbeaf08bbcd93f659dc348e5311a1ca54c2984da3a9d4676a2b",
+      "role": "sim run 42 events"
+    },
+    {
+      "path": "sim/out-42/SIM-KOSU-9ca44c32e004.capsule",
+      "sha256": "79360b8fc57edbd7d8b50bc3e294c21b6133f4cea998b7213ade0ea1fbf42a59",
+      "role": "sim run 42 capsule"
+    },
+    {
+      "path": "sim/out-43/makbuz.json",
+      "sha256": "dea1e591b608ac5d4e20d459c2807e9ca73e84fab2fe286fc032958ef7eb9e51",
+      "role": "sim run 43 receipt (RED+FIRE path)"
+    },
+    {
+      "path": "sim/out-43/olaylar.jsonl",
+      "sha256": "16afbbaf0bc7e9b2624dfe27b181e4cd18e021e111e23637ee2e8e79600c2407",
+      "role": "sim run 43 events"
+    },
+    {
+      "path": "sim/out-43/SIM-KOSU-e44c283afb6d.capsule",
+      "sha256": "6b5d3860821c0d51d0610c171fb46638f3e7c71493251f07af01fdef9f50fcf0",
+      "role": "sim run 43 capsule"
+    },
+    {
+      "path": "scenes/film_shoe_sim_3d.py",
+      "sha256": "309fd44d5532b5ee72ab8fabb7664318e669afa6527dcfd4dba74e41dd9e0581",
+      "role": "deterministic scene"
+    }
+  ],
+  "source_digest_rule": "sha256 of 'path\\0sha256\\n' lines, sources in listed order",
+  "digests": {
+    "film_sha256": "6c4e2d49f42284f3f27f4dd2129b15570b1be9f5ae88106a1e163e16118c3c97",
+    "poster_sha256": "0f396b894de886d638716bf12b22ba23a6df31c0811b7d91d365f27a66db2dbf",
+    "preview_sha256": "fdcc449c8658e111510e6074b5b80a6dffa128ee67eabdb1b4619ecb365812ec",
+    "scene_sha256": "309fd44d5532b5ee72ab8fabb7664318e669afa6527dcfd4dba74e41dd9e0581"
+  }
 }

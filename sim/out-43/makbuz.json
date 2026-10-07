@@ -1,0 +1,37 @@
+{
+  "betik": {
+    "adim": 10,
+    "sha256": "d3c26078f41cf8437690801d2c667e4b035443207388d686f57624b514881fcd",
+    "yol": "shoe-niyetler-43.jsonl"
+  },
+  "determinizm": {
+    "ayni": true,
+    "kosu": 2,
+    "parmak_izleri": [
+      "e44c283afb6d0bc9b90ccbaaf043e37a039cc6570c00549315a85020233de66c|16afbbaf0bc7e9b2624dfe27b181e4cd18e021e111e23637ee2e8e79600c2407|10|9|0|1",
+      "e44c283afb6d0bc9b90ccbaaf043e37a039cc6570c00549315a85020233de66c|16afbbaf0bc7e9b2624dfe27b181e4cd18e021e111e23637ee2e8e79600c2407|10|9|0|1"
+    ],
+    "son_digestler": [
+      "e44c283afb6d0bc9b90ccbaaf043e37a039cc6570c00549315a85020233de66c",
+      "e44c283afb6d0bc9b90ccbaaf043e37a039cc6570c00549315a85020233de66c"
+    ]
+  },
+  "dunya": {
+    "ad": "shoe-studio-43-red",
+    "sha256": "1a45b8cb448a8d962b890faf33398bcc174113de308ac9198797d783b0baa8dd",
+    "yol": "shoe-dunya-43.json"
+  },
+  "kanonik_durum": "{\"tick\":9,\"aktorler\":{\"ayakkabi\":{\"x\":7,\"y\":0},\"baba\":{\"x\":8,\"y\":2},\"bitirici\":{\"x\":4,\"y\":2},\"dikici\":{\"x\":2,\"y\":2},\"kalip43\":{\"x\":6,\"y\":0},\"kesimci\":{\"x\":1,\"y\":2},\"montajci\":{\"x\":3,\"y\":2}}}",
+  "kaynak": "harness sim kos (Rust); cekirdek=hos-sim",
+  "sayaclar": {
+    "adim": 10,
+    "bicim": 0,
+    "ihlal": 1,
+    "kabul": 9,
+    "yetkisiz": 0
+  },
+  "schema": "harness.sim.makbuz.v1",
+  "son_digest": "e44c283afb6d0bc9b90ccbaaf043e37a039cc6570c00549315a85020233de66c",
+  "ts": "2026-10-07T07:59:14Z",
+  "zincir_digest": "16afbbaf0bc7e9b2624dfe27b181e4cd18e021e111e23637ee2e8e79600c2407"
+}

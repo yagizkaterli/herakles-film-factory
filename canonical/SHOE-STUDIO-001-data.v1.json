@@ -1,0 +1,75 @@
+{
+  "schema": "herakles.shoe-studio-film-source.v1",
+  "baslik": "BABANIN ATOLYESI - Shoe Studio filmi",
+  "is_id": "HRK-SHOE-STUDIO-001",
+  "tl_referans": 5000,
+  "accept_kurali": "1 KABUL EDILMIS AYAKKABI = 5.000 TL",
+  "para_kurali": "baba-facing tum para anlatimi TL; USD sembolu ekranda YOK; kur cevrimi yapilmadi",
+  "akis": ["SIPARIS", "TASARIM", "KESIM", "DIKIS", "MONTAJ", "BITIRME", "KALITE KAPISI", "KABUL"],
+  "akis_s3_adlari": ["order", "design", "cut", "stitch", "assemble", "finish", "quality_gate", "accepted_product"],
+  "shoelaw": [
+    {"kural": "KALIP NUMARASI SIPARISLE UYUSMALI", "falsifier": "kalip.numara != siparis.numara -> RED", "sl": "SL-02"},
+    {"kural": "DIKIS HATTI SAGLAM OLMALI", "falsifier": "kopuk/atlanmis dikis -> RED", "sl": "SL-04"},
+    {"kural": "SON KONTROL: BABA ONAYI", "falsifier": "baba onayi yok -> RED", "sl": "SL-07"}
+  ],
+  "soy": [
+    "GERCEK INTENT",
+    "PCA / TYPED IS GRAFIGI",
+    "SINIRLI ISCILER",
+    "MAKBUZLAR / TELEMETRI",
+    "POLITIKA OGRENME / REPLAY",
+    "HERAKLES-SCALE (RUST)",
+    "HERAKLES SIM REPLAY KERNEL",
+    "EKONOMIK CEKIRDEK"
+  ],
+  "soy_not": "S2: 5 halka kanitli - substrat herakles-scale - kernel HERAKLES SIM deterministik replay",
+  "soy_kaynak": "out/S2-lineage.json (ANIL-INVEST-SCALE-001 baglama; dilim durumu KISMI)",
+  "soy_acik_celiski": [
+    "iki-sepet agirlik celiskisi (R2 vs HRK107) - cozulmemis:true, iki gorus yan yana",
+    "HRK-107 kapsul hash drifti (d0983812/12017B vs closeout 65fcc0fa/11496B) - cozulmemis"
+  ],
+  "kpi": {"ad": "MALIYET / KABUL EDILMIS AYAKKABI", "deger": "UNKNOWN", "marj": "UNKNOWN"},
+  "maliyet_bilesenleri": {"malzeme": "UNKNOWN", "iscilik": "UNKNOWN", "fire": "UNKNOWN", "compute": "UNKNOWN"},
+  "compute_tl": "UNKNOWN - KUR MAKBUZU GELINCE",
+  "compute_fixture": {
+    "tur": "economic-kernel girdisi (fixture)",
+    "gelir_kaniti": false,
+    "baba_facing": false,
+    "usd": 10.0,
+    "requests": 6601,
+    "tokens": 667634779,
+    "usd_per_request": 0.001515,
+    "not": "USD degerler provenance'ta kalir; ekranda gorunmez, TL'ye cevrilmedi"
+  },
+  "sahne_metinleri": {
+    "baba_referans": "Oğlum, kabul edilmiş bir ayakkabı bizim için 5.000 TL değerindedir.",
+    "yagiz_kabul": "Ayakkabıyı yapmak yetmez oğlum; kabul edilmiş ürün olmalı.",
+    "kapi_reddi": "Yanlış numara kalite kapısından geçemez; o ürün kabul edilmez.",
+    "kpi_cumlesi": "Ölçümüz şu: kabul edilmiş ayakkabı başına maliyet, 5.000 TL'ye karşı.",
+    "marj_durustlugu": "Oğlum, gerçek veri yok; marj şimdilik UNKNOWN, uydurma rakam yazmayız.",
+    "kapanis": "Doğru numara, doğru model, kabul edilmiş ürün; oğlum, gerisi zamanla.",
+    "compute_bekleyen": "Bugünkü hesaplamanın TL karşılığı UNKNOWN; kur makbuzu gelince yazacağız."
+  },
+  "baba_karakter": {
+    "stil": "stilize theatrical cartoon; fotogercekci deepfake YOK; kimlik adi uydurulmadi",
+    "ozellikler": ["kisa gri/kir sac", "bakimli kisa gri sakal-biyik", "siyah gomlek", "sicak gulumseme", "orta yasli gorunum"],
+    "kaynak": "kullanici referans fotografi (bu sohbette yuklu) -> VPS'e aktarim UNKNOWN; ozellikler kaptan M3 metninden",
+    "provenance_dosya": "out/S5-character-grammar.json"
+  },
+  "gramer": ["squash/stretch", "iris", "conveyor gag", "title cards", "painted workshop"],
+  "imagegen_kullanildi": false,
+  "sanat_kaynagi": "manim primitifleri + Film Factory konvansiyonu (ImageGen kullanilmadi)",
+  "provenance": {
+    "kaptan_kapsul": "C:/herakles/.herakles/kovan/HRK-SHOE-STUDIO-001/HRK-SHOE-STUDIO-001.capsule",
+    "kaptan_kapsul_sha256": "7f3ebb73f44403aa158371fe9e2aa21377fc897b665c42329e2a7ee5c7ce17fe",
+    "dilim_dosyalari": [
+      "out/S1-factory-survey.json",
+      "out/S2-lineage.json",
+      "out/S3-shoelaw-foundation.json",
+      "out/S4-shoe-economics.json",
+      "out/S5-character-grammar.json",
+      "out/S6-preflight.json"
+    ],
+    "not": "gelir kanitli degil; evidence confidence != execution outcome"
+  }
+}

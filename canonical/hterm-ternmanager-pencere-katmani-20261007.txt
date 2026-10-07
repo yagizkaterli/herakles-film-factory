@@ -1,0 +1,28 @@
+┌ PENCERE (tern) ──────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│1 pencere (1 canli / 0 olu) · 1 pane · 11 oturum · 0 harici                                                           │
+│defter /root/.herakles/pencere/defter.json                                                                            │
+│PENCERELER (headless)                                                                                                 │
+│▶ ● pencere-birim1-koordinator · pane=1 160x45 · ~ · pid=2702433 · 8dk                                                │
+│    /tmp/hterm-pencere-pencere-birim1-koordinator-1791372079172.sock                                                  │
+│                                                                                                                      │
+│OTURUMLAR (tern daemon) · 11                                                                                          │
+│  HERDR-VPS · tab=1 blok=2 · /root/repos/agent-fleet                                                                  │
+│  CAPSULESPACE · tab=10 blok=10 · /root/.capsulespace                                                                 │
+│  RE-COUNCIL · tab=1 blok=1 · /root/herakles-harness                                                                  │
+│  PR-UNIT · tab=1 blok=1 · /root/herakles-harness                                                                     │
+│  OMP-HERDSMAN · tab=1 blok=1 · /root/repos/omp-herdsman                                                              │
+│  HRK-UNIT-MAIL-001-SW · tab=1 blok=1 · /root/repos/omp-herdsman                                                      │
+│  advisor-ds · tab=1 blok=1 · /root/herakles/worktrees/simcraft-graf                                                  │
+│  queen · tab=1 blok=1 · /root/vault-homebase                                                                         │
+│  improve-codex · tab=1 blok=1 · /root/vault-homebase                                                                 │
+│  donus-tazele · tab=1 blok=1 · /root/vault-homebase                                                                  │
+│  shoe-ds-19 · tab=1 blok=1 · /root/vault-homebase                                                                    │
+│                                                                                                                      │
+│HARICI (tmux, TERN oncesi) · 0                                                                                        │
+│  harici terminal yok                                                                                                 │
+│olcum 2026-10-07 14:29:25                                                                                             │
+│n ac · x kapat (olu kaydi budar) · b bol · s shot · ↑/↓ sec                                                           │
+│                                                                                                                      │
+│                                                                                                                      │
+│                                                                                                                      │
+└──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘

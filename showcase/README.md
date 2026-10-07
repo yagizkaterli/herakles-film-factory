@@ -21,7 +21,28 @@ The receipt limits the visible economy to one accepted reference product (**1 KA
 | `shoe-sim-3d` | 854x480@15 · 43.13 s | [MP4](films/shoe-sim-3d.mp4) · [poster](films/shoe-sim-3d-poster.png) · [receipt](films/shoe-sim-3d.receipt.json) |
 | `hterm-ternmanager-v1` | 854x480@15 · 18.60 s | [MP4](films/hterm-ternmanager-v1.mp4) · [reduced-motion](films/hterm-ternmanager-v1-reduced-motion.mp4) · [poster](films/hterm-ternmanager-v1-poster.png) · [receipt](films/hterm-ternmanager-v1.receipt.json) |
 
+| `shoe-sim-3d` | `hterm-ternmanager-v1` |
+|---|---|
+| ![shoe sim preview](films/shoe-sim-3d-preview.gif) | ![hterm ternmanager preview](films/hterm-ternmanager-v1-preview.gif) |
+
 `hterm-ternmanager-v1` is the newest render: it explains the hterm pane mail contract (`herdr:<pane>`, jeton, ack chain) and the ternmanager window surface (defter, live/dead badges, prune, machine surface). Its receipt records narrative and outsiderRead as **open** — no human/VLM content read was performed — and no frame OCR exists; the film is not presented as content-verified.
+
+### Gates
+
+| Film | sourceParity | identity | narrative | outsiderRead | worldLink | reducedMotion |
+|---|---|---|---|---|---|---|
+| `shoe-studio-baba-v1` | ✓ | ✓ | × | × | × | × |
+| `shoe-sim-3d` | ✓ | ✓ | × | × | × | × |
+| `hterm-ternmanager-v1` | ✓ | ✓ | × | × | × | ✓ |
+
+### Check the digests yourself
+
+```bash
+python3 showcase/verify-films.py            # re-hashes every digest the receipts record
+python3 showcase/verify-films.py --id hterm-ternmanager-v1
+```
+
+Legacy receipts (pre-contract) print as warnings — listed, not blessed. Missing assets, digest mismatches and contract receipts missing required fields exit non-zero.
 
 ## Film states
 

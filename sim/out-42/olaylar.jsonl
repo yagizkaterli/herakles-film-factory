@@ -1,0 +1,9 @@
+{"sema":"sim-olay-v1","sira":1,"tick":1,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"74282c25b59a6f0dacee7a8c264eefa863d94fc0cb0ee832c568f1d4f7954d41"}
+{"sema":"sim-olay-v1","sira":2,"tick":2,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"448e731fda2818fafe8df5412728d6681769d3b5a4ae6244b6858809a3356891"}
+{"sema":"sim-olay-v1","sira":3,"tick":3,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"acb160a9cdbc5992f5e3e6872607f853bc5d3df1645e6c73fc1774b357fa2f19"}
+{"sema":"sim-olay-v1","sira":4,"tick":4,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"4f6839dabb60366c63fe232d870ef1ee24dabc5243bf19c891f40d4cf1cae8a6"}
+{"sema":"sim-olay-v1","sira":5,"tick":5,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"00d104f4b2a0f124e28370ffc6390cb51b9cb87f1c49aba27cb693fcf498f8f2"}
+{"sema":"sim-olay-v1","sira":6,"tick":5,"aktor":"ham_deri","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Red","neden":"YETKISIZ: aktor ham_deri icin 'Hareket' izni yok","durum_ozeti":"00d104f4b2a0f124e28370ffc6390cb51b9cb87f1c49aba27cb693fcf498f8f2"}
+{"sema":"sim-olay-v1","sira":7,"tick":6,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"15748fa07f52f7b851f47e812edc6d0a9aa877965e738c7465195c5def018764"}
+{"sema":"sim-olay-v1","sira":8,"tick":7,"aktor":"baba","eylem":{"tur":"Hareket","dx":0,"dy":-1},"karar":"Kabul","durum_ozeti":"01942a70e76299e090df1a8db9be4232afd7bd14b4cd3aea51691546523a0ac1"}
+{"sema":"sim-olay-v1","sira":9,"tick":8,"aktor":"baba","eylem":{"tur":"Hareket","dx":0,"dy":-1},"karar":"Kabul","durum_ozeti":"9ca44c32e004ece184526c1e4b46cd6a83ab30c9931d6b947ffc3d797a353bf8"}

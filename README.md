@@ -28,6 +28,22 @@ Current deterministic renders added on 2026-10-07 (all four public assets — mp
 
 `hterm-ternmanager-v1` is the newest render of the three (“iki yuzey, tek kanit”: the hterm pane mail contract and the ternmanager window surface). Its receipt records the open gates — narrative and outsiderRead await a human/VLM read, and no frame-level OCR was possible — rather than claiming a content review that did not happen.
 
+| `shoe-studio-baba-v1` (pointer) | `shoe-sim-3d` | `hterm-ternmanager-v1` |
+|---|---|---|
+| ![shoe studio preview](showcase/films/shoe-studio-baba-v1-preview.gif) | ![shoe sim preview](showcase/films/shoe-sim-3d-preview.gif) | ![hterm ternmanager preview](showcase/films/hterm-ternmanager-v1-preview.gif) |
+
+### Gates — what each render does *not* prove
+
+Every receipt carries six boolean gates. An open gate (`×`) is a claim the render deliberately does not make:
+
+| Film | sourceParity | identity | narrative | outsiderRead | worldLink | reducedMotion |
+|---|---|---|---|---|---|---|
+| `shoe-studio-baba-v1` | ✓ | ✓ | × | × | × | × |
+| `shoe-sim-3d` | ✓ | ✓ | × | × | × | × |
+| `hterm-ternmanager-v1` | ✓ | ✓ | × | × | × | ✓ |
+
+`narrative` and `outsiderRead` are open because no human or VLM content read was performed; `worldLink` is open because no runtime-state projection is bound to any of the three. Only the hterm render ships a reduced-motion cut. Every render is also atomised into per-second frame capsules on the build host — that is where a future VLM pass would land, not in this repository.
+
 ## What lives here
 
 A film promotion is expected to keep four surfaces together:
@@ -99,13 +115,37 @@ This repository therefore distinguishes:
 - **visual explanation** from **system authority**;
 - **pilot/baseline** from **current pointer**.
 
+Published receipts declare the repository publish contract (`herakles.final-film-publish.v1`) and carry its six required receipt fields — `source_digest`, `render_command`, `sha256`, `world_link`, `outsider_qa`, `reduced_motion_qa` — alongside the schema fields. `sources[]` lists every input the render was bound to, each with its own digest, and `source_digest` is recomputed from that list by the rule the receipt states. The local QA trail stays next to each film as a `*.hrk-receipt.json` annex. Receipts that predate the contract are kept as they are and reported as unverified by the checker below, never silently upgraded.
+
+## Verify a render yourself
+
+Receipts are claims; the files are the evidence. [`showcase/verify-films.py`](showcase/verify-films.py) re-hashes every digest a receipt records — the media digests, its `sources[]` list and the `source_digest` manifest — validates contract receipts against [`contracts/film-receipt.v1.schema.json`](contracts/film-receipt.v1.schema.json), and checks that the latest-film pointer resolves to real assets:
+
+```bash
+python3 showcase/verify-films.py
+# 25 kayit | yeniden hesaplanan digest=26 | uyari=20 | hata=0
+```
+
+Legacy receipts are printed as warnings (listed, not blessed). A hard failure — missing asset, digest mismatch, or a contract receipt missing a required field — exits non-zero.
+
+Spot-check one render:
+
+```bash
+sha256sum showcase/films/hterm-ternmanager-v1.mp4        # compare with receipt.sha256
+ffprobe -v error -show_entries stream=width,height,avg_frame_rate \
+  -show_entries format=duration -of default=nw=1 \
+  showcase/films/hterm-ternmanager-v1.mp4
+python3 showcase/publish-latest-film.py                  # pointer resolves to real assets
+```
+
 ## Explore
 
-- [`showcase/`](showcase/README.md) — public artifact index and film states.
+- [`showcase/`](showcase/README.md) — public artifact index, film states, and the digest checker [`verify-films.py`](showcase/verify-films.py).
 - [`pipeline/`](pipeline/README.md) — production state machine and gates.
-- [`canonical/`](canonical/) — film grammar and bounded narrative inputs.
-- [`contracts/`](contracts/) — source and receipt schemas.
-- [`scenes/`](scenes/) — deterministic scene code.
+- [`canonical/`](canonical/) — film grammar, bounded narrative inputs, and the source data the published renders bind to.
+- [`sim/`](sim/) — measured SIM-KOSU run outputs (`out-42`, `out-43`) that `shoe-sim-3d` binds to.
+- [`contracts/`](contracts/) — source, receipt and publish schemas.
+- [`scenes/`](scenes/) — deterministic scene code; each published render keeps its scene here so the receipt's `scene_sha256` stays checkable.
 - [`assets/`](assets/) — generated/narrative assets and manifests.
 
 ## Local development

@@ -1,0 +1,10 @@
+{"sema":"sim-olay-v1","sira":1,"tick":1,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"9176c722beb79a3acbdeef13494c5842531417efcd39be1a79364e4ccf2af096"}
+{"sema":"sim-olay-v1","sira":2,"tick":2,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"419345e5e5b18e0bf0e20536f8d12ddbcc5ce09cb58843da23e3a025ce0c3364"}
+{"sema":"sim-olay-v1","sira":3,"tick":3,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"d934ebd87789f0013d1b98164e086e0c369f62e11660e5a41798107f15692eaa"}
+{"sema":"sim-olay-v1","sira":4,"tick":4,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"d5a1a9c7596c530be0bd043623a8e5375b5694c66f4522cc4cc6b6ab9b9af9d8"}
+{"sema":"sim-olay-v1","sira":5,"tick":5,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"52ba9e33daad652a6571fb205843333b7729b3f5aef99d94cf2e664cc70463d3"}
+{"sema":"sim-olay-v1","sira":6,"tick":5,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Red","neden":"IHLAL: CakismaYok: ayakkabi ve kalip43 ayni hucrede (6,0)","durum_ozeti":"52ba9e33daad652a6571fb205843333b7729b3f5aef99d94cf2e664cc70463d3"}
+{"sema":"sim-olay-v1","sira":7,"tick":6,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":0,"dy":1},"karar":"Kabul","durum_ozeti":"094f10dbaf0dde71257dac2ea6ac4c4103779b69e3e276292d69fe6f9e8c0d0f"}
+{"sema":"sim-olay-v1","sira":8,"tick":7,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"16a4ba5bbf4d042250dac468e570ddc015be6e7095a56e058f202a6b9a599038"}
+{"sema":"sim-olay-v1","sira":9,"tick":8,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":1,"dy":0},"karar":"Kabul","durum_ozeti":"67635ee374c6fd7993944ac93dc899bfe0fedc32a46400d97618fb20a04a79b8"}
+{"sema":"sim-olay-v1","sira":10,"tick":9,"aktor":"ayakkabi","eylem":{"tur":"Hareket","dx":0,"dy":-1},"karar":"Kabul","durum_ozeti":"e44c283afb6d0bc9b90ccbaaf043e37a039cc6570c00549315a85020233de66c"}

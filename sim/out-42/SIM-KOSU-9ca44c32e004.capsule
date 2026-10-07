@@ -1,0 +1,20 @@
+{
+  "akis": ".pca -> simulation -> .capsule",
+  "betik_sha256": "605523f5964e4af9264a9933528f694ff262550c8b08db484fdbe12d899943f3",
+  "dunya": {
+    "ad": "shoe-studio-42-kabul",
+    "sha256": "2307a2bf10ee88915003e13b077c240e9c2acaa756c927938e39fb16564433b4"
+  },
+  "is_id": "SIM-KOSU-9ca44c32e004",
+  "makbuz_sha256": "af6e7aaccecdd1c916a47ba2d4ee9149728ee79ffdee83bacd785f5f2c78565c",
+  "sayaclar": {
+    "adim": 9,
+    "ihlal": 0,
+    "kabul": 8,
+    "yetkisiz": 1
+  },
+  "schema": "harness.sim.capsule.v1",
+  "son_digest": "9ca44c32e004ece184526c1e4b46cd6a83ab30c9931d6b947ffc3d797a353bf8",
+  "ts": "2026-10-07T07:59:14Z",
+  "zincir_digest": "04b87f7fbb426bbeaf08bbcd93f659dc348e5311a1ca54c2984da3a9d4676a2b"
+}
