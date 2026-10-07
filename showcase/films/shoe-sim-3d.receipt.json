@@ -1,0 +1,49 @@
+{
+ "schema": "herakles.film-receipt.v1",
+ "filmId": "shoe-sim-3d",
+ "title": "BABANIN ATOLYESI - HERAKLES SIM (3D)",
+ "sourceDigest": "309fd44d5532b5ee72ab8fabb7664318e669afa6527dcfd4dba74e41dd9e0581",
+ "sceneStateDigest": "309fd44d5532b5ee72ab8fabb7664318e669afa6527dcfd4dba74e41dd9e0581",
+ "source": {
+  "pointer": "sim/out-42 + sim/out-43 (SIM-KOSU kapsulleri)",
+  "scene": "scenes/film_shoe_sim_3d.py"
+ },
+ "render": {
+  "engine": "manim",
+  "version": "0.20.1",
+  "width": 854,
+  "height": 480,
+  "fps": 15.0,
+  "durationSeconds": 43.132357,
+  "output": "showcase/films/shoe-sim-3d.mp4"
+ },
+ "gates": {
+  "sourceParity": true,
+  "narrative": false,
+  "identity": true,
+  "reducedMotion": false,
+  "outsiderRead": false,
+  "worldLink": false
+ },
+ "gateNotes": {
+  "narrative": "insan okumasi gerekli",
+  "outsiderRead": "insan/VLM okumasi gerekli",
+  "reducedMotion": "reduced-motion kesimi uretilmedi"
+ },
+ "worldLink": {},
+ "status": "deterministic-render",
+ "limit": "Film sim kosularini gosterir; marj/maliyet alt kalemleri UNKNOWN (veri yok).",
+ "digests": {
+  "film_sha256": "6c4e2d49f42284f3f27f4dd2129b15570b1be9f5ae88106a1e163e16118c3c97",
+  "poster_sha256": "0f396b894de886d638716bf12b22ba23a6df31c0811b7d91d365f27a66db2dbf",
+  "preview_sha256": "fdcc449c8658e111510e6074b5b80a6dffa128ee67eabdb1b4619ecb365812ec",
+  "scene_sha256": "309fd44d5532b5ee72ab8fabb7664318e669afa6527dcfd4dba74e41dd9e0581",
+  "source_sha256": null
+ },
+ "qa": {
+  "kare_qa": "PASS (piksel; bos kare yok)",
+  "ocr": "UNKNOWN (tesseract kurulu degil)",
+  "gorsel_yorum": "UNKNOWN (vision yok)"
+ },
+ "annex": "showcase/films/shoe-sim-3d.hrk-receipt.json"
+}

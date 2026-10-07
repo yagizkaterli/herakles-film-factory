@@ -6,13 +6,22 @@ A file existing here does not by itself mean it is current or released. Use [`la
 
 ## Current promoted render
 
-[`latest-film.json`](latest-film.json) currently points to **`terra-revenue-curve-20260908`** with status `deterministic-render`.
+[`latest-film.json`](latest-film.json) currently points to **`shoe-studio-baba-v1`** with status `deterministic-render`.
 
 ![Current promoted preview](latest-preview.gif)
 
-[MP4](films/terra-revenue-curve-20260908.mp4) · [poster](films/terra-revenue-curve-20260908-poster.png) · [receipt](films/terra-revenue-curve-20260908.receipt.json)
+[MP4](films/shoe-studio-baba-v1.mp4) · [poster](films/shoe-studio-baba-v1-poster.png) · [receipt](films/shoe-studio-baba-v1.receipt.json)
 
-The receipt limits the visible revenue milestones to **scenario assumptions**; they are not presented as measured paying-customer MRR/ARR.
+The receipt limits the visible economy to one accepted reference product (**1 KABUL EDILMIS ayakkabi = 5.000 TL**) and keeps revenue explicitly unproven; it is not presented as measured income.
+
+## Newest deterministic renders (2026-10-07)
+
+| Film | Render | Assets |
+|---|---|---|
+| `shoe-sim-3d` | 854x480@15 · 43.13 s | [MP4](films/shoe-sim-3d.mp4) · [poster](films/shoe-sim-3d-poster.png) · [receipt](films/shoe-sim-3d.receipt.json) |
+| `hterm-ternmanager-v1` | 854x480@15 · 18.60 s | [MP4](films/hterm-ternmanager-v1.mp4) · [reduced-motion](films/hterm-ternmanager-v1-reduced-motion.mp4) · [poster](films/hterm-ternmanager-v1-poster.png) · [receipt](films/hterm-ternmanager-v1.receipt.json) |
+
+`hterm-ternmanager-v1` is the newest render: it explains the hterm pane mail contract (`herdr:<pane>`, jeton, ack chain) and the ternmanager window surface (defter, live/dead badges, prune, machine surface). Its receipt records narrative and outsiderRead as **open** — no human/VLM content read was performed — and no frame OCR exists; the film is not presented as content-verified.
 
 ## Film states
 

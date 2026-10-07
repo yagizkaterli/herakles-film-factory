@@ -1,0 +1,49 @@
+{
+ "schema": "herakles.film-receipt.v1",
+ "filmId": "shoe-studio-baba-v1",
+ "title": "BABANIN ATOLYESI - HERAKLES SIM Shoe Studio",
+ "sourceDigest": "882461c5a53c338dbaa077e10a956b492400ecebe842779799c72086a59c62f8",
+ "sceneStateDigest": "882461c5a53c338dbaa077e10a956b492400ecebe842779799c72086a59c62f8",
+ "source": {
+  "pointer": "canonical/SHOE-STUDIO-001-data.v1.json",
+  "scene": "scenes/film_shoe_studio_baba_v1.py"
+ },
+ "render": {
+  "engine": "manim",
+  "version": "0.20.1",
+  "width": 1280,
+  "height": 720,
+  "fps": 30.0,
+  "durationSeconds": 71.858854,
+  "output": "showcase/films/shoe-studio-baba-v1.mp4"
+ },
+ "gates": {
+  "sourceParity": true,
+  "narrative": false,
+  "identity": true,
+  "reducedMotion": false,
+  "outsiderRead": false,
+  "worldLink": false
+ },
+ "gateNotes": {
+  "narrative": "insan okumasi gerekli (makbuz iddia etmez)",
+  "outsiderRead": "insan/VLM okumasi gerekli",
+  "reducedMotion": "reduced-motion kesimi uretilmedi"
+ },
+ "worldLink": {},
+ "status": "deterministic-render",
+ "limit": "Film ekonomik kurali (1 KABUL EDILMIS urun = 5.000 TL referans) gosterir; gelir KANITLI DEGIL - fail-closed siniri filmde acik.",
+ "digests": {
+  "film_sha256": "e774a3c8bcb05efcb4cf0d8e68f26d42c809a6855d6a261ca12f93259def917a",
+  "poster_sha256": "baf133e2b86546ce6e8bed7d08589aeb77e363af7ac01c6f68dc40de6ca19cb0",
+  "preview_sha256": "677ae607cd38fa4d8aa56ff1f3c1d4f1f8d021e3624a38b30ed91957b271ae6e",
+  "scene_sha256": "882461c5a53c338dbaa077e10a956b492400ecebe842779799c72086a59c62f8",
+  "source_sha256": null
+ },
+ "qa": {
+  "kare_qa": "PASS (piksel; bos kare yok)",
+  "ocr": "UNKNOWN (tesseract kurulu degil)",
+  "gorsel_yorum": "UNKNOWN (vision yok)"
+ },
+ "annex": "showcase/films/shoe-studio-baba-v1.hrk-receipt.json"
+}

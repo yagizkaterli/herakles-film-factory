@@ -16,7 +16,17 @@ HERAKLES Film Factory is a deterministic visualization layer for selected HERAKL
 
 The moving pointer in [`showcase/latest-film.json`](showcase/latest-film.json) is the canonical repository-level answer to “what is the latest promoted render?”. It binds the preview, MP4, poster and receipt paths for that promotion.
 
-The current pointer identifies `terra-revenue-curve-20260908` as a **deterministic render**. Its receipt explicitly describes the visible revenue curve as scenario assumptions, not measured paying-customer revenue. That distinction is part of the artifact, not README marketing.
+The current pointer identifies `shoe-studio-baba-v1` (**BABANIN ATOLYESI — HERAKLES SIM Shoe Studio**) as a **deterministic render**: Manim 0.20.1, 1280x720@30, 71.86 s, with a receipt that binds source, scene, poster, preview and film digests. The film shows an economic rule — *1 accepted shoe = 5.000 TL reference* — and states fail-closed that the revenue is **not proven**; the receipt repeats that limit instead of hiding it.
+
+Current deterministic renders added on 2026-10-07 (all four public assets — mp4, poster, preview, receipt):
+
+| Film | Render | Receipt |
+|---|---|---|
+| [`shoe-studio-baba-v1`](showcase/films/shoe-studio-baba-v1.mp4) | 1280x720@30 · 71.86 s | [`receipt`](showcase/films/shoe-studio-baba-v1.receipt.json) |
+| [`shoe-sim-3d`](showcase/films/shoe-sim-3d.mp4) | 854x480@15 · 43.13 s | [`receipt`](showcase/films/shoe-sim-3d.receipt.json) |
+| [`hterm-ternmanager-v1`](showcase/films/hterm-ternmanager-v1.mp4) | 854x480@15 · 18.60 s (+ [reduced-motion cut](showcase/films/hterm-ternmanager-v1-reduced-motion.mp4)) | [`receipt`](showcase/films/hterm-ternmanager-v1.receipt.json) |
+
+`hterm-ternmanager-v1` is the newest render of the three (“iki yuzey, tek kanit”: the hterm pane mail contract and the ternmanager window surface). Its receipt records the open gates — narrative and outsiderRead await a human/VLM read, and no frame-level OCR was possible — rather than claiming a content review that did not happen.
 
 ## What lives here
 
@@ -80,7 +90,7 @@ These are pilots, not automatically the latest promoted film.
 
 ## Receipt discipline
 
-A receipt can bind source and render metadata; it cannot make an unsupported real-world claim true. For example, the current promoted revenue-curve receipt records source/storyboard/scene/poster/film digests, deterministic-render status, QA fields, and an explicit falsifier while limiting the revenue values to scenario assumptions.
+A receipt can bind source and render metadata; it cannot make an unsupported real-world claim true. For example, the published revenue-curve receipt records source/storyboard/scene/poster/film digests, deterministic-render status, QA fields, and an explicit falsifier while limiting the revenue values to scenario assumptions.
 
 This repository therefore distinguishes:
 

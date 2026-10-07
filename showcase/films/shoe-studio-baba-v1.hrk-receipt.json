@@ -1,0 +1,111 @@
+{
+ "schema": "hrk-film-receipt/v1",
+ "ts": "2026-10-07T10:55:00Z",
+ "is_id": "HRK-SHOE-STUDIO-001",
+ "film": "BABANIN ATOLYESI - HERAKLES SIM Shoe Studio",
+ "durum": "PASS",
+ "render": {
+  "host": "herakles (VPS)",
+  "command": "LC_ALL=C.UTF-8 manim -qm --disable_caching --media_dir /root/herakles-film-factory/media -o shoe-studio-baba-v1-720p30.mp4 scenes/film_shoe_studio_baba_v1.py ShoeStudioBabaV1",
+  "quality": "qm (1280x720@30)",
+  "scene_sha256": "882461c5a53c338dbaa077e10a956b492400ecebe842779799c72086a59c62f8",
+  "data_sha256": "8f03e44841dd2a6a970389bef747e5d515152980d14273b0d4b6829827d0530d",
+  "not": "manim surumu ve tam stdout bu makbuzla birlikte tutulmadi; kuyruk kaniti 'Rendered ShoeStudioBabaV1' satiridir",
+  "hash_dogrulama": "yerel sha256 == VPS sha256 (scene 882461c5..62f8, 558 satir; data 8f03e448..530d)"
+ },
+ "mp4": {
+  "exact_path_vps": "/root/herakles-film-factory/media/videos/film_shoe_studio_baba_v1/720p30/shoe-studio-baba-v1-720p30.mp4",
+  "exact_path_local": "C:/herakles/.herakles/kovan/HRK-SHOE-STUDIO-001/film/dist/shoe-studio-baba-v1-720p30.mp4",
+  "duration_s": 71.858854,
+  "width": 1280,
+  "height": 720,
+  "fps": 30,
+  "nb_frames": 2156,
+  "bytes": 2587492,
+  "sha256": "e774a3c8bcb05efcb4cf0d8e68f26d42c809a6855d6a261ca12f93259def917a",
+  "kopya_dogrulama": "scp sonrasi yerel sha256 == VPS sha256 (byte-ozdes)"
+ },
+ "poster": {
+  "exact_path_vps": "/root/herakles-film-factory/poster/shoe-studio-baba-poster.png",
+  "exact_path_local": "C:/herakles/.herakles/kovan/HRK-SHOE-STUDIO-001/film/dist/shoe-studio-baba-poster.png",
+  "t_s": 35,
+  "bytes": 113110,
+  "sha256": "baf133e2b86546ce6e8bed7d08589aeb77e363af7ac01c6f68dc40de6ca19cb0"
+ },
+ "para_kurali": {
+  "rule": "baba-facing ekonomi TL; 1 KABUL EDILMIS ayakkabi = 5.000 TL referans",
+  "falsifier": "VPS tools/para_falsifier.py v2.1 (sha256 f4fef2d8..f5bd; AST kovalari: T degerleri 80 + cagri 58 + diger 79 = tekil 140 metin denetlendi; muaf: docstring 5, hex/yol 19) -> usd_isabet=0, durum=PASS, rc=0 (kosu ts 2026-10-07T08:21:22Z)",
+  "falsifier_v1_kaydi": "eski '58 ekran stringi' figuru v1 kapsamiydi (yalniz cagri-ici sabitler); v2.1 T-dict degerlerini de denetler. Muafiyet: docstring (kural metni 'USD ... YOK' icerir - yanlis-pozitif onlenir), hex renk kodu, dosya yolu.",
+  "falsifier_negatif_kontrol": "3 prob: temiz + docstring'de USD -> PASS (rc=0); kirli T-degeri '12.000 USD' -> FAIL (rc=1, kaynak t-degeri); kirli cagri '$9.99' -> FAIL (rc=1, kaynak cagri:note)",
+  "falsifier_3d": "film_shoe_sim_3d.py (yeni 3D sahne): T degerleri 272 + cagri 48 + diger 125 = tekil 132 metin denetlendi (v1 kapsami yalniz 30 idi); usd_isabet=0, PASS, rc=0. Kanit: qa/PARA-FALSIFIER-3D.receipt.json",
+  "kare_ocr": "UNKNOWN - kare bazli OCR yapilmadi; kanit kaynak-AST duzeyindedir"
+ },
+ "kapsam": {
+  "acts": [
+   "I. ATOLYE",
+   "II. KURAL",
+   "III. GELECEK - SIM Shoe Studio",
+   "kapanis fail-closed"
+  ],
+  "soy": "S2'ye hizali 8 dugum (5 halka + substrat/kernel/ekonomik cekirdek)",
+  "tek_siparis": "42 numara kahverengi klasik - tek kabul: KABUL EDILMIS urun"
+ },
+ "unknown": [
+  "baba fotografinin bu makineye aktarimi gozlenmedi (karakter ozellikleri metin/geometri duzeyinde sadik; fotograflik kullanim yok)",
+  "kare bazli OCR yapilmadi (para kurali kaniti kaynak-AST)",
+  "malzeme/iscilik/fire/compute alt maliyetleri ve marj UNKNOWN (veri yok)",
+  "compute TL karsiligi UNKNOWN (kur makbuzu yok); kaynak USD yalniz provenance'ta"
+ ],
+ "durum_notu": "gelir kanitli degil - FAIL-CLOSED siniri filmde acikca gosterilir",
+ "qa_kareler": {
+  "ts": "2026-10-07T07:49:54Z",
+  "dizin_vps": "/root/herakles-film-factory/qa/frames",
+  "dizin_local": "C:/herakles/.herakles/kovan/HRK-SHOE-STUDIO-001/film/qa",
+  "arac": "/root/herakles-film-factory/tools/kare_qa.py",
+  "kareler": [
+   {"t_s": 4, "sha256": "c49ae04678275f8c789cb8f30a061cd43913f2e36ae8ec650e2fd552e20680ca", "not": "title card; dolu_oran 0.01"},
+   {"t_s": 20, "sha256": "70de26fda70606a6ebe02d7bbd2c30664120d1af9c378a827ba55bd433e7d4f0"},
+   {"t_s": 35, "sha256": "baf133e2b86546ce6e8bed7d08589aeb77e363af7ac01c6f68dc40de6ca19cb0", "not": "poster ile bit-ozdes"},
+   {"t_s": 52, "sha256": "fe21651487c47c35332e2dd1b6b12926477926d64591d4349ad91eef044e6c5e"},
+   {"t_s": 67, "sha256": "f3bef41e142e4edac758231fe2c69cb6728f83fab588658518aea4913e2653be"}
+  ],
+  "piksel_kontrol": "PASS - kareler bos degil (1280x720; dolu_oran 0.01-0.16); baskin renkler sahne paletiyle uyumlu (#0A0B0E~BG, #483827~WOOD, #29343F~BELT, #0D1115~PANEL)",
+  "ocr": "UNKNOWN - tesseract kurulu degil (olculdu); kare bazli metin dogrulamasi yok, para kurali kaniti kaynak-AST",
+  "gorsel_yorum": "UNKNOWN - bu bedende vision yok; kare icerigi insan-gozu/VLM ile dogrulanmadi"
+ },
+ "gorsel_kapsul": {
+  "aile": "gorsel/HRK-SHOE-STUDIO-001*.gorsel.json|png|svg|d2|hff (16 set: ana + S1-S6 + DISPATCH + SWARM-TESLIM + ADVISOR-NOTLARI)",
+  "orun": "gorsel/HRK-SHOE-STUDIO-001-S6.png"
+ },
+ "transport": {
+  "yol": "tern-link send (ledger f037c5d26f25)",
+  "durum": "UNCONFIRMED (Tern penceresi kapali; ekran dogrulamasi yok)",
+  "makbuz": "evidence/TERN-DELIVERY.json"
+ },
+ "veri_durumu": {
+  "beklenen": "KANONIK",
+  "kanit": "kanonik yol /root/herakles-film-factory/canonical/SHOE-STUDIO-001-data.v1.json mevcut, schema herakles.shoe-studio-film-source.v1 eslesti, sha 8f03e448..530d (yerel==VPS)",
+  "kare_dogrulama": "UNKNOWN (OCR yok; cercevedeki veri damgasi olculmedi)"
+ },
+ "kaptan_mandatlari": {
+  "M4b": "UNKNOWN - HRK-DS-SW-VISUAL-KERNEL-001 (token-kapsul-projeksiyon-film, L1..L7) spec dosyasi kovanda ve codex-kabilesi kapsullerinde BULUNAMADI (grep 0); film bu cekirdege eslendigini IDDIA ETMEZ"
+ },
+ "s5_sinir": {
+  "durum": "UNKNOWN/DOGRULANMADI",
+  "olcum": "8-12 sahne ve 90-180 sn kabul siniri hicbir artefaktta bulunamadi (grep 0; yalniz T16 veri-semasi alan listesinde shot_list/film_ozet gecer)",
+  "film": {
+   "sahne_isaretleri": 12,
+   "perde": [
+    "I. ATOLYE",
+    "II. KURAL",
+    "III. GELECEK",
+    "kapanis"
+   ],
+   "sure_s": 71.858854
+  }
+ },
+ "uye_dogum": {
+  "durum": "BORN+WORKING",
+  "makbuz": "kovan/HRK-DS-GYM-SHOE-19-001/evidence/UYE-DOGUM.receipt.json"
+ }
+}

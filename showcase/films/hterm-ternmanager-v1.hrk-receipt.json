@@ -1,0 +1,111 @@
+{
+ "schema": "hrk-film-receipt/v1",
+ "ts": "2026-10-07T11:42:33Z",
+ "is_id": "HRK-HTERM-TERNMANAGER-FILM-20261007",
+ "film": "HTERM · TERNMANAGER - iki yuzey, tek kanit (uyeler icin video kapsul)",
+ "durum": "PASS",
+ "render": {
+  "host": "herakles (VPS)",
+  "command": "cd /root/herakles-film-factory && LC_ALL=C.UTF-8 timeout 1500 manim -ql --disable_caching --media_dir media -o hterm-ternmanager-v1.mp4 scenes/film_hterm_ternmanager_v1.py HtermTernmanagerV1",
+  "quality": "ql (854x480@15) - fabrika konvansiyonu (komsu 3D/2D filmler de 480p15)",
+  "manim": "v0.20.1",
+  "render_sure_s": 17.3,
+  "render_kaniti": "manim stdout: 'Rendered HtermTernmanagerV1' + 'Played 41 animations' (render komutu wall time 17.29 sn)",
+  "scene_yolu": "scenes/film_hterm_ternmanager_v1.py",
+  "scene_sha256": "f0737e64b3707da7fb2ea4671cc03994d8fdddd867e68ee0702711a4e63bdad9",
+  "sahne_satiri": 144,
+  "veri_kaynagi": "olculmus yuzeyler: /root/tmp/ternmanager-*.txt (gercek TUI dokumu), /root/.herakles/pencere/defter.json, hterm --help posta sozlesmesi; sahne sayi UYDURMAZ (panel satirlari dokumden birebir)"
+ },
+ "mp4": {
+  "exact_path_vps": "/root/herakles-film-factory/media/videos/film_hterm_ternmanager_v1/480p15/hterm-ternmanager-v1.mp4",
+  "duration_s": 18.599023,
+  "width": 854,
+  "height": 480,
+  "fps": 15,
+  "nb_frames": 279,
+  "bytes": 462683,
+  "codec": "h264 (tek stream; ses yok)",
+  "sha256": "872b522d1681a06dfae6bc719a9f0759d5835698d308f57ea70f655c2ce351df"
+ },
+ "poster": {
+  "exact_path_vps": "/root/herakles-film-factory/poster/hterm-ternmanager-v1-poster.png",
+  "t_s": 6.5,
+  "bytes": 63206,
+  "sha256": "c7eac455fd6298e488bbb450ab68e001eda6c5b5f6fa00cd16b94127021f18d5",
+  "not": "38 kare tarandi (0.5s adim), en dolu kare t=6.5 (dolu_oran 0.083); qa f-6.5.png ile bit-ozdes"
+ },
+ "reduced_motion": {
+  "exact_path_vps": "/root/herakles-film-factory/renders/hterm-ternmanager-v1-reduced-motion.mp4",
+  "duration_s": 18.133333,
+  "width": 854,
+  "height": 480,
+  "fps": 15,
+  "nb_frames": 272,
+  "bytes": 74880,
+  "sha256": "a4e2b74228e19e737bae1f52a9fa65bae17acc904f63d45314f2baa7b92cb710",
+  "yontem": "4 statik kart (ImageMagick convert, metin) -> kart basina 4.5 sn 15fps libx264 -> concat demuxer; ANIMASYON YOK",
+  "falsifier": "Bu kesim CURUR: kartlar arasinda hareket/gecis animasyonu varsa VEYA kart metni ana filmdeki iddialarla celisirse"
+ },
+ "kapsam": {
+  "acts": [
+   "I. BASLIK",
+   "II. POSTA (.hterm)",
+   "III. TERNMANAGER (PENCERE)",
+   "IV. KANIT ZINCIRI / KAPANIS"
+  ],
+  "sure_s": 18.599023,
+  "animasyon": 41,
+  "kaynak_yuzeyler": [
+   "hterm --terminal-durt/--posta-oku/--terminal-ack (herdr-pane, jeton, ack zinciri)",
+   "ternmanager PENCERE katmani (defter, canli/olu rozet, budama, HARICI, --json --pencere ozet, --pencere-dokum)"
+  ]
+ },
+ "qa_kareler": {
+  "ts": "2026-10-07T11:42:33Z",
+  "dizin_vps": "/root/herakles-film-factory/qa/frames-hterm",
+  "arac": "/root/herakles-film-factory/tools/kare_qa.py",
+  "kareler": [
+   {
+    "t_s": 2.0,
+    "sha256": "abf0562cb37efd24265e0d4b51410dda58468ed482d318134afb5dfba10d4be9",
+    "dolu_oran": 0.02
+   },
+   {
+    "t_s": 6.5,
+    "sha256": "c7eac455fd6298e488bbb450ab68e001eda6c5b5f6fa00cd16b94127021f18d5",
+    "dolu_oran": 0.08,
+    "not": "poster ile bit-ozdes (en dolu kare)"
+   },
+   {
+    "t_s": 9.3,
+    "sha256": "b82ac22223b330ab2f907e5f8e00c9263b5d2f1a3373aedb46c7d81e719095c4",
+    "dolu_oran": 0.02
+   },
+   {
+    "t_s": 13.0,
+    "sha256": "9072878ec09e7eff783ed68fb32784815c44e703e212e615ef6b59e7fa2ffed9",
+    "dolu_oran": 0.03
+   },
+   {
+    "t_s": 17.1,
+    "sha256": "34062db5420fe8240bd9a51505a81d7034052a86fd4f0b116c818deb5c26a23e",
+    "dolu_oran": 0.02
+   }
+  ],
+  "piksel_kontrol": "PASS - kareler bos degil (854x480; dolu_oran 0.02-0.08); baskin renk #05090D sahne BG (#070A0F) ile uyumlu",
+  "ocr": "UNKNOWN - tesseract kurulu degil (olculdu: tesseract=YOK); kare bazli metin dogrulamasi yok",
+  "gorsel_yorum": "UNKNOWN - bu bedende vision yok; kare icerigi insan-gozu/VLM ile dogrulanmadi"
+ },
+ "uye_ogrenme": {
+  "kanal_1_kapsul": "HRK-HTERM-TERNMANAGER-FILM-20261007 (kapsul-v2 + hff + png + makbuz; vault gelen)",
+  "kanal_2_bulgu": "hterm --bulgu (BULGU-HAVUZU + uye hafizasi; imzali)",
+  "kanal_3_oda_durt": "KULLANILAMADI: 'hterm --durt Topluluk ...' -> 'oda listesi alinamadi: lobi rooms failed (fetch failed)' (LOBI erisilemedi, kuru kosuda olculdu)"
+ },
+ "unknown": [
+  "gorsel yorum yok (vision yok; film icerigi insan-gozu/VLM ile dogrulanmadi)",
+  "kare bazli OCR yok (tesseract yok)",
+  "LOBI oda durt yolu kapali (fetch failed) - uye bildirimi bulgu + kapsul ile yapildi",
+  "narrative/outsiderRead kapilari insan okumasi gerektirir: bu makbuz onlari iddia ETMEZ"
+ ],
+ "durum_notu": "Film iddia uretmez; olculmus yuzeyleri gosterir. Kanitsiz sayi sahneye konmadi."
+}

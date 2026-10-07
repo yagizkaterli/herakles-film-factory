@@ -1,0 +1,50 @@
+{
+ "schema": "herakles.film-receipt.v1",
+ "filmId": "hterm-ternmanager-v1",
+ "title": "HTERM + TERNMANAGER - iki yuzey, tek kanit",
+ "sourceDigest": "f0737e64b3707da7fb2ea4671cc03994d8fdddd867e68ee0702711a4e63bdad9",
+ "sceneStateDigest": "f0737e64b3707da7fb2ea4671cc03994d8fdddd867e68ee0702711a4e63bdad9",
+ "source": {
+  "pointer": "/root/tmp/ternmanager-pencere-katmani-20261007.txt (olculen panel dokumu)",
+  "scene": "scenes/film_hterm_ternmanager_v1.py"
+ },
+ "render": {
+  "engine": "manim",
+  "version": "0.20.1",
+  "width": 854,
+  "height": 480,
+  "fps": 15.0,
+  "durationSeconds": 18.599023,
+  "output": "showcase/films/hterm-ternmanager-v1.mp4"
+ },
+ "gates": {
+  "sourceParity": true,
+  "narrative": false,
+  "identity": true,
+  "reducedMotion": true,
+  "outsiderRead": false,
+  "worldLink": false
+ },
+ "gateNotes": {
+  "narrative": "insan okumasi gerekli (vision yok)",
+  "outsiderRead": "insan/VLM okumasi gerekli",
+  "reducedMotion": "statik kart kesimi uretildi (hterm-ternmanager-v1-reduced-motion.mp4)"
+ },
+ "worldLink": {},
+ "status": "deterministic-render",
+ "limit": "Film gozle dogrulanmadi (vision yok) ve kare OCR yok (tesseract yok); narrative/outsiderRead kapilari insan okumasi bekler.",
+ "digests": {
+  "film_sha256": "872b522d1681a06dfae6bc719a9f0759d5835698d308f57ea70f655c2ce351df",
+  "poster_sha256": "c7eac455fd6298e488bbb450ab68e001eda6c5b5f6fa00cd16b94127021f18d5",
+  "preview_sha256": "9072fd82de0b09023fb727b045e2bb2fd3ed3ef474806115ee97909e3d63c5bd",
+  "scene_sha256": "f0737e64b3707da7fb2ea4671cc03994d8fdddd867e68ee0702711a4e63bdad9",
+  "source_sha256": null,
+  "reduced_motion_sha256": "a4e2b74228e19e737bae1f52a9fa65bae17acc904f63d45314f2baa7b92cb710"
+ },
+ "qa": {
+  "kare_qa": "PASS (piksel; bos kare yok)",
+  "ocr": "UNKNOWN (tesseract kurulu degil)",
+  "gorsel_yorum": "UNKNOWN (vision yok)"
+ },
+ "annex": "showcase/films/hterm-ternmanager-v1.hrk-receipt.json"
+}

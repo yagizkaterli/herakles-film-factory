@@ -1,224 +1,261 @@
 {
-  "schema": "herakles.film-showcase-index.v1",
-  "films": [
-    {
-      "id": "terra-revenue-curve-20260908",
-      "title": "Beklenen gelir eğrisi: tahmin değil",
-      "status": "deterministic-render",
-      "question": "Can a revenue scenario remain understandable without being presented as measured revenue?",
-      "source": "fable/hff/terra-revenue-20260908/source-manifest.json + ImageGen poster + deterministic Manim scene",
-      "render": "showcase/films/terra-revenue-curve-20260908.mp4",
-      "preview": "showcase/terra-revenue-curve-20260908-preview.gif",
-      "poster": "showcase/films/terra-revenue-curve-20260908-poster.png",
-      "receipt": "showcase/films/terra-revenue-curve-20260908.receipt.json"
-    },
-    {
-      "id": "world-v21-live-v1",
-      "title": "HERAKLES World v21 — Live Runtime Capture",
-      "status": "live-runtime-candidate",
-      "question": "Can the actual v21 World runtime, rather than a derived illustration, become the film source?",
-      "source": "v21 relay /v2/snapshot + /events; sanitized read-only capture",
-      "render": "showcase/films/world-v21-live-v1.mp4",
-      "receipt": "showcase/films/world-v21-live-v1.receipt.json"
-    },
-    {
-      "id": "world-bound-agents-v2",
-      "title": "A Live World for Bounded Work",
-      "status": "validated-candidate",
-      "question": "Can a real HERAKLES World snapshot make live workers, bounded traces, and receipts understandable without exposing hidden reasoning?",
-      "source": "canonical/world-bound-film-source.v1.json; 40-worker atomic quality fleet; HTERM rollout QA",
-      "render": "showcase/films/world-bound-agents-v2.mp4",
-      "receipt": "showcase/films/world-bound-agents-v2.receipt.json"
-    },
-    {
-      "id": "evidence-world-v1",
-      "title": "A Trace Becomes a World",
-      "status": "rendered-v1",
-      "question": "Can a trustworthy agent system be understood as a world with memory, gates, and recoverable traces?",
-      "source": "storyboards/evidence-world-film-v1.json + ImageGen keyframe + deterministic Manim scene",
-      "render": "showcase/films/evidence-world-v1.mp4",
-      "receipt": "showcase/films/evidence-world-v1.receipt.json"
-    },
-    {
-      "id": "contextless-agent-proof",
-      "title": "Can a blank agent find the thread?",
-      "status": "in-progress",
-      "question": "Can an agent with no prior chat reconstruct the work from system surfaces?",
-      "source": "HERAKLES system snapshot + d-SONNET-DESTAN-D2-B3 report",
-      "render": "showcase/films/contextless-agent-proof-3d.mp4",
-      "poster": "showcase/films/contextless-agent-proof-3d-poster.png",
-      "receipt": "showcase/films/contextless-agent-proof-3d.receipt.json"
-    },
-    {
-      "id": "evidence-terrain-pilot",
-      "title": "One trace, one receipt",
-      "status": "pilot-render",
-      "question": "Can one source trace become a readable evidence path?",
-      "source": "prior-art pilot P01; deterministic scene geometry",
-      "render": "showcase/films/evidence-terrain-pilot-3d.mp4",
-      "receipt": null
-    },
-    {
-      "id": "eon-camera-journey-pilot",
-      "title": "An EON is a journey",
-      "status": "pilot-render",
-      "question": "Can a chapter camera path make EON transitions legible?",
-      "source": "prior-art pilot P02; deterministic waypoint rail",
-      "render": "showcase/films/eon-camera-journey-pilot-3d.mp4",
-      "receipt": null
-    },
-    {
-      "id": "herakles-trace-to-receipt-grammar-pilot",
-      "title": "Trace becomes a receipt",
-      "status": "grammar-pilot-render",
-      "question": "Can HERAKLES own a visual grammar beyond the seed design?",
-      "source": "canonical/herakles-film-grammar.v1.json",
-      "render": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.mp4",
-      "receipt": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.receipt.json"
-    },
-    {
-      "id": "anlati-counterexample",
-      "title": "One counterexample breaks the surface",
-      "status": "scene-render",
-      "question": "Can one concrete counterexample overturn a whole-looking claim?",
-      "source": "d-MAT-007 + d-KARA-S0-01 receipts",
-      "render": "showcase/films/anlati-counterexample.scene.html",
-      "poster": "showcase/films/anlati-counterexample-poster.png",
-      "receipt": "showcase/films/anlati-counterexample.receipt.json"
-    },
-    {
-      "id": "anlati-label-vs-stream-3d",
-      "title": "The Label Said Running",
-      "status": "pilot-render",
-      "question": "Can a frozen stream contradict a running label?",
-      "source": "canonical/label-is-not-evidence.v1.json",
-      "render": "showcase/films/anlati-label-vs-stream-3d.mp4",
-      "preview": "showcase/films/anlati-label-vs-stream-3d-preview.gif",
-      "receipt": "showcase/films/anlati-label-vs-stream-3d.receipt.json"
-    },
-    {
-      "id": "anlati-label-vs-stream-v2-3d",
-      "title": "The Label Said Running — v2",
-      "status": "pilot-render",
-      "question": "Can a measured stream overturn a status label?",
-      "source": "canonical/label-is-not-evidence.v1.json + prior-art state/camera grammar",
-      "render": "showcase/films/anlati-label-vs-stream-v2-3d.mp4",
-      "preview": "showcase/films/anlati-label-vs-stream-v2-3d-preview.gif",
-      "receipt": "showcase/films/anlati-label-vs-stream-v2-3d.receipt.json"
-    },
-    {
-      "id": "nobet-health-surface-2047",
-      "title": "Measured Health Surface",
-      "status": "pilot-render",
-      "question": "Can measured system health contradict green status?",
-      "source": "canonical/nobet-film-2047.v1.json + Film Factory room turn 2026-08-23T20:47Z",
-      "render": "showcase/films/nobet-health-surface-2047.mp4",
-      "preview": "showcase/films/nobet-health-surface-2047-preview.gif",
-      "poster": "showcase/films/nobet-health-surface-2047-poster.png",
-      "receipt": "showcase/films/nobet-health-surface-2047.receipt.json"
-    },
-    {
-      "id": "s6-torus-to-sphere",
-      "title": "When a Torus Family Becomes S6",
-      "status": "pilot-render",
-      "question": "How does a smooth torus family close into S6 at the cusp?",
-      "source": "https://alpo.ge/s6.pdf",
-      "render": "showcase/films/s6-torus-to-sphere.mp4",
-      "preview": "showcase/films/s6-torus-to-sphere-preview.gif",
-      "receipt": "showcase/films/s6-torus-to-sphere.receipt.json"
-    },
-    {
-      "id": "s6-explainer-long",
-      "title": "Does S6 admit a complex structure? Yup.",
-      "status": "pilot-render",
-      "question": "How does the torus family degenerate and close into S6?",
-      "source": "https://alpo.ge/s6.pdf + X hook @__alpoge__",
-      "render": "showcase/films/s6-explainer-long.mp4",
-      "preview": "showcase/films/s6-explainer-long-preview.gif",
-      "receipt": "showcase/films/s6-explainer-long.receipt.json"
-    },
-    {
-      "id": "s6-explainer-v2",
-      "title": "Does S6 admit a complex structure? Yup. — v2",
-      "status": "qa-revision-render",
-      "question": "Can an outsider follow torus → cusp → dP6 → S6?",
-      "source": "https://alpo.ge/s6.pdf + outsider QA revision",
-      "render": "showcase/films/s6-explainer-v2.mp4",
-      "preview": "showcase/films/s6-explainer-v2-preview.gif",
-      "receipt": "showcase/films/s6-explainer-v2.receipt.json"
-    },
-    {
-      "id": "s6-phrasing-v3",
-      "title": "Can S6 carry a complex structure? — v3",
-      "status": "phrasing-revision-render",
-      "question": "Can an outsider follow the geometric story before seeing the formula?",
-      "source": "canonical/s6-phrasing-v3.v1.json + s6.pdf",
-      "render": "showcase/films/s6-phrasing-v3.mp4",
-      "preview": "showcase/films/s6-phrasing-v3-preview.gif",
-      "receipt": "showcase/films/s6-phrasing-v3.receipt.json"
-    },
-    {
-      "id": "s6-universe-rebuild",
-      "title": "The Unfinished World Closes",
-      "status": "deterministic-render",
-      "question": "Can a viewer follow the S6 construction from geometry alone?",
-      "source": "https://alpo.ge/s6.pdf",
-      "render": "showcase/films/s6-universe-rebuild.mp4",
-      "preview": "showcase/films/s6-universe-rebuild-preview.gif",
-      "receipt": "showcase/films/s6-universe-rebuild.receipt.json"
-    },
-    {
-      "id": "d-CTXC-05",
-      "title": "Fail-Closed Context Gate",
-      "status": "deterministic-render",
-      "question": "What happens when the context capsule is incomplete?",
-      "source": "cards/kontrat.json",
-      "render": "docs/media/d-CTXC-05-gate.mp4",
-      "preview": "docs/media/gate.gif",
-      "receipt": "showcase/films/d-CTXC-05.receipt.json"
-    },
-    {
-      "id": "d-CTXC-06",
-      "title": "Context to Event to Decision",
-      "status": "deterministic-render",
-      "question": "How does a file pile become a decision trace?",
-      "source": "cards/kontrat.json",
-      "render": "docs/media/d-CTXC-06-hero.mp4",
-      "preview": "docs/media/hero.gif",
-      "receipt": "showcase/films/d-CTXC-06.receipt.json"
-    },
-    {
-      "id": "s6-claude-f06-rebuilt",
-      "title": "S6 Construction — Answer and Disagreement",
-      "status": "deterministic-render",
-      "question": "What does the paper claim, and where does it disagree with a published theorem?",
-      "source": "https://alpo.ge/s6.pdf + Claude F06 review",
-      "render": "showcase/films/s6-claude-f06-rebuilt.mp4",
-      "preview": "showcase/films/s6-claude-f06-rebuilt-preview.gif",
-      "receipt": "showcase/films/s6-claude-f06-rebuilt.receipt.json",
-      "tweet": "canonical/s6-tweet-variant-a.v1.json"
-    },
-    {
-      "id": "w1-evidence-thread-tweet",
-      "title": "Source to Receipt — S6 Tweet Film",
-      "status": "deterministic-render",
-      "question": "Can a public viewer follow a paper claim from source to receipt?",
-      "source": "https://alpo.ge/s6.pdf + W1 evidence-thread fleet",
-      "render": "showcase/films/w1-evidence-thread-tweet.mp4",
-      "preview": "showcase/films/w1-evidence-thread-tweet.gif",
-      "receipt": "showcase/films/w1-evidence-thread-tweet.receipt.json",
-      "tweet": "canonical/w1-evidence-thread-tweet.v1.json"
-    },
-    {
-      "id": "s6-claude-original-20.87",
-      "title": "S6 Construction — Claude Final F06",
-      "status": "retrieved-and-verified",
-      "question": "Can the film answer the question and scope the disagreement?",
-      "source": "VPS root artifact + https://alpo.ge/s6.pdf",
-      "render": "showcase/films/s6-claude-original-20.87.mp4",
-      "receipt": "showcase/films/s6-claude-original-20.87.receipt.json",
-      "tweet": "canonical/s6-tweet-variant-a.v1.json"
-    }
-  ],
-  "rule": "status=planned means no film asset is presented as released"
+ "schema": "herakles.film-showcase-index.v1",
+ "films": [
+  {
+   "id": "terra-revenue-curve-20260908",
+   "title": "Beklenen gelir eğrisi: tahmin değil",
+   "status": "deterministic-render",
+   "question": "Can a revenue scenario remain understandable without being presented as measured revenue?",
+   "source": "fable/hff/terra-revenue-20260908/source-manifest.json + ImageGen poster + deterministic Manim scene",
+   "render": "showcase/films/terra-revenue-curve-20260908.mp4",
+   "preview": "showcase/terra-revenue-curve-20260908-preview.gif",
+   "poster": "showcase/films/terra-revenue-curve-20260908-poster.png",
+   "receipt": "showcase/films/terra-revenue-curve-20260908.receipt.json"
+  },
+  {
+   "id": "world-v21-live-v1",
+   "title": "HERAKLES World v21 — Live Runtime Capture",
+   "status": "live-runtime-candidate",
+   "question": "Can the actual v21 World runtime, rather than a derived illustration, become the film source?",
+   "source": "v21 relay /v2/snapshot + /events; sanitized read-only capture",
+   "render": "showcase/films/world-v21-live-v1.mp4",
+   "receipt": "showcase/films/world-v21-live-v1.receipt.json"
+  },
+  {
+   "id": "world-bound-agents-v2",
+   "title": "A Live World for Bounded Work",
+   "status": "validated-candidate",
+   "question": "Can a real HERAKLES World snapshot make live workers, bounded traces, and receipts understandable without exposing hidden reasoning?",
+   "source": "canonical/world-bound-film-source.v1.json; 40-worker atomic quality fleet; HTERM rollout QA",
+   "render": "showcase/films/world-bound-agents-v2.mp4",
+   "receipt": "showcase/films/world-bound-agents-v2.receipt.json"
+  },
+  {
+   "id": "evidence-world-v1",
+   "title": "A Trace Becomes a World",
+   "status": "rendered-v1",
+   "question": "Can a trustworthy agent system be understood as a world with memory, gates, and recoverable traces?",
+   "source": "storyboards/evidence-world-film-v1.json + ImageGen keyframe + deterministic Manim scene",
+   "render": "showcase/films/evidence-world-v1.mp4",
+   "receipt": "showcase/films/evidence-world-v1.receipt.json"
+  },
+  {
+   "id": "contextless-agent-proof",
+   "title": "Can a blank agent find the thread?",
+   "status": "in-progress",
+   "question": "Can an agent with no prior chat reconstruct the work from system surfaces?",
+   "source": "HERAKLES system snapshot + d-SONNET-DESTAN-D2-B3 report",
+   "render": "showcase/films/contextless-agent-proof-3d.mp4",
+   "poster": "showcase/films/contextless-agent-proof-3d-poster.png",
+   "receipt": "showcase/films/contextless-agent-proof-3d.receipt.json"
+  },
+  {
+   "id": "evidence-terrain-pilot",
+   "title": "One trace, one receipt",
+   "status": "pilot-render",
+   "question": "Can one source trace become a readable evidence path?",
+   "source": "prior-art pilot P01; deterministic scene geometry",
+   "render": "showcase/films/evidence-terrain-pilot-3d.mp4",
+   "receipt": null
+  },
+  {
+   "id": "eon-camera-journey-pilot",
+   "title": "An EON is a journey",
+   "status": "pilot-render",
+   "question": "Can a chapter camera path make EON transitions legible?",
+   "source": "prior-art pilot P02; deterministic waypoint rail",
+   "render": "showcase/films/eon-camera-journey-pilot-3d.mp4",
+   "receipt": null
+  },
+  {
+   "id": "herakles-trace-to-receipt-grammar-pilot",
+   "title": "Trace becomes a receipt",
+   "status": "grammar-pilot-render",
+   "question": "Can HERAKLES own a visual grammar beyond the seed design?",
+   "source": "canonical/herakles-film-grammar.v1.json",
+   "render": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.mp4",
+   "receipt": "showcase/films/herakles-trace-to-receipt-grammar-pilot-3d.receipt.json"
+  },
+  {
+   "id": "anlati-counterexample",
+   "title": "One counterexample breaks the surface",
+   "status": "scene-render",
+   "question": "Can one concrete counterexample overturn a whole-looking claim?",
+   "source": "d-MAT-007 + d-KARA-S0-01 receipts",
+   "render": "showcase/films/anlati-counterexample.scene.html",
+   "poster": "showcase/films/anlati-counterexample-poster.png",
+   "receipt": "showcase/films/anlati-counterexample.receipt.json"
+  },
+  {
+   "id": "anlati-label-vs-stream-3d",
+   "title": "The Label Said Running",
+   "status": "pilot-render",
+   "question": "Can a frozen stream contradict a running label?",
+   "source": "canonical/label-is-not-evidence.v1.json",
+   "render": "showcase/films/anlati-label-vs-stream-3d.mp4",
+   "preview": "showcase/films/anlati-label-vs-stream-3d-preview.gif",
+   "receipt": "showcase/films/anlati-label-vs-stream-3d.receipt.json"
+  },
+  {
+   "id": "anlati-label-vs-stream-v2-3d",
+   "title": "The Label Said Running — v2",
+   "status": "pilot-render",
+   "question": "Can a measured stream overturn a status label?",
+   "source": "canonical/label-is-not-evidence.v1.json + prior-art state/camera grammar",
+   "render": "showcase/films/anlati-label-vs-stream-v2-3d.mp4",
+   "preview": "showcase/films/anlati-label-vs-stream-v2-3d-preview.gif",
+   "receipt": "showcase/films/anlati-label-vs-stream-v2-3d.receipt.json"
+  },
+  {
+   "id": "nobet-health-surface-2047",
+   "title": "Measured Health Surface",
+   "status": "pilot-render",
+   "question": "Can measured system health contradict green status?",
+   "source": "canonical/nobet-film-2047.v1.json + Film Factory room turn 2026-08-23T20:47Z",
+   "render": "showcase/films/nobet-health-surface-2047.mp4",
+   "preview": "showcase/films/nobet-health-surface-2047-preview.gif",
+   "poster": "showcase/films/nobet-health-surface-2047-poster.png",
+   "receipt": "showcase/films/nobet-health-surface-2047.receipt.json"
+  },
+  {
+   "id": "s6-torus-to-sphere",
+   "title": "When a Torus Family Becomes S6",
+   "status": "pilot-render",
+   "question": "How does a smooth torus family close into S6 at the cusp?",
+   "source": "https://alpo.ge/s6.pdf",
+   "render": "showcase/films/s6-torus-to-sphere.mp4",
+   "preview": "showcase/films/s6-torus-to-sphere-preview.gif",
+   "receipt": "showcase/films/s6-torus-to-sphere.receipt.json"
+  },
+  {
+   "id": "s6-explainer-long",
+   "title": "Does S6 admit a complex structure? Yup.",
+   "status": "pilot-render",
+   "question": "How does the torus family degenerate and close into S6?",
+   "source": "https://alpo.ge/s6.pdf + X hook @__alpoge__",
+   "render": "showcase/films/s6-explainer-long.mp4",
+   "preview": "showcase/films/s6-explainer-long-preview.gif",
+   "receipt": "showcase/films/s6-explainer-long.receipt.json"
+  },
+  {
+   "id": "s6-explainer-v2",
+   "title": "Does S6 admit a complex structure? Yup. — v2",
+   "status": "qa-revision-render",
+   "question": "Can an outsider follow torus → cusp → dP6 → S6?",
+   "source": "https://alpo.ge/s6.pdf + outsider QA revision",
+   "render": "showcase/films/s6-explainer-v2.mp4",
+   "preview": "showcase/films/s6-explainer-v2-preview.gif",
+   "receipt": "showcase/films/s6-explainer-v2.receipt.json"
+  },
+  {
+   "id": "s6-phrasing-v3",
+   "title": "Can S6 carry a complex structure? — v3",
+   "status": "phrasing-revision-render",
+   "question": "Can an outsider follow the geometric story before seeing the formula?",
+   "source": "canonical/s6-phrasing-v3.v1.json + s6.pdf",
+   "render": "showcase/films/s6-phrasing-v3.mp4",
+   "preview": "showcase/films/s6-phrasing-v3-preview.gif",
+   "receipt": "showcase/films/s6-phrasing-v3.receipt.json"
+  },
+  {
+   "id": "s6-universe-rebuild",
+   "title": "The Unfinished World Closes",
+   "status": "deterministic-render",
+   "question": "Can a viewer follow the S6 construction from geometry alone?",
+   "source": "https://alpo.ge/s6.pdf",
+   "render": "showcase/films/s6-universe-rebuild.mp4",
+   "preview": "showcase/films/s6-universe-rebuild-preview.gif",
+   "receipt": "showcase/films/s6-universe-rebuild.receipt.json"
+  },
+  {
+   "id": "d-CTXC-05",
+   "title": "Fail-Closed Context Gate",
+   "status": "deterministic-render",
+   "question": "What happens when the context capsule is incomplete?",
+   "source": "cards/kontrat.json",
+   "render": "docs/media/d-CTXC-05-gate.mp4",
+   "preview": "docs/media/gate.gif",
+   "receipt": "showcase/films/d-CTXC-05.receipt.json"
+  },
+  {
+   "id": "d-CTXC-06",
+   "title": "Context to Event to Decision",
+   "status": "deterministic-render",
+   "question": "How does a file pile become a decision trace?",
+   "source": "cards/kontrat.json",
+   "render": "docs/media/d-CTXC-06-hero.mp4",
+   "preview": "docs/media/hero.gif",
+   "receipt": "showcase/films/d-CTXC-06.receipt.json"
+  },
+  {
+   "id": "s6-claude-f06-rebuilt",
+   "title": "S6 Construction — Answer and Disagreement",
+   "status": "deterministic-render",
+   "question": "What does the paper claim, and where does it disagree with a published theorem?",
+   "source": "https://alpo.ge/s6.pdf + Claude F06 review",
+   "render": "showcase/films/s6-claude-f06-rebuilt.mp4",
+   "preview": "showcase/films/s6-claude-f06-rebuilt-preview.gif",
+   "receipt": "showcase/films/s6-claude-f06-rebuilt.receipt.json",
+   "tweet": "canonical/s6-tweet-variant-a.v1.json"
+  },
+  {
+   "id": "w1-evidence-thread-tweet",
+   "title": "Source to Receipt — S6 Tweet Film",
+   "status": "deterministic-render",
+   "question": "Can a public viewer follow a paper claim from source to receipt?",
+   "source": "https://alpo.ge/s6.pdf + W1 evidence-thread fleet",
+   "render": "showcase/films/w1-evidence-thread-tweet.mp4",
+   "preview": "showcase/films/w1-evidence-thread-tweet.gif",
+   "receipt": "showcase/films/w1-evidence-thread-tweet.receipt.json",
+   "tweet": "canonical/w1-evidence-thread-tweet.v1.json"
+  },
+  {
+   "id": "s6-claude-original-20.87",
+   "title": "S6 Construction — Claude Final F06",
+   "status": "retrieved-and-verified",
+   "question": "Can the film answer the question and scope the disagreement?",
+   "source": "VPS root artifact + https://alpo.ge/s6.pdf",
+   "render": "showcase/films/s6-claude-original-20.87.mp4",
+   "receipt": "showcase/films/s6-claude-original-20.87.receipt.json",
+   "tweet": "canonical/s6-tweet-variant-a.v1.json"
+  },
+  {
+   "id": "shoe-studio-baba-v1",
+   "title": "BABANIN ATOLYESI - HERAKLES SIM Shoe Studio",
+   "status": "deterministic-render",
+   "question": "Bir aile atolyesinin tek siparisi, kabul edilmis urune nasil donusur?",
+   "source": "canonical/SHOE-STUDIO-001-data.v1.json + deterministic Manim scene",
+   "render": "showcase/films/shoe-studio-baba-v1.mp4",
+   "preview": "showcase/films/shoe-studio-baba-v1-preview.gif",
+   "poster": "showcase/films/shoe-studio-baba-v1-poster.png",
+   "receipt": "showcase/films/shoe-studio-baba-v1.receipt.json",
+   "annex": "showcase/films/shoe-studio-baba-v1.hrk-receipt.json"
+  },
+  {
+   "id": "shoe-sim-3d",
+   "title": "BABANIN ATOLYESI - HERAKLES SIM (3D)",
+   "status": "deterministic-render",
+   "question": "Iki simulasyon kosusu (KABUL ve IHLAL yolu) filmde okunabilir mi?",
+   "source": "sim/out-42 + sim/out-43 (SIM-KOSU kapsulleri) + deterministic Manim 3D scene",
+   "render": "showcase/films/shoe-sim-3d.mp4",
+   "preview": "showcase/films/shoe-sim-3d-preview.gif",
+   "poster": "showcase/films/shoe-sim-3d-poster.png",
+   "receipt": "showcase/films/shoe-sim-3d.receipt.json",
+   "annex": "showcase/films/shoe-sim-3d.hrk-receipt.json"
+  },
+  {
+   "id": "hterm-ternmanager-v1",
+   "title": "HTERM + TERNMANAGER - iki yuzey, tek kanit",
+   "status": "deterministic-render",
+   "question": "Uyeler hterm posta ve ternmanager penceresini hangi kanitla ogrenir?",
+   "source": "olculen panel dokumu (/root/tmp/ternmanager-pencere-katmani-20261007.txt) + deterministic Manim scene",
+   "render": "showcase/films/hterm-ternmanager-v1.mp4",
+   "preview": "showcase/films/hterm-ternmanager-v1-preview.gif",
+   "poster": "showcase/films/hterm-ternmanager-v1-poster.png",
+   "receipt": "showcase/films/hterm-ternmanager-v1.receipt.json",
+   "reducedMotion": "showcase/films/hterm-ternmanager-v1-reduced-motion.mp4",
+   "annex": "showcase/films/hterm-ternmanager-v1.hrk-receipt.json"
+  }
+ ],
+ "rule": "status=planned means no film asset is presented as released"
 }
