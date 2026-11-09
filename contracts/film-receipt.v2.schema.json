@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "herakles.film-receipt.v2",
+  "title": "HERAKLES film receipt v2",
+  "description": "A rendered film receipt. Engines are explicit; lemo-canvas is code-only Canvas 2D and makes no video/image model claim. The receipt binds the film, source and poster by sha256.",
+  "type": "object",
+  "required": ["schema", "id", "ts", "duration_s", "fps", "frames", "resolution", "files", "render", "claims", "falsifier", "state"],
+  "properties": {
+    "schema": {"const": "herakles.film-receipt/v2"},
+    "id": {"type": "string", "minLength": 1},
+    "ts": {"type": "string", "minLength": 1},
+    "title": {"type": "string"},
+    "duration_s": {"type": "number", "exclusiveMinimum": 0},
+    "fps": {"type": "number", "exclusiveMinimum": 0},
+    "frames": {"type": "integer", "minimum": 1},
+    "resolution": {"type": "string", "pattern": "^[1-9][0-9]*x[1-9][0-9]*$"},
+    "files": {
+      "type": "object",
+      "required": ["film", "source", "poster"],
+      "properties": {
+        "film": {"$ref": "#/$defs/fileRef"},
+        "source": {"$ref": "#/$defs/fileRef"},
+        "poster": {"$ref": "#/$defs/fileRef"}
+      },
+      "additionalProperties": false
+    },
+    "render": {
+      "type": "object",
+      "required": ["engine", "pipeline", "python_used", "video_model_used", "image_model_used", "deterministic", "decode_check"],
+      "properties": {
+        "engine": {"enum": ["manim", "manimgl", "lemo-canvas", "canvas2d"]},
+        "pipeline": {"type": "string", "minLength": 1},
+        "browser": {"type": "string"},
+        "python_used": {"type": "boolean"},
+        "video_model_used": {"type": "boolean"},
+        "image_model_used": {"type": "boolean"},
+        "audio": {"type": "string"},
+        "deterministic": {"type": "boolean"},
+        "decode_check": {"type": "string", "minLength": 1},
+        "black_frames": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "claims": {"type": "array", "items": {"type": "string"}, "minItems": 1},
+    "falsifier": {"type": "string", "minLength": 1},
+    "state": {"enum": ["DELIVERED", "PARTIAL", "FAILED"]},
+    "gates": {
+      "type": "object",
+      "properties": {
+        "sourceParity": {"type": "boolean"},
+        "narrative": {"type": "boolean"},
+        "identity": {"type": "boolean"},
+        "reducedMotion": {"type": "boolean"},
+        "outsiderRead": {"type": "boolean"},
+        "worldLink": {"type": "boolean"}
+      },
+      "additionalProperties": {"type": "boolean"}
+    }
+  },
+  "$defs": {
+    "fileRef": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": true
+}
